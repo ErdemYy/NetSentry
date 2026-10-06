@@ -22,10 +22,14 @@
       "severity": "warning"
     }
   ],
-  "generatedAt": "2026-10-06T17:12:41.065Z",
+  "generatedAt": "2026-10-06T17:33:59.461Z",
   "ignored": [
     {
       "path": "apps/api/dist/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/.pytest_cache/v/cache/",
       "reason": "default"
     },
     {
@@ -37,11 +41,35 @@
       "reason": "default"
     },
     {
+      "path": "apps/ml/app/anomaly/__pycache__/",
+      "reason": "default"
+    },
+    {
       "path": "apps/ml/app/api/__pycache__/",
       "reason": "default"
     },
     {
+      "path": "apps/ml/app/data/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/app/preprocessing/__pycache__/",
+      "reason": "default"
+    },
+    {
       "path": "apps/ml/app/schemas/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/app/training/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/app/xai/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/tests/__pycache__/",
       "reason": "default"
     },
     {
@@ -61,18 +89,20 @@
   "schemaVersion": 1,
   "stats": {
     "byCategory": {
-      "config": 15,
-      "documentation": 19,
-      "source": 22,
-      "unknown": 2
+      "asset": 8,
+      "config": 17,
+      "documentation": 20,
+      "source": 31,
+      "test": 3,
+      "unknown": 11
     },
     "byLanguage": {
       "css": 1,
       "javascript": 2,
-      "python": 4,
+      "python": 16,
       "typescript": 17
     },
-    "files": 58,
+    "files": 90,
     "graph": {
       "cycles": 0,
       "edges": 32,
@@ -81,20 +111,20 @@
         "imports": 27
       },
       "externals": 10,
-      "files": 24,
+      "files": 36,
       "languagesAnalyzed": [
         "javascript",
         "typescript"
       ],
       "languagesMetadataOnly": {
         "css": 1,
-        "python": 4
+        "python": 16
       },
-      "nodes": 34,
+      "nodes": 46,
       "unresolvedImports": 2
     },
-    "ignoredDirectories": 8,
-    "ignoredFiles": 2,
+    "ignoredDirectories": 15,
+    "ignoredFiles": 18,
     "withheld": 4
   },
   "tool": {

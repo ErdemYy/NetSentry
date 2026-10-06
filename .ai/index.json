@@ -1,10 +1,10 @@
 {
   "configDigest": "dee4c60aba43bf149c21a8e46e77f8b9c842ea6905a7e9b87badafa13cfe5396",
   "directories": [
+    "apps/ml",
     "apps/api",
     "packages/shared",
-    "apps/web",
-    "apps/ml"
+    "apps/web"
   ],
   "files": [
     {
@@ -342,6 +342,51 @@
       "ext": "",
       "fingerprint": {
         "algo": "sha256",
+        "hash": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+        "mtime": "2026-10-06T17:31:51.457Z",
+        "normalization": "text-lf-nobom",
+        "size": 37
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:31:51.457Z",
+      "path": "apps/ml/.pytest_cache/.gitignore",
+      "size": 37
+    },
+    {
+      "category": "unknown",
+      "ext": ".tag",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+        "mtime": "2026-10-06T17:31:51.459Z",
+        "normalization": "text-lf-nobom",
+        "size": 191
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:31:51.459Z",
+      "path": "apps/ml/.pytest_cache/CACHEDIR.TAG",
+      "size": 191
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+        "mtime": "2026-10-06T17:31:51.457Z",
+        "normalization": "text-lf-nobom",
+        "size": 302
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:31:51.457Z",
+      "path": "apps/ml/.pytest_cache/README.md",
+      "size": 302
+    },
+    {
+      "category": "config",
+      "ext": "",
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "d338b05452a81220a24daedd1259f2403b9715dd19423209696a560604cf1ebf",
         "mtime": "2026-10-06T17:04:10.715Z",
         "normalization": "text-lf-nobom",
@@ -351,6 +396,21 @@
       "mtime": "2026-10-06T17:04:10.715Z",
       "path": "apps/ml/Dockerfile",
       "size": 263
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8b779324a12697addb9b578bc6cfe2ad2e24e20da5f4d6b791eb82913b50e614",
+        "mtime": "2026-10-06T17:30:14.216Z",
+        "normalization": "text-lf-nobom",
+        "size": 7464
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:30:14.216Z",
+      "path": "apps/ml/app/anomaly/isolation_forest.py",
+      "size": 7464
     },
     {
       "category": "source",
@@ -387,6 +447,66 @@
       "ext": ".py",
       "fingerprint": {
         "algo": "sha256",
+        "hash": "d4a84ff652fc622ce9bbc64a3cceb9483f9bcc2c6074a60a74074eb271077026",
+        "mtime": "2026-10-06T17:21:14.181Z",
+        "normalization": "text-lf-nobom",
+        "size": 3951
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:21:14.181Z",
+      "path": "apps/ml/app/data/download.py",
+      "size": 3951
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6115afb052a9bbfd5b7d0e7900c08a7ab9f6b4f695ce6bf936a6fbd1d55ef331",
+        "mtime": "2026-10-06T17:27:53.135Z",
+        "normalization": "text-lf-nobom",
+        "size": 5175
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:27:53.135Z",
+      "path": "apps/ml/app/data/eda.py",
+      "size": 5175
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e41a6067455b0a760e4ec566f101f32f9efc085d0db813bf57aa18f9e08ac0dd",
+        "mtime": "2026-10-06T17:26:08.035Z",
+        "normalization": "text-lf-nobom",
+        "size": 7400
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:26:08.035Z",
+      "path": "apps/ml/app/data/ingestion.py",
+      "size": 7400
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "483e941fa021af9b9fff9e2cae54d4cb0f98c287ebc014fb32bb8b67da848af0",
+        "mtime": "2026-10-06T17:25:36.041Z",
+        "normalization": "text-lf-nobom",
+        "size": 3849
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:25:36.041Z",
+      "path": "apps/ml/app/data/schema.py",
+      "size": 3849
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "11589dde831271231be5d0aa575dbf1ccf9b1fec535f3c5443e1238775e1997a",
         "mtime": "2026-10-06T17:00:08.506Z",
         "normalization": "text-lf-nobom",
@@ -396,6 +516,36 @@
       "mtime": "2026-10-06T17:00:08.506Z",
       "path": "apps/ml/app/main.py",
       "size": 762
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "28c6730ec2aad4596044e4906caf16ff7091d8928bbfb3fca8c07714a40e6da4",
+        "mtime": "2026-10-06T17:25:47.597Z",
+        "normalization": "text-lf-nobom",
+        "size": 3146
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:25:47.597Z",
+      "path": "apps/ml/app/preprocessing/label_normalizer.py",
+      "size": 3146
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "399c06e8ebd0ffb3632aa0822cb288ca0ecbf71f72b60c49458d9a614b283c83",
+        "mtime": "2026-10-06T17:28:42.051Z",
+        "normalization": "text-lf-nobom",
+        "size": 4534
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:28:42.051Z",
+      "path": "apps/ml/app/preprocessing/pipeline.py",
+      "size": 4534
     },
     {
       "category": "source",
@@ -413,6 +563,36 @@
       "size": 2147
     },
     {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "72185795d057117f61d459a4935420d3c284313e91e9bc53af0c4c7dcdcd44d6",
+        "mtime": "2026-10-06T17:28:58.276Z",
+        "normalization": "text-lf-nobom",
+        "size": 5648
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:28:58.276Z",
+      "path": "apps/ml/app/training/supervised.py",
+      "size": 5648
+    },
+    {
+      "category": "source",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "09203434872746df7ae458c7e1190f7749eb0b944d5ba521122b6845271c38ac",
+        "mtime": "2026-10-06T17:30:46.299Z",
+        "normalization": "text-lf-nobom",
+        "size": 4446
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:30:46.299Z",
+      "path": "apps/ml/app/xai/shap_explainer.py",
+      "size": 4446
+    },
+    {
       "category": "documentation",
       "ext": ".md",
       "fingerprint": {
@@ -426,6 +606,66 @@
       "mtime": "2026-10-06T17:00:17.143Z",
       "path": "apps/ml/data/README.md",
       "size": 452
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f55f7eb1c6a71b9d49da5ab08cd97d5cdfb61858a0a5d07cf7e1a2d525040196",
+        "mtime": "2026-10-06T17:24:21.207Z",
+        "normalization": "text-lf-nobom",
+        "size": 3371
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:24:21.207Z",
+      "path": "apps/ml/data/dataset_manifest.json",
+      "size": 3371
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "025565b1845f89aeb1ab6b95feef0d8ac1cbb73e8634ea21dce020df7bbce22e",
+        "mtime": "2026-10-06T17:26:45.985Z",
+        "normalization": "text-lf-nobom",
+        "size": 1913
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:26:45.985Z",
+      "path": "apps/ml/data/label_mapping.json",
+      "size": 1913
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "10237b62cd158abdbdd6ac0f3e552848f0c85a90ca40348408d578b236c40f56",
+        "mtime": "2026-10-06T17:27:26.737Z",
+        "normalization": "text-lf-nobom",
+        "size": 5584
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:27:26.737Z",
+      "path": "apps/ml/data/processed/dataset_summary.json",
+      "size": 5584
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d880faba88a27d4d5d2e7c8fb43a501f09bfa0a663610d41f4f77cca46a62e80",
+        "mtime": "2026-10-06T17:30:57.525Z",
+        "normalization": "text-lf-nobom",
+        "size": 3049
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:30:57.525Z",
+      "path": "apps/ml/data/processed/split_metadata.json",
+      "size": 3049
     },
     {
       "category": "documentation",
@@ -443,19 +683,259 @@
       "size": 513
     },
     {
+      "category": "config",
+      "ext": ".ini",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "07e12af78809b103a9e003b9bf24f9718928fa263046b37bf3ebc9ebbf802ceb",
+        "mtime": "2026-10-06T17:31:57.383Z",
+        "normalization": "text-lf-nobom",
+        "size": 24
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:31:57.383Z",
+      "path": "apps/ml/pytest.ini",
+      "size": 24
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a4dc1c13814fea8820ad7579c6d5e074956e4e923beb89e88323f07da9dfd648",
+        "mtime": "2026-10-06T17:28:12.074Z",
+        "normalization": "binary-raw",
+        "size": 72942
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:28:12.074Z",
+      "path": "apps/ml/reports/class_distribution.png",
+      "size": 72942
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ab569371f606038bcb3609614fd519dc7e5e334d799bbfb56d77ff32e9b60031",
+        "mtime": "2026-10-06T17:29:16.903Z",
+        "normalization": "binary-raw",
+        "size": 160271
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:29:16.903Z",
+      "path": "apps/ml/reports/confusion_matrix_supervised.png",
+      "size": 160271
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2ac16ebc659abfa56e20d9f479a3b8724e959478049b7670eda73732eb7334da",
+        "mtime": "2026-10-06T17:28:10.567Z",
+        "normalization": "text-lf-nobom",
+        "size": 3608
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:28:10.567Z",
+      "path": "apps/ml/reports/eda_summary.json",
+      "size": 3608
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "4819d31b514a6df797d960893deed8a05ac77d2e28f802ec92469fe17e125ff7",
+        "mtime": "2026-10-06T17:28:16.687Z",
+        "normalization": "binary-raw",
+        "size": 291333
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:28:16.687Z",
+      "path": "apps/ml/reports/feature_distributions.png",
+      "size": 291333
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "eff1623eec1a6968032f90a3a87a9fd0c5ac5595c6e770de52e95db4cbe0aa6e",
+        "mtime": "2026-10-06T17:30:24.616Z",
+        "normalization": "binary-raw",
+        "size": 190280
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:30:24.616Z",
+      "path": "apps/ml/reports/isolation_forest_threshold_analysis.png",
+      "size": 190280
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "b9268c7548acc1ad77f6314673cefb282a40879a83df68d4f3d6c4bfda8503cb",
+        "mtime": "2026-10-06T17:28:12.276Z",
+        "normalization": "binary-raw",
+        "size": 41247
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:28:12.276Z",
+      "path": "apps/ml/reports/missing_inf_overview.png",
+      "size": 41247
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e8e6cdff6385b5ff513b15cd3c730903be435f18527cbd89acc08a753e6c5248",
+        "mtime": "2026-10-06T17:30:58.534Z",
+        "normalization": "text-lf-nobom",
+        "size": 10438
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:30:58.534Z",
+      "path": "apps/ml/reports/sample_shap_explanations.json",
+      "size": 10438
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "cfce80ff4ea2212163396353d65c517fed9b8e32a7501693716d7eb99756bc56",
+        "mtime": "2026-10-06T17:30:58.947Z",
+        "normalization": "binary-raw",
+        "size": 111209
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:30:58.947Z",
+      "path": "apps/ml/reports/shap_summary.png",
+      "size": 111209
+    },
+    {
       "category": "documentation",
       "ext": ".txt",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "8e0cb24975d0ab199cff82da91f3754c5aca9c3b2dc781224e46714e2c4d0fdd",
-        "mtime": "2026-10-06T16:59:35.741Z",
+        "hash": "6961d6630078e6bee3d46d48e46e128e4a41e789d2455b0e417b748d0978ddcd",
+        "mtime": "2026-10-06T17:26:34.581Z",
         "normalization": "text-lf-nobom",
-        "size": 286
+        "size": 402
       },
       "language": null,
-      "mtime": "2026-10-06T16:59:35.741Z",
+      "mtime": "2026-10-06T17:26:34.581Z",
       "path": "apps/ml/requirements.txt",
-      "size": 286
+      "size": 402
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "4e238c1728ae3e731486dee0bbdb50b1a3e6c3840c6ddfbaf2389d6dc5263d06",
+        "mtime": "2026-10-06T17:30:24.220Z",
+        "normalization": "text-lf-nobom",
+        "size": 10596
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:30:24.220Z",
+      "path": "apps/ml/runs/baseline_anomaly_001/metrics.json",
+      "size": 10596
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "eff1623eec1a6968032f90a3a87a9fd0c5ac5595c6e770de52e95db4cbe0aa6e",
+        "mtime": "2026-10-06T17:30:24.777Z",
+        "normalization": "binary-raw",
+        "size": 190280
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:30:24.777Z",
+      "path": "apps/ml/runs/baseline_anomaly_001/threshold_analysis.png",
+      "size": 190280
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ab569371f606038bcb3609614fd519dc7e5e334d799bbfb56d77ff32e9b60031",
+        "mtime": "2026-10-06T17:29:17.115Z",
+        "normalization": "binary-raw",
+        "size": 160271
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:29:17.115Z",
+      "path": "apps/ml/runs/baseline_supervised_001/confusion_matrix.png",
+      "size": 160271
+    },
+    {
+      "category": "unknown",
+      "ext": ".json",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "70763f4f1a6e2075d6ce1adc4ed8885bea71ef97630ed1f7aaef801bc2b4f137",
+        "mtime": "2026-10-06T17:29:16.354Z",
+        "normalization": "text-lf-nobom",
+        "size": 4385
+      },
+      "language": null,
+      "mtime": "2026-10-06T17:29:16.354Z",
+      "path": "apps/ml/runs/baseline_supervised_001/metrics.json",
+      "size": 4385
+    },
+    {
+      "category": "test",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ed010677717ee6c8fab893256e7f814325b5865ff3c1cd17cf6c4f03544f086a",
+        "mtime": "2026-10-06T17:31:15.922Z",
+        "normalization": "text-lf-nobom",
+        "size": 1868
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:31:15.922Z",
+      "path": "apps/ml/tests/test_data_pipeline.py",
+      "size": 1868
+    },
+    {
+      "category": "test",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d3572c6d90bfe74e0416302396a535d68e7ed118bee07867267d4fcfa008bd07",
+        "mtime": "2026-10-06T17:31:22.804Z",
+        "normalization": "text-lf-nobom",
+        "size": 1519
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:31:22.804Z",
+      "path": "apps/ml/tests/test_leakage.py",
+      "size": 1519
+    },
+    {
+      "category": "test",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2201a899fd42789defd5abd6bb141cd655485785c8adef5498040e950aead0da",
+        "mtime": "2026-10-06T17:31:41.728Z",
+        "normalization": "text-lf-nobom",
+        "size": 1612
+      },
+      "language": "python",
+      "mtime": "2026-10-06T17:31:41.728Z",
+      "path": "apps/ml/tests/test_models.py",
+      "size": 1612
     },
     {
       "category": "config",
@@ -657,30 +1137,30 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "5dc95b4a56cb55558a1ba82f57bef0118b43e147d48c3fe1c97ef562c3f6fd07",
-        "mtime": "2026-10-06T17:02:38.886Z",
+        "hash": "4cd0d4e59d545eeb4dd8dc5cf387314981df72fbd594eb6184c4ffda7cef3e47",
+        "mtime": "2026-10-06T17:32:31.323Z",
         "normalization": "text-lf-nobom",
-        "size": 2141
+        "size": 4735
       },
       "language": null,
-      "mtime": "2026-10-06T17:02:38.886Z",
+      "mtime": "2026-10-06T17:32:31.323Z",
       "path": "docs/DATASET.md",
-      "size": 2141
+      "size": 4735
     },
     {
       "category": "documentation",
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "5a94e87bdc165070231d2d995ec4fee8bf04414f00743acd53b3b3729a3ff5c0",
-        "mtime": "2026-10-06T17:03:44.712Z",
+        "hash": "1a537438f6504987083591a97de36682dcc384b7451176b469f51eb60ea79cac",
+        "mtime": "2026-10-06T17:33:27.989Z",
         "normalization": "text-lf-nobom",
-        "size": 2902
+        "size": 4648
       },
       "language": null,
-      "mtime": "2026-10-06T17:03:44.712Z",
+      "mtime": "2026-10-06T17:33:27.989Z",
       "path": "docs/DECISIONS.md",
-      "size": 2902
+      "size": 4648
     },
     {
       "category": "documentation",
@@ -702,30 +1182,30 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "a2e6839fcbd269d800e9d75250b27d10f49294e2c9a5f055f3018c4be57b6213",
-        "mtime": "2026-10-06T17:03:26.720Z",
+        "hash": "34b3add78a2af39c63b6d9f9e92c59d39c412794d62094620c1ce1b02198ffb1",
+        "mtime": "2026-10-06T17:33:15.838Z",
         "normalization": "text-lf-nobom",
-        "size": 1641
+        "size": 4314
       },
       "language": null,
-      "mtime": "2026-10-06T17:03:26.720Z",
+      "mtime": "2026-10-06T17:33:15.838Z",
       "path": "docs/EXPERIMENTS.md",
-      "size": 1641
+      "size": 4314
     },
     {
       "category": "documentation",
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "ae92b73be5ed27b6b36019b2d9a122d096f2411391a499ef19f26b594800a1b7",
-        "mtime": "2026-10-06T17:02:28.326Z",
+        "hash": "9e1e8862a888cc1e0a6338cdd76e8eb45b06ed37f0165cb23f3345a3d7563fed",
+        "mtime": "2026-10-06T17:32:46.372Z",
         "normalization": "text-lf-nobom",
-        "size": 3356
+        "size": 4263
       },
       "language": null,
-      "mtime": "2026-10-06T17:02:28.326Z",
+      "mtime": "2026-10-06T17:32:46.372Z",
       "path": "docs/ML-METHODOLOGY.md",
-      "size": 3356
+      "size": 4263
     },
     {
       "category": "documentation",
@@ -880,11 +1360,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 58,
-    "hash": "6e5834b0cc51189507b936b79f9fb7613a5250df348b78d9127911be56613fa4",
+    "count": 90,
+    "hash": "2e15af69347ecc6e565f0a31d588795400bb699cdd93a4c010b6c7f0ed8bffb0",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T17:12:41.065Z",
+  "generatedAt": "2026-10-06T17:33:59.461Z",
   "hashAlgo": "sha256",
   "profile": "lite",
   "project": {
@@ -894,26 +1374,28 @@
   "schemaVersion": 1,
   "stats": {
     "byCategory": {
-      "config": 15,
-      "documentation": 19,
-      "source": 22,
-      "unknown": 2
+      "asset": 8,
+      "config": 17,
+      "documentation": 20,
+      "source": 31,
+      "test": 3,
+      "unknown": 11
     },
     "byLanguage": {
       "css": 1,
       "javascript": 2,
-      "python": 4,
+      "python": 16,
       "typescript": 17
     },
-    "files": 58,
-    "ignoredDirectories": 8,
-    "ignoredFiles": 2,
+    "files": 90,
+    "ignoredDirectories": 15,
+    "ignoredFiles": 18,
     "withheld": 4
   },
   "structureFingerprint": {
     "algo": "sha256",
-    "count": 37,
-    "hash": "9bbd3a0e62ed4e4b36cc5311eee76119933ae18ded839fae8a7f633d78d1cb6d",
+    "count": 51,
+    "hash": "e9c89788b6e1b56afa17d83da93aec4b060efe6686631bcdcb355876f63fe318",
     "normalization": "set-path-hash-v1"
   },
   "tool": {

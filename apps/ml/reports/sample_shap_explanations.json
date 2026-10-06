@@ -1,0 +1,372 @@
+[
+  {
+    "sample_index": 42394,
+    "predicted_class": "BENIGN",
+    "actual_class": "BENIGN",
+    "top_contributing_features": [
+      {
+        "feature": "bwd_packet_length_min",
+        "feature_value_scaled": 0.1784,
+        "shap_contribution": 1.3353,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "init_win_bytes_fwd",
+        "feature_value_scaled": -0.5433,
+        "shap_contribution": 0.9879,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "flow_iat_min",
+        "feature_value_scaled": -0.0161,
+        "shap_contribution": 0.3874,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": -0.4386,
+        "shap_contribution": -0.3204,
+        "direction": "decreases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_std",
+        "feature_value_scaled": -0.4455,
+        "shap_contribution": 0.3021,
+        "direction": "increases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 22904,
+    "predicted_class": "BENIGN",
+    "actual_class": "BENIGN",
+    "top_contributing_features": [
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": 2.8047,
+        "shap_contribution": 2.8017,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_std",
+        "feature_value_scaled": -0.4404,
+        "shap_contribution": 0.9548,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "flow_packets_per_sec",
+        "feature_value_scaled": -0.2269,
+        "shap_contribution": -0.8157,
+        "direction": "decreases_risk"
+      },
+      {
+        "feature": "fwd_iat_mean",
+        "feature_value_scaled": 1.3737,
+        "shap_contribution": 0.7415,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "active_min",
+        "feature_value_scaled": -0.0167,
+        "shap_contribution": -0.6498,
+        "direction": "decreases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 48104,
+    "predicted_class": "BENIGN",
+    "actual_class": "BENIGN",
+    "top_contributing_features": [
+      {
+        "feature": "bwd_packet_length_std",
+        "feature_value_scaled": 0.3735,
+        "shap_contribution": 1.1303,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_mean",
+        "feature_value_scaled": 0.6721,
+        "shap_contribution": 0.7353,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "init_win_bytes_bwd",
+        "feature_value_scaled": -0.2216,
+        "shap_contribution": 0.6397,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": -0.4209,
+        "shap_contribution": 0.6008,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_min",
+        "feature_value_scaled": -0.5496,
+        "shap_contribution": -0.3594,
+        "direction": "decreases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 29633,
+    "predicted_class": "BENIGN",
+    "actual_class": "BENIGN",
+    "top_contributing_features": [
+      {
+        "feature": "bwd_packet_length_min",
+        "feature_value_scaled": 1.5132,
+        "shap_contribution": 1.5333,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "init_win_bytes_fwd",
+        "feature_value_scaled": -0.5433,
+        "shap_contribution": 1.0421,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": -0.4425,
+        "shap_contribution": -0.6249,
+        "direction": "decreases_risk"
+      },
+      {
+        "feature": "min_packet_length",
+        "feature_value_scaled": 1.2454,
+        "shap_contribution": 0.3465,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "fwd_packet_length_min",
+        "feature_value_scaled": 0.3228,
+        "shap_contribution": 0.325,
+        "direction": "increases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 36667,
+    "predicted_class": "WebAttack",
+    "actual_class": "WebAttack",
+    "top_contributing_features": [
+      {
+        "feature": "max_packet_length",
+        "feature_value_scaled": -0.52,
+        "shap_contribution": 3.7824,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "init_win_bytes_bwd",
+        "feature_value_scaled": 3.3059,
+        "shap_contribution": 1.9296,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "fwd_iat_min",
+        "feature_value_scaled": -0.1111,
+        "shap_contribution": 1.4522,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": -0.441,
+        "shap_contribution": 1.1957,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "init_win_bytes_fwd",
+        "feature_value_scaled": 1.5835,
+        "shap_contribution": 0.9623,
+        "direction": "increases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 43183,
+    "predicted_class": "BENIGN",
+    "actual_class": "BENIGN",
+    "top_contributing_features": [
+      {
+        "feature": "bwd_packet_length_min",
+        "feature_value_scaled": 2.5901,
+        "shap_contribution": 1.6256,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "init_win_bytes_fwd",
+        "feature_value_scaled": -0.5433,
+        "shap_contribution": 1.0538,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": -0.4425,
+        "shap_contribution": -0.6029,
+        "direction": "decreases_risk"
+      },
+      {
+        "feature": "min_packet_length",
+        "feature_value_scaled": 0.6346,
+        "shap_contribution": 0.4219,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "fwd_packet_length_min",
+        "feature_value_scaled": 0.137,
+        "shap_contribution": 0.3613,
+        "direction": "increases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 27419,
+    "predicted_class": "BruteForce",
+    "actual_class": "BruteForce",
+    "top_contributing_features": [
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": -0.4442,
+        "shap_contribution": 10.9646,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "min_seg_size_fwd",
+        "feature_value_scaled": 0.0029,
+        "shap_contribution": 0.3491,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "fwd_packet_length_max",
+        "feature_value_scaled": -0.2544,
+        "shap_contribution": 0.2837,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "total_fwd_packets",
+        "feature_value_scaled": -0.0109,
+        "shap_contribution": 0.1998,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "flow_iat_min",
+        "feature_value_scaled": -0.0489,
+        "shap_contribution": 0.0913,
+        "direction": "increases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 23288,
+    "predicted_class": "BENIGN",
+    "actual_class": "BENIGN",
+    "top_contributing_features": [
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": 2.7194,
+        "shap_contribution": 1.2815,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_std",
+        "feature_value_scaled": -0.4455,
+        "shap_contribution": 0.6677,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_min",
+        "feature_value_scaled": -0.4586,
+        "shap_contribution": -0.508,
+        "direction": "decreases_risk"
+      },
+      {
+        "feature": "down_up_ratio",
+        "feature_value_scaled": 6.4491,
+        "shap_contribution": 0.4404,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "min_seg_size_fwd",
+        "feature_value_scaled": 0.0029,
+        "shap_contribution": 0.2208,
+        "direction": "increases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 28736,
+    "predicted_class": "BENIGN",
+    "actual_class": "BENIGN",
+    "top_contributing_features": [
+      {
+        "feature": "destination_port",
+        "feature_value_scaled": 2.6347,
+        "shap_contribution": 2.0197,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_std",
+        "feature_value_scaled": -0.4455,
+        "shap_contribution": 0.6559,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packet_length_min",
+        "feature_value_scaled": -0.5496,
+        "shap_contribution": -0.2514,
+        "direction": "decreases_risk"
+      },
+      {
+        "feature": "min_seg_size_fwd",
+        "feature_value_scaled": 0.0029,
+        "shap_contribution": 0.2302,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "fwd_packets_per_sec",
+        "feature_value_scaled": 3.6529,
+        "shap_contribution": 0.2157,
+        "direction": "increases_risk"
+      }
+    ]
+  },
+  {
+    "sample_index": 47797,
+    "predicted_class": "PortScan",
+    "actual_class": "PortScan",
+    "top_contributing_features": [
+      {
+        "feature": "psh_flag_count",
+        "feature_value_scaled": 1.3587,
+        "shap_contribution": 3.2107,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "bwd_packets_per_sec",
+        "feature_value_scaled": 0.1171,
+        "shap_contribution": 2.3296,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "flow_duration",
+        "feature_value_scaled": -0.4814,
+        "shap_contribution": 0.9838,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "packet_length_mean",
+        "feature_value_scaled": -0.5916,
+        "shap_contribution": 0.8848,
+        "direction": "increases_risk"
+      },
+      {
+        "feature": "fwd_packets_per_sec",
+        "feature_value_scaled": -0.1266,
+        "shap_contribution": 0.6371,
+        "direction": "increases_risk"
+      }
+    ]
+  }
+]

@@ -1,5 +1,5 @@
 %% project-intel graph view: Dependency overview
-%% mode=full level=file nodes=24 edges=16
+%% mode=full level=file nodes=33 edges=16
 flowchart TD
   subgraph sg3a52ce78["(root)"]
     n35b8c13c["docker-compose.yml"]
@@ -17,10 +17,19 @@ flowchart TD
     n338ea8c7["src/main.ts"]
   end
   subgraph sg368ad0cd["apps/ml"]
+    n9085e1e2["anomaly/isolation_forest.py"]
     n05b2672a["api/health.py"]
     n6bbfe0f3["api/inference.py"]
+    nc1d951fa["data/download.py"]
+    n0cd89336["data/eda.py"]
+    ne3a15c3a["data/ingestion.py"]
+    nc17c857f["data/schema.py"]
     n9be4b79c["app/main.py"]
+    n9d35f8c3["preprocessing/label_normalizer.py"]
+    n5bdea03e["preprocessing/pipeline.py"]
     naa1c7bbc["schemas/flow.py"]
+    nac9391c1["training/supervised.py"]
+    n62f2da0e["xai/shap_explainer.py"]
   end
   subgraph sg8972e234["apps/web"]
     n8076096b["web/next-env.d.ts"]

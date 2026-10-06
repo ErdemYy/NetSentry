@@ -1,16 +1,26 @@
 # Handoff — NetSentry AI
 
-- **Objective:** Complete PHASE 0 (Foundation) for NetSentry AI.
-- **Current State:** Environment analyzed, Erdem Design System adapter integrated and verified via `doctor.mjs`. Repository structure initialized with Git, AGENTS.md, .gitignore, and .ai project intelligence artifacts.
-- **Next Action:** Build monorepo `package.json`, shared types package, NestJS backend skeleton, Next.js frontend skeleton, and Python ML service skeleton.
+- **Objective:** Successfully complete PHASE 1 (Dataset Ingestion, EDA & Baseline ML Methodology) and prepare for Phase 2.
+- **Completed:**
+  - Ingested 8 canonical CIC-IDS2017 files (843.66 MB total, 2,830,743 raw rows).
+  - Cleansed data, eliminated Inf/duplicates, and produced `data/processed/clean_flows.parquet` (341,713 rows, 77 features).
+  - Normalization: 15 raw labels mapped to 9 security classes with 100% minority vector retention.
+  - Strict leakage control: Stratified 70/15/15 split, preprocessors fit only on training data.
+  - Supervised LightGBM Baseline: 99.85% Accuracy, 93.74% Macro F1, 99.85% Weighted F1.
+  - Unsupervised Isolation Forest Baseline: Optimal $\tau = 0.49540$ selected on validation set; 73.35% ROC-AUC on test set.
+  - SHAP TreeExplainer: Feature attributions extracted and plotted.
+  - Unit Tests: 8/8 passed in Pytest.
+- **Current State:** Machine learning baseline and data artifacts are completely established, serialized, and documented.
+- **Next Action:** PHASE 2 — Flow ingestion pipeline, Redis event streaming, and real-time inference integration between FastAPI and NestJS Core API.
 - **Validation Status:**
-  - Erdem Doctor: PASS (no failures)
-  - Git init: PASS
-  - Docker daemon: STOPPED (will validate docker-compose.yml configuration)
-- **Relevant Documents:**
-  - [AGENTS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/AGENTS.md)
-  - [.ai/AI_INDEX.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/.ai/AI_INDEX.md)
-  - [.ai/TASK_STATE.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/.ai/TASK_STATE.md)
-- **GeneratedAt:** 2026-10-06T19:55:00+03:00
-- **From:** Senior Software Architect
-- **To:** Current / Succeeding Agent
+  - Pytest: 8 PASSED (0 failed)
+  - Data integrity: 0 NaN, 0 Inf, 0 index overlap
+  - Erdem Doctor: Intact
+- **Important Documents:**
+  - [docs/DATASET.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DATASET.md)
+  - [docs/ML-METHODOLOGY.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/ML-METHODOLOGY.md)
+  - [docs/EXPERIMENTS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/EXPERIMENTS.md)
+  - [docs/DECISIONS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DECISIONS.md)
+- **GeneratedAt:** 2026-10-06T20:33:50+03:00
+- **From:** Senior Software Architect & ML Engineer
+- **To:** Succeeding Engineering Agent / User

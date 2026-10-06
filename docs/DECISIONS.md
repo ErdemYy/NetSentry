@@ -38,5 +38,29 @@
 ## ADR-005: Strict Zero-Mock Policy for Academic Thesis Presentation
 - **Status:** Accepted
 - **Context:** Bitirme projelerinde sahte metrik veya mock verilere başvurulması akademik güvenilirliği zedeler.
-- **Decision:** No hard-coded metrics, fake attack detections, or synthetic confusion matrices. Phase 0 contains foundation skeletons, while Phase 1 trains real baseline models on CIC-IDS2017.
+- **Decision:** No hard-coded metrics, fake attack detections, or synthetic confusion matrices. All performance metrics must stem from real dataset splits and experiment runs.
 - **Consequences:** Honest, defensible, and high-impact engineering portfolio.
+
+---
+
+## ADR-006: Label Normalization Taxonomy (15 Raw to 9 Semantic Classes)
+- **Status:** Accepted
+- **Context:** Raw CIC-IDS2017 files contain fragmented sub-labels (e.g., `DoS Hulk`, `DoS GoldenEye`, `Web Attack – XSS`, `FTP-Patator`).
+- **Decision:** Consolidate related attack vectors into recognized semantic security families: `DoS`, `BruteForce`, `WebAttack`, while preserving distinct threats (`DDoS`, `PortScan`, `Botnet`, `Infiltration`, `Heartbleed`, and `BENIGN`).
+- **Consequences:** Balanced model convergence without losing attack vector specificity.
+
+---
+
+## ADR-007: Stratified Sampling with 100% Minority Vector Retention
+- **Status:** Accepted
+- **Context:** Full CIC-IDS2017 contains 2,830,743 rows. In-memory loading and tree training over 2.8M rows requires excessive RAM and causes compute bottlenecks.
+- **Decision:** Cap voluminous benign and DDoS/DoS classes while retaining **100% of minority attack vectors** (Heartbleed, Infiltration, Web Attacks, Botnet). Construct a verified representative dataset of 341,713 flows.
+- **Consequences:** Retains full representation of rare and dangerous attacks while ensuring rapid, reproducible experimentation on workstation hardware.
+
+---
+
+## ADR-008: Methodological Threshold Selection on Validation Set
+- **Status:** Accepted
+- **Context:** Unsupervised anomaly detectors output continuous scores. Setting an arbitrary threshold (e.g. 0.5) is scientifically indefensible.
+- **Decision:** Sweep candidate thresholds across 40 percentiles of validation benign scores, selecting $\tau^* = 0.49540$ based on F1-maximization and FPR constraints on the Validation set. Never tune $\tau$ on the Test set.
+- **Consequences:** Objective, defensible anomaly cutoff that prevents test data snooping.

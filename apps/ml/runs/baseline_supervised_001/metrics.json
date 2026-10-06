@@ -1,0 +1,303 @@
+{
+  "experiment_id": "EXP-001",
+  "model_name": "LightGBM_NIDS_Multiclass_Baseline",
+  "model_version": "1.0.0",
+  "training_timestamp": "2026-10-06T17:29:16Z",
+  "random_state": 42,
+  "train_rows": 239199,
+  "val_rows": 51257,
+  "test_rows": 51257,
+  "feature_count": 77,
+  "classes": [
+    "BENIGN",
+    "Botnet",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Heartbleed",
+    "Infiltration",
+    "PortScan",
+    "WebAttack"
+  ],
+  "hyperparameters": {
+    "objective": "multiclass",
+    "num_class": 9,
+    "metric": "multi_logloss",
+    "boosting_type": "gbdt",
+    "learning_rate": 0.1,
+    "num_leaves": 31,
+    "max_depth": -1,
+    "random_state": 42,
+    "n_estimators": 100,
+    "class_weight": "balanced",
+    "verbosity": -1,
+    "n_jobs": -1
+  },
+  "training_duration_seconds": 10.51,
+  "test_evaluation_seconds": 0.1772,
+  "metrics": {
+    "accuracy": 0.99854,
+    "precision_macro": 0.98784,
+    "recall_macro": 0.92451,
+    "f1_macro": 0.93737,
+    "f1_weighted": 0.99853
+  },
+  "per_class_metrics": {
+    "BENIGN": {
+      "precision": 0.99975,
+      "recall": 0.99827,
+      "f1_score": 0.99901,
+      "support": 35764
+    },
+    "Botnet": {
+      "precision": 0.89815,
+      "recall": 0.99658,
+      "f1_score": 0.94481,
+      "support": 292
+    },
+    "BruteForce": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 1373
+    },
+    "DDoS": {
+      "precision": 0.99933,
+      "recall": 1.0,
+      "f1_score": 0.99967,
+      "support": 4500
+    },
+    "DoS": {
+      "precision": 0.99756,
+      "recall": 0.99956,
+      "f1_score": 0.99856,
+      "support": 4500
+    },
+    "Heartbleed": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 1
+    },
+    "Infiltration": {
+      "precision": 1.0,
+      "recall": 0.33333,
+      "f1_score": 0.5,
+      "support": 6
+    },
+    "PortScan": {
+      "precision": 0.99579,
+      "recall": 0.99911,
+      "f1_score": 0.99745,
+      "support": 4500
+    },
+    "WebAttack": {
+      "precision": 1.0,
+      "recall": 0.99377,
+      "f1_score": 0.99687,
+      "support": 321
+    }
+  },
+  "confusion_matrix": [
+    [
+      35702,
+      33,
+      0,
+      3,
+      7,
+      0,
+      0,
+      19,
+      0
+    ],
+    [
+      1,
+      291,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1373,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      4500,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      4498,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      4496,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      319
+    ]
+  ],
+  "confusion_matrix_normalized": [
+    [
+      0.9983,
+      0.0009,
+      0.0,
+      0.0001,
+      0.0002,
+      0.0,
+      0.0,
+      0.0005,
+      0.0
+    ],
+    [
+      0.0034,
+      0.9966,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0004,
+      0.0,
+      0.0,
+      0.0,
+      0.9996,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.6667,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.3333,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0009,
+      0.0,
+      0.0,
+      0.9991,
+      0.0
+    ],
+    [
+      0.0062,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.9938
+    ]
+  ]
+}

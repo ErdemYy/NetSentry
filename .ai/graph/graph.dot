@@ -22,10 +22,19 @@ digraph "project_intel" {
   }
   subgraph cluster_368ad0cd {
     label="apps/ml"; style=rounded;
+    n9085e1e2 [label="anomaly/isolation_forest.py"];
     n05b2672a [label="api/health.py"];
     n6bbfe0f3 [label="api/inference.py"];
+    nc1d951fa [label="data/download.py"];
+    n0cd89336 [label="data/eda.py"];
+    ne3a15c3a [label="data/ingestion.py"];
+    nc17c857f [label="data/schema.py"];
     n9be4b79c [label="app/main.py"];
+    n9d35f8c3 [label="preprocessing/label_normalizer.py"];
+    n5bdea03e [label="preprocessing/pipeline.py"];
     naa1c7bbc [label="schemas/flow.py"];
+    nac9391c1 [label="training/supervised.py"];
+    n62f2da0e [label="xai/shap_explainer.py"];
   }
   subgraph cluster_8972e234 {
     label="apps/web"; style=rounded;

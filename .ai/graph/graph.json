@@ -198,11 +198,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 37,
-    "hash": "9bbd3a0e62ed4e4b36cc5311eee76119933ae18ded839fae8a7f633d78d1cb6d",
+    "count": 51,
+    "hash": "e9c89788b6e1b56afa17d83da93aec4b060efe6686631bcdcb355876f63fe318",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T17:12:41.065Z",
+  "generatedAt": "2026-10-06T17:33:59.461Z",
   "nodes": [
     {
       "consumers": [],
@@ -502,6 +502,37 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
+        "hash": "8b779324a12697addb9b578bc6cfe2ad2e24e20da5f4d6b791eb82913b50e614",
+        "normalization": "text-lf-nobom",
+        "size": 7464
+      },
+      "id": "apps/ml/app/anomaly/isolation_forest.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/anomaly/isolation_forest.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "29605dd4bb1b293e8fdfb67c9d6d247ce388a15933b52959768e19282946e96a",
         "normalization": "text-lf-nobom",
         "size": 592
@@ -564,6 +595,130 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
+        "hash": "d4a84ff652fc622ce9bbc64a3cceb9483f9bcc2c6074a60a74074eb271077026",
+        "normalization": "text-lf-nobom",
+        "size": 3951
+      },
+      "id": "apps/ml/app/data/download.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/data/download.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6115afb052a9bbfd5b7d0e7900c08a7ab9f6b4f695ce6bf936a6fbd1d55ef331",
+        "normalization": "text-lf-nobom",
+        "size": 5175
+      },
+      "id": "apps/ml/app/data/eda.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/data/eda.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e41a6067455b0a760e4ec566f101f32f9efc085d0db813bf57aa18f9e08ac0dd",
+        "normalization": "text-lf-nobom",
+        "size": 7400
+      },
+      "id": "apps/ml/app/data/ingestion.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/data/ingestion.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "483e941fa021af9b9fff9e2cae54d4cb0f98c287ebc014fb32bb8b67da848af0",
+        "normalization": "text-lf-nobom",
+        "size": 3849
+      },
+      "id": "apps/ml/app/data/schema.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/data/schema.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "11589dde831271231be5d0aa575dbf1ccf9b1fec535f3c5443e1238775e1997a",
         "normalization": "text-lf-nobom",
         "size": 762
@@ -586,6 +741,68 @@
         "subsystem": "apps/ml"
       },
       "path": "apps/ml/app/main.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "28c6730ec2aad4596044e4906caf16ff7091d8928bbfb3fca8c07714a40e6da4",
+        "normalization": "text-lf-nobom",
+        "size": 3146
+      },
+      "id": "apps/ml/app/preprocessing/label_normalizer.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/preprocessing/label_normalizer.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "399c06e8ebd0ffb3632aa0822cb288ca0ecbf71f72b60c49458d9a614b283c83",
+        "normalization": "text-lf-nobom",
+        "size": 4534
+      },
+      "id": "apps/ml/app/preprocessing/pipeline.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/preprocessing/pipeline.py",
       "publicSurface": false,
       "risk": null,
       "type": "file"
@@ -619,6 +836,161 @@
       "path": "apps/ml/app/schemas/flow.py",
       "publicSurface": false,
       "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "72185795d057117f61d459a4935420d3c284313e91e9bc53af0c4c7dcdcd44d6",
+        "normalization": "text-lf-nobom",
+        "size": 5648
+      },
+      "id": "apps/ml/app/training/supervised.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/training/supervised.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "09203434872746df7ae458c7e1190f7749eb0b944d5ba521122b6845271c38ac",
+        "normalization": "text-lf-nobom",
+        "size": 4446
+      },
+      "id": "apps/ml/app/xai/shap_explainer.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/xai/shap_explainer.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ed010677717ee6c8fab893256e7f814325b5865ff3c1cd17cf6c4f03544f086a",
+        "normalization": "text-lf-nobom",
+        "size": 1868
+      },
+      "id": "apps/ml/tests/test_data_pipeline.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/tests/test_data_pipeline.py",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d3572c6d90bfe74e0416302396a535d68e7ed118bee07867267d4fcfa008bd07",
+        "normalization": "text-lf-nobom",
+        "size": 1519
+      },
+      "id": "apps/ml/tests/test_leakage.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/tests/test_leakage.py",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2201a899fd42789defd5abd6bb141cd655485785c8adef5498040e950aead0da",
+        "normalization": "text-lf-nobom",
+        "size": 1612
+      },
+      "id": "apps/ml/tests/test_models.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/tests/test_models.py",
+      "publicSurface": false,
+      "risk": "LOW",
       "type": "file"
     },
     {
@@ -1337,16 +1709,16 @@
       "imports": 27
     },
     "externals": 10,
-    "files": 24,
+    "files": 36,
     "languagesAnalyzed": [
       "javascript",
       "typescript"
     ],
     "languagesMetadataOnly": {
       "css": 1,
-      "python": 4
+      "python": 16
     },
-    "nodes": 34,
+    "nodes": 46,
     "unresolvedImports": 2
   },
   "tool": {

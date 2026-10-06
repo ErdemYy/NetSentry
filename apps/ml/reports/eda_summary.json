@@ -1,0 +1,153 @@
+{
+  "total_rows": 341713,
+  "total_features": 77,
+  "numeric_features": 77,
+  "categorical_features": 0,
+  "benign_count": 238427,
+  "attack_count": 103286,
+  "benign_percentage": 69.77,
+  "attack_percentage": 30.23,
+  "class_distribution": {
+    "BENIGN": {
+      "count": 238427,
+      "percentage": 69.7741
+    },
+    "DDoS": {
+      "count": 30000,
+      "percentage": 8.7793
+    },
+    "PortScan": {
+      "count": 30000,
+      "percentage": 8.7793
+    },
+    "DoS": {
+      "count": 29998,
+      "percentage": 8.7787
+    },
+    "BruteForce": {
+      "count": 9150,
+      "percentage": 2.6777
+    },
+    "WebAttack": {
+      "count": 2143,
+      "percentage": 0.6271
+    },
+    "Botnet": {
+      "count": 1948,
+      "percentage": 0.5701
+    },
+    "Infiltration": {
+      "count": 36,
+      "percentage": 0.0105
+    },
+    "Heartbleed": {
+      "count": 11,
+      "percentage": 0.0032
+    }
+  },
+  "missing_features_count": 0,
+  "missing_features": {},
+  "high_correlation_pairs_count": 43,
+  "high_correlation_pairs": [
+    {
+      "feature_1": "flow_duration",
+      "feature_2": "fwd_iat_total",
+      "correlation": 0.9984
+    },
+    {
+      "feature_1": "total_fwd_packets",
+      "feature_2": "total_bwd_packets",
+      "correlation": 0.9712
+    },
+    {
+      "feature_1": "total_fwd_packets",
+      "feature_2": "total_bwd_bytes",
+      "correlation": 0.9696
+    },
+    {
+      "feature_1": "total_fwd_packets",
+      "feature_2": "subflow_fwd_packets",
+      "correlation": 1.0
+    },
+    {
+      "feature_1": "total_fwd_packets",
+      "feature_2": "subflow_bwd_packets",
+      "correlation": 0.9712
+    },
+    {
+      "feature_1": "total_fwd_packets",
+      "feature_2": "subflow_bwd_bytes",
+      "correlation": 0.9696
+    },
+    {
+      "feature_1": "total_bwd_packets",
+      "feature_2": "total_bwd_bytes",
+      "correlation": 0.981
+    },
+    {
+      "feature_1": "total_bwd_packets",
+      "feature_2": "bwd_header_length",
+      "correlation": 0.9811
+    },
+    {
+      "feature_1": "total_bwd_packets",
+      "feature_2": "subflow_fwd_packets",
+      "correlation": 0.9712
+    },
+    {
+      "feature_1": "total_bwd_packets",
+      "feature_2": "subflow_bwd_packets",
+      "correlation": 1.0
+    },
+    {
+      "feature_1": "total_bwd_packets",
+      "feature_2": "subflow_bwd_bytes",
+      "correlation": 0.981
+    },
+    {
+      "feature_1": "total_fwd_bytes",
+      "feature_2": "subflow_fwd_bytes",
+      "correlation": 1.0
+    },
+    {
+      "feature_1": "total_bwd_bytes",
+      "feature_2": "bwd_header_length",
+      "correlation": 0.9517
+    },
+    {
+      "feature_1": "total_bwd_bytes",
+      "feature_2": "subflow_fwd_packets",
+      "correlation": 0.9696
+    },
+    {
+      "feature_1": "total_bwd_bytes",
+      "feature_2": "subflow_bwd_packets",
+      "correlation": 0.981
+    },
+    {
+      "feature_1": "total_bwd_bytes",
+      "feature_2": "subflow_bwd_bytes",
+      "correlation": 1.0
+    },
+    {
+      "feature_1": "fwd_packet_length_max",
+      "feature_2": "fwd_packet_length_std",
+      "correlation": 0.9827
+    },
+    {
+      "feature_1": "fwd_packet_length_mean",
+      "feature_2": "avg_fwd_segment_size",
+      "correlation": 1.0
+    },
+    {
+      "feature_1": "bwd_packet_length_max",
+      "feature_2": "bwd_packet_length_mean",
+      "correlation": 0.9621
+    },
+    {
+      "feature_1": "bwd_packet_length_max",
+      "feature_2": "bwd_packet_length_std",
+      "correlation": 0.9857
+    }
+  ]
+}
