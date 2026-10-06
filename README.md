@@ -1,8 +1,7 @@
 # NetSentry AI
 
 **Yapay Zeka Destekli Dağıtık Ağ Trafiği Anomali Tespiti ve Gerçek Zamanlı Tehdit İstihbarat Platformu**  
-*AI-Assisted Distributed Network Traffic Anomaly Detection and Real-Time Threat Intelligence Platform*  
-*Akademik Bitirme Tezi Projesi (Academic Capstone Thesis)*
+*AI-Assisted Distributed Network Traffic Anomaly Detection and Real-Time Threat Intelligence Platform*
 
 ---
 
