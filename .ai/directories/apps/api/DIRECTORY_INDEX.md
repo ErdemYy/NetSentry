@@ -1,10 +1,10 @@
 ---
-generatedAt: 2026-10-06T18:12:57.611Z
+generatedAt: 2026-10-06T18:42:04.326Z
 source: project-intel 0.1.0
 scope: directory
 path: apps/api
 schemaVersion: 1
-fingerprint: sha256:c0eb53d97306f07c867c44b0b18b66d6dd2bcfd7873fa67501e712f4a89c5689
+fingerprint: sha256:2becb94160423345baf891ed248c9ca8f173c967aedef56d92042cf39c65491b
 generated: true
 ---
 
@@ -18,13 +18,13 @@ _Not determined by tooling (no README or package description found)._
 
 ## Composition
 
-11 source files (typescript 11), 1 test file.
+29 source files (typescript 29), 2 test files.
 
 ## Important files
 
 | Path | Why | Risk |
 | --- | --- | --- |
-| `apps/api/src/prisma/prisma.service.ts` | used by 3 files | MEDIUM |
+| `apps/api/src/prisma/prisma.service.ts` | used by 8 files | MEDIUM |
 
 ## Entry points
 
@@ -41,14 +41,14 @@ _none_
 | Depends on | Edges |
 | --- | --- |
 | `packages/shared` | 4 |
-| `@nestjs/common` (package) | 11 |
+| `@nestjs/common` (package) | 29 |
+| `@prisma/client` (package) | 3 |
 | `@nestjs/core` (package) | 2 |
 | `dotenv` (package) | 2 |
 | `ioredis` (package) | 2 |
 | `@nestjs/websockets` (package) | 1 |
-| `@prisma/client` (package) | 1 |
 | `cookie-parser` (package) | 1 |
-| `socket.io` (package) | 1 |
+| `fs` (package) | 1 |
 
 ## Consumers
 

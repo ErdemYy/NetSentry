@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Shell } from '../components/layout/Shell';
 
 export const metadata: Metadata = {
   title: 'NetSentry AI — SOC & Threat Intelligence Platform',
@@ -12,9 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body className="antialiased bg-[#060709] text-[#ecebe6]">
-        {children}
+        <Shell>{children}</Shell>
       </body>
     </html>
   );

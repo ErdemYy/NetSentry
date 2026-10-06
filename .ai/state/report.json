@@ -20,9 +20,86 @@
       "parser": "javascript",
       "path": "apps/web/next-env.d.ts",
       "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/analytics/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/incidents/[id]/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/incidents/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/models/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/network/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/settings/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/threats/[id]/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/app/threats/page.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/components/layout/Shell.tsx",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"../lib/api\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/src/hooks/useRealtime.ts",
+      "severity": "warning"
     }
   ],
-  "generatedAt": "2026-10-06T18:12:57.611Z",
+  "generatedAt": "2026-10-06T18:42:04.326Z",
   "ignored": [
     {
       "path": "apps/api/dist/",
@@ -85,6 +162,10 @@
       "reason": "default"
     },
     {
+      "path": "apps/web/src/lib/",
+      "reason": "project"
+    },
+    {
       "path": "node_modules/",
       "reason": "default"
     },
@@ -100,26 +181,26 @@
       "asset": 8,
       "config": 17,
       "documentation": 20,
-      "source": 44,
-      "test": 6,
+      "source": 77,
+      "test": 9,
       "unknown": 13
     },
     "byLanguage": {
       "css": 1,
-      "javascript": 2,
+      "javascript": 5,
       "python": 26,
-      "typescript": 23
+      "typescript": 56
     },
-    "files": 108,
+    "files": 144,
     "graph": {
       "cycles": 0,
-      "edges": 59,
+      "edges": 168,
       "edgesByType": {
         "exports": 5,
-        "imports": 54
+        "imports": 163
       },
-      "externals": 13,
-      "files": 52,
+      "externals": 19,
+      "files": 88,
       "languagesAnalyzed": [
         "javascript",
         "typescript"
@@ -128,10 +209,10 @@
         "css": 1,
         "python": 26
       },
-      "nodes": 65,
-      "unresolvedImports": 2
+      "nodes": 107,
+      "unresolvedImports": 13
     },
-    "ignoredDirectories": 17,
+    "ignoredDirectories": 18,
     "ignoredFiles": 18,
     "withheld": 7
   },

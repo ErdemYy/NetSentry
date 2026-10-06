@@ -1,97 +1,18 @@
-%% project-intel graph view: Dependency overview
-%% mode=full level=file nodes=46 edges=28
+%% project-intel graph view: Dependency overview (by subsystem)
+%% mode=full level=subsystem nodes=6 edges=1
+%% 79 files exceed maxNodes (60); showing subsystems. Use --view subsystem --target <path> for detail; graph.json has the full graph.
 flowchart TD
-  subgraph sg3a52ce78["(root)"]
-    n35b8c13c["docker-compose.yml"]
-    n7030d0b2["package.json"]
-  end
-  subgraph sg55eb8eee[".agents"]
-    nbe9c72a0["scripts/erdem.mjs"]
-  end
-  subgraph sg73776ec8["apps/api"]
-    nec28db8b["src/app.module.ts"]
-    n2b19c9c0["detection/detection.module.ts"]
-    nf8659a2d["detection/detection.service.ts"]
-    n08398223["detection/redis-consumer.service.ts"]
-    n0808c694["events/events.gateway.ts"]
-    n854d837f["events/events.module.ts"]
-    nd046f3c6["health/health.controller.ts"]
-    naba0fc26["health/health.module.ts"]
-    n338ea8c7["src/main.ts"]
-    n114ee72c["prisma/prisma.module.ts"]
-    nbc402317["prisma/prisma.service.ts"]
-  end
-  subgraph sg368ad0cd["apps/ml"]
-    n9085e1e2["anomaly/isolation_forest.py"]
-    n05b2672a["api/health.py"]
-    n6bbfe0f3["api/inference.py"]
-    nc1d951fa["data/download.py"]
-    n0cd89336["data/eda.py"]
-    ne3a15c3a["data/ingestion.py"]
-    nc17c857f["data/schema.py"]
-    n0385082c["inference/model_loader.py"]
-    n8ee5d33f["inference/service.py"]
-    nc0dccd96["inference/severity.py"]
-    n9be4b79c["app/main.py"]
-    n9d35f8c3["preprocessing/label_normalizer.py"]
-    n5bdea03e["preprocessing/pipeline.py"]
-    naa1c7bbc["schemas/flow.py"]
-    na2521d9e["streaming/config.py"]
-    n8607901b["streaming/replay.py"]
-    n31d06501["streaming/worker.py"]
-    nac9391c1["training/supervised.py"]
-    n62f2da0e["xai/shap_explainer.py"]
-    ncc12973c["scripts/benchmark_phase2.py"]
-    n1a3c3e10["scripts/verify_e2e_live.py"]
-  end
-  subgraph sg8972e234["apps/web"]
-    n8076096b["web/next-env.d.ts"]
-    ne0eb2c1f["health/route.ts"]
-    n4306ffba["app/globals.css"]
-    nf79a94b8["app/layout.tsx"]
-    n0d6d11c3["app/page.tsx"]
-  end
-  subgraph sgf021f83d["packages/shared"]
-    nc4a79788["src/index.ts"]
-    n36707835["types/detection.ts"]
-    nc80fea85["types/events.ts"]
-    n30ddfb3b["types/flow.ts"]
-    n43e205d0["types/incident.ts"]
-    n9c18c09c["types/metrics.ts"]
-  end
-  nec28db8b --> n2b19c9c0
-  nec28db8b --> n854d837f
-  nec28db8b --> naba0fc26
-  nec28db8b --> n114ee72c
-  n2b19c9c0 --> nf8659a2d
-  n2b19c9c0 --> n08398223
-  n2b19c9c0 --> n854d837f
-  nf8659a2d --> n0808c694
-  nf8659a2d --> nbc402317
-  nf8659a2d --> nc4a79788
-  n08398223 --> nf8659a2d
-  n08398223 --> nc4a79788
-  n0808c694 --> nc4a79788
-  n854d837f --> n0808c694
-  nd046f3c6 --> nbc402317
-  naba0fc26 --> nd046f3c6
-  n338ea8c7 --> nec28db8b
-  n114ee72c --> nbc402317
-  nf79a94b8 --> n4306ffba
-  nc4a79788 ==> n36707835
-  nc4a79788 ==> nc80fea85
-  nc4a79788 ==> n30ddfb3b
-  nc4a79788 ==> n43e205d0
-  nc4a79788 ==> n9c18c09c
-  nc80fea85 --> n36707835
-  nc80fea85 --> n30ddfb3b
-  nc80fea85 --> n43e205d0
-  n43e205d0 --> n36707835
+  nc446879c[["(root) (2)"]]
+  n304f8618[[".agents (1)"]]
+  n36245fac[["apps/api (29)"]]
+  n3b7669be[["apps/ml (21)"]]
+  ne97c5dd0[["apps/web (20)"]]
+  n21f228d0[["packages/shared (6)"]]
+  n36245fac -->|3| n21f228d0
   classDef surface stroke-width:3px;
   classDef entry stroke-width:3px,stroke-dasharray:6 2;
   classDef external stroke-dasharray:4 3;
   classDef outside stroke-dasharray:2 2;
   classDef target fill:#fff3b0,stroke:#555555;
   classDef note stroke-dasharray:4 3;
-  class n0d6d11c3,n35b8c13c,n7030d0b2,ne0eb2c1f,nf79a94b8 surface;
-  class n0d6d11c3,ne0eb2c1f,nf79a94b8 entry;
+  class nc446879c,ne97c5dd0 surface;

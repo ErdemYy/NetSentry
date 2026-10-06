@@ -22,6 +22,60 @@
     },
     {
       "kind": "static",
+      "source": "apps/api/src/analytics/analytics.controller.ts",
+      "target": "apps/api/src/analytics/analytics.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/analytics/analytics.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/analytics/analytics.module.ts",
+      "target": "apps/api/src/analytics/analytics.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/analytics/analytics.module.ts",
+      "target": "apps/api/src/analytics/analytics.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/analytics/analytics.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/analytics/analytics.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/analytics/analytics.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/analytics/analytics.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/dashboard/dashboard.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
       "source": "apps/api/src/app.module.ts",
       "target": "apps/api/src/detection/detection.module.ts",
       "type": "imports"
@@ -41,12 +95,78 @@
     {
       "kind": "static",
       "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/incidents/incidents.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/models/models.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/network/network.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
       "target": "apps/api/src/prisma/prisma.module.ts",
       "type": "imports"
     },
     {
       "kind": "static",
       "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/threats/threats.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/dashboard/dashboard.controller.ts",
+      "target": "apps/api/src/dashboard/dashboard.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/dashboard/dashboard.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/dashboard/dashboard.module.ts",
+      "target": "apps/api/src/dashboard/dashboard.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/dashboard/dashboard.module.ts",
+      "target": "apps/api/src/dashboard/dashboard.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/dashboard/dashboard.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/dashboard/dashboard.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/dashboard/dashboard.service.ts",
       "target": "ext:@nestjs/common",
       "type": "imports"
     },
@@ -190,6 +310,54 @@
     },
     {
       "kind": "static",
+      "source": "apps/api/src/incidents/incidents.controller.ts",
+      "target": "apps/api/src/incidents/incidents.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.module.ts",
+      "target": "apps/api/src/incidents/incidents.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.module.ts",
+      "target": "apps/api/src/incidents/incidents.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.service.ts",
+      "target": "ext:@prisma/client",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
       "source": "apps/api/src/main.ts",
       "target": "apps/api/src/app.module.ts",
       "type": "imports"
@@ -207,7 +375,7 @@
       "type": "imports"
     },
     {
-      "kind": "static",
+      "kind": "require",
       "source": "apps/api/src/main.ts",
       "target": "ext:cookie-parser",
       "type": "imports"
@@ -216,6 +384,96 @@
       "kind": "side-effect",
       "source": "apps/api/src/main.ts",
       "target": "ext:dotenv",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.controller.ts",
+      "target": "apps/api/src/models/models.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.module.ts",
+      "target": "apps/api/src/models/models.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.module.ts",
+      "target": "apps/api/src/models/models.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.service.ts",
+      "target": "ext:fs",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/models/models.service.ts",
+      "target": "ext:path",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/network/network.controller.ts",
+      "target": "apps/api/src/network/network.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/network/network.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/network/network.module.ts",
+      "target": "apps/api/src/network/network.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/network/network.module.ts",
+      "target": "apps/api/src/network/network.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/network/network.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/network/network.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/network/network.service.ts",
+      "target": "ext:@nestjs/common",
       "type": "imports"
     },
     {
@@ -239,6 +497,54 @@
     {
       "kind": "static",
       "source": "apps/api/src/prisma/prisma.service.ts",
+      "target": "ext:@prisma/client",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threats/threats.controller.ts",
+      "target": "apps/api/src/threats/threats.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threats/threats.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threats/threats.module.ts",
+      "target": "apps/api/src/threats/threats.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threats/threats.module.ts",
+      "target": "apps/api/src/threats/threats.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threats/threats.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threats/threats.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threats/threats.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "require",
+      "source": "apps/api/test/check-counts.js",
       "target": "ext:@prisma/client",
       "type": "imports"
     },
@@ -280,8 +586,92 @@
     },
     {
       "kind": "static",
+      "source": "apps/web/src/app/analytics/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/analytics/page.tsx",
+      "target": "apps/web/src/components/ui/KpiCard.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/analytics/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/analytics/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
       "source": "apps/web/src/app/api/health/route.ts",
       "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/[id]/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/[id]/page.tsx",
+      "target": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/[id]/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/[id]/page.tsx",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/[id]/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/page.tsx",
+      "target": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/page.tsx",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/incidents/page.tsx",
+      "target": "ext:react",
       "type": "imports"
     },
     {
@@ -293,14 +683,278 @@
     {
       "kind": "static",
       "source": "apps/web/src/app/layout.tsx",
+      "target": "apps/web/src/components/layout/Shell.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/layout.tsx",
       "target": "ext:next",
       "type": "imports",
       "typeOnly": true
     },
     {
       "kind": "static",
+      "source": "apps/web/src/app/models/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/models/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/models/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/network/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/network/page.tsx",
+      "target": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/network/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/network/page.tsx",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/network/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/page.tsx",
+      "target": "apps/web/src/components/ui/KpiCard.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/page.tsx",
+      "target": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/page.tsx",
+      "target": "apps/web/src/hooks/useRealtime.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
       "source": "apps/web/src/app/page.tsx",
       "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/page.tsx",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/settings/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/settings/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/[id]/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/[id]/page.tsx",
+      "target": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/[id]/page.tsx",
+      "target": "apps/web/src/components/ui/ShapAttributionBar.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/[id]/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/[id]/page.tsx",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/[id]/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/page.tsx",
+      "target": "apps/web/src/components/ui/EmptyState.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/page.tsx",
+      "target": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/page.tsx",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/threats/page.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/layout/Shell.tsx",
+      "target": "apps/web/src/hooks/useRealtime.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/layout/Shell.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/layout/Shell.tsx",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/layout/Shell.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/ui/EmptyState.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/ui/EmptyState.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/ui/KpiCard.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/ui/ShapAttributionBar.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/components/ui/StatusIndicator.tsx",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/hooks/useRealtime.ts",
+      "target": "ext:react",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/hooks/useRealtime.ts",
+      "target": "ext:socket.io-client",
+      "type": "imports"
+    },
+    {
+      "kind": "require",
+      "source": "apps/web/test/verify-realtime-e2e.js",
+      "target": "ext:child_process",
+      "type": "imports"
+    },
+    {
+      "kind": "require",
+      "source": "apps/web/test/verify-realtime-e2e.js",
+      "target": "ext:path",
+      "type": "imports"
+    },
+    {
+      "kind": "require",
+      "source": "apps/web/test/verify-realtime-e2e.js",
+      "target": "ext:socket.io-client",
+      "type": "imports"
+    },
+    {
+      "kind": "require",
+      "source": "apps/web/test/verify-routes.js",
+      "target": "ext:http",
       "type": "imports"
     },
     {
@@ -360,11 +1014,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 67,
-    "hash": "2c9a4d3f9f2e5fbd3bd5079ee04fcb62e31f104f6b46c982a37fd48fc2df3db2",
+    "count": 103,
+    "hash": "2bdd1e048e25186d3a6c6cb81a3c454b6b04ed88f920d096eab5abdc3b5ecfb3",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T18:12:57.611Z",
+  "generatedAt": "2026-10-06T18:42:04.326Z",
   "nodes": [
     {
       "consumers": [],
@@ -407,6 +1061,135 @@
     },
     {
       "consumers": [
+        "apps/api/src/analytics/analytics.module.ts"
+      ],
+      "exports": [
+        "AnalyticsController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e4274e4406f4d5e11c52579d28c2cacee3060d5e47763f1631dc8a6f85007650",
+        "normalization": "text-lf-nobom",
+        "size": 345
+      },
+      "id": "apps/api/src/analytics/analytics.controller.ts",
+      "importers": [
+        "apps/api/src/analytics/analytics.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/analytics/analytics.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/analytics/analytics.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "AnalyticsModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "24db74322b1299b6d2518cdfae3f8fb796fb60f8dbcc2fbd00a8b8b2d816637a",
+        "normalization": "text-lf-nobom",
+        "size": 307
+      },
+      "id": "apps/api/src/analytics/analytics.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/analytics/analytics.controller.ts",
+        "apps/api/src/analytics/analytics.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/analytics/analytics.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/analytics/analytics.controller.ts",
+        "apps/api/src/analytics/analytics.module.ts"
+      ],
+      "exports": [
+        "AnalyticsService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "91acd505f714147009795b144ffbfc826b48b010cc1e8ef9574826e1bbf46af4",
+        "normalization": "text-lf-nobom",
+        "size": 3231
+      },
+      "id": "apps/api/src/analytics/analytics.service.ts",
+      "importers": [
+        "apps/api/src/analytics/analytics.controller.ts",
+        "apps/api/src/analytics/analytics.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/analytics/analytics.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
         "apps/api/src/main.ts",
         "apps/api/test/test-e2e-pipeline.ts"
       ],
@@ -415,9 +1198,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "d3ceda333166812a77d6be626e6ef1609247e88cba3d7dcdd19d4f7d6b0b54f1",
+        "hash": "dbe256a9b3bc056d63897af5f39dc63d915bde4afd10a492907bc1948b605133",
         "normalization": "text-lf-nobom",
-        "size": 382
+        "size": 885
       },
       "id": "apps/api/src/app.module.ts",
       "importers": [
@@ -425,10 +1208,16 @@
         "apps/api/test/test-e2e-pipeline.ts"
       ],
       "imports": [
+        "apps/api/src/analytics/analytics.module.ts",
+        "apps/api/src/dashboard/dashboard.module.ts",
         "apps/api/src/detection/detection.module.ts",
         "apps/api/src/events/events.module.ts",
         "apps/api/src/health/health.module.ts",
+        "apps/api/src/incidents/incidents.module.ts",
+        "apps/api/src/models/models.module.ts",
+        "apps/api/src/network/network.module.ts",
         "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/src/threats/threats.module.ts",
         "ext:@nestjs/common"
       ],
       "language": "typescript",
@@ -448,6 +1237,135 @@
         "subsystem": "apps/api"
       },
       "path": "apps/api/src/app.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/dashboard/dashboard.module.ts"
+      ],
+      "exports": [
+        "DashboardController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a5494d40e9f0758af7b203b140e1d7491ccb75058bd2839ca0f541a267c9ea0c",
+        "normalization": "text-lf-nobom",
+        "size": 336
+      },
+      "id": "apps/api/src/dashboard/dashboard.controller.ts",
+      "importers": [
+        "apps/api/src/dashboard/dashboard.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/dashboard/dashboard.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/dashboard/dashboard.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "DashboardModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f3758610edd074a1b7047defe372b495bc014f80411324d70f821d58dddf3184",
+        "normalization": "text-lf-nobom",
+        "size": 307
+      },
+      "id": "apps/api/src/dashboard/dashboard.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/dashboard/dashboard.controller.ts",
+        "apps/api/src/dashboard/dashboard.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/dashboard/dashboard.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/dashboard/dashboard.controller.ts",
+        "apps/api/src/dashboard/dashboard.module.ts"
+      ],
+      "exports": [
+        "DashboardService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "91ad12ef5881a6fc708cad9b1b03b38840bc57bd67a52216488518543edd7245",
+        "normalization": "text-lf-nobom",
+        "size": 1373
+      },
+      "id": "apps/api/src/dashboard/dashboard.service.ts",
+      "importers": [
+        "apps/api/src/dashboard/dashboard.controller.ts",
+        "apps/api/src/dashboard/dashboard.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/dashboard/dashboard.service.ts",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -768,13 +1686,145 @@
       "type": "file"
     },
     {
+      "consumers": [
+        "apps/api/src/incidents/incidents.module.ts"
+      ],
+      "exports": [
+        "IncidentsController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "9fc7403d5f4d4ba84640efd22fe7f7f866117e9e50cb2addac75244e421a156c",
+        "normalization": "text-lf-nobom",
+        "size": 689
+      },
+      "id": "apps/api/src/incidents/incidents.controller.ts",
+      "importers": [
+        "apps/api/src/incidents/incidents.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/incidents/incidents.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/incidents/incidents.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "IncidentsModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "96189a6eae65f1c2bcabb85f6caa4ab1cac797a7bc9733063eb491780ec42afe",
+        "normalization": "text-lf-nobom",
+        "size": 307
+      },
+      "id": "apps/api/src/incidents/incidents.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/incidents/incidents.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/incidents/incidents.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/incidents/incidents.module.ts"
+      ],
+      "exports": [
+        "IncidentQueryDto",
+        "IncidentsService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "461cca82b0b797d92ccf968192dc70a8b614e1744e61c1dab80cc6e0ed725f06",
+        "normalization": "text-lf-nobom",
+        "size": 2615
+      },
+      "id": "apps/api/src/incidents/incidents.service.ts",
+      "importers": [
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/incidents/incidents.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common",
+        "ext:@prisma/client"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "@prisma/client"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/incidents/incidents.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
       "consumers": [],
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "e778ebe60171cdc731b2e35fe15731a07e72f7943f602850df63dc5a62ba67a2",
+        "hash": "cfa9198f39674d7709310f056eebbb3d3f3569215e5da61152ab5dae410db0bf",
         "normalization": "text-lf-nobom",
-        "size": 623
+        "size": 628
       },
       "id": "apps/api/src/main.ts",
       "importers": [],
@@ -805,6 +1855,267 @@
         "subsystem": "apps/api"
       },
       "path": "apps/api/src/main.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/models/models.module.ts"
+      ],
+      "exports": [
+        "ModelsController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "54845834bd2cea038fd46557ecca165fd4024471f46a19847dc0faacc38cb3d0",
+        "normalization": "text-lf-nobom",
+        "size": 322
+      },
+      "id": "apps/api/src/models/models.controller.ts",
+      "importers": [
+        "apps/api/src/models/models.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/models/models.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/models/models.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "ModelsModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "230eeb33495390410157cf83e9e430df025dd53622ce543cafe73ccd6578da8a",
+        "normalization": "text-lf-nobom",
+        "size": 283
+      },
+      "id": "apps/api/src/models/models.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/models/models.controller.ts",
+        "apps/api/src/models/models.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/models/models.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/models/models.controller.ts",
+        "apps/api/src/models/models.module.ts"
+      ],
+      "exports": [
+        "ModelsService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6b6df1c305b0fd24e68fa3d1d139e4e324b8e802ade62cc9451a83c2830003a5",
+        "normalization": "text-lf-nobom",
+        "size": 4661
+      },
+      "id": "apps/api/src/models/models.service.ts",
+      "importers": [
+        "apps/api/src/models/models.controller.ts",
+        "apps/api/src/models/models.module.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common",
+        "ext:fs",
+        "ext:path"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "fs",
+          "path"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/models/models.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/network/network.module.ts"
+      ],
+      "exports": [
+        "NetworkController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "3903d5349e8649b177bb123f19a4ba68d795c25d427fbb3fdcd5772d84ee1f7d",
+        "normalization": "text-lf-nobom",
+        "size": 327
+      },
+      "id": "apps/api/src/network/network.controller.ts",
+      "importers": [
+        "apps/api/src/network/network.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/network/network.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/network/network.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "NetworkModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8a0d8edf1e8e91a376f12d376dbdbe307625a66d72e696ab671425e2c49eb56a",
+        "normalization": "text-lf-nobom",
+        "size": 291
+      },
+      "id": "apps/api/src/network/network.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/network/network.controller.ts",
+        "apps/api/src/network/network.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/network/network.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/network/network.controller.ts",
+        "apps/api/src/network/network.module.ts"
+      ],
+      "exports": [
+        "NetworkService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6078fa5d51fab42d39ce7231d2f3b35a716cb97864430814a3d34bdfe19ad9b6",
+        "normalization": "text-lf-nobom",
+        "size": 2709
+      },
+      "id": "apps/api/src/network/network.service.ts",
+      "importers": [
+        "apps/api/src/network/network.controller.ts",
+        "apps/api/src/network/network.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/network/network.service.ts",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -853,9 +2164,14 @@
     },
     {
       "consumers": [
+        "apps/api/src/analytics/analytics.service.ts",
+        "apps/api/src/dashboard/dashboard.service.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/health/health.controller.ts",
+        "apps/api/src/incidents/incidents.service.ts",
+        "apps/api/src/network/network.service.ts",
         "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/src/threats/threats.service.ts",
         "apps/api/test/test-e2e-pipeline.ts"
       ],
       "exports": [
@@ -869,9 +2185,14 @@
       },
       "id": "apps/api/src/prisma/prisma.service.ts",
       "importers": [
+        "apps/api/src/analytics/analytics.service.ts",
+        "apps/api/src/dashboard/dashboard.service.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/health/health.controller.ts",
+        "apps/api/src/incidents/incidents.service.ts",
+        "apps/api/src/network/network.service.ts",
         "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/src/threats/threats.service.ts",
         "apps/api/test/test-e2e-pipeline.ts"
       ],
       "imports": [
@@ -891,13 +2212,178 @@
         "parseStatus": "parsed",
         "publicSurfaceReasons": [],
         "riskBasis": [
-          "MEDIUM: 3 dependents (at or above 3)"
+          "MEDIUM: 8 dependents (at or above 3)"
         ],
         "subsystem": "apps/api"
       },
       "path": "apps/api/src/prisma/prisma.service.ts",
       "publicSurface": false,
       "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/threats/threats.module.ts"
+      ],
+      "exports": [
+        "ThreatsController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ef41e8479c3e9dd34fd40ab06e6a9e276680d8bd76517955fae3504c3787b13f",
+        "normalization": "text-lf-nobom",
+        "size": 487
+      },
+      "id": "apps/api/src/threats/threats.controller.ts",
+      "importers": [
+        "apps/api/src/threats/threats.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/threats/threats.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threats/threats.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "ThreatsModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "c2efdb26081db2a0865e98da719f405e03eb24d797b7baa372116896d4fdf663",
+        "normalization": "text-lf-nobom",
+        "size": 291
+      },
+      "id": "apps/api/src/threats/threats.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/threats/threats.controller.ts",
+        "apps/api/src/threats/threats.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threats/threats.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/threats/threats.controller.ts",
+        "apps/api/src/threats/threats.module.ts"
+      ],
+      "exports": [
+        "ThreatQueryDto",
+        "ThreatsService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "727f5881575460d6d251c5bb6f626ce093e22738be747646de216df52f306e7b",
+        "normalization": "text-lf-nobom",
+        "size": 2113
+      },
+      "id": "apps/api/src/threats/threats.service.ts",
+      "importers": [
+        "apps/api/src/threats/threats.controller.ts",
+        "apps/api/src/threats/threats.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threats/threats.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8630b69e6c482b28e3bb4ce81cacc27c529dd1ed17826797da642131176f5f49",
+        "normalization": "text-lf-nobom",
+        "size": 349
+      },
+      "id": "apps/api/test/check-counts.js",
+      "importers": [],
+      "imports": [
+        "ext:@prisma/client"
+      ],
+      "language": "javascript",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@prisma/client"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/test/check-counts.js",
+      "publicSurface": false,
+      "risk": "LOW",
       "type": "file"
     },
     {
@@ -1781,6 +3267,49 @@
     {
       "consumers": [],
       "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ad6044314138f36f9856fe1db0e76101c45c9d6da1e37e7e80bf617358ebe0b0",
+        "normalization": "text-lf-nobom",
+        "size": 9155
+      },
+      "id": "apps/web/src/app/analytics/page.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/KpiCard.tsx",
+        "ext:lucide-react",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/analytics/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
         "GET"
       ],
       "fingerprint": {
@@ -1824,9 +3353,9 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "e0013f174c08601881944ca7c754d3efc8aa9fafef33a60782af003f48a1d582",
+        "hash": "21e1269c036cf515e7aa93ea2e633c263c2d8df2497e6793818e2462d6fc0181",
         "normalization": "text-lf-nobom",
-        "size": 1296
+        "size": 2126
       },
       "id": "apps/web/src/app/globals.css",
       "importers": [
@@ -1855,19 +3384,110 @@
     {
       "consumers": [],
       "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2aed7b049c30d85071204da7103e0a4b11af991c844fed7b4727b437f1b6222e",
+        "normalization": "text-lf-nobom",
+        "size": 8181
+      },
+      "id": "apps/web/src/app/incidents/[id]/page.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "ext:lucide-react",
+        "ext:next",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "next",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/incidents/[id]/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "77917f856933586082515d2896726cedc1b4ad199d5231e23bac7a846086aafb",
+        "normalization": "text-lf-nobom",
+        "size": 8440
+      },
+      "id": "apps/web/src/app/incidents/page.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "ext:lucide-react",
+        "ext:next",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "next",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/incidents/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
         "default",
         "metadata"
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "8f8c8ee754edd8af88e75fc8195d8e8a1c4d6e45ae4ac0213e645969932a85c1",
+        "hash": "9363bc1af245c87aab3bda22b24530a864759d25045c4173048927591376e76c",
         "normalization": "text-lf-nobom",
-        "size": 504
+        "size": 571
       },
       "id": "apps/web/src/app/layout.tsx",
       "importers": [],
       "imports": [
         "apps/web/src/app/globals.css",
+        "apps/web/src/components/layout/Shell.tsx",
         "ext:next"
       ],
       "language": "typescript",
@@ -1900,14 +3520,16 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "4c93962d1cadada5483cbc857d351ec33addb9d67b32164350ad69d573bb8feb",
+        "hash": "96b4dc088bc6f2514ea3c444c483a7e3602014acca21084c3d9acd2f1f669816",
         "normalization": "text-lf-nobom",
-        "size": 8524
+        "size": 13753
       },
-      "id": "apps/web/src/app/page.tsx",
+      "id": "apps/web/src/app/models/page.tsx",
       "importers": [],
       "imports": [
-        "ext:lucide-react"
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "ext:lucide-react",
+        "ext:react"
       ],
       "language": "typescript",
       "metadata": {
@@ -1915,7 +3537,100 @@
         "dependencyAnalysis": "analyzed",
         "entryPoint": true,
         "externalImports": [
-          "lucide-react"
+          "lucide-react",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/models/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5bd4052bac1d1c60eda3f6ce7ac4c5f15536b7285b0cb7a0924cc0109648c2d3",
+        "normalization": "text-lf-nobom",
+        "size": 10753
+      },
+      "id": "apps/web/src/app/network/page.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "ext:lucide-react",
+        "ext:next",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "next",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/network/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ee47497053a2737d4e9b1a4d0cc2e53b4e93af5cf59838e40fb581ffc08093e6",
+        "normalization": "text-lf-nobom",
+        "size": 12874
+      },
+      "id": "apps/web/src/app/page.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/KpiCard.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "apps/web/src/hooks/useRealtime.ts",
+        "ext:lucide-react",
+        "ext:next",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "next",
+          "react"
         ],
         "inCycle": false,
         "parseStatus": "parsed",
@@ -1930,6 +3645,538 @@
       "path": "apps/web/src/app/page.tsx",
       "publicSurface": true,
       "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "b4ae940445a72a4c6cc6521c6e9c90b9dbe6c7f2a12ca747d42b145f6cdb75f5",
+        "normalization": "text-lf-nobom",
+        "size": 7482
+      },
+      "id": "apps/web/src/app/settings/page.tsx",
+      "importers": [],
+      "imports": [
+        "ext:lucide-react",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/settings/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "325b25f2b4a04f0a481978aa75511dda42ea635964a934b47dbedbe5973c9715",
+        "normalization": "text-lf-nobom",
+        "size": 15304
+      },
+      "id": "apps/web/src/app/threats/[id]/page.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "apps/web/src/components/ui/ShapAttributionBar.tsx",
+        "ext:lucide-react",
+        "ext:next",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "next",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/threats/[id]/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "20a4f58e2fb1ba0d6087ebc9d7e3e4b21186085dd1a8897cd8c83fa80d89521c",
+        "normalization": "text-lf-nobom",
+        "size": 10164
+      },
+      "id": "apps/web/src/app/threats/page.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "ext:lucide-react",
+        "ext:next",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react",
+          "next",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/threats/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/layout.tsx"
+      ],
+      "exports": [
+        "Shell"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a5c90ba1a7b40d56892fc57e42cd61262ff15496300a732957370d0366729f68",
+        "normalization": "text-lf-nobom",
+        "size": 9395
+      },
+      "id": "apps/web/src/components/layout/Shell.tsx",
+      "importers": [
+        "apps/web/src/app/layout.tsx"
+      ],
+      "imports": [
+        "apps/web/src/hooks/useRealtime.ts",
+        "ext:lucide-react",
+        "ext:next",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "lucide-react",
+          "next",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/components/layout/Shell.tsx",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/models/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx"
+      ],
+      "exports": [
+        "EmptyState",
+        "ErrorState",
+        "LoadingSkeleton"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "044bc913babd0db940d1f493cb2fca15248e5f5a381733e6d0f0b064af65e35b",
+        "normalization": "text-lf-nobom",
+        "size": 2378
+      },
+      "id": "apps/web/src/components/ui/EmptyState.tsx",
+      "importers": [
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/models/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx"
+      ],
+      "imports": [
+        "ext:lucide-react",
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "lucide-react",
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 8 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/components/ui/EmptyState.tsx",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/page.tsx"
+      ],
+      "exports": [
+        "KpiCard"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f062b1d8943bfdef314e0c7c92173426018e52de1c7892931bfa08d83c88d7a8",
+        "normalization": "text-lf-nobom",
+        "size": 874
+      },
+      "id": "apps/web/src/components/ui/KpiCard.tsx",
+      "importers": [
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/page.tsx"
+      ],
+      "imports": [
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/components/ui/KpiCard.tsx",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx"
+      ],
+      "exports": [
+        "SeverityBadge",
+        "SeverityType"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "31a1aeec051d9aeb886bafb2bb33464557eb053e968a97c8b34d900a4e07fcce",
+        "normalization": "text-lf-nobom",
+        "size": 1746
+      },
+      "id": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "importers": [
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx"
+      ],
+      "imports": [
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 6 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/threats/[id]/page.tsx"
+      ],
+      "exports": [
+        "ShapAttributionBar",
+        "ShapItem"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f95a0363adb23dec411003a636df6e67f59d405c985b8ca40265fed793eb6968",
+        "normalization": "text-lf-nobom",
+        "size": 3301
+      },
+      "id": "apps/web/src/components/ui/ShapAttributionBar.tsx",
+      "importers": [
+        "apps/web/src/app/threats/[id]/page.tsx"
+      ],
+      "imports": [
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/components/ui/ShapAttributionBar.tsx",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "StatusIndicator"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "291cca85d072ece14c24ab533e0fcbb04d0faff3d85323628e85126cb6c034ca",
+        "normalization": "text-lf-nobom",
+        "size": 634
+      },
+      "id": "apps/web/src/components/ui/StatusIndicator.tsx",
+      "importers": [],
+      "imports": [
+        "ext:react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: no dependents found by static analysis"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/components/ui/StatusIndicator.tsx",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx"
+      ],
+      "exports": [
+        "ConnectionStatus",
+        "RealtimeState",
+        "useRealtime"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d8e4f92fae861e2eaad1beba67827addbe53c1b39d231d6fbaa463c185127025",
+        "normalization": "text-lf-nobom",
+        "size": 2609
+      },
+      "id": "apps/web/src/hooks/useRealtime.ts",
+      "importers": [
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx"
+      ],
+      "imports": [
+        "ext:react",
+        "ext:socket.io-client"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "react",
+          "socket.io-client"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/hooks/useRealtime.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "724445fa08033007d41e7cd201298aec93bdf6e7374c0fef886aa4dc7652cfe4",
+        "normalization": "text-lf-nobom",
+        "size": 2697
+      },
+      "id": "apps/web/test/verify-realtime-e2e.js",
+      "importers": [],
+      "imports": [
+        "ext:child_process",
+        "ext:path",
+        "ext:socket.io-client"
+      ],
+      "language": "javascript",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "child_process",
+          "path",
+          "socket.io-client"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/test/verify-realtime-e2e.js",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f83bde3b67f2397be93ea714061ba7f08ded90e64d04903615af17737c366972",
+        "normalization": "text-lf-nobom",
+        "size": 2094
+      },
+      "id": "apps/web/test/verify-routes.js",
+      "importers": [],
+      "imports": [
+        "ext:http"
+      ],
+      "language": "javascript",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "http"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/test/verify-routes.js",
+      "publicSurface": false,
+      "risk": "LOW",
       "type": "file"
     },
     {
@@ -1967,7 +4214,13 @@
     },
     {
       "consumers": [
+        "apps/api/src/analytics/analytics.controller.ts",
+        "apps/api/src/analytics/analytics.module.ts",
+        "apps/api/src/analytics/analytics.service.ts",
         "apps/api/src/app.module.ts",
+        "apps/api/src/dashboard/dashboard.controller.ts",
+        "apps/api/src/dashboard/dashboard.module.ts",
+        "apps/api/src/dashboard/dashboard.service.ts",
         "apps/api/src/detection/detection.module.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/detection/redis-consumer.service.ts",
@@ -1975,15 +4228,33 @@
         "apps/api/src/events/events.module.ts",
         "apps/api/src/health/health.controller.ts",
         "apps/api/src/health/health.module.ts",
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/incidents/incidents.module.ts",
+        "apps/api/src/incidents/incidents.service.ts",
         "apps/api/src/main.ts",
+        "apps/api/src/models/models.controller.ts",
+        "apps/api/src/models/models.module.ts",
+        "apps/api/src/models/models.service.ts",
+        "apps/api/src/network/network.controller.ts",
+        "apps/api/src/network/network.module.ts",
+        "apps/api/src/network/network.service.ts",
         "apps/api/src/prisma/prisma.module.ts",
-        "apps/api/src/prisma/prisma.service.ts"
+        "apps/api/src/prisma/prisma.service.ts",
+        "apps/api/src/threats/threats.controller.ts",
+        "apps/api/src/threats/threats.module.ts",
+        "apps/api/src/threats/threats.service.ts"
       ],
       "exports": [],
       "fingerprint": null,
       "id": "ext:@nestjs/common",
       "importers": [
+        "apps/api/src/analytics/analytics.controller.ts",
+        "apps/api/src/analytics/analytics.module.ts",
+        "apps/api/src/analytics/analytics.service.ts",
         "apps/api/src/app.module.ts",
+        "apps/api/src/dashboard/dashboard.controller.ts",
+        "apps/api/src/dashboard/dashboard.module.ts",
+        "apps/api/src/dashboard/dashboard.service.ts",
         "apps/api/src/detection/detection.module.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/detection/redis-consumer.service.ts",
@@ -1991,9 +4262,21 @@
         "apps/api/src/events/events.module.ts",
         "apps/api/src/health/health.controller.ts",
         "apps/api/src/health/health.module.ts",
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/incidents/incidents.module.ts",
+        "apps/api/src/incidents/incidents.service.ts",
         "apps/api/src/main.ts",
+        "apps/api/src/models/models.controller.ts",
+        "apps/api/src/models/models.module.ts",
+        "apps/api/src/models/models.service.ts",
+        "apps/api/src/network/network.controller.ts",
+        "apps/api/src/network/network.module.ts",
+        "apps/api/src/network/network.service.ts",
         "apps/api/src/prisma/prisma.module.ts",
-        "apps/api/src/prisma/prisma.service.ts"
+        "apps/api/src/prisma/prisma.service.ts",
+        "apps/api/src/threats/threats.controller.ts",
+        "apps/api/src/threats/threats.module.ts",
+        "apps/api/src/threats/threats.service.ts"
       ],
       "imports": [],
       "language": null,
@@ -2049,18 +4332,42 @@
     },
     {
       "consumers": [
-        "apps/api/src/prisma/prisma.service.ts"
+        "apps/api/src/incidents/incidents.service.ts",
+        "apps/api/src/prisma/prisma.service.ts",
+        "apps/api/test/check-counts.js"
       ],
       "exports": [],
       "fingerprint": null,
       "id": "ext:@prisma/client",
       "importers": [
-        "apps/api/src/prisma/prisma.service.ts"
+        "apps/api/src/incidents/incidents.service.ts",
+        "apps/api/src/prisma/prisma.service.ts",
+        "apps/api/test/check-counts.js"
       ],
       "imports": [],
       "language": null,
       "metadata": {
         "package": "@prisma/client"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/web/test/verify-realtime-e2e.js"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:child_process",
+      "importers": [
+        "apps/web/test/verify-realtime-e2e.js"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "child_process"
       },
       "path": null,
       "publicSurface": false,
@@ -2111,6 +4418,46 @@
     },
     {
       "consumers": [
+        "apps/api/src/models/models.service.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:fs",
+      "importers": [
+        "apps/api/src/models/models.service.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "fs"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/web/test/verify-routes.js"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:http",
+      "importers": [
+        "apps/web/test/verify-routes.js"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "http"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
         "apps/api/src/detection/redis-consumer.service.ts",
         "apps/api/src/health/health.controller.ts"
       ],
@@ -2133,13 +4480,33 @@
     },
     {
       "consumers": [
-        "apps/web/src/app/page.tsx"
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/models/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/settings/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx",
+        "apps/web/src/components/ui/EmptyState.tsx"
       ],
       "exports": [],
       "fingerprint": null,
       "id": "ext:lucide-react",
       "importers": [
-        "apps/web/src/app/page.tsx"
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/models/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/settings/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx",
+        "apps/web/src/components/ui/EmptyState.tsx"
       ],
       "imports": [],
       "language": null,
@@ -2154,14 +4521,28 @@
     {
       "consumers": [
         "apps/web/src/app/api/health/route.ts",
-        "apps/web/src/app/layout.tsx"
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/layout.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx"
       ],
       "exports": [],
       "fingerprint": null,
       "id": "ext:next",
       "importers": [
         "apps/web/src/app/api/health/route.ts",
-        "apps/web/src/app/layout.tsx"
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/layout.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx"
       ],
       "imports": [],
       "language": null,
@@ -2235,6 +4616,78 @@
     },
     {
       "consumers": [
+        "apps/api/src/models/models.service.ts",
+        "apps/web/test/verify-realtime-e2e.js"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:path",
+      "importers": [
+        "apps/api/src/models/models.service.ts",
+        "apps/web/test/verify-realtime-e2e.js"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "path"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/models/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/settings/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx",
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/KpiCard.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "apps/web/src/components/ui/ShapAttributionBar.tsx",
+        "apps/web/src/components/ui/StatusIndicator.tsx",
+        "apps/web/src/hooks/useRealtime.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:react",
+      "importers": [
+        "apps/web/src/app/analytics/page.tsx",
+        "apps/web/src/app/incidents/[id]/page.tsx",
+        "apps/web/src/app/incidents/page.tsx",
+        "apps/web/src/app/models/page.tsx",
+        "apps/web/src/app/network/page.tsx",
+        "apps/web/src/app/page.tsx",
+        "apps/web/src/app/settings/page.tsx",
+        "apps/web/src/app/threats/[id]/page.tsx",
+        "apps/web/src/app/threats/page.tsx",
+        "apps/web/src/components/layout/Shell.tsx",
+        "apps/web/src/components/ui/EmptyState.tsx",
+        "apps/web/src/components/ui/KpiCard.tsx",
+        "apps/web/src/components/ui/SeverityBadge.tsx",
+        "apps/web/src/components/ui/ShapAttributionBar.tsx",
+        "apps/web/src/components/ui/StatusIndicator.tsx",
+        "apps/web/src/hooks/useRealtime.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "react"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
         "apps/api/src/events/events.gateway.ts"
       ],
       "exports": [],
@@ -2247,6 +4700,28 @@
       "language": null,
       "metadata": {
         "package": "socket.io"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/web/src/hooks/useRealtime.ts",
+        "apps/web/test/verify-realtime-e2e.js"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:socket.io-client",
+      "importers": [
+        "apps/web/src/hooks/useRealtime.ts",
+        "apps/web/test/verify-realtime-e2e.js"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "socket.io-client"
       },
       "path": null,
       "publicSurface": false,
@@ -2539,13 +5014,13 @@
   "schemaVersion": 1,
   "stats": {
     "cycles": 0,
-    "edges": 59,
+    "edges": 168,
     "edgesByType": {
       "exports": 5,
-      "imports": 54
+      "imports": 163
     },
-    "externals": 13,
-    "files": 52,
+    "externals": 19,
+    "files": 88,
     "languagesAnalyzed": [
       "javascript",
       "typescript"
@@ -2554,8 +5029,8 @@
       "css": 1,
       "python": 26
     },
-    "nodes": 65,
-    "unresolvedImports": 2
+    "nodes": 107,
+    "unresolvedImports": 13
   },
   "tool": {
     "name": "project-intel",

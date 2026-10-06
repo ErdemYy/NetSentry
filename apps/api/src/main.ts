@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common';
-import cookieParser from 'cookie-parser';
+const cookieParser = require('cookie-parser');
 import { AppModule } from './app.module';
 
 async function bootstrap() {

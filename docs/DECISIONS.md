@@ -111,7 +111,61 @@
 - **Status:** Accepted
 - **Context:** Severity levels (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) must not be hardcoded, guessed, or randomly assigned.
 - **Decision:** Implement a rule-based deterministic matrix evaluating:
-  1. Attack category severity ceiling (e.g. Heartbleed, DDoS, Infiltration $\rightarrow$ CRITICAL/HIGH).
-  2. Model confidence thresholds ($\ge 0.85 \rightarrow$ full category severity; lower confidence scales down).
-  3. Unsupervised anomaly confirmation ($s(x) \ge \tau$ elevates medium threats to high).
+  1. Attack category severity ceiling (e.g. Heartbleed, DDoS, Infiltration -> CRITICAL/HIGH).
+  2. Model confidence thresholds (>= 0.85 -> full category severity; lower confidence scales down).
+  3. Unsupervised anomaly confirmation (s(x) >= tau elevates medium threats to high).
 - **Consequences:** Transparent, auditable, and reproducible alert classification documented in `docs/THREAT-MODEL.md`.
+
+---
+
+## ADR-015: Strict Zero-Mock SOC Dashboard Architecture and Real Telemetry Guarantee
+- **Status:** Accepted
+- **Context:** Standard dashboard templates frequently simulate activity with `Math.random()`, fake threat feeds, or client-side synthetic metric counters. In an academic capstone defense, mock data renders the demonstration scientifically untrustworthy.
+- **Decision:** Strictly prohibit any synthetic data, random generators, or client-side mock feeds in `apps/web`. Every metric, flow record, SHAP score, and incident timeline displayed in the UI must originate directly from NestJS REST API endpoints (`/api/v1/dashboard/*`, `/api/v1/threats/*`, `/api/v1/incidents/*`, `/api/v1/analytics/*`, `/api/v1/models/*`), PostgreSQL query aggregations, or live WebSocket `/events` frames. When no data exists, the UI renders explicit `NO DATA` or `WAITING FOR EVENTS` empty states.
+- **Consequences:** 100% genuine system telemetry. The interface directly exposes the real underlying ML inference engine and network flows.
+
+---
+
+## ADR-016: Erdem Design System Security Adaptation and Semantic Severity Tokens
+- **Status:** Accepted
+- **Context:** SOC dashboards often suffer from overwhelming visual noise: neon green/red cyberpunk themes, terminal hacker gimmicks, glowing animations, and card overload. Conversely, Erdem Design System emphasizes minimal, editorial, cinematic, high-density, and restrained typography.
+- **Decision:** Adapt the Erdem Design System for Security Operations without altering the core design system:
+  1. Maintain base palette: `--color-ink: #060709`, `--color-graphite: #101216`, `--color-signal: #ff5b2e`, `--color-tech: #4f8cff`.
+  2. Implement semantic, accessible severity badges combining both dual-indicator visuals (subtle edge pills) and uppercase text: `CRITICAL` (crimson), `HIGH` (amber/orange), `MEDIUM` (signal blue), `LOW` (slate), `INFO` (zinc).
+  3. Avoid full card colored backgrounds, pulse glows, spinning radars, or matrix particle backgrounds.
+  4. Preserve Space Grotesk for editorial headers and JetBrains Mono for all telemetry data (IPs, ports, scores, latencies, timestamps).
+- **Consequences:** A calm, authoritative, information-dense Security Intelligence Operating Interface with high readability and zero decorative gimmicks.
+
+---
+
+## ADR-017: TreeSHAP Feature Attribution UX and Risk Direction Visualization
+- **Status:** Accepted
+- **Context:** Security analysts must know *why* an AI model flagged a network flow as malicious. Hardcoded explanations or arbitrary feature lists do not provide defensible explanations.
+- **Decision:** Expose genuine TreeSHAP Shapley values computed by the Python ML Worker (`apps/ml`) directly in the Threat Detail view (`/threats/[id]`):
+  1. Section header: "WHY DID THE MODEL FLAG THIS?".
+  2. Render exact feature names, input flow values, and signed contribution bars (`+X.XXXX` vs `-X.XXXX`).
+  3. Explicitly categorize directionality into `INCREASED RISK` (positive Shapley value pushing towards attack prediction) and `DECREASED RISK` (negative value mitigating risk).
+  4. Monospace numerical typography with hover tooltips displaying feature descriptions and impact magnitude.
+- **Consequences:** Transparent, auditable, and interpretable machine learning that directly answers analyst questions and passes academic defense criteria.
+
+---
+
+## ADR-018: Hybrid Threat vs Anomaly Cognitive Separation in Operations Interface
+- **Status:** Accepted
+- **Context:** Intrusion detection systems often conflate known attacks with unknown anomalies, confusing operators about the detection mechanism.
+- **Decision:** Explicitly separate model outputs on all cards, tables, and detail screens into two distinct analytical pillars:
+  1. **Supervised Verdict (LightGBM):** Attack classification category (e.g. `PORT_SCAN`, `DDOS`, `BENIGN`) and confidence percentage (e.g. `99.94%`).
+  2. **Unsupervised Anomaly (Isolation Forest):** Normalized outlier score $s(x)$ evaluated against the methodologically derived threshold $\tau^* = 0.49540$, with explicit status (`NORMAL` vs `ANOMALOUS`).
+- **Consequences:** Analysts instantly recognize whether a flow is a signature-like known threat, a statistical anomaly, or a dangerous hybrid combination.
+
+---
+
+## ADR-019: Realtime WebSocket State Management and Selective Motion Restraint
+- **Status:** Accepted
+- **Context:** High-velocity streaming events can trigger massive React rerenders, causing layout thrashing, performance degradation, and distracting UI flickering.
+- **Decision:**
+  1. Centralize WebSocket state in `useRealtime` hook with clear connection states: `LIVE`, `RECONNECTING`, `DISCONNECTED` with exponential backoff.
+  2. Maintain a capped FIFO buffer (50 most recent alerts) and deduplicate by `id`.
+  3. Micro-animations are strictly restrained to newly inserted rows (`fade-in`, `translateY(4px -> 0)`), with zero whole-screen flashing, zero glow pulses, and full `prefers-reduced-motion` compliance.
+- **Consequences:** Silky smooth 60fps rendering under active packet streams, zero layout shifts, and full WCAG accessibility.
+

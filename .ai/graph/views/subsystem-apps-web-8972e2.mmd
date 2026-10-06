@@ -1,17 +1,52 @@
 %% project-intel graph view: Subsystem: apps/web
-%% mode=subsystem level=file nodes=5 edges=1
+%% mode=subsystem level=file nodes=20 edges=21
 flowchart TD
+  n427f1ee2["ui/EmptyState.tsx"]
+  n125c5857["ui/SeverityBadge.tsx"]
+  ncd405606["ui/KpiCard.tsx"]
+  n0daee931["hooks/useRealtime.ts"]
   n4306ffba["app/globals.css"]
+  n22e41f8d["layout/Shell.tsx"]
+  n2aad2718["ui/ShapAttributionBar.tsx"]
   n8076096b["web/next-env.d.ts"]
+  n0a3f4a7b["analytics/page.tsx"]
   ne0eb2c1f["health/route.ts"]
+  n2c8c81d7["[id]/page.tsx"]
+  n84e1830b["incidents/page.tsx"]
   nf79a94b8["app/layout.tsx"]
+  n9e62018c["models/page.tsx"]
+  ne592b24f["network/page.tsx"]
   n0d6d11c3["app/page.tsx"]
+  n90ba88dc["settings/page.tsx"]
+  n84be801d["[id]/page.tsx"]
+  n5881f91c["threats/page.tsx"]
+  n090b7b19["ui/StatusIndicator.tsx"]
+  n0a3f4a7b --> n427f1ee2
+  n0a3f4a7b --> ncd405606
+  n2c8c81d7 --> n427f1ee2
+  n2c8c81d7 --> n125c5857
+  n84e1830b --> n427f1ee2
+  n84e1830b --> n125c5857
   nf79a94b8 --> n4306ffba
+  nf79a94b8 --> n22e41f8d
+  n9e62018c --> n427f1ee2
+  ne592b24f --> n427f1ee2
+  ne592b24f --> n125c5857
+  n0d6d11c3 --> n427f1ee2
+  n0d6d11c3 --> ncd405606
+  n0d6d11c3 --> n125c5857
+  n0d6d11c3 --> n0daee931
+  n84be801d --> n427f1ee2
+  n84be801d --> n125c5857
+  n84be801d --> n2aad2718
+  n5881f91c --> n427f1ee2
+  n5881f91c --> n125c5857
+  n22e41f8d --> n0daee931
   classDef surface stroke-width:3px;
   classDef entry stroke-width:3px,stroke-dasharray:6 2;
   classDef external stroke-dasharray:4 3;
   classDef outside stroke-dasharray:2 2;
   classDef target fill:#fff3b0,stroke:#555555;
   classDef note stroke-dasharray:4 3;
-  class n0d6d11c3,ne0eb2c1f,nf79a94b8 surface;
-  class n0d6d11c3,ne0eb2c1f,nf79a94b8 entry;
+  class n0a3f4a7b,n0d6d11c3,n2c8c81d7,n5881f91c,n84be801d,n84e1830b,n90ba88dc,n9e62018c,ne0eb2c1f,ne592b24f,nf79a94b8 surface;
+  class n0a3f4a7b,n0d6d11c3,n2c8c81d7,n5881f91c,n84be801d,n84e1830b,n90ba88dc,n9e62018c,ne0eb2c1f,ne592b24f,nf79a94b8 entry;

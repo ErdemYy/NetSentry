@@ -1,29 +1,37 @@
 # Handoff — NetSentry AI
 
-- **Objective:** Successfully complete PHASE 2 (Asynchronous Flow Ingestion & Real-Time ML Inference) and hand off with verified operational proof.
+- **Objective:** Successfully complete PHASE 3 (Frontend SOC Operations Dashboard & Real-Time Security Intelligence Interface) and hand off with verified operational proof.
 - **Completed:**
-  - Real-time ML inference service (`POST /api/v1/predict` + `apps/ml/app/streaming/worker.py`) running authentic Phase 1 artifacts (`LightGBM`, `IsolationForest`, `TreeSHAP`, `RobustScaler`, `LabelEncoder`).
-  - Strict 77-feature ordering and datatype validation guard (rejection of missing, unknown, NaN, Inf, and wrong datatypes with HTTP 400).
-  - Deterministic threat severity rule engine (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) and hybrid verdict synthesis.
-  - Redis Streams pipeline: `netsentry:flows` -> `ml-worker` -> `netsentry:detections` with consumer group `ml-inference`, consumer `XREADGROUP`, `XACK`, retries, and DLQ routing.
-  - Controlled Replay Engine (`apps/ml/app/streaming/replay.py`) reading `clean_flows.parquet` across `NORMAL`, `ATTACK`, `MIXED` modes with configurable rates. Ground-truth labels stripped from inference payloads.
-  - NestJS Core API integration (`apps/api`): `PrismaService`, `DetectionService`, `RedisConsumerService`, idempotent upsert to PostgreSQL (`Flow`, `Detection`, `Incident`), and WebSocket `/events` broadcasting (`threat_alert`, `detection.created`).
-  - Performance profiling (EXP-004): 500 samples profiled. Mean latency 24.865 ms with SHAP (P95: 31.645 ms); 20.260 ms without SHAP (P95: 26.680 ms). TreeSHAP overhead measured at 6.794 ms. Throughput benchmarked up to 57.21 flows/sec.
-  - 21/21 Pytest tests passed; NestJS E2E persistence and idempotency test passed.
-- **Current State:** End-to-end asynchronous streaming inference pipeline is fully functional, durable, idempotent, and backed by genuine empirical measurements.
-- **Next Action:** PHASE 3 — Frontend SOC Operations Dashboard (Erdem Design System UI, live WebSocket feed, incident response UI, confusion matrix & SHAP visualization).
+  - Production-grade, dark-themed SOC Operations Dashboard (`apps/web`) adhering to the Erdem Design System (`Space Grotesk`, `JetBrains Mono`, `--color-ink`, `--color-graphite`, `--color-signal`, `--color-tech`).
+  - **Strict Zero-Mock Guarantee:** Zero occurrences of `mockData`, synthetic charts, or `Math.random()`. All metrics, flow metadata, anomaly scores, and incident records are hydrated from NestJS REST API endpoints (`/api/v1/dashboard/overview`, `/threats`, `/incidents`, `/network/stats`, `/analytics/stats`, `/models/metrics`, `/health/detailed`) and live WebSocket (`/events`).
+  - Clear cognitive separation between **Known Attack classification (LightGBM)** and **Anomaly Detection (Isolation Forest score vs $\tau^* = 0.49540$)**.
+  - **TreeSHAP Explainability UX ("WHY DID THE MODEL FLAG THIS?"):** Exact feature attributions rendered with signed numerical contribution bars and directional risk indicators (`INCREASED RISK` vs `DECREASED RISK`).
+  - Complete application routes implemented and verified with Next.js 15:
+    - `/` (Overview & real-time activity stream)
+    - `/threats` (Tabular threat feed)
+    - `/threats/[id]` (Deep telemetry & SHAP attribution)
+    - `/incidents` (Incident management triage table)
+    - `/incidents/[id]` (Incident timeline & status transition controls)
+    - `/network` (Network flow & protocol intelligence)
+    - `/analytics` (Distribution & confidence analytics)
+    - `/models` (Academic ML benchmark comparison & latency profile)
+    - `/settings` (Platform diagnostics & health probes)
+  - Real-time Socket.IO connection hook `useRealtime` listening to `threat_alert` and `detection.created` with reconnection and bounded event caching.
+  - End-to-end verified live data flow: `CIC-IDS2017 Dataset -> Redis Stream -> ML Worker -> NestJS Core API -> PostgreSQL -> WebSocket /events -> Dashboard`.
 - **Validation Status:**
-  - Pytest: 21 PASSED (0 failed)
-  - NestJS E2E Test: PASSED (Idempotency and DB persistence confirmed)
-  - Live Replay Test: PASSED (BENIGN, DDoS, PortScan, DoS, BruteForce verified)
-  - TypeScript: Clean build across `@netsentry/shared` and `@netsentry/api`
+  - `apps/web`: `npm test` PASSED (8/8 routes HTTP 200 + live WebSocket E2E verified).
+  - `apps/web`: `npm run build` PASSED (0 errors, 10/10 routes generated).
+  - `apps/api`: `npm run build` PASSED (0 errors).
+  - Codebase Scan: 0 mock/fake data violations.
+  - Live Replay: 5/5 canonical attack categories (BENIGN, DDoS, PortScan, DoS, BruteForce) confirmed end-to-end.
+- **Next Phase:** PHASE 4 (Advanced Security Hardening, Threat Intelligence Enrichment, and Defense Presentation Readiness).
 - **Important Documents:**
   - [docs/ARCHITECTURE.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/ARCHITECTURE.md)
-  - [docs/API.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/API.md)
-  - [docs/DEMO.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DEMO.md)
-  - [docs/EXPERIMENTS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/EXPERIMENTS.md)
   - [docs/DECISIONS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DECISIONS.md)
+  - [docs/DEMO.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DEMO.md)
+  - [docs/API.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/API.md)
+  - [docs/EXPERIMENTS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/EXPERIMENTS.md)
   - [docs/THREAT-MODEL.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/THREAT-MODEL.md)
-- **GeneratedAt:** 2026-10-06T21:12:30+03:00
-- **From:** Senior Software Architect & ML Engineer
-- **To:** Succeeding Engineering Agent / User
+- **GeneratedAt:** 2026-10-06T21:43:00+03:00
+- **From:** Senior Software Architect & Frontend Engineer
+- **To:** Academic Thesis Committee / User

@@ -78,14 +78,44 @@ Explain to the thesis jury:
 - Negative contributions indicate features reducing suspicion; positive contributions pinpoint the exact structural anomalies driving the alert (e.g. `psh_flag_count`, `min_seg_size_fwd`, `bwd_packet_length_mean`).
 - Demonstrates to the jury that NetSentry AI eliminates the "black-box" dilemma in modern AI-driven cybersecurity.
 
-### Phase 5: Automated Verification Suite
-Run the automated end-to-end verification script:
+### Phase 5: Frontend SOC Operations Dashboard Jury Presentation
+Open Google Chrome / Edge to: `http://localhost:3000`
+
+1. **Top Bar & Real-Time System Health:**
+   - Point out the active health status indicators (`API ●`, `ML ENGINE ●`, `REDIS ●`, `DATABASE ●`) dynamically probed from `/api/v1/health/detailed`.
+   - Point out the WebSocket connection pill: `LIVE ●` on `/events`.
+
+2. **Overview (`/`):**
+   - Show the real-time KPI Strip: `ACTIVE THREATS`, `INCIDENTS`, `EVENTS / SEC`, `FLOWS ANALYZED`.
+   - Replay a burst of flows (`python -m app.streaming.replay --mode MIXED --rate 10 --max 10`) and show the jury the live entries streaming into `REAL-TIME NETWORK ACTIVITY` with zero page reload and smooth, non-distracting row transitions.
+
+3. **Threat Detail & XAI Inspection (`/threats/[id]`):**
+   - Click on an elevated detection (e.g. `DDOS` or `PORT_SCAN`).
+   - Walk the jury through the **Dual-Engine Verdict**:
+     - Supervised (LightGBM): `KNOWN ATTACK`, confidence `100.0%`.
+     - Unsupervised (Isolation Forest): Anomaly Score `0.5032` against $\tau^* = 0.49540$ (`ANOMALY DETECTED`).
+   - Highlight **"WHY DID THE MODEL FLAG THIS?"**:
+     - Point out the exact TreeSHAP feature attributions (`min_seg_size_fwd`, `init_win_bytes_bwd`, `fwd_packet_length_max`).
+     - Point out the signed numerical bars and direction badges (`INCREASED RISK` vs `DECREASED RISK`). Explain to the jury how this answers the fundamental requirement of defensible, interpretable AI in cybersecurity.
+
+4. **Incident Management (`/incidents` & `/incidents/[id]`):**
+   - Show how elevated threats are automatically grouped into persistent incidents.
+   - Click into an incident, view the flow telemetry, and demonstrate real-time status transitions (`OPEN` -> `INVESTIGATING` -> `RESOLVED`).
+
+5. **Scientific ML Model Defense (`/models`):**
+   - Show the comparative table of **Supervised (LightGBM)** vs **Unsupervised (Isolation Forest)**.
+   - Emphasize to the committee why Accuracy (99.85%) is NOT the sole benchmark, and draw attention to **Macro Recall (92.45%)** and **Macro F1 (93.74%)** across all 9 classes.
+   - Review the 6-stage end-to-end latency benchmarks (total mean: 27.04 ms, fast-path: 20.26 ms).
+
+### Phase 6: Automated Verification Suite
+Run the automated end-to-end verification and test suite:
 ```bash
+# Verify ML pipeline and real traffic replay
 cd apps/ml
 .venv/Scripts/python scripts/verify_e2e_live.py
+
+# Verify Frontend routes and live WebSocket integration
+cd apps/web
+npm test
 ```
-And execute the NestJS persistence & idempotency test:
-```bash
-cd apps/api
-npx ts-node test/test-e2e-pipeline.ts
-```
+

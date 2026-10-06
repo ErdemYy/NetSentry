@@ -1,10 +1,10 @@
 ---
-generatedAt: 2026-10-06T18:12:57.611Z
+generatedAt: 2026-10-06T18:42:04.326Z
 source: project-intel 0.1.0
 scope: directory
 path: apps/web
 schemaVersion: 1
-fingerprint: sha256:e34cfb50fea521fe25e196025541b9cca086e6f60f7fc10c1929caf638fb5ca2
+fingerprint: sha256:6e5ce38e8a72aa637f99ed314b42ba98ba83ea20ee520502cf257c15cfaa4dd7
 generated: true
 ---
 
@@ -18,21 +18,39 @@ _Not determined by tooling (no README or package description found)._
 
 ## Composition
 
-5 source files (typescript 4, css 1), 0 test files.
+20 source files (typescript 19, css 1), 2 test files.
 
 ## Important files
 
 | Path | Why | Risk |
 | --- | --- | --- |
+| `apps/web/src/components/ui/EmptyState.tsx` | used by 8 files | MEDIUM |
+| `apps/web/src/components/ui/SeverityBadge.tsx` | used by 6 files | MEDIUM |
+| `apps/web/src/app/analytics/page.tsx` | entry point, framework-route | MEDIUM |
 | `apps/web/src/app/api/health/route.ts` | entry point, framework-route | MEDIUM |
+| `apps/web/src/app/incidents/[id]/page.tsx` | entry point, framework-route | MEDIUM |
+| `apps/web/src/app/incidents/page.tsx` | entry point, framework-route | MEDIUM |
 | `apps/web/src/app/layout.tsx` | entry point, framework-route | MEDIUM |
+| `apps/web/src/app/models/page.tsx` | entry point, framework-route | MEDIUM |
+| `apps/web/src/app/network/page.tsx` | entry point, framework-route | MEDIUM |
 | `apps/web/src/app/page.tsx` | entry point, framework-route | MEDIUM |
+| `apps/web/src/app/settings/page.tsx` | entry point, framework-route | MEDIUM |
+| `apps/web/src/app/threats/[id]/page.tsx` | entry point, framework-route | MEDIUM |
+| `apps/web/src/app/threats/page.tsx` | entry point, framework-route | MEDIUM |
 
 ## Entry points
 
+- `apps/web/src/app/analytics/page.tsx`
 - `apps/web/src/app/api/health/route.ts`
+- `apps/web/src/app/incidents/[id]/page.tsx`
+- `apps/web/src/app/incidents/page.tsx`
 - `apps/web/src/app/layout.tsx`
+- `apps/web/src/app/models/page.tsx`
+- `apps/web/src/app/network/page.tsx`
 - `apps/web/src/app/page.tsx`
+- `apps/web/src/app/settings/page.tsx`
+- `apps/web/src/app/threats/[id]/page.tsx`
+- `apps/web/src/app/threats/page.tsx`
 
 ## Responsibilities (derived)
 
@@ -44,8 +62,13 @@ _none_
 
 | Depends on | Edges |
 | --- | --- |
-| `next` (package) | 2 |
-| `lucide-react` (package) | 1 |
+| `react` (package) | 16 |
+| `lucide-react` (package) | 11 |
+| `next` (package) | 9 |
+| `socket.io-client` (package) | 2 |
+| `child_process` (package) | 1 |
+| `http` (package) | 1 |
+| `path` (package) | 1 |
 
 ## Consumers
 

@@ -1,10 +1,10 @@
 {
   "configDigest": "dee4c60aba43bf149c21a8e46e77f8b9c842ea6905a7e9b87badafa13cfe5396",
   "directories": [
-    "apps/ml",
     "apps/api",
-    "packages/shared",
-    "apps/web"
+    "apps/ml",
+    "apps/web",
+    "packages/shared"
   ],
   "files": [
     {
@@ -222,15 +222,105 @@
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "d3ceda333166812a77d6be626e6ef1609247e88cba3d7dcdd19d4f7d6b0b54f1",
-        "mtime": "2026-10-06T17:50:19.911Z",
+        "hash": "e4274e4406f4d5e11c52579d28c2cacee3060d5e47763f1631dc8a6f85007650",
+        "mtime": "2026-10-06T18:20:37.661Z",
         "normalization": "text-lf-nobom",
-        "size": 382
+        "size": 345
       },
       "language": "typescript",
-      "mtime": "2026-10-06T17:50:19.911Z",
+      "mtime": "2026-10-06T18:20:37.661Z",
+      "path": "apps/api/src/analytics/analytics.controller.ts",
+      "size": 345
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "24db74322b1299b6d2518cdfae3f8fb796fb60f8dbcc2fbd00a8b8b2d816637a",
+        "mtime": "2026-10-06T18:20:51.972Z",
+        "normalization": "text-lf-nobom",
+        "size": 307
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:20:51.972Z",
+      "path": "apps/api/src/analytics/analytics.module.ts",
+      "size": 307
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "91acd505f714147009795b144ffbfc826b48b010cc1e8ef9574826e1bbf46af4",
+        "mtime": "2026-10-06T18:20:31.777Z",
+        "normalization": "text-lf-nobom",
+        "size": 3231
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:20:31.777Z",
+      "path": "apps/api/src/analytics/analytics.service.ts",
+      "size": 3231
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "dbe256a9b3bc056d63897af5f39dc63d915bde4afd10a492907bc1948b605133",
+        "mtime": "2026-10-06T18:21:27.796Z",
+        "normalization": "text-lf-nobom",
+        "size": 885
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:21:27.796Z",
       "path": "apps/api/src/app.module.ts",
-      "size": 382
+      "size": 885
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a5494d40e9f0758af7b203b140e1d7491ccb75058bd2839ca0f541a267c9ea0c",
+        "mtime": "2026-10-06T18:18:49.031Z",
+        "normalization": "text-lf-nobom",
+        "size": 336
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:18:49.031Z",
+      "path": "apps/api/src/dashboard/dashboard.controller.ts",
+      "size": 336
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f3758610edd074a1b7047defe372b495bc014f80411324d70f821d58dddf3184",
+        "mtime": "2026-10-06T18:18:55.893Z",
+        "normalization": "text-lf-nobom",
+        "size": 307
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:18:55.893Z",
+      "path": "apps/api/src/dashboard/dashboard.module.ts",
+      "size": 307
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "91ad12ef5881a6fc708cad9b1b03b38840bc57bd67a52216488518543edd7245",
+        "mtime": "2026-10-06T18:18:44.045Z",
+        "normalization": "text-lf-nobom",
+        "size": 1373
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:18:44.045Z",
+      "path": "apps/api/src/dashboard/dashboard.service.ts",
+      "size": 1373
     },
     {
       "category": "source",
@@ -342,15 +432,150 @@
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "e778ebe60171cdc731b2e35fe15731a07e72f7943f602850df63dc5a62ba67a2",
-        "mtime": "2026-10-06T17:54:24.631Z",
+        "hash": "9fc7403d5f4d4ba84640efd22fe7f7f866117e9e50cb2addac75244e421a156c",
+        "mtime": "2026-10-06T18:19:27.158Z",
         "normalization": "text-lf-nobom",
-        "size": 623
+        "size": 689
       },
       "language": "typescript",
-      "mtime": "2026-10-06T17:54:24.631Z",
+      "mtime": "2026-10-06T18:19:27.158Z",
+      "path": "apps/api/src/incidents/incidents.controller.ts",
+      "size": 689
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "96189a6eae65f1c2bcabb85f6caa4ab1cac797a7bc9733063eb491780ec42afe",
+        "mtime": "2026-10-06T18:19:57.636Z",
+        "normalization": "text-lf-nobom",
+        "size": 307
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:19:57.636Z",
+      "path": "apps/api/src/incidents/incidents.module.ts",
+      "size": 307
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "461cca82b0b797d92ccf968192dc70a8b614e1744e61c1dab80cc6e0ed725f06",
+        "mtime": "2026-10-06T18:19:22.440Z",
+        "normalization": "text-lf-nobom",
+        "size": 2615
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:19:22.440Z",
+      "path": "apps/api/src/incidents/incidents.service.ts",
+      "size": 2615
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "cfa9198f39674d7709310f056eebbb3d3f3569215e5da61152ab5dae410db0bf",
+        "mtime": "2026-10-06T18:29:55.135Z",
+        "normalization": "text-lf-nobom",
+        "size": 628
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:29:55.135Z",
       "path": "apps/api/src/main.ts",
-      "size": 623
+      "size": 628
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "54845834bd2cea038fd46557ecca165fd4024471f46a19847dc0faacc38cb3d0",
+        "mtime": "2026-10-06T18:21:11.954Z",
+        "normalization": "text-lf-nobom",
+        "size": 322
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:21:11.954Z",
+      "path": "apps/api/src/models/models.controller.ts",
+      "size": 322
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "230eeb33495390410157cf83e9e430df025dd53622ce543cafe73ccd6578da8a",
+        "mtime": "2026-10-06T18:21:16.511Z",
+        "normalization": "text-lf-nobom",
+        "size": 283
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:21:16.511Z",
+      "path": "apps/api/src/models/models.module.ts",
+      "size": 283
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6b6df1c305b0fd24e68fa3d1d139e4e324b8e802ade62cc9451a83c2830003a5",
+        "mtime": "2026-10-06T18:21:08.125Z",
+        "normalization": "text-lf-nobom",
+        "size": 4661
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:21:08.125Z",
+      "path": "apps/api/src/models/models.service.ts",
+      "size": 4661
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "3903d5349e8649b177bb123f19a4ba68d795c25d427fbb3fdcd5772d84ee1f7d",
+        "mtime": "2026-10-06T18:20:16.134Z",
+        "normalization": "text-lf-nobom",
+        "size": 327
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:20:16.134Z",
+      "path": "apps/api/src/network/network.controller.ts",
+      "size": 327
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8a0d8edf1e8e91a376f12d376dbdbe307625a66d72e696ab671425e2c49eb56a",
+        "mtime": "2026-10-06T18:20:21.807Z",
+        "normalization": "text-lf-nobom",
+        "size": 291
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:20:21.807Z",
+      "path": "apps/api/src/network/network.module.ts",
+      "size": 291
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6078fa5d51fab42d39ce7231d2f3b35a716cb97864430814a3d34bdfe19ad9b6",
+        "mtime": "2026-10-06T18:20:10.917Z",
+        "normalization": "text-lf-nobom",
+        "size": 2709
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:20:10.917Z",
+      "path": "apps/api/src/network/network.service.ts",
+      "size": 2709
     },
     {
       "category": "source",
@@ -381,6 +606,66 @@
       "mtime": "2026-10-06T17:49:02.387Z",
       "path": "apps/api/src/prisma/prisma.service.ts",
       "size": 540
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ef41e8479c3e9dd34fd40ab06e6a9e276680d8bd76517955fae3504c3787b13f",
+        "mtime": "2026-10-06T18:19:09.175Z",
+        "normalization": "text-lf-nobom",
+        "size": 487
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:19:09.175Z",
+      "path": "apps/api/src/threats/threats.controller.ts",
+      "size": 487
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "c2efdb26081db2a0865e98da719f405e03eb24d797b7baa372116896d4fdf663",
+        "mtime": "2026-10-06T18:19:13.374Z",
+        "normalization": "text-lf-nobom",
+        "size": 291
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:19:13.374Z",
+      "path": "apps/api/src/threats/threats.module.ts",
+      "size": 291
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "727f5881575460d6d251c5bb6f626ce093e22738be747646de216df52f306e7b",
+        "mtime": "2026-10-06T18:19:03.806Z",
+        "normalization": "text-lf-nobom",
+        "size": 2113
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:19:03.806Z",
+      "path": "apps/api/src/threats/threats.service.ts",
+      "size": 2113
+    },
+    {
+      "category": "test",
+      "ext": ".js",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8630b69e6c482b28e3bb4ce81cacc27c529dd1ed17826797da642131176f5f49",
+        "mtime": "2026-10-06T18:17:57.812Z",
+        "normalization": "text-lf-nobom",
+        "size": 349
+      },
+      "language": "javascript",
+      "mtime": "2026-10-06T18:17:57.812Z",
+      "path": "apps/api/test/check-counts.js",
+      "size": 349
     },
     {
       "category": "test",
@@ -1257,15 +1542,15 @@
       "ext": ".json",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "330e5766aeaab893acd4efaf7d5fd93673751c9a0c38fb63ce3e0a8b76f8d666",
-        "mtime": "2026-10-06T17:00:30.402Z",
+        "hash": "5e7c13b2d171167385311cafa2ed07029223c3ffd9bb90ef94c23579f661ffd3",
+        "mtime": "2026-10-06T18:39:08.923Z",
         "normalization": "text-lf-nobom",
-        "size": 679
+        "size": 757
       },
       "language": null,
-      "mtime": "2026-10-06T17:00:30.402Z",
+      "mtime": "2026-10-06T18:39:08.923Z",
       "path": "apps/web/package.json",
-      "size": 679
+      "size": 757
     },
     {
       "category": "config",
@@ -1281,6 +1566,21 @@
       "mtime": "2026-10-06T17:00:47.858Z",
       "path": "apps/web/postcss.config.mjs",
       "size": 94
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ad6044314138f36f9856fe1db0e76101c45c9d6da1e37e7e80bf617358ebe0b0",
+        "mtime": "2026-10-06T18:26:54.703Z",
+        "normalization": "text-lf-nobom",
+        "size": 9155
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:26:54.703Z",
+      "path": "apps/web/src/app/analytics/page.tsx",
+      "size": 9155
     },
     {
       "category": "source",
@@ -1302,45 +1602,285 @@
       "ext": ".css",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "e0013f174c08601881944ca7c754d3efc8aa9fafef33a60782af003f48a1d582",
-        "mtime": "2026-10-06T17:00:58.880Z",
+        "hash": "21e1269c036cf515e7aa93ea2e633c263c2d8df2497e6793818e2462d6fc0181",
+        "mtime": "2026-10-06T18:21:52.509Z",
         "normalization": "text-lf-nobom",
-        "size": 1296
+        "size": 2126
       },
       "language": "css",
-      "mtime": "2026-10-06T17:00:58.880Z",
+      "mtime": "2026-10-06T18:21:52.509Z",
       "path": "apps/web/src/app/globals.css",
-      "size": 1296
+      "size": 2126
     },
     {
       "category": "source",
       "ext": ".tsx",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "8f8c8ee754edd8af88e75fc8195d8e8a1c4d6e45ae4ac0213e645969932a85c1",
-        "mtime": "2026-10-06T17:01:03.387Z",
+        "hash": "2aed7b049c30d85071204da7103e0a4b11af991c844fed7b4727b437f1b6222e",
+        "mtime": "2026-10-06T18:26:04.017Z",
         "normalization": "text-lf-nobom",
-        "size": 504
+        "size": 8181
       },
       "language": "typescript",
-      "mtime": "2026-10-06T17:01:03.387Z",
+      "mtime": "2026-10-06T18:26:04.017Z",
+      "path": "apps/web/src/app/incidents/[id]/page.tsx",
+      "size": 8181
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "77917f856933586082515d2896726cedc1b4ad199d5231e23bac7a846086aafb",
+        "mtime": "2026-10-06T18:25:42.299Z",
+        "normalization": "text-lf-nobom",
+        "size": 8440
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:25:42.299Z",
+      "path": "apps/web/src/app/incidents/page.tsx",
+      "size": 8440
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "9363bc1af245c87aab3bda22b24530a864759d25045c4173048927591376e76c",
+        "mtime": "2026-10-06T18:23:39.247Z",
+        "normalization": "text-lf-nobom",
+        "size": 571
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:23:39.247Z",
       "path": "apps/web/src/app/layout.tsx",
-      "size": 504
+      "size": 571
     },
     {
       "category": "source",
       "ext": ".tsx",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "4c93962d1cadada5483cbc857d351ec33addb9d67b32164350ad69d573bb8feb",
-        "mtime": "2026-10-06T17:01:33.598Z",
+        "hash": "96b4dc088bc6f2514ea3c444c483a7e3602014acca21084c3d9acd2f1f669816",
+        "mtime": "2026-10-06T18:27:27.811Z",
         "normalization": "text-lf-nobom",
-        "size": 8524
+        "size": 13753
       },
       "language": "typescript",
-      "mtime": "2026-10-06T17:01:33.598Z",
+      "mtime": "2026-10-06T18:27:27.811Z",
+      "path": "apps/web/src/app/models/page.tsx",
+      "size": 13753
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5bd4052bac1d1c60eda3f6ce7ac4c5f15536b7285b0cb7a0924cc0109648c2d3",
+        "mtime": "2026-10-06T18:26:29.951Z",
+        "normalization": "text-lf-nobom",
+        "size": 10753
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:26:29.951Z",
+      "path": "apps/web/src/app/network/page.tsx",
+      "size": 10753
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "ee47497053a2737d4e9b1a4d0cc2e53b4e93af5cf59838e40fb581ffc08093e6",
+        "mtime": "2026-10-06T18:24:08.200Z",
+        "normalization": "text-lf-nobom",
+        "size": 12874
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:24:08.200Z",
       "path": "apps/web/src/app/page.tsx",
-      "size": 8524
+      "size": 12874
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "b4ae940445a72a4c6cc6521c6e9c90b9dbe6c7f2a12ca747d42b145f6cdb75f5",
+        "mtime": "2026-10-06T18:28:05.000Z",
+        "normalization": "text-lf-nobom",
+        "size": 7482
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:28:05.000Z",
+      "path": "apps/web/src/app/settings/page.tsx",
+      "size": 7482
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "325b25f2b4a04f0a481978aa75511dda42ea635964a934b47dbedbe5973c9715",
+        "mtime": "2026-10-06T18:25:20.702Z",
+        "normalization": "text-lf-nobom",
+        "size": 15304
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:25:20.702Z",
+      "path": "apps/web/src/app/threats/[id]/page.tsx",
+      "size": 15304
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "20a4f58e2fb1ba0d6087ebc9d7e3e4b21186085dd1a8897cd8c83fa80d89521c",
+        "mtime": "2026-10-06T18:24:46.416Z",
+        "normalization": "text-lf-nobom",
+        "size": 10164
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:24:46.416Z",
+      "path": "apps/web/src/app/threats/page.tsx",
+      "size": 10164
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a5c90ba1a7b40d56892fc57e42cd61262ff15496300a732957370d0366729f68",
+        "mtime": "2026-10-06T18:23:28.041Z",
+        "normalization": "text-lf-nobom",
+        "size": 9395
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:23:28.041Z",
+      "path": "apps/web/src/components/layout/Shell.tsx",
+      "size": 9395
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "044bc913babd0db940d1f493cb2fca15248e5f5a381733e6d0f0b064af65e35b",
+        "mtime": "2026-10-06T18:22:54.370Z",
+        "normalization": "text-lf-nobom",
+        "size": 2378
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:22:54.370Z",
+      "path": "apps/web/src/components/ui/EmptyState.tsx",
+      "size": 2378
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f062b1d8943bfdef314e0c7c92173426018e52de1c7892931bfa08d83c88d7a8",
+        "mtime": "2026-10-06T18:22:45.411Z",
+        "normalization": "text-lf-nobom",
+        "size": 874
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:22:45.411Z",
+      "path": "apps/web/src/components/ui/KpiCard.tsx",
+      "size": 874
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "31a1aeec051d9aeb886bafb2bb33464557eb053e968a97c8b34d900a4e07fcce",
+        "mtime": "2026-10-06T18:22:28.251Z",
+        "normalization": "text-lf-nobom",
+        "size": 1746
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:22:28.251Z",
+      "path": "apps/web/src/components/ui/SeverityBadge.tsx",
+      "size": 1746
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f95a0363adb23dec411003a636df6e67f59d405c985b8ca40265fed793eb6968",
+        "mtime": "2026-10-06T18:23:05.596Z",
+        "normalization": "text-lf-nobom",
+        "size": 3301
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:23:05.596Z",
+      "path": "apps/web/src/components/ui/ShapAttributionBar.tsx",
+      "size": 3301
+    },
+    {
+      "category": "source",
+      "ext": ".tsx",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "291cca85d072ece14c24ab533e0fcbb04d0faff3d85323628e85126cb6c034ca",
+        "mtime": "2026-10-06T18:22:39.892Z",
+        "normalization": "text-lf-nobom",
+        "size": 634
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:22:39.892Z",
+      "path": "apps/web/src/components/ui/StatusIndicator.tsx",
+      "size": 634
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d8e4f92fae861e2eaad1beba67827addbe53c1b39d231d6fbaa463c185127025",
+        "mtime": "2026-10-06T18:22:17.660Z",
+        "normalization": "text-lf-nobom",
+        "size": 2609
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:22:17.660Z",
+      "path": "apps/web/src/hooks/useRealtime.ts",
+      "size": 2609
+    },
+    {
+      "category": "test",
+      "ext": ".js",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "724445fa08033007d41e7cd201298aec93bdf6e7374c0fef886aa4dc7652cfe4",
+        "mtime": "2026-10-06T18:38:46.909Z",
+        "normalization": "text-lf-nobom",
+        "size": 2697
+      },
+      "language": "javascript",
+      "mtime": "2026-10-06T18:38:46.909Z",
+      "path": "apps/web/test/verify-realtime-e2e.js",
+      "size": 2697
+    },
+    {
+      "category": "test",
+      "ext": ".js",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f83bde3b67f2397be93ea714061ba7f08ded90e64d04903615af17737c366972",
+        "mtime": "2026-10-06T18:35:40.020Z",
+        "normalization": "text-lf-nobom",
+        "size": 2094
+      },
+      "language": "javascript",
+      "mtime": "2026-10-06T18:35:40.020Z",
+      "path": "apps/web/test/verify-routes.js",
+      "size": 2094
     },
     {
       "category": "config",
@@ -1392,15 +1932,15 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "d7f29ea2a77c10f66abc1bb98a0b8ad198623226009650578f5a8b6ad13867cf",
-        "mtime": "2026-10-06T18:09:59.840Z",
+        "hash": "1b17e99077e2f7ea41570a9d3bd6f8dc632d3d3e2afd580e27bc8cec0aebb225",
+        "mtime": "2026-10-06T18:40:33.910Z",
         "normalization": "text-lf-nobom",
-        "size": 6141
+        "size": 10910
       },
       "language": null,
-      "mtime": "2026-10-06T18:09:59.840Z",
+      "mtime": "2026-10-06T18:40:33.910Z",
       "path": "docs/ARCHITECTURE.md",
-      "size": 6141
+      "size": 10910
     },
     {
       "category": "documentation",
@@ -1422,30 +1962,30 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "cb73ed652323f6b36c0c379f9c954cf2ac69092903f174f49245d43b95fb495f",
-        "mtime": "2026-10-06T18:11:36.114Z",
+        "hash": "2e8e820fca96e957c7eee0eaa61b03c954f42a6100f798c2e5c5d0eb6a84433c",
+        "mtime": "2026-10-06T18:40:13.089Z",
         "normalization": "text-lf-nobom",
-        "size": 8897
+        "size": 13976
       },
       "language": null,
-      "mtime": "2026-10-06T18:11:36.114Z",
+      "mtime": "2026-10-06T18:40:13.089Z",
       "path": "docs/DECISIONS.md",
-      "size": 8897
+      "size": 13976
     },
     {
       "category": "documentation",
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "f2bc5ccb202f035134740b71bd5cb63c3440d9a87c37b437e1185d42521d1e5d",
-        "mtime": "2026-10-06T18:10:49.083Z",
+        "hash": "ce56f72fbeff11dbe1eeef9ea8a1dc948023d7018096ee7ce4d5d04ce41261af",
+        "mtime": "2026-10-06T18:40:51.168Z",
         "normalization": "text-lf-nobom",
-        "size": 3615
+        "size": 5861
       },
       "language": null,
-      "mtime": "2026-10-06T18:10:49.083Z",
+      "mtime": "2026-10-06T18:40:51.168Z",
       "path": "docs/DEMO.md",
-      "size": 3615
+      "size": 5861
     },
     {
       "category": "documentation",
@@ -1630,11 +2170,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 108,
-    "hash": "0a8e35e0bcb4b027307ceb5498714e99a2ad59e5a4a5a1c681f08514e993bcaa",
+    "count": 144,
+    "hash": "b1e52c9004bbd7d365479264a9153edaaa6acef8fdeb551f13c27050dc9f4408",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T18:12:57.611Z",
+  "generatedAt": "2026-10-06T18:42:04.326Z",
   "hashAlgo": "sha256",
   "profile": "standard",
   "project": {
@@ -1647,25 +2187,25 @@
       "asset": 8,
       "config": 17,
       "documentation": 20,
-      "source": 44,
-      "test": 6,
+      "source": 77,
+      "test": 9,
       "unknown": 13
     },
     "byLanguage": {
       "css": 1,
-      "javascript": 2,
+      "javascript": 5,
       "python": 26,
-      "typescript": 23
+      "typescript": 56
     },
-    "files": 108,
-    "ignoredDirectories": 17,
+    "files": 144,
+    "ignoredDirectories": 18,
     "ignoredFiles": 18,
     "withheld": 7
   },
   "structureFingerprint": {
     "algo": "sha256",
-    "count": 67,
-    "hash": "2c9a4d3f9f2e5fbd3bd5079ee04fcb62e31f104f6b46c982a37fd48fc2df3db2",
+    "count": 103,
+    "hash": "2bdd1e048e25186d3a6c6cb81a3c454b6b04ed88f920d096eab5abdc3b5ecfb3",
     "normalization": "set-path-hash-v1"
   },
   "tool": {
