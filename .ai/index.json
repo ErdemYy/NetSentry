@@ -162,15 +162,15 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "a4472dcda5f0efee600e7acaae862f9301cc665c0799538adefe456b70a9b33d",
-        "mtime": "2026-10-06T17:04:00.343Z",
+        "hash": "f6b9b8fca89b8624fcf63ab2519b7420ed06840a1bbc30c73df0a731eafed141",
+        "mtime": "2026-10-06T19:29:04.964Z",
         "normalization": "text-lf-nobom",
-        "size": 3924
+        "size": 11472
       },
       "language": null,
-      "mtime": "2026-10-06T17:04:00.343Z",
+      "mtime": "2026-10-06T19:29:04.964Z",
       "path": "README.md",
-      "size": 3924
+      "size": 11472
     },
     {
       "category": "config",
@@ -357,15 +357,15 @@
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "2cd56fe35cfe5cc17eac559c6ad3ea2b31f4c2a499d4808a0322bd8a1f3e3578",
-        "mtime": "2026-10-06T18:57:28.696Z",
+        "hash": "8578e32bb539068848ce336bccbb45c2c2c826cbf337cb60e000542d8740f709",
+        "mtime": "2026-10-06T19:33:51.726Z",
         "normalization": "text-lf-nobom",
-        "size": 4910
+        "size": 5674
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:57:28.696Z",
+      "mtime": "2026-10-06T19:33:51.726Z",
       "path": "apps/api/src/auth/auth.service.ts",
-      "size": 4910
+      "size": 5674
     },
     {
       "category": "source",
@@ -1002,15 +1002,15 @@
       "ext": ".js",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "5cb337d715c8d6a7caa8247a3c85963b910c1cdae1a9226e1a6da80061d4535e",
-        "mtime": "2026-10-06T19:01:40.435Z",
+        "hash": "bee19da4730869c653ac4c25a6706ab1d0ede3f7df80a11ee3b1cdcfe8857474",
+        "mtime": "2026-10-06T19:21:26.729Z",
         "normalization": "text-lf-nobom",
-        "size": 5936
+        "size": 6101
       },
       "language": "javascript",
-      "mtime": "2026-10-06T19:01:40.435Z",
+      "mtime": "2026-10-06T19:21:26.729Z",
       "path": "apps/api/test/test-security-suite.js",
-      "size": 5936
+      "size": 6101
     },
     {
       "category": "config",
@@ -2097,15 +2097,15 @@
       "ext": ".tsx",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "043c745a8e7bdacd7e1776cf7037244fedc0bb0e3ea8946f10dec58cbb25384b",
-        "mtime": "2026-10-06T19:06:00.765Z",
+        "hash": "63cac2c2e9f26f8ef3ea11bb6af178acd1310463efada3d94fa062b6b6e8dc64",
+        "mtime": "2026-10-06T19:21:02.654Z",
         "normalization": "text-lf-nobom",
-        "size": 15532
+        "size": 15841
       },
       "language": "typescript",
-      "mtime": "2026-10-06T19:06:00.765Z",
+      "mtime": "2026-10-06T19:21:02.654Z",
       "path": "apps/web/src/components/layout/Shell.tsx",
-      "size": 15532
+      "size": 15841
     },
     {
       "category": "source",
@@ -2277,15 +2277,15 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "1b17e99077e2f7ea41570a9d3bd6f8dc632d3d3e2afd580e27bc8cec0aebb225",
-        "mtime": "2026-10-06T18:40:33.910Z",
+        "hash": "6d554555af23de2bd7c2615eb27deba20a63e784f549c766c37813b4d5d2e226",
+        "mtime": "2026-10-06T19:23:49.016Z",
         "normalization": "text-lf-nobom",
-        "size": 10910
+        "size": 10943
       },
       "language": null,
-      "mtime": "2026-10-06T18:40:33.910Z",
+      "mtime": "2026-10-06T19:23:49.016Z",
       "path": "docs/ARCHITECTURE.md",
-      "size": 10910
+      "size": 10943
     },
     {
       "category": "documentation",
@@ -2378,6 +2378,96 @@
       "size": 6927
     },
     {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "17d54ba9c4ead681603b0590d42f0b87b9a3748f8088941645d80dee24e55709",
+        "mtime": "2026-10-06T19:30:12.314Z",
+        "normalization": "binary-raw",
+        "size": 100453
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:30:12.314Z",
+      "path": "docs/screenshots/analytics.png",
+      "size": 100453
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "54ad17d2d4506fcfa2856f1d6b221c1ab43dfc740b9a8c77dc2439fba029c4d9",
+        "mtime": "2026-10-06T19:30:19.167Z",
+        "normalization": "binary-raw",
+        "size": 162375
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:30:19.167Z",
+      "path": "docs/screenshots/incidents.png",
+      "size": 162375
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "4ec8625086996584852e38d7f5eece3170ddd594df876a41fb84435749349308",
+        "mtime": "2026-10-06T19:30:01.685Z",
+        "normalization": "binary-raw",
+        "size": 151496
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:30:01.685Z",
+      "path": "docs/screenshots/models.png",
+      "size": 151496
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "b2a79a0281b6bde515849ca1d6cde11761bcb0b7611d3e6943f442441a0804e5",
+        "mtime": "2026-10-06T19:29:48.288Z",
+        "normalization": "binary-raw",
+        "size": 156156
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:29:48.288Z",
+      "path": "docs/screenshots/overview.png",
+      "size": 156156
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d701e71527ced3d329f6f57a4f19c9d97d0fcdd331ccabdc34e2afd3bba6693f",
+        "mtime": "2026-10-06T19:30:27.614Z",
+        "normalization": "binary-raw",
+        "size": 102595
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:30:27.614Z",
+      "path": "docs/screenshots/settings.png",
+      "size": 102595
+    },
+    {
+      "category": "asset",
+      "ext": ".png",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d47384a792d60fa6f27f57278d02e1443712dfc3af77f5abd74829401da04a83",
+        "mtime": "2026-10-06T19:30:49.840Z",
+        "normalization": "binary-raw",
+        "size": 104404
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:30:49.840Z",
+      "path": "docs/screenshots/threat_detail.png",
+      "size": 104404
+    },
+    {
       "category": "documentation",
       "ext": ".md",
       "fingerprint": {
@@ -2427,6 +2517,21 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
+        "hash": "9296fad4e6379e5721928b5f102d5d290445356718fee194e961204517ca3acc",
+        "mtime": "2026-10-06T19:25:32.547Z",
+        "normalization": "text-lf-nobom",
+        "size": 4967
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:25:32.547Z",
+      "path": "docs/thesis/DEFENSE_CHECKLIST.md",
+      "size": 4967
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "5fda65a305de839d0630f9eca3689a43f3f7f73da63535659e2810e1562483ec",
         "mtime": "2026-10-06T19:10:17.188Z",
         "normalization": "text-lf-nobom",
@@ -2436,6 +2541,36 @@
       "mtime": "2026-10-06T19:10:17.188Z",
       "path": "docs/thesis/EXPERIMENTAL_RESULTS.md",
       "size": 4463
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "cfc7eec2a5a9c6bdd6b97eb8392432d9793310aeff8ebd73b234e07ab6195100",
+        "mtime": "2026-10-06T19:25:54.550Z",
+        "normalization": "text-lf-nobom",
+        "size": 6504
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:25:54.550Z",
+      "path": "docs/thesis/FINAL_VALIDATION.md",
+      "size": 6504
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "473332242e36c61f813c844226526ff7f88171a91710f108004aa84de622138f",
+        "mtime": "2026-10-06T19:25:15.468Z",
+        "normalization": "text-lf-nobom",
+        "size": 13021
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:25:15.468Z",
+      "path": "docs/thesis/JURY_QA.md",
+      "size": 13021
     },
     {
       "category": "documentation",
@@ -2487,15 +2622,15 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "b24ee3aa9b48dd4844b25015f4e15af1c18eafa308f324533790aec69fb956eb",
-        "mtime": "2026-10-06T19:11:04.281Z",
+        "hash": "c38fae7b6afd96800c81133b7f383370d57c3148c220a7338e3a45f4e7d8f070",
+        "mtime": "2026-10-06T19:24:32.210Z",
         "normalization": "text-lf-nobom",
-        "size": 6981
+        "size": 8862
       },
       "language": null,
-      "mtime": "2026-10-06T19:11:04.281Z",
+      "mtime": "2026-10-06T19:24:32.210Z",
       "path": "docs/thesis/PRESENTATION_SCRIPT.md",
-      "size": 6981
+      "size": 8862
     },
     {
       "category": "documentation",
@@ -2710,11 +2845,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 180,
-    "hash": "7af4569d59be3f33f19e85303a97005744df3b7695bac45e63eb1d7fdafa8af6",
+    "count": 189,
+    "hash": "9c8d18b9cd297e039c2ede7c7121a87a46c621168f1096d56fe8755db369716c",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T19:14:56.407Z",
+  "generatedAt": "2026-10-06T19:37:41.559Z",
   "hashAlgo": "sha256",
   "profile": "standard",
   "project": {
@@ -2724,9 +2859,9 @@
   "schemaVersion": 1,
   "stats": {
     "byCategory": {
-      "asset": 8,
+      "asset": 14,
       "config": 17,
-      "documentation": 33,
+      "documentation": 36,
       "source": 98,
       "test": 11,
       "unknown": 13
@@ -2737,15 +2872,15 @@
       "python": 27,
       "typescript": 77
     },
-    "files": 180,
-    "ignoredDirectories": 18,
+    "files": 189,
+    "ignoredDirectories": 19,
     "ignoredFiles": 18,
     "withheld": 7
   },
   "structureFingerprint": {
     "algo": "sha256",
     "count": 126,
-    "hash": "b15ef2c7b92eca516bc7869ef11acf7848ce09cd689fa682ac216a35becbc148",
+    "hash": "6b5ffa859a56cdd3a27e1adbe200a4a3db4d0847b49977e2e764303a2fccf434",
     "normalization": "set-path-hash-v1"
   },
   "tool": {

@@ -3,41 +3,39 @@
 ## 1. Executive Overview
 NetSentry AI is a next-generation distributed Network Intrusion Detection System (NIDS) and Security Operations Center (SOC) intelligence platform designed for graduation thesis research. It addresses the limitation of traditional signature-based detection systems (such as Snort or Suricata) by combining **multi-class supervised machine learning** for known threat classification with **unsupervised anomaly detection** for novel/zero-day pattern discovery, backed by **eXplainable Artificial Intelligence (SHAP)**.
 
-## 2. Distributed Component Pipeline (Phase 2 Real-Time Implementation)
+## 2. Distributed Component Pipeline & Security Architecture
 ```text
-Controlled Replay Engine (clean_flows.parquet)
+Dataset / Flow Replay Source (clean_flows.parquet)
                      │
                      ▼
        Redis Stream: netsentry:flows
                      │
        (Consumer Group: ml-inference)
                      ▼
-         ML Worker (Streaming / Batch)
-   ┌─────────────────┴──────────────────┐
-   │ 1. Schema & Feature Order Check   │
-   │ 2. RobustScaler Transformation    │
-   │ 3. LightGBM Classification        │
-   │ 4. Isolation Forest Scoring (τ*)  │
-   │ 5. Deterministic Severity & Hybrid│
-   │ 6. SHAP TreeExplainer Attributions│
+                 ML Worker
+   ┌─────────────────┼──────────────────┐
+   ↓                 ↓                  ↓
+LightGBM       Isolation Forest      TreeSHAP
+(Supervised)    (τ* = 0.49540)     (Attributions)
    └─────────────────┬──────────────────┘
                      │ DetectionResult
                      ▼
-    Redis Stream: netsentry:detections
-    Redis Pub/Sub: netsentry:detections:pubsub
+       Redis Stream: netsentry:detections
                      │
-      (Consumer Group: netsentry-api-group)
+       (Consumer Group: netsentry-api-group)
                      ▼
-          NestJS Core API Orchestrator
-   ┌─────────────────┴──────────────────┐
-   │ 1. DetectionResult Validation     │
-   │ 2. Idempotent PostgreSQL Upsert   │
-   │    - Flow, Detection, Incident    │
-   │ 3. WebSocket Gateway Broadcast    │
+            NestJS Core API Orchestrator  ◄─── [Enrichment Layer: Threat Intel (AbuseIPDB)]
+   ┌─────────────────┼──────────────────┐        (SSRF Protected, 24h Redis Cache, Non-blocking)
+   ↓                 ↓                  ↓
+PostgreSQL        AuditLog        Incident State Machine
+(Persistence)   (Security Trail)  (Triage Validation)
    └─────────────────┬──────────────────┘
-                     │ WSS (/events namespace)
+                     │ WSS (/events namespace, JWT Auth Guard)
                      ▼
-         SOC Operations Dashboard
+         SOC Operations Dashboard (Next.js 16)
+                     │
+                     ▼
+        SOC Analyst / Security Lead
 ```
 
 ## 3. Subsystem Breakdown
@@ -87,7 +85,7 @@ Controlled Replay Engine (clean_flows.parquet)
 ## 4. Frontend SOC Operations Dashboard (Phase 3 Implementation)
 
 ### 4.1 Architecture & Strict Zero-Mock Policy
-The frontend (`apps/web`) is built with Next.js 15 (App Router), React 19, and Tailwind CSS v4, adhering strictly to the **Zero-Mock Policy** (ADR-005, ADR-015):
+The frontend (`apps/web`) is built with Next.js 16 (App Router, Turbopack), React 19, and Tailwind CSS v4, adhering strictly to the **Zero-Mock Policy** (ADR-005, ADR-015):
 - No synthetic data, random generators (`Math.random()`), fake charts, or simulated alerts exist anywhere in production components.
 - All metrics, charts, tables, and detail screens are dynamically hydrated from NestJS REST API endpoints:
   - `GET /api/v1/dashboard/overview` (Real-time KPIs, active threats, recent alerts)

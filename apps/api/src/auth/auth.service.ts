@@ -14,7 +14,13 @@ export interface UserSessionPayload {
 @Injectable()
 export class AuthService implements OnModuleInit {
   private readonly logger = new Logger(AuthService.name);
-  private readonly jwtSecret = process.env.JWT_SECRET || 'netsentry_production_super_secret_jwt_key_2026';
+  private readonly jwtSecret =
+    process.env.JWT_SECRET ||
+    (process.env.NODE_ENV === 'production'
+      ? (() => {
+          throw new Error('FATAL: JWT_SECRET must be explicitly defined in production environment');
+        })()
+      : 'netsentry_dev_secret_development_only');
   private readonly jwtExpiresIn = '24h';
 
   constructor(
@@ -51,8 +57,9 @@ export class AuthService implements OnModuleInit {
 
       // 2. Ensure Default Admin User exists
       const adminCount = await this.prisma.user.count({ where: { email: 'admin@netsentry.ai' } });
-      if (adminCount === 0) {
-        const adminPassHash = await bcrypt.hash('AdminPassword123!', 10);
+      const envAdminPassword = process.env.ADMIN_INITIAL_PASSWORD;
+      if (adminCount === 0 && envAdminPassword) {
+        const adminPassHash = await bcrypt.hash(envAdminPassword, 10);
         await this.prisma.user.create({
           data: {
             email: 'admin@netsentry.ai',
@@ -61,13 +68,16 @@ export class AuthService implements OnModuleInit {
             roleId: adminRole.id,
           },
         });
-        this.logger.log('Seeded default admin user: admin@netsentry.ai');
+        this.logger.log('Seeded default admin user from environment configuration: admin@netsentry.ai');
+      } else if (adminCount === 0 && !envAdminPassword) {
+        this.logger.warn('ADMIN_INITIAL_PASSWORD is not set in environment. Skipping default admin user seed.');
       }
 
       // 3. Ensure Default Analyst User exists
       const analystCount = await this.prisma.user.count({ where: { email: 'analyst@netsentry.ai' } });
-      if (analystCount === 0) {
-        const analystPassHash = await bcrypt.hash('AnalystPassword123!', 10);
+      const envAnalystPassword = process.env.ANALYST_INITIAL_PASSWORD;
+      if (analystCount === 0 && envAnalystPassword) {
+        const analystPassHash = await bcrypt.hash(envAnalystPassword, 10);
         await this.prisma.user.create({
           data: {
             email: 'analyst@netsentry.ai',
@@ -76,7 +86,9 @@ export class AuthService implements OnModuleInit {
             roleId: analystRole.id,
           },
         });
-        this.logger.log('Seeded default analyst user: analyst@netsentry.ai');
+        this.logger.log('Seeded default analyst user from environment configuration: analyst@netsentry.ai');
+      } else if (analystCount === 0 && !envAnalystPassword) {
+        this.logger.warn('ANALYST_INITIAL_PASSWORD is not set in environment. Skipping default analyst user seed.');
       }
     } catch (err: any) {
       this.logger.error(`Error during initial security state seeding: ${err.message}`);

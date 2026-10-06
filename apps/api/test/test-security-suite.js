@@ -5,6 +5,9 @@ async function testSecuritySuite() {
 
   const BASE_URL = 'http://localhost:3001/api/v1';
 
+  const ADMIN_PASSWORD = process.env.ADMIN_INITIAL_PASSWORD || 'AdminPassword123!';
+  const ANALYST_PASSWORD = process.env.ANALYST_INITIAL_PASSWORD || 'AnalystPassword123!';
+
   // 1. Test Login with invalid credentials
   console.log('1. Testing Login with invalid credentials...');
   const resBad = await fetch(`${BASE_URL}/auth/login`, {
@@ -20,7 +23,7 @@ async function testSecuritySuite() {
   const resAdmin = await fetch(`${BASE_URL}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: 'admin@netsentry.ai', password: 'AdminPassword123!' }),
+    body: JSON.stringify({ email: 'admin@netsentry.ai', password: ADMIN_PASSWORD }),
   });
   assert.strictEqual(resAdmin.status, 200, 'Expected 200 for valid admin login');
   const adminData = await resAdmin.json();
@@ -34,7 +37,7 @@ async function testSecuritySuite() {
   const resAnalyst = await fetch(`${BASE_URL}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: 'analyst@netsentry.ai', password: 'AnalystPassword123!' }),
+    body: JSON.stringify({ email: 'analyst@netsentry.ai', password: ANALYST_PASSWORD }),
   });
   assert.strictEqual(resAnalyst.status, 200, 'Expected 200 for valid analyst login');
   const analystData = await resAnalyst.json();

@@ -37,7 +37,7 @@ export function Shell({ children }: ShellProps) {
   const [user, setUser] = useState<any>(null);
   const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
   const [loginEmail, setLoginEmail] = useState<string>('admin@netsentry.ai');
-  const [loginPassword, setLoginPassword] = useState<string>('AdminPassword123!');
+  const [loginPassword, setLoginPassword] = useState<string>('');
   const [loginError, setLoginError] = useState<string | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
 
@@ -336,6 +336,7 @@ export function Shell({ children }: ShellProps) {
                     type="password"
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
+                    placeholder="••••••••••••"
                     className="w-full bg-[#060709] border border-[rgba(236,235,230,0.2)] rounded px-3 py-2 text-[#ecebe6] focus:outline-none focus:border-[#ff5b2e]"
                     required
                   />
@@ -354,23 +355,28 @@ export function Shell({ children }: ShellProps) {
                 <div className="text-[10px] text-[#8b8f98] font-mono">Jüri Demosu Hızlı Rol Seçimi:</div>
                 <div className="grid grid-cols-2 gap-2 font-mono text-[10px]">
                   <button
+                    type="button"
                     onClick={() => {
                       setLoginEmail('admin@netsentry.ai');
-                      setLoginPassword('AdminPassword123!');
+                      setLoginPassword('');
                     }}
                     className="p-1.5 bg-[#1a1d23] hover:bg-[#22262e] border border-[rgba(236,235,230,0.12)] rounded text-[#4f8cff] text-left cursor-pointer"
                   >
                     Admin Seç
                   </button>
                   <button
+                    type="button"
                     onClick={() => {
                       setLoginEmail('analyst@netsentry.ai');
-                      setLoginPassword('AnalystPassword123!');
+                      setLoginPassword('');
                     }}
                     className="p-1.5 bg-[#1a1d23] hover:bg-[#22262e] border border-[rgba(236,235,230,0.12)] rounded text-[#2a9d8f] text-left cursor-pointer"
                   >
                     Analist Seç
                   </button>
+                </div>
+                <div className="text-[9px] text-[#555a64] font-mono">
+                  * Parola, çalışma ortamı konfigürasyonunda (ADMIN/ANALYST_INITIAL_PASSWORD) tanımlanan gizli anahtardır.
                 </div>
               </div>
             </div>

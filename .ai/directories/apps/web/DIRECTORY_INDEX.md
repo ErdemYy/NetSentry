@@ -1,10 +1,10 @@
 ---
-generatedAt: 2026-10-06T19:14:56.407Z
+generatedAt: 2026-10-06T19:37:41.559Z
 source: project-intel 0.1.0
 scope: directory
 path: apps/web
 schemaVersion: 1
-fingerprint: sha256:a2fe2faaba01f7ad85d524ad549222bc67fc66ef55672f3e51b204482644392a
+fingerprint: sha256:ef53ac9cbdda156b7358342e5a4d6ff9bd59ae60dfeca3dff7a75f25a9b6129e
 generated: true
 ---
 
