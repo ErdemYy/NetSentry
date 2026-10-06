@@ -1,0 +1,63 @@
+%% project-intel graph view: Dependency overview
+%% mode=full level=file nodes=24 edges=16
+flowchart TD
+  subgraph sg3a52ce78["(root)"]
+    n35b8c13c["docker-compose.yml"]
+    n7030d0b2["package.json"]
+  end
+  subgraph sg55eb8eee[".agents"]
+    nbe9c72a0["scripts/erdem.mjs"]
+  end
+  subgraph sg73776ec8["apps/api"]
+    nec28db8b["src/app.module.ts"]
+    n0808c694["events/events.gateway.ts"]
+    n854d837f["events/events.module.ts"]
+    nd046f3c6["health/health.controller.ts"]
+    naba0fc26["health/health.module.ts"]
+    n338ea8c7["src/main.ts"]
+  end
+  subgraph sg368ad0cd["apps/ml"]
+    n05b2672a["api/health.py"]
+    n6bbfe0f3["api/inference.py"]
+    n9be4b79c["app/main.py"]
+    naa1c7bbc["schemas/flow.py"]
+  end
+  subgraph sg8972e234["apps/web"]
+    n8076096b["web/next-env.d.ts"]
+    ne0eb2c1f["health/route.ts"]
+    n4306ffba["app/globals.css"]
+    nf79a94b8["app/layout.tsx"]
+    n0d6d11c3["app/page.tsx"]
+  end
+  subgraph sgf021f83d["packages/shared"]
+    nc4a79788["src/index.ts"]
+    n36707835["types/detection.ts"]
+    nc80fea85["types/events.ts"]
+    n30ddfb3b["types/flow.ts"]
+    n43e205d0["types/incident.ts"]
+    n9c18c09c["types/metrics.ts"]
+  end
+  nec28db8b --> n854d837f
+  nec28db8b --> naba0fc26
+  n0808c694 --> nc4a79788
+  n854d837f --> n0808c694
+  naba0fc26 --> nd046f3c6
+  n338ea8c7 --> nec28db8b
+  nf79a94b8 --> n4306ffba
+  nc4a79788 ==> n36707835
+  nc4a79788 ==> nc80fea85
+  nc4a79788 ==> n30ddfb3b
+  nc4a79788 ==> n43e205d0
+  nc4a79788 ==> n9c18c09c
+  nc80fea85 --> n36707835
+  nc80fea85 --> n30ddfb3b
+  nc80fea85 --> n43e205d0
+  n43e205d0 --> n36707835
+  classDef surface stroke-width:3px;
+  classDef entry stroke-width:3px,stroke-dasharray:6 2;
+  classDef external stroke-dasharray:4 3;
+  classDef outside stroke-dasharray:2 2;
+  classDef target fill:#fff3b0,stroke:#555555;
+  classDef note stroke-dasharray:4 3;
+  class n0d6d11c3,n35b8c13c,n7030d0b2,ne0eb2c1f,nf79a94b8 surface;
+  class n0d6d11c3,ne0eb2c1f,nf79a94b8 entry;

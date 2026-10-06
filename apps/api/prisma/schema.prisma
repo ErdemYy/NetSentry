@@ -1,0 +1,257 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum RoleType {
+  ADMIN
+  ANALYST
+  VIEWER
+}
+
+enum Protocol {
+  TCP
+  UDP
+  ICMP
+  OTHER
+}
+
+enum AttackCategory {
+  BENIGN
+  DOS
+  DDOS
+  PORT_SCAN
+  BRUTE_FORCE
+  WEB_ATTACK
+  BOTNET
+  INFILTRATION
+  UNKNOWN_ANOMALY
+}
+
+enum SeverityLevel {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ThreatVerdict {
+  NORMAL
+  KNOWN_ATTACK
+  ANOMALOUS
+  HIGH_RISK
+  UNKNOWN_ANOMALOUS
+}
+
+enum IncidentStatus {
+  NEW
+  INVESTIGATING
+  CONFIRMED_THREAT
+  FALSE_POSITIVE
+  RESOLVED
+}
+
+enum MitigationAction {
+  NONE
+  IP_BLOCKED
+  RATE_LIMITED
+  ALERT_SENT
+}
+
+model Role {
+  id          String   @id @default(uuid())
+  type        RoleType @unique
+  name        String
+  description String?
+  users       User[]
+  createdAt   DateTime @default(now())
+}
+
+model User {
+  id                String            @id @default(uuid())
+  email             String            @unique
+  passwordHash      String
+  fullName          String
+  roleId            String
+  role              Role              @relation(fields: [roleId], references: [id])
+  assignedIncidents Incident[]        @relation("AssignedIncidents")
+  incidentNotes     IncidentNote[]
+  blacklistEntries  BlacklistEntry[]
+  auditLogs         AuditLog[]
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+}
+
+model NetworkEvent {
+  id         String   @id @default(uuid())
+  timestamp  DateTime @default(now())
+  source     String   @default("pcap_replay")
+  rawPayload Json?
+  flowId     String?
+  flow       Flow?    @relation(fields: [flowId], references: [id])
+  createdAt  DateTime @default(now())
+
+  @@index([timestamp])
+}
+
+model Flow {
+  id                  String         @id @default(uuid())
+  timestamp           DateTime
+  sourceIp            String
+  destinationIp       String
+  sourcePort          Int
+  destinationPort     Int
+  protocol            Protocol
+  durationMs          Float
+  totalFwdPackets     Int
+  totalBwdPackets     Int
+  totalFwdBytes       Float
+  totalBwdBytes       Float
+  fwdPacketLengthMean Float
+  bwdPacketLengthMean Float
+  flowBytesPerSec     Float
+  flowPacketsPerSec   Float
+  synFlagCount        Int            @default(0)
+  finFlagCount        Int            @default(0)
+  rstFlagCount        Int            @default(0)
+  pshFlagCount        Int            @default(0)
+  ackFlagCount        Int            @default(0)
+  detections          Detection[]
+  networkEvents       NetworkEvent[]
+  createdAt           DateTime       @default(now())
+
+  @@index([sourceIp])
+  @@index([destinationIp])
+  @@index([timestamp])
+}
+
+model Detection {
+  id                       String         @id @default(uuid())
+  flowId                   String
+  flow                     Flow           @relation(fields: [flowId], references: [id])
+  timestamp                DateTime       @default(now())
+  verdict                  ThreatVerdict
+  attackCategory           AttackCategory
+  supervisedConfidence     Float
+  unsupervisedAnomalyScore Float
+  isAnomalous              Boolean        @default(false)
+  severity                 SeverityLevel
+  topFeatures              Json           // Array of ShapFeatureContribution
+  explanation              String
+  modelVersionSupervised   String
+  modelVersionUnsupervised String
+  incident                 Incident?
+  createdAt                DateTime       @default(now())
+
+  @@index([verdict])
+  @@index([severity])
+  @@index([timestamp])
+}
+
+model Incident {
+  id                    String            @id @default(uuid())
+  title                 String
+  status                IncidentStatus    @default(NEW)
+  severity              SeverityLevel
+  attackCategory        AttackCategory
+  sourceIp              String
+  destinationIp         String
+  firstSeen             DateTime
+  lastSeen              DateTime
+  eventCount            Int               @default(1)
+  assignedToUserId      String?
+  assignedTo            User?             @relation("AssignedIncidents", fields: [assignedToUserId], references: [id])
+  detectionId           String            @unique
+  detection             Detection         @relation(fields: [detectionId], references: [id])
+  mitigationActionTaken MitigationAction  @default(NONE)
+  notes                 IncidentNote[]
+  threatIndicators      ThreatIndicator[]
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+
+  @@index([status])
+  @@index([severity])
+  @@index([sourceIp])
+}
+
+model IncidentNote {
+  id         String   @id @default(uuid())
+  incidentId String
+  incident   Incident @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  authorId   String
+  author     User     @relation(fields: [authorId], references: [id])
+  note       String
+  createdAt  DateTime @default(now())
+}
+
+model ThreatIndicator {
+  id             String   @id @default(uuid())
+  incidentId     String
+  incident       Incident @relation(fields: [incidentId], references: [id], onDelete: Cascade)
+  indicatorType  String   // IP, DOMAIN, HASH, PORT
+  indicatorValue String
+  confidence     Float    @default(0.8)
+  isMalicious    Boolean  @default(true)
+  createdAt      DateTime @default(now())
+}
+
+model BlacklistEntry {
+  id              String    @id @default(uuid())
+  ipAddress       String    @unique
+  reason          String
+  addedByUserId   String?
+  addedBy         User?     @relation(fields: [addedByUserId], references: [id])
+  active          Boolean   @default(true)
+  expiresAt       DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model ModelVersion {
+  id          String            @id @default(uuid())
+  modelName   String
+  version     String            @unique
+  modelType   String            // SUPERVISED, UNSUPERVISED, HYBRID
+  algorithm   String            // XGBoost, LightGBM, IsolationForest
+  parameters  Json?
+  status      String            @default("ACTIVE") // ACTIVE, RETIRED, CANDIDATE
+  evaluations ModelEvaluation[]
+  createdAt   DateTime          @default(now())
+}
+
+model ModelEvaluation {
+  id                String       @id @default(uuid())
+  modelVersionId    String
+  modelVersion      ModelVersion @relation(fields: [modelVersionId], references: [id])
+  datasetName       String
+  datasetVersion    String
+  evaluationDate    DateTime     @default(now())
+  overallAccuracy   Float
+  macroF1           Float
+  weightedF1        Float
+  rocAucMacro       Float?
+  classMetrics      Json
+  confusionMatrix   Json
+  trainSamplesCount Int
+  testSamplesCount  Int
+  createdAt         DateTime     @default(now())
+}
+
+model AuditLog {
+  id             String   @id @default(uuid())
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id])
+  action         String
+  targetResource String
+  targetId       String?
+  ipAddress      String?
+  details        Json?
+  createdAt      DateTime @default(now())
+
+  @@index([action])
+  @@index([createdAt])
+}

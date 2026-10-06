@@ -1,0 +1,493 @@
+{
+  "files": {
+    ".agents/skills/erdem/scripts/erdem.mjs": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [
+          {
+            "code": "dynamic-import-non-literal",
+            "message": "1 dynamic import(s) with a computed specifier were not resolved",
+            "severity": "info"
+          }
+        ],
+        "exports": [],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "node:fs",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "node:path",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "node:url",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": "Launcher bundled with the erdem skill.",
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "f7857eb24a59293938f19db5083140eb942bdb26eea5f125c8f5ad08292cf566"
+    },
+    "apps/api/src/app.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AppModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./events/events.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./health/health.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "6b4d83497479989e9832f55b78ba1b1d48867d7587384474063ddad2f8ae02a3"
+    },
+    "apps/api/src/events/events.gateway.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "EventsGateway"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/websockets",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@netsentry/shared",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "socket.io",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "a259a7decad1591d27ee297e2d5cd930c7ee4ff1cddfeb98599277132d7aa079"
+    },
+    "apps/api/src/events/events.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "EventsModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./events.gateway",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "02cfdd92ade93380a4b2d7d0a6e0a43164ba7d65c5027ddb88b31eb92528546f"
+    },
+    "apps/api/src/health/health.controller.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "HealthController"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "e5274266ed71ef43da6fd862085a783b8a9216d33065c10c68c85040fdb42440"
+    },
+    "apps/api/src/health/health.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "HealthModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./health.controller",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "8e6fe50b38d87d28ed07af3285935f9496908c98eabd92c987b1b6d8def8d08b"
+    },
+    "apps/api/src/main.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./app.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/core",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "cookie-parser",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "9dae98a45b54d0f2a2a01cf325345e23fd13e3e619ddc686652457dc49b24502"
+    },
+    "apps/web/next-env.d.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [],
+        "imports": [
+          {
+            "kind": "side-effect",
+            "specifier": "./.next/types/root-params.d.ts",
+            "typeOnly": false
+          },
+          {
+            "kind": "side-effect",
+            "specifier": "./.next/types/routes.d.ts",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": "/ <reference types=\"next\" /> / <reference types=\"next/image-types/global\" />",
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b"
+    },
+    "apps/web/src/app/api/health/route.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "GET"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "next/server",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "05f8c0000e417458042982a850a9d4f221a9b284987a17d3f075286f7c17ccb8"
+    },
+    "apps/web/src/app/layout.tsx": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "default",
+          "metadata"
+        ],
+        "imports": [
+          {
+            "kind": "side-effect",
+            "specifier": "./globals.css",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "next",
+            "typeOnly": true
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "8f8c8ee754edd8af88e75fc8195d8e8a1c4d6e45ae4ac0213e645969932a85c1"
+    },
+    "apps/web/src/app/page.tsx": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "default"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "lucide-react",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "4c93962d1cadada5483cbc857d351ec33addb9d67b32164350ad69d573bb8feb"
+    },
+    "packages/shared/src/index.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "*"
+        ],
+        "imports": [],
+        "purposeHint": null,
+        "reexports": [
+          {
+            "names": [
+              "*"
+            ],
+            "specifier": "./types/detection.js",
+            "star": true,
+            "typeOnly": false
+          },
+          {
+            "names": [
+              "*"
+            ],
+            "specifier": "./types/events.js",
+            "star": true,
+            "typeOnly": false
+          },
+          {
+            "names": [
+              "*"
+            ],
+            "specifier": "./types/flow.js",
+            "star": true,
+            "typeOnly": false
+          },
+          {
+            "names": [
+              "*"
+            ],
+            "specifier": "./types/incident.js",
+            "star": true,
+            "typeOnly": false
+          },
+          {
+            "names": [
+              "*"
+            ],
+            "specifier": "./types/metrics.js",
+            "star": true,
+            "typeOnly": false
+          }
+        ],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "b95cd0d34ba9756cba9d5fa447374c9cc990416d06b52fe3c270f4c6f007e630"
+    },
+    "packages/shared/src/types/detection.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AttackCategory",
+          "DetectionResult",
+          "SeverityLevel",
+          "ShapFeatureContribution",
+          "ThreatVerdict"
+        ],
+        "imports": [],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "f2be1ca71f801cbbe9ff09c86789adcd8b6d11b2dd1e1529730f0178ee2f0e1a"
+    },
+    "packages/shared/src/types/events.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "IncidentUpdatedEvent",
+          "MetricSnapshotEvent",
+          "ThreatFeedEvent"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./detection.js",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./flow.js",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./incident.js",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "8308a9323b3e0905e8e1c34dbc6dffa0ebb23a64ce7de38bc5c7f0c2373d0e00"
+    },
+    "packages/shared/src/types/flow.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "NetworkFlow",
+          "NetworkProtocol"
+        ],
+        "imports": [],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "e990fc4d9a034acc204f97fe00ca0b521a120254f1edd0821b6268ee6ed32206"
+    },
+    "packages/shared/src/types/incident.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "IncidentNote",
+          "IncidentStatus",
+          "SecurityIncident"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./detection.js",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "82e0aef3353d6aebb13cc887bf0759e3741696c02d8973396369b10b58a005c9"
+    },
+    "packages/shared/src/types/metrics.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "ClassMetric",
+          "ModelEvaluationReport"
+        ],
+        "imports": [],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "6e43b45276729449068c4d759100a7288bbede0f26844323964e2c893a29f4ad"
+    }
+  },
+  "generatedAt": "2026-10-06T17:12:41.065Z",
+  "schema": "erdem.parse-cache",
+  "schemaVersion": 1,
+  "tool": {
+    "name": "project-intel",
+    "version": "0.1.0"
+  }
+}

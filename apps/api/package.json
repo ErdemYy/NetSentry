@@ -1,0 +1,35 @@
+{
+  "name": "@netsentry/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/main",
+    "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main\"",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@netsentry/shared": "*",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/platform-socket.io": "^11.0.1",
+    "@nestjs/websockets": "^11.0.1",
+    "@prisma/client": "^5.22.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ioredis": "^5.5.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "prisma": "^5.22.0",
+    "typescript": "^5.7.2"
+  }
+}

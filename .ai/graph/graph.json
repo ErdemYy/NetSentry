@@ -1,0 +1,1356 @@
+{
+  "configDigest": "dee4c60aba43bf149c21a8e46e77f8b9c842ea6905a7e9b87badafa13cfe5396",
+  "cycles": [],
+  "edges": [
+    {
+      "kind": "static",
+      "source": ".agents/skills/erdem/scripts/erdem.mjs",
+      "target": "ext:node:fs",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": ".agents/skills/erdem/scripts/erdem.mjs",
+      "target": "ext:node:path",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": ".agents/skills/erdem/scripts/erdem.mjs",
+      "target": "ext:node:url",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/events/events.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/health/health.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/events/events.gateway.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/events/events.gateway.ts",
+      "target": "ext:@nestjs/websockets",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/events/events.gateway.ts",
+      "target": "ext:socket.io",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/events/events.gateway.ts",
+      "target": "packages/shared/src/index.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/events/events.module.ts",
+      "target": "apps/api/src/events/events.gateway.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/events/events.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/health/health.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/health/health.module.ts",
+      "target": "apps/api/src/health/health.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/health/health.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/main.ts",
+      "target": "apps/api/src/app.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/main.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/main.ts",
+      "target": "ext:@nestjs/core",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/main.ts",
+      "target": "ext:cookie-parser",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/api/health/route.ts",
+      "target": "ext:next",
+      "type": "imports"
+    },
+    {
+      "kind": "side-effect",
+      "source": "apps/web/src/app/layout.tsx",
+      "target": "apps/web/src/app/globals.css",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/layout.tsx",
+      "target": "ext:next",
+      "type": "imports",
+      "typeOnly": true
+    },
+    {
+      "kind": "static",
+      "source": "apps/web/src/app/page.tsx",
+      "target": "ext:lucide-react",
+      "type": "imports"
+    },
+    {
+      "kind": "reexport",
+      "source": "packages/shared/src/index.ts",
+      "target": "packages/shared/src/types/detection.ts",
+      "type": "exports"
+    },
+    {
+      "kind": "reexport",
+      "source": "packages/shared/src/index.ts",
+      "target": "packages/shared/src/types/events.ts",
+      "type": "exports"
+    },
+    {
+      "kind": "reexport",
+      "source": "packages/shared/src/index.ts",
+      "target": "packages/shared/src/types/flow.ts",
+      "type": "exports"
+    },
+    {
+      "kind": "reexport",
+      "source": "packages/shared/src/index.ts",
+      "target": "packages/shared/src/types/incident.ts",
+      "type": "exports"
+    },
+    {
+      "kind": "reexport",
+      "source": "packages/shared/src/index.ts",
+      "target": "packages/shared/src/types/metrics.ts",
+      "type": "exports"
+    },
+    {
+      "kind": "static",
+      "source": "packages/shared/src/types/events.ts",
+      "target": "packages/shared/src/types/detection.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "packages/shared/src/types/events.ts",
+      "target": "packages/shared/src/types/flow.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "packages/shared/src/types/events.ts",
+      "target": "packages/shared/src/types/incident.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "packages/shared/src/types/incident.ts",
+      "target": "packages/shared/src/types/detection.ts",
+      "type": "imports"
+    }
+  ],
+  "fingerprint": {
+    "algo": "sha256",
+    "count": 37,
+    "hash": "9bbd3a0e62ed4e4b36cc5311eee76119933ae18ded839fae8a7f633d78d1cb6d",
+    "normalization": "set-path-hash-v1"
+  },
+  "generatedAt": "2026-10-06T17:12:41.065Z",
+  "nodes": [
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f7857eb24a59293938f19db5083140eb942bdb26eea5f125c8f5ad08292cf566",
+        "normalization": "text-lf-nobom",
+        "size": 1567
+      },
+      "id": ".agents/skills/erdem/scripts/erdem.mjs",
+      "importers": [],
+      "imports": [
+        "ext:node:fs",
+        "ext:node:path",
+        "ext:node:url"
+      ],
+      "language": "javascript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "node:fs",
+          "node:path",
+          "node:url"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: no dependents found by static analysis"
+        ],
+        "subsystem": ".agents"
+      },
+      "path": ".agents/skills/erdem/scripts/erdem.mjs",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/main.ts"
+      ],
+      "exports": [
+        "AppModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6b4d83497479989e9832f55b78ba1b1d48867d7587384474063ddad2f8ae02a3",
+        "normalization": "text-lf-nobom",
+        "size": 232
+      },
+      "id": "apps/api/src/app.module.ts",
+      "importers": [
+        "apps/api/src/main.ts"
+      ],
+      "imports": [
+        "apps/api/src/events/events.module.ts",
+        "apps/api/src/health/health.module.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/app.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/events/events.module.ts"
+      ],
+      "exports": [
+        "EventsGateway"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a259a7decad1591d27ee297e2d5cd930c7ee4ff1cddfeb98599277132d7aa079",
+        "normalization": "text-lf-nobom",
+        "size": 1275
+      },
+      "id": "apps/api/src/events/events.gateway.ts",
+      "importers": [
+        "apps/api/src/events/events.module.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common",
+        "ext:@nestjs/websockets",
+        "ext:socket.io",
+        "packages/shared/src/index.ts"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "@nestjs/websockets",
+          "socket.io"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/events/events.gateway.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "EventsModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "02cfdd92ade93380a4b2d7d0a6e0a43164ba7d65c5027ddb88b31eb92528546f",
+        "normalization": "text-lf-nobom",
+        "size": 192
+      },
+      "id": "apps/api/src/events/events.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/events/events.gateway.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/events/events.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/health/health.module.ts"
+      ],
+      "exports": [
+        "HealthController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e5274266ed71ef43da6fd862085a783b8a9216d33065c10c68c85040fdb42440",
+        "normalization": "text-lf-nobom",
+        "size": 333
+      },
+      "id": "apps/api/src/health/health.controller.ts",
+      "importers": [
+        "apps/api/src/health/health.module.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/health/health.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "HealthModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8e6fe50b38d87d28ed07af3285935f9496908c98eabd92c987b1b6d8def8d08b",
+        "normalization": "text-lf-nobom",
+        "size": 175
+      },
+      "id": "apps/api/src/health/health.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/health/health.controller.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/health/health.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "9dae98a45b54d0f2a2a01cf325345e23fd13e3e619ddc686652457dc49b24502",
+        "normalization": "text-lf-nobom",
+        "size": 599
+      },
+      "id": "apps/api/src/main.ts",
+      "importers": [],
+      "imports": [
+        "apps/api/src/app.module.ts",
+        "ext:@nestjs/common",
+        "ext:@nestjs/core",
+        "ext:cookie-parser"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "@nestjs/core",
+          "cookie-parser"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: no dependents found by static analysis"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/main.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "29605dd4bb1b293e8fdfb67c9d6d247ce388a15933b52959768e19282946e96a",
+        "normalization": "text-lf-nobom",
+        "size": 592
+      },
+      "id": "apps/ml/app/api/health.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/api/health.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "90f2745e24ba15e8a2253630453c4243f7a6880b97fe24aef9bbc0c0319748b1",
+        "normalization": "text-lf-nobom",
+        "size": 756
+      },
+      "id": "apps/ml/app/api/inference.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/api/inference.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "11589dde831271231be5d0aa575dbf1ccf9b1fec535f3c5443e1238775e1997a",
+        "normalization": "text-lf-nobom",
+        "size": 762
+      },
+      "id": "apps/ml/app/main.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/main.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2e9e50507fadc25a77b3d74b3456896dfcdbdf6de2f6710ac9fea72406be6c5d",
+        "normalization": "text-lf-nobom",
+        "size": 2147
+      },
+      "id": "apps/ml/app/schemas/flow.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/schemas/flow.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b",
+        "normalization": "text-lf-nobom",
+        "size": 295
+      },
+      "id": "apps/web/next-env.d.ts",
+      "importers": [],
+      "imports": [],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: no dependents found by static analysis"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/next-env.d.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "GET"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "05f8c0000e417458042982a850a9d4f221a9b284987a17d3f075286f7c17ccb8",
+        "normalization": "text-lf-nobom",
+        "size": 265
+      },
+      "id": "apps/web/src/app/api/health/route.ts",
+      "importers": [],
+      "imports": [
+        "ext:next"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "next"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/api/health/route.ts",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/layout.tsx"
+      ],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e0013f174c08601881944ca7c754d3efc8aa9fafef33a60782af003f48a1d582",
+        "normalization": "text-lf-nobom",
+        "size": 1296
+      },
+      "id": "apps/web/src/app/globals.css",
+      "importers": [
+        "apps/web/src/app/layout.tsx"
+      ],
+      "imports": [],
+      "language": "css",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/globals.css",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default",
+        "metadata"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8f8c8ee754edd8af88e75fc8195d8e8a1c4d6e45ae4ac0213e645969932a85c1",
+        "normalization": "text-lf-nobom",
+        "size": 504
+      },
+      "id": "apps/web/src/app/layout.tsx",
+      "importers": [],
+      "imports": [
+        "apps/web/src/app/globals.css",
+        "ext:next"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "next"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/layout.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [
+        "default"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "4c93962d1cadada5483cbc857d351ec33addb9d67b32164350ad69d573bb8feb",
+        "normalization": "text-lf-nobom",
+        "size": 8524
+      },
+      "id": "apps/web/src/app/page.tsx",
+      "importers": [],
+      "imports": [
+        "ext:lucide-react"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": true,
+        "externalImports": [
+          "lucide-react"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [
+          "framework-route"
+        ],
+        "riskBasis": [
+          "MEDIUM: framework route file"
+        ],
+        "subsystem": "apps/web"
+      },
+      "path": "apps/web/src/app/page.tsx",
+      "publicSurface": true,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "21f13cd433fda24e0b5cf87aa1e8d7ede954252b98cbe0a9e63c7143ca1b76b2",
+        "normalization": "text-lf-nobom",
+        "size": 2219
+      },
+      "id": "docker-compose.yml",
+      "importers": [],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "category": "config",
+        "dependencyAnalysis": "n/a",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "n/a",
+        "publicSurfaceReasons": [
+          "global-config"
+        ],
+        "riskBasis": [
+          "HIGH: global configuration at the project root"
+        ],
+        "subsystem": "."
+      },
+      "path": "docker-compose.yml",
+      "publicSurface": true,
+      "risk": "HIGH",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts",
+        "apps/api/src/events/events.gateway.ts",
+        "apps/api/src/events/events.module.ts",
+        "apps/api/src/health/health.controller.ts",
+        "apps/api/src/health/health.module.ts",
+        "apps/api/src/main.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:@nestjs/common",
+      "importers": [
+        "apps/api/src/app.module.ts",
+        "apps/api/src/events/events.gateway.ts",
+        "apps/api/src/events/events.module.ts",
+        "apps/api/src/health/health.controller.ts",
+        "apps/api/src/health/health.module.ts",
+        "apps/api/src/main.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "@nestjs/common"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/main.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:@nestjs/core",
+      "importers": [
+        "apps/api/src/main.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "@nestjs/core"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/events/events.gateway.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:@nestjs/websockets",
+      "importers": [
+        "apps/api/src/events/events.gateway.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "@nestjs/websockets"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/main.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:cookie-parser",
+      "importers": [
+        "apps/api/src/main.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "cookie-parser"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/page.tsx"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:lucide-react",
+      "importers": [
+        "apps/web/src/app/page.tsx"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "lucide-react"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/web/src/app/api/health/route.ts",
+        "apps/web/src/app/layout.tsx"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:next",
+      "importers": [
+        "apps/web/src/app/api/health/route.ts",
+        "apps/web/src/app/layout.tsx"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "next"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        ".agents/skills/erdem/scripts/erdem.mjs"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:node:fs",
+      "importers": [
+        ".agents/skills/erdem/scripts/erdem.mjs"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "node:fs"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        ".agents/skills/erdem/scripts/erdem.mjs"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:node:path",
+      "importers": [
+        ".agents/skills/erdem/scripts/erdem.mjs"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "node:path"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        ".agents/skills/erdem/scripts/erdem.mjs"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:node:url",
+      "importers": [
+        ".agents/skills/erdem/scripts/erdem.mjs"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "node:url"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/events/events.gateway.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:socket.io",
+      "importers": [
+        "apps/api/src/events/events.gateway.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "socket.io"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6fea35d3d1251ad7ac0b6241a046b10e3c1b416b7669888c9e8a505f7d533083",
+        "normalization": "text-lf-nobom",
+        "size": 423
+      },
+      "id": "package.json",
+      "importers": [],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "category": "config",
+        "dependencyAnalysis": "n/a",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "n/a",
+        "publicSurfaceReasons": [
+          "global-config"
+        ],
+        "riskBasis": [
+          "HIGH: global configuration at the project root"
+        ],
+        "subsystem": "."
+      },
+      "path": "package.json",
+      "publicSurface": true,
+      "risk": "HIGH",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/events/events.gateway.ts"
+      ],
+      "exports": [
+        "*"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "b95cd0d34ba9756cba9d5fa447374c9cc990416d06b52fe3c270f4c6f007e630",
+        "normalization": "text-lf-nobom",
+        "size": 179
+      },
+      "id": "packages/shared/src/index.ts",
+      "importers": [
+        "apps/api/src/events/events.gateway.ts"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "packages/shared"
+      },
+      "path": "packages/shared/src/index.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "packages/shared/src/index.ts",
+        "packages/shared/src/types/events.ts",
+        "packages/shared/src/types/incident.ts"
+      ],
+      "exports": [
+        "AttackCategory",
+        "DetectionResult",
+        "SeverityLevel",
+        "ShapFeatureContribution",
+        "ThreatVerdict"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "f2be1ca71f801cbbe9ff09c86789adcd8b6d11b2dd1e1529730f0178ee2f0e1a",
+        "normalization": "text-lf-nobom",
+        "size": 1013
+      },
+      "id": "packages/shared/src/types/detection.ts",
+      "importers": [
+        "packages/shared/src/types/events.ts",
+        "packages/shared/src/types/incident.ts"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 3 dependents (at or above 3)"
+        ],
+        "subsystem": "packages/shared"
+      },
+      "path": "packages/shared/src/types/detection.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "packages/shared/src/index.ts"
+      ],
+      "exports": [
+        "IncidentUpdatedEvent",
+        "MetricSnapshotEvent",
+        "ThreatFeedEvent"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8308a9323b3e0905e8e1c34dbc6dffa0ebb23a64ce7de38bc5c7f0c2373d0e00",
+        "normalization": "text-lf-nobom",
+        "size": 537
+      },
+      "id": "packages/shared/src/types/events.ts",
+      "importers": [],
+      "imports": [
+        "packages/shared/src/types/detection.ts",
+        "packages/shared/src/types/flow.ts",
+        "packages/shared/src/types/incident.ts"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "packages/shared"
+      },
+      "path": "packages/shared/src/types/events.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "packages/shared/src/index.ts",
+        "packages/shared/src/types/events.ts"
+      ],
+      "exports": [
+        "NetworkFlow",
+        "NetworkProtocol"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e990fc4d9a034acc204f97fe00ca0b521a120254f1edd0821b6268ee6ed32206",
+        "normalization": "text-lf-nobom",
+        "size": 632
+      },
+      "id": "packages/shared/src/types/flow.ts",
+      "importers": [
+        "packages/shared/src/types/events.ts"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "packages/shared"
+      },
+      "path": "packages/shared/src/types/flow.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "packages/shared/src/index.ts",
+        "packages/shared/src/types/events.ts"
+      ],
+      "exports": [
+        "IncidentNote",
+        "IncidentStatus",
+        "SecurityIncident"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "82e0aef3353d6aebb13cc887bf0759e3741696c02d8973396369b10b58a005c9",
+        "normalization": "text-lf-nobom",
+        "size": 793
+      },
+      "id": "packages/shared/src/types/incident.ts",
+      "importers": [
+        "packages/shared/src/types/events.ts"
+      ],
+      "imports": [
+        "packages/shared/src/types/detection.ts"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "packages/shared"
+      },
+      "path": "packages/shared/src/types/incident.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "packages/shared/src/index.ts"
+      ],
+      "exports": [
+        "ClassMetric",
+        "ModelEvaluationReport"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6e43b45276729449068c4d759100a7288bbede0f26844323964e2c893a29f4ad",
+        "normalization": "text-lf-nobom",
+        "size": 526
+      },
+      "id": "packages/shared/src/types/metrics.ts",
+      "importers": [],
+      "imports": [],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "packages/shared"
+      },
+      "path": "packages/shared/src/types/metrics.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    }
+  ],
+  "project": {
+    "name": "netsentry-ai-monorepo"
+  },
+  "schema": "erdem.graph",
+  "schemaVersion": 1,
+  "stats": {
+    "cycles": 0,
+    "edges": 32,
+    "edgesByType": {
+      "exports": 5,
+      "imports": 27
+    },
+    "externals": 10,
+    "files": 24,
+    "languagesAnalyzed": [
+      "javascript",
+      "typescript"
+    ],
+    "languagesMetadataOnly": {
+      "css": 1,
+      "python": 4
+    },
+    "nodes": 34,
+    "unresolvedImports": 2
+  },
+  "tool": {
+    "name": "project-intel",
+    "version": "0.1.0"
+  }
+}

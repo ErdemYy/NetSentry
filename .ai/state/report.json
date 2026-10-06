@@ -1,0 +1,122 @@
+{
+  "diagnostics": [
+    {
+      "code": "dynamic-import-non-literal",
+      "message": "1 dynamic import(s) with a computed specifier were not resolved",
+      "parser": "javascript",
+      "path": ".agents/skills/erdem/scripts/erdem.mjs",
+      "severity": "info"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"./.next/types/root-params.d.ts\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/next-env.d.ts",
+      "severity": "warning"
+    },
+    {
+      "code": "unresolved-import",
+      "message": "cannot resolve \"./.next/types/routes.d.ts\" (relative-target-not-found)",
+      "parser": "javascript",
+      "path": "apps/web/next-env.d.ts",
+      "severity": "warning"
+    }
+  ],
+  "generatedAt": "2026-10-06T17:12:41.065Z",
+  "ignored": [
+    {
+      "path": "apps/api/dist/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/.venv/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/app/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/app/api/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/app/schemas/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/web/.next/",
+      "reason": "default"
+    },
+    {
+      "path": "node_modules/",
+      "reason": "default"
+    },
+    {
+      "path": "packages/shared/dist/",
+      "reason": "default"
+    }
+  ],
+  "schema": "erdem.report",
+  "schemaVersion": 1,
+  "stats": {
+    "byCategory": {
+      "config": 15,
+      "documentation": 19,
+      "source": 22,
+      "unknown": 2
+    },
+    "byLanguage": {
+      "css": 1,
+      "javascript": 2,
+      "python": 4,
+      "typescript": 17
+    },
+    "files": 58,
+    "graph": {
+      "cycles": 0,
+      "edges": 32,
+      "edgesByType": {
+        "exports": 5,
+        "imports": 27
+      },
+      "externals": 10,
+      "files": 24,
+      "languagesAnalyzed": [
+        "javascript",
+        "typescript"
+      ],
+      "languagesMetadataOnly": {
+        "css": 1,
+        "python": 4
+      },
+      "nodes": 34,
+      "unresolvedImports": 2
+    },
+    "ignoredDirectories": 8,
+    "ignoredFiles": 2,
+    "withheld": 4
+  },
+  "tool": {
+    "name": "project-intel",
+    "version": "0.1.0"
+  },
+  "withheld": [
+    {
+      "path": ".env.example",
+      "reason": "secret-pattern"
+    },
+    {
+      "path": "apps/api/.env.example",
+      "reason": "secret-pattern"
+    },
+    {
+      "path": "apps/ml/.env.example",
+      "reason": "secret-pattern"
+    },
+    {
+      "path": "apps/web/.env.example",
+      "reason": "secret-pattern"
+    }
+  ]
+}

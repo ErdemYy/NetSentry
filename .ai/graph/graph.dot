@@ -1,0 +1,63 @@
+digraph "project_intel" {
+  graph [rankdir=LR, fontname="Helvetica", labelloc=t, label="Dependency overview"];
+  node [shape=box, fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9];
+  subgraph cluster_3a52ce78 {
+    label="(root)"; style=rounded;
+    n35b8c13c [label="docker-compose.yml", peripheries=2];
+    n7030d0b2 [label="package.json", peripheries=2];
+  }
+  subgraph cluster_55eb8eee {
+    label=".agents"; style=rounded;
+    nbe9c72a0 [label="scripts/erdem.mjs"];
+  }
+  subgraph cluster_73776ec8 {
+    label="apps/api"; style=rounded;
+    nec28db8b [label="src/app.module.ts"];
+    n0808c694 [label="events/events.gateway.ts"];
+    n854d837f [label="events/events.module.ts"];
+    nd046f3c6 [label="health/health.controller.ts"];
+    naba0fc26 [label="health/health.module.ts"];
+    n338ea8c7 [label="src/main.ts"];
+  }
+  subgraph cluster_368ad0cd {
+    label="apps/ml"; style=rounded;
+    n05b2672a [label="api/health.py"];
+    n6bbfe0f3 [label="api/inference.py"];
+    n9be4b79c [label="app/main.py"];
+    naa1c7bbc [label="schemas/flow.py"];
+  }
+  subgraph cluster_8972e234 {
+    label="apps/web"; style=rounded;
+    n8076096b [label="web/next-env.d.ts"];
+    ne0eb2c1f [label="health/route.ts", peripheries=2, style="bold"];
+    n4306ffba [label="app/globals.css"];
+    nf79a94b8 [label="app/layout.tsx", peripheries=2, style="bold"];
+    n0d6d11c3 [label="app/page.tsx", peripheries=2, style="bold"];
+  }
+  subgraph cluster_f021f83d {
+    label="packages/shared"; style=rounded;
+    nc4a79788 [label="src/index.ts"];
+    n36707835 [label="types/detection.ts"];
+    nc80fea85 [label="types/events.ts"];
+    n30ddfb3b [label="types/flow.ts"];
+    n43e205d0 [label="types/incident.ts"];
+    n9c18c09c [label="types/metrics.ts"];
+  }
+  nec28db8b -> n854d837f;
+  nec28db8b -> naba0fc26;
+  n0808c694 -> nc4a79788;
+  n854d837f -> n0808c694;
+  naba0fc26 -> nd046f3c6;
+  n338ea8c7 -> nec28db8b;
+  nf79a94b8 -> n4306ffba;
+  nc4a79788 -> n36707835 [penwidth=2];
+  nc4a79788 -> nc80fea85 [penwidth=2];
+  nc4a79788 -> n30ddfb3b [penwidth=2];
+  nc4a79788 -> n43e205d0 [penwidth=2];
+  nc4a79788 -> n9c18c09c [penwidth=2];
+  nc80fea85 -> n36707835;
+  nc80fea85 -> n30ddfb3b;
+  nc80fea85 -> n43e205d0;
+  n43e205d0 -> n36707835;
+}

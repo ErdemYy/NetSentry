@@ -1,0 +1,13 @@
+{
+  "owner": "ERDEM_DESIGN_SYSTEM_ANTIGRAVITY_ADAPTER",
+  "adapterVersion": "0.1.0",
+  "files": {
+    "SKILL.md": "366167347dbf9a7408f560591378e7f502e8f59ede225f93a1da939f302e8410",
+    "references/context.md": "e8974ad260f132624b50af55fb1bea807c459e4b2836829c135914c44b08f8aa",
+    "references/design-routing.md": "ef6ecc4bbf4eaa9a3bc75611d86ef8e4fec0df3ac857c2bbd35309a965e163ad",
+    "references/handoff.md": "4d5b83aa0c133296e5c23ca99844129740afb1768357893319ea298b5d27fd72",
+    "references/task-routing.md": "bb7d8fbc5bb1b16aadd94a9e13f97b3128d35db1c18d2b023f89b1e2e3822014",
+    "references/validation.md": "c04e5225a185d44273515c06c7e4c338b1d04722cf18173c1e33d0729c30b8c7",
+    "scripts/erdem.mjs": "f7857eb24a59293938f19db5083140eb942bdb26eea5f125c8f5ad08292cf566"
+  }
+}

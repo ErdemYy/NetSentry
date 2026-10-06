@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  /* Erdem Design System Core Tokens (Dark Theme) */
+  --color-ink: #060709;
+  --color-graphite: #101216;
+  --color-steel: #1a1d23;
+  --color-bone: #ecebe6;
+  --color-mute: #8b8f98;
+  --color-signal: #ff5b2e;
+  --color-tech: #4f8cff;
+  --color-line: rgba(236, 235, 230, 0.12);
+
+  /* Semantic SOC Severity Mapping (Accessible, non-neon) */
+  --severity-critical: #e63946;
+  --severity-high: #f77f00;
+  --severity-medium: #fcbf49;
+  --severity-low: #4f8cff;
+  --severity-normal: #2a9d8f;
+
+  /* Typography */
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Technical dense grid and border utilities */
+.border-subtle {
+  border-color: var(--color-line);
+}
+
+.bg-surface-primary {
+  background-color: var(--color-graphite);
+}
+
+.bg-surface-secondary {
+  background-color: var(--color-steel);
+}
+
+.text-bone {
+  color: var(--color-bone);
+}
+
+.text-mute {
+  color: var(--color-mute);
+}
+
+.text-signal {
+  color: var(--color-signal);
+}
+
+.text-tech {
+  color: var(--color-tech);
+}
