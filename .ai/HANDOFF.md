@@ -1,26 +1,29 @@
 # Handoff — NetSentry AI
 
-- **Objective:** Successfully complete PHASE 1 (Dataset Ingestion, EDA & Baseline ML Methodology) and prepare for Phase 2.
+- **Objective:** Successfully complete PHASE 2 (Asynchronous Flow Ingestion & Real-Time ML Inference) and hand off with verified operational proof.
 - **Completed:**
-  - Ingested 8 canonical CIC-IDS2017 files (843.66 MB total, 2,830,743 raw rows).
-  - Cleansed data, eliminated Inf/duplicates, and produced `data/processed/clean_flows.parquet` (341,713 rows, 77 features).
-  - Normalization: 15 raw labels mapped to 9 security classes with 100% minority vector retention.
-  - Strict leakage control: Stratified 70/15/15 split, preprocessors fit only on training data.
-  - Supervised LightGBM Baseline: 99.85% Accuracy, 93.74% Macro F1, 99.85% Weighted F1.
-  - Unsupervised Isolation Forest Baseline: Optimal $\tau = 0.49540$ selected on validation set; 73.35% ROC-AUC on test set.
-  - SHAP TreeExplainer: Feature attributions extracted and plotted.
-  - Unit Tests: 8/8 passed in Pytest.
-- **Current State:** Machine learning baseline and data artifacts are completely established, serialized, and documented.
-- **Next Action:** PHASE 2 — Flow ingestion pipeline, Redis event streaming, and real-time inference integration between FastAPI and NestJS Core API.
+  - Real-time ML inference service (`POST /api/v1/predict` + `apps/ml/app/streaming/worker.py`) running authentic Phase 1 artifacts (`LightGBM`, `IsolationForest`, `TreeSHAP`, `RobustScaler`, `LabelEncoder`).
+  - Strict 77-feature ordering and datatype validation guard (rejection of missing, unknown, NaN, Inf, and wrong datatypes with HTTP 400).
+  - Deterministic threat severity rule engine (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) and hybrid verdict synthesis.
+  - Redis Streams pipeline: `netsentry:flows` -> `ml-worker` -> `netsentry:detections` with consumer group `ml-inference`, consumer `XREADGROUP`, `XACK`, retries, and DLQ routing.
+  - Controlled Replay Engine (`apps/ml/app/streaming/replay.py`) reading `clean_flows.parquet` across `NORMAL`, `ATTACK`, `MIXED` modes with configurable rates. Ground-truth labels stripped from inference payloads.
+  - NestJS Core API integration (`apps/api`): `PrismaService`, `DetectionService`, `RedisConsumerService`, idempotent upsert to PostgreSQL (`Flow`, `Detection`, `Incident`), and WebSocket `/events` broadcasting (`threat_alert`, `detection.created`).
+  - Performance profiling (EXP-004): 500 samples profiled. Mean latency 24.865 ms with SHAP (P95: 31.645 ms); 20.260 ms without SHAP (P95: 26.680 ms). TreeSHAP overhead measured at 6.794 ms. Throughput benchmarked up to 57.21 flows/sec.
+  - 21/21 Pytest tests passed; NestJS E2E persistence and idempotency test passed.
+- **Current State:** End-to-end asynchronous streaming inference pipeline is fully functional, durable, idempotent, and backed by genuine empirical measurements.
+- **Next Action:** PHASE 3 — Frontend SOC Operations Dashboard (Erdem Design System UI, live WebSocket feed, incident response UI, confusion matrix & SHAP visualization).
 - **Validation Status:**
-  - Pytest: 8 PASSED (0 failed)
-  - Data integrity: 0 NaN, 0 Inf, 0 index overlap
-  - Erdem Doctor: Intact
+  - Pytest: 21 PASSED (0 failed)
+  - NestJS E2E Test: PASSED (Idempotency and DB persistence confirmed)
+  - Live Replay Test: PASSED (BENIGN, DDoS, PortScan, DoS, BruteForce verified)
+  - TypeScript: Clean build across `@netsentry/shared` and `@netsentry/api`
 - **Important Documents:**
-  - [docs/DATASET.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DATASET.md)
-  - [docs/ML-METHODOLOGY.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/ML-METHODOLOGY.md)
+  - [docs/ARCHITECTURE.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/ARCHITECTURE.md)
+  - [docs/API.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/API.md)
+  - [docs/DEMO.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DEMO.md)
   - [docs/EXPERIMENTS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/EXPERIMENTS.md)
   - [docs/DECISIONS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DECISIONS.md)
-- **GeneratedAt:** 2026-10-06T20:33:50+03:00
+  - [docs/THREAT-MODEL.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/THREAT-MODEL.md)
+- **GeneratedAt:** 2026-10-06T21:12:30+03:00
 - **From:** Senior Software Architect & ML Engineer
 - **To:** Succeeding Engineering Agent / User

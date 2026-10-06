@@ -64,3 +64,54 @@
 - **Context:** Unsupervised anomaly detectors output continuous scores. Setting an arbitrary threshold (e.g. 0.5) is scientifically indefensible.
 - **Decision:** Sweep candidate thresholds across 40 percentiles of validation benign scores, selecting $\tau^* = 0.49540$ based on F1-maximization and FPR constraints on the Validation set. Never tune $\tau$ on the Test set.
 - **Consequences:** Objective, defensible anomaly cutoff that prevents test data snooping.
+
+---
+
+## ADR-009: Redis Streams as Canonical Event Bus Transport (Phase 2)
+- **Status:** Accepted
+- **Context:** Real-time distributed inference requires durable message delivery, consumer group scaling, and acknowledgment capabilities. Redis Pub/Sub lacks message persistence and delivery guarantees if a consumer restarts.
+- **Decision:** Use Redis Streams (`XREADGROUP`, `XACK`, `XADD`) with consumer groups (`ml-inference` for ML Worker, `netsentry-api-group` for NestJS). Reserve Redis Pub/Sub strictly for lightweight ephemeral WebSocket client alerts.
+- **Consequences:** Guarantees zero dropped packets, provides automatic recovery of pending messages, and isolates dead-letter queues (`netsentry:flows:dlq`, `netsentry:detections:dlq`).
+
+---
+
+## ADR-010: Unified InferenceService Singleton for Sync and Async Pathways
+- **Status:** Accepted
+- **Context:** Predictions can originate via HTTP `POST /api/v1/predict` or Redis Stream `netsentry:flows`. If implemented separately, logic drift could lead to discrepancies between REST and streaming verdicts.
+- **Decision:** Encapsulate all validation, scaling, prediction, anomaly scoring, and SHAP calculation within a single, stateful `InferenceService` singleton instantiated once at worker/app startup.
+- **Consequences:** 100% identical inference behavior regardless of ingestion entry point; models remain cached in memory and are never reloaded per flow.
+
+---
+
+## ADR-011: Strict 77-Feature Ordering and Input Validation Guard
+- **Status:** Accepted
+- **Context:** Decision trees and scalers depend on exact column indexing. In Python/JSON, dictionary key iteration orders can vary across platforms, and missing/NaN values can cause silent corruption or misleading classifications.
+- **Decision:** Enforce rigorous pre-inference validation: verify exact set equality with the 77 canonical feature names, assert numeric datatypes, check for `NaN` and `+/-Infinity`, and reassemble vectors in strict canonical order (`apps/ml/models/metadata.json`).
+- **Consequences:** Prevents feature ordering transposition bugs. Out-of-spec requests are immediately rejected with HTTP `400 Bad Request`.
+
+---
+
+## ADR-012: TreeSHAP Performance Profiling and Execution Strategy
+- **Status:** Accepted
+- **Context:** Computing SHAP values per flow introduces algorithmic overhead. In high-velocity streaming (>100 flows/sec), computing full Shapley values on every flow can saturate CPU cores.
+- **Decision:** Based on rigorous 500-sample empirical profiling (EXP-004), TreeSHAP adds an average of **6.794 ms** latency per flow. For low-rate operations and individual REST calls, SHAP runs synchronously. For high-speed streaming stress tiers, a `compute_shap` boolean toggle enables fast-path execution (20.26 ms mean latency), while SHAP is generated selectively for elevated threats (`HIGH` / `CRITICAL`) and analyst investigations.
+- **Consequences:** High-throughput streaming resilience while maintaining explainability when analysts need it most.
+
+---
+
+## ADR-013: Idempotent Persistence in NestJS Core API
+- **Status:** Accepted
+- **Context:** In distributed event processing, network retries or consumer restarts can cause at-least-once message delivery, leading to duplicate records in the database.
+- **Decision:** Implement deterministic idempotency keys (`flowId`, `detectionId`) in NestJS persistence service using Prisma `upsert` and `findUnique` pre-checks.
+- **Consequences:** Redundant delivery of previously processed detections is safely skipped with zero duplicate database rows.
+
+---
+
+## ADR-014: Deterministic Threat Severity Rule Engine
+- **Status:** Accepted
+- **Context:** Severity levels (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) must not be hardcoded, guessed, or randomly assigned.
+- **Decision:** Implement a rule-based deterministic matrix evaluating:
+  1. Attack category severity ceiling (e.g. Heartbleed, DDoS, Infiltration $\rightarrow$ CRITICAL/HIGH).
+  2. Model confidence thresholds ($\ge 0.85 \rightarrow$ full category severity; lower confidence scales down).
+  3. Unsupervised anomaly confirmation ($s(x) \ge \tau$ elevates medium threats to high).
+- **Consequences:** Transparent, auditable, and reproducible alert classification documented in `docs/THREAT-MODEL.md`.

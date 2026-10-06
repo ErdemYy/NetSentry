@@ -31,11 +31,12 @@ class ShapFeatureContributionSchema(BaseModel):
     value: float
     contribution: float
     description: str
+    direction: Optional[Literal["increases_risk", "decreases_risk"]] = None
 
 
 class DetectionResponseSchema(BaseModel):
     id: str
-    flow_id: str
+    flow_id: str = Field(..., alias="flowId")
     timestamp: str
     verdict: Literal["NORMAL", "KNOWN_ATTACK", "ANOMALOUS", "HIGH_RISK", "UNKNOWN_ANOMALOUS"]
     attack_category: Literal[
@@ -47,13 +48,21 @@ class DetectionResponseSchema(BaseModel):
         "WEB_ATTACK",
         "BOTNET",
         "INFILTRATION",
+        "HEARTBLEED",
         "UNKNOWN_ANOMALY",
-    ]
-    supervised_confidence: float = Field(..., ge=0.0, le=1.0)
-    unsupervised_anomaly_score: float = Field(..., ge=0.0, le=1.0)
-    is_anomalous: bool
+    ] = Field(..., alias="attackCategory")
+    supervised_confidence: float = Field(..., ge=0.0, le=1.0, alias="supervisedConfidence")
+    unsupervised_anomaly_score: float = Field(..., ge=0.0, le=1.0, alias="unsupervisedAnomalyScore")
+    anomaly_threshold: float = Field(..., alias="anomalyThreshold")
+    is_anomalous: bool = Field(..., alias="isAnomalous")
     severity: Literal["LOW", "MEDIUM", "HIGH", "CRITICAL"]
-    top_features: List[ShapFeatureContributionSchema] = []
+    top_features: List[ShapFeatureContributionSchema] = Field(default=[], alias="topFeatures")
     explanation: str
-    model_version_supervised: str
-    model_version_unsupervised: str
+    model_version_supervised: str = Field(..., alias="modelVersionSupervised")
+    model_version_unsupervised: str = Field(..., alias="modelVersionUnsupervised")
+    inference_latency_ms: Optional[float] = Field(default=None, alias="inferenceLatencyMs")
+    class_probabilities: Optional[dict] = Field(default=None, alias="classProbabilities")
+
+    class Config:
+        populate_by_name = True
+

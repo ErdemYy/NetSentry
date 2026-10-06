@@ -29,6 +29,7 @@ enum AttackCategory {
   WEB_ATTACK
   BOTNET
   INFILTRATION
+  HEARTBLEED
   UNKNOWN_ANOMALY
 }
 

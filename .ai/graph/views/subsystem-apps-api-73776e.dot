@@ -1,0 +1,38 @@
+digraph "project_intel" {
+  graph [rankdir=LR, fontname="Helvetica", labelloc=t, label="Subsystem: apps/api"];
+  node [shape=box, fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9];
+  subgraph cluster_73776ec8 {
+    label="apps/api"; style=rounded;
+    nbc402317 [label="prisma/prisma.service.ts"];
+    nf8659a2d [label="detection/detection.service.ts"];
+    nec28db8b [label="src/app.module.ts"];
+    n0808c694 [label="events/events.gateway.ts"];
+    n854d837f [label="events/events.module.ts"];
+    n2b19c9c0 [label="detection/detection.module.ts"];
+    n08398223 [label="detection/redis-consumer.service.ts"];
+    nd046f3c6 [label="health/health.controller.ts"];
+    naba0fc26 [label="health/health.module.ts"];
+    n114ee72c [label="prisma/prisma.module.ts"];
+    n338ea8c7 [label="src/main.ts"];
+  }
+  nc4a79788 [label="src/index.ts", style="dashed"];
+  nec28db8b -> n2b19c9c0;
+  nec28db8b -> n854d837f;
+  nec28db8b -> naba0fc26;
+  nec28db8b -> n114ee72c;
+  n2b19c9c0 -> nf8659a2d;
+  n2b19c9c0 -> n08398223;
+  n2b19c9c0 -> n854d837f;
+  nf8659a2d -> n0808c694;
+  nf8659a2d -> nbc402317;
+  nf8659a2d -> nc4a79788;
+  n08398223 -> nf8659a2d;
+  n08398223 -> nc4a79788;
+  n0808c694 -> nc4a79788;
+  n854d837f -> n0808c694;
+  nd046f3c6 -> nbc402317;
+  naba0fc26 -> nd046f3c6;
+  n338ea8c7 -> nec28db8b;
+  n114ee72c -> nbc402317;
+}

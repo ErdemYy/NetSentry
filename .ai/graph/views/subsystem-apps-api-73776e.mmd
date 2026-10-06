@@ -1,0 +1,42 @@
+%% project-intel graph view: Subsystem: apps/api
+%% mode=subsystem level=file nodes=12 edges=18
+flowchart TD
+  subgraph sg73776ec8["apps/api"]
+    nbc402317["prisma/prisma.service.ts"]
+    nf8659a2d["detection/detection.service.ts"]
+    nec28db8b["src/app.module.ts"]
+    n0808c694["events/events.gateway.ts"]
+    n854d837f["events/events.module.ts"]
+    n2b19c9c0["detection/detection.module.ts"]
+    n08398223["detection/redis-consumer.service.ts"]
+    nd046f3c6["health/health.controller.ts"]
+    naba0fc26["health/health.module.ts"]
+    n114ee72c["prisma/prisma.module.ts"]
+    n338ea8c7["src/main.ts"]
+  end
+  nc4a79788["src/index.ts"]
+  nec28db8b --> n2b19c9c0
+  nec28db8b --> n854d837f
+  nec28db8b --> naba0fc26
+  nec28db8b --> n114ee72c
+  n2b19c9c0 --> nf8659a2d
+  n2b19c9c0 --> n08398223
+  n2b19c9c0 --> n854d837f
+  nf8659a2d --> n0808c694
+  nf8659a2d --> nbc402317
+  nf8659a2d --> nc4a79788
+  n08398223 --> nf8659a2d
+  n08398223 --> nc4a79788
+  n0808c694 --> nc4a79788
+  n854d837f --> n0808c694
+  nd046f3c6 --> nbc402317
+  naba0fc26 --> nd046f3c6
+  n338ea8c7 --> nec28db8b
+  n114ee72c --> nbc402317
+  classDef surface stroke-width:3px;
+  classDef entry stroke-width:3px,stroke-dasharray:6 2;
+  classDef external stroke-dasharray:4 3;
+  classDef outside stroke-dasharray:2 2;
+  classDef target fill:#fff3b0,stroke:#555555;
+  classDef note stroke-dasharray:4 3;
+  class nc4a79788 outside;

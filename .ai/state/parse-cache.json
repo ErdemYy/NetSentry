@@ -47,12 +47,22 @@
         "imports": [
           {
             "kind": "static",
+            "specifier": "./detection/detection.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
             "specifier": "./events/events.module",
             "typeOnly": false
           },
           {
             "kind": "static",
             "specifier": "./health/health.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./prisma/prisma.module",
             "typeOnly": false
           },
           {
@@ -66,7 +76,118 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "6b4d83497479989e9832f55b78ba1b1d48867d7587384474063ddad2f8ae02a3"
+      "hash": "d3ceda333166812a77d6be626e6ef1609247e88cba3d7dcdd19d4f7d6b0b54f1"
+    },
+    "apps/api/src/detection/detection.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "DetectionModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../events/events.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./detection.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./redis-consumer.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "5b37ae92c3386db7d52c572848a971590f5c9abde9c3811c7d7b47cf2c75d2f5"
+    },
+    "apps/api/src/detection/detection.service.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "DetectionService"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../events/events.gateway",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../prisma/prisma.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@netsentry/shared",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "30ca2abb0d6a5d1d9eaadfb037c89672bdd654f8c749b33c6e9d59b339372d8f"
+    },
+    "apps/api/src/detection/redis-consumer.service.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "RedisConsumerService"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./detection.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@netsentry/shared",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "ioredis",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "d0283eaecfe9be2827249828218e13383b5b347d047eac95ec73a6eb6ec053fe"
     },
     "apps/api/src/events/events.gateway.ts": {
       "adapter": "javascript",
@@ -103,7 +224,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "a259a7decad1591d27ee297e2d5cd930c7ee4ff1cddfeb98599277132d7aa079"
+      "hash": "83468c0a530090321c39bbb666152490a5b3e45ccf1dfbcbb6999ff0b1c16307"
     },
     "apps/api/src/events/events.module.ts": {
       "adapter": "javascript",
@@ -143,7 +264,17 @@
         "imports": [
           {
             "kind": "static",
+            "specifier": "../prisma/prisma.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
             "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "ioredis",
             "typeOnly": false
           }
         ],
@@ -152,7 +283,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "e5274266ed71ef43da6fd862085a783b8a9216d33065c10c68c85040fdb42440"
+      "hash": "b85763b0533b1ec21459125aedf5041474131ab90bc4aa44883b40769d99390c"
     },
     "apps/api/src/health/health.module.ts": {
       "adapter": "javascript",
@@ -207,6 +338,11 @@
             "kind": "static",
             "specifier": "cookie-parser",
             "typeOnly": false
+          },
+          {
+            "kind": "side-effect",
+            "specifier": "dotenv/config",
+            "typeOnly": false
           }
         ],
         "purposeHint": null,
@@ -214,7 +350,106 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "9dae98a45b54d0f2a2a01cf325345e23fd13e3e619ddc686652457dc49b24502"
+      "hash": "e778ebe60171cdc731b2e35fe15731a07e72f7943f602850df63dc5a62ba67a2"
+    },
+    "apps/api/src/prisma/prisma.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "PrismaModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./prisma.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "9223a0889abb0669020e94a9b8c1e68274cdc05533c1f79d84fe516450e94ebd"
+    },
+    "apps/api/src/prisma/prisma.service.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "PrismaService"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@prisma/client",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "59a2f2fa2bebb31924523c440004591731ba56e5a49d2a722f3fd774c65b3925"
+    },
+    "apps/api/test/test-e2e-pipeline.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../src/app.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../src/detection/detection.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../src/prisma/prisma.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/core",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@netsentry/shared",
+            "typeOnly": false
+          },
+          {
+            "kind": "side-effect",
+            "specifier": "dotenv/config",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "e7502da86c3f615885960f747db6dcfb8b0df3f1f059ef6621964505656721d6"
     },
     "apps/web/next-env.d.ts": {
       "adapter": "javascript",
@@ -388,7 +623,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "f2be1ca71f801cbbe9ff09c86789adcd8b6d11b2dd1e1529730f0178ee2f0e1a"
+      "hash": "c6b21ac8c16155296bfa8e67c8042ef57097b2d3a4ea6249f99c96a19e585dcf"
     },
     "packages/shared/src/types/events.ts": {
       "adapter": "javascript",
@@ -483,7 +718,7 @@
       "hash": "6e43b45276729449068c4d759100a7288bbede0f26844323964e2c893a29f4ad"
     }
   },
-  "generatedAt": "2026-10-06T17:12:41.065Z",
+  "generatedAt": "2026-10-06T18:12:57.611Z",
   "schema": "erdem.parse-cache",
   "schemaVersion": 1,
   "tool": {

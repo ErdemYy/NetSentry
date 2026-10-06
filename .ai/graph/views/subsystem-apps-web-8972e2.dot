@@ -1,0 +1,11 @@
+digraph "project_intel" {
+  graph [rankdir=LR, fontname="Helvetica", labelloc=t, label="Subsystem: apps/web"];
+  node [shape=box, fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9];
+  n4306ffba [label="app/globals.css"];
+  n8076096b [label="web/next-env.d.ts"];
+  ne0eb2c1f [label="health/route.ts", peripheries=2, style="bold"];
+  nf79a94b8 [label="app/layout.tsx", peripheries=2, style="bold"];
+  n0d6d11c3 [label="app/page.tsx", peripheries=2, style="bold"];
+  nf79a94b8 -> n4306ffba;
+}

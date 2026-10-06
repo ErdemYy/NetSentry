@@ -1,0 +1,30 @@
+%% project-intel graph view: Subsystem: apps/ml
+%% mode=subsystem level=file nodes=21 edges=0
+flowchart TD
+  n9085e1e2["anomaly/isolation_forest.py"]
+  n05b2672a["api/health.py"]
+  n6bbfe0f3["api/inference.py"]
+  nc1d951fa["data/download.py"]
+  n0cd89336["data/eda.py"]
+  ne3a15c3a["data/ingestion.py"]
+  nc17c857f["data/schema.py"]
+  n0385082c["inference/model_loader.py"]
+  n8ee5d33f["inference/service.py"]
+  nc0dccd96["inference/severity.py"]
+  n9be4b79c["app/main.py"]
+  n9d35f8c3["preprocessing/label_normalizer.py"]
+  n5bdea03e["preprocessing/pipeline.py"]
+  naa1c7bbc["schemas/flow.py"]
+  na2521d9e["streaming/config.py"]
+  n8607901b["streaming/replay.py"]
+  n31d06501["streaming/worker.py"]
+  nac9391c1["training/supervised.py"]
+  n62f2da0e["xai/shap_explainer.py"]
+  ncc12973c["scripts/benchmark_phase2.py"]
+  n1a3c3e10["scripts/verify_e2e_live.py"]
+  classDef surface stroke-width:3px;
+  classDef entry stroke-width:3px,stroke-dasharray:6 2;
+  classDef external stroke-dasharray:4 3;
+  classDef outside stroke-dasharray:2 2;
+  classDef target fill:#fff3b0,stroke:#555555;
+  classDef note stroke-dasharray:4 3;

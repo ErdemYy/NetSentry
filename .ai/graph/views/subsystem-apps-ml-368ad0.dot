@@ -1,0 +1,26 @@
+digraph "project_intel" {
+  graph [rankdir=LR, fontname="Helvetica", labelloc=t, label="Subsystem: apps/ml"];
+  node [shape=box, fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9];
+  n9085e1e2 [label="anomaly/isolation_forest.py"];
+  n05b2672a [label="api/health.py"];
+  n6bbfe0f3 [label="api/inference.py"];
+  nc1d951fa [label="data/download.py"];
+  n0cd89336 [label="data/eda.py"];
+  ne3a15c3a [label="data/ingestion.py"];
+  nc17c857f [label="data/schema.py"];
+  n0385082c [label="inference/model_loader.py"];
+  n8ee5d33f [label="inference/service.py"];
+  nc0dccd96 [label="inference/severity.py"];
+  n9be4b79c [label="app/main.py"];
+  n9d35f8c3 [label="preprocessing/label_normalizer.py"];
+  n5bdea03e [label="preprocessing/pipeline.py"];
+  naa1c7bbc [label="schemas/flow.py"];
+  na2521d9e [label="streaming/config.py"];
+  n8607901b [label="streaming/replay.py"];
+  n31d06501 [label="streaming/worker.py"];
+  nac9391c1 [label="training/supervised.py"];
+  n62f2da0e [label="xai/shap_explainer.py"];
+  ncc12973c [label="scripts/benchmark_phase2.py"];
+  n1a3c3e10 [label="scripts/verify_e2e_live.py"];
+}

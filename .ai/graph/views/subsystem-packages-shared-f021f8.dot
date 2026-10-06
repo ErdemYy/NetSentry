@@ -1,0 +1,31 @@
+digraph "project_intel" {
+  graph [rankdir=LR, fontname="Helvetica", labelloc=t, label="Subsystem: packages/shared"];
+  node [shape=box, fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9];
+  subgraph cluster_f021f83d {
+    label="packages/shared"; style=rounded;
+    nc4a79788 [label="src/index.ts"];
+    n36707835 [label="types/detection.ts"];
+    n30ddfb3b [label="types/flow.ts"];
+    n43e205d0 [label="types/incident.ts"];
+    nc80fea85 [label="types/events.ts"];
+    n9c18c09c [label="types/metrics.ts"];
+  }
+  nf8659a2d [label="detection/detection.service.ts", style="dashed"];
+  n0808c694 [label="events/events.gateway.ts", style="dashed"];
+  n08398223 [label="detection/redis-consumer.service.ts", style="dashed"];
+  nf8659a2d -> n0808c694;
+  nf8659a2d -> nc4a79788;
+  n08398223 -> nf8659a2d;
+  n08398223 -> nc4a79788;
+  n0808c694 -> nc4a79788;
+  nc4a79788 -> n36707835 [penwidth=2];
+  nc4a79788 -> nc80fea85 [penwidth=2];
+  nc4a79788 -> n30ddfb3b [penwidth=2];
+  nc4a79788 -> n43e205d0 [penwidth=2];
+  nc4a79788 -> n9c18c09c [penwidth=2];
+  nc80fea85 -> n36707835;
+  nc80fea85 -> n30ddfb3b;
+  nc80fea85 -> n43e205d0;
+  n43e205d0 -> n36707835;
+}

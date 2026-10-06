@@ -9,7 +9,7 @@ import {
 } from '@nestjs/websockets';
 import { Logger } from '@nestjs/common';
 import { Server, Socket } from 'socket.io';
-import { ThreatFeedEvent, MetricSnapshotEvent } from '@netsentry/shared';
+import { ThreatFeedEvent, MetricSnapshotEvent, DetectionResult } from '@netsentry/shared';
 
 @WebSocketGateway({
   cors: {
@@ -41,10 +41,23 @@ export class EventsGateway implements OnGatewayConnection, OnGatewayDisconnect {
   }
 
   broadcastThreat(event: ThreatFeedEvent) {
-    this.server.to('threat_feed').emit('threat_alert', event);
+    if (this.server) {
+      this.server.to('threat_feed').emit('threat_alert', event);
+      this.server.emit('detection.created', event.detection);
+    }
+  }
+
+  broadcastDetection(detection: DetectionResult) {
+    if (this.server) {
+      this.server.emit('detection.created', detection);
+    }
   }
 
   broadcastMetricSnapshot(metrics: MetricSnapshotEvent) {
-    this.server.emit('metrics_snapshot', metrics);
+    if (this.server) {
+      this.server.emit('metrics_snapshot', metrics);
+    }
   }
+
 }
+

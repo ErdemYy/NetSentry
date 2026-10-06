@@ -1,45 +1,60 @@
 # Task State — NetSentry AI
 
-- **Goal:** Execute PHASE 1 — Dataset Ingestion, EDA & Baseline ML Methodology: verified CIC-IDS2017 provenance, data cleaning, leakage audit, EDA, supervised LightGBM baseline, unsupervised Isolation Forest baseline with methodological thresholding, SHAP XAI attribution, and unit tests.
+- **Goal:** Execute PHASE 2 — Asynchronous Flow Ingestion & Real-Time ML Inference: Redis Streams (`netsentry:flows`, `netsentry:detections`), ML Stream Worker (`LightGBM`, `IsolationForest`, `TreeSHAP`), REST inference endpoint (`POST /api/v1/predict`), Controlled Replay Engine, NestJS Core API idempotent persistence, PostgreSQL tables (`Flow`, `Detection`, `Incident`), WebSocket Gateway alerts, and comprehensive empirical performance benchmarking.
 - **Status:** done
 - **Class and Risk:** ARCHITECTURAL / MEDIUM
 - **Owner:** Senior Software Architect & ML Engineer
-- **UpdatedAt:** 2026-10-06T20:33:40+03:00
+- **UpdatedAt:** 2026-10-06T21:12:00+03:00
 
 ## Completed
-1. Ingested all 8 canonical CIC-IDS2017 files (843.66 MB total, 2,830,743 raw rows).
-2. Computed SHA-256 hashes and saved `dataset_manifest.json`.
-3. Cleansed dataset: removed 2,867 Inf rows, 256,858 duplicates; created clean 341,713 flow dataset retaining 100% of minority attacks.
-4. Normalized labels into 9 canonical security categories (`label_mapping.json`).
-5. Conducted EDA and generated report artifacts (`class_distribution.png`, `missing_inf_overview.png`, `feature_distributions.png`, `eda_summary.json`).
-6. Implemented strict leakage-safe pipeline (70% Train, 15% Val, 15% Test; Scaler fit strictly on Train).
-7. Trained Supervised LightGBM model (EXP-001): 99.85% Accuracy, 93.74% Macro F1, 99.85% Weighted F1.
-8. Trained Unsupervised Isolation Forest (EXP-002) on 166,899 pure benign flows with validation threshold optimization ($\tau^* = 0.49540$, Test Recall: 43.54%, FPR: 9.87%, ROC-AUC: 73.35%).
-9. Extracted real SHAP TreeExplainer attributions (EXP-003) and generated `shap_summary.png`.
-10. Executed full unit test suite (8/8 tests passed).
-11. Updated all documentation files (`DATASET.md`, `ML-METHODOLOGY.md`, `EXPERIMENTS.md`, `DECISIONS.md`).
+1. **Model Artifact Integrity:** Verified Phase 1 artifacts (`metadata.json`, `supervised_lightgbm.joblib`, `isolation_forest.joblib`, `shap_explainer.joblib`, `scaler.joblib`, `label_encoder.joblib`) with exact 77-feature order and $\tau^* = 0.49540$.
+2. **Inference Core (`apps/ml/app/inference/`):**
+   - Memory-cached `ModelArtifactLoader` singleton.
+   - Strict 77-feature order and validation guard (rejecting missing, unknown, wrong datatype, NaN, and Inf with HTTP 400).
+   - Deterministic `calculate_severity()` rule engine (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`).
+   - High-performance `InferenceService` unifying LightGBM classification, Isolation Forest scoring, hybrid verdict synthesis, and TreeSHAP explainability.
+3. **REST Endpoint (`POST /api/v1/predict`):** Pydantic `PredictRequest` and `DetectionResponseSchema` matching `@netsentry/shared` `DetectionResult` contract. Tested and verified.
+4. **Redis Streams Ingestion & Worker (`apps/ml/app/streaming/`):**
+   - Central stream keys (`netsentry:flows`, `netsentry:detections`, `netsentry:flows:dlq`, `netsentry:detections:dlq`, `netsentry:detections:pubsub`).
+   - `MLStreamWorker` utilizing `XREADGROUP`, `XACK`, retry counter, and DLQ routing.
+5. **Controlled Replay Engine (`apps/ml/app/streaming/replay.py`):**
+   - Streams authentic flows from `clean_flows.parquet` across `NORMAL` (benign), `ATTACK` (threats), and `MIXED` modes.
+   - Configurable flow rates (10–500 flows/sec). Ground-truth labels strictly isolated to evaluation metadata.
+6. **NestJS Core API Orchestration (`apps/api`):**
+   - Implemented `PrismaModule` and `PrismaService` connected to PostgreSQL on port 5433.
+   - `DetectionModule` with `DetectionService` and `RedisConsumerService` consuming `netsentry:detections`.
+   - Idempotent upsert of `Flow` and `Detection` records. Automated escalation to `Incident` for `HIGH`/`CRITICAL` threats.
+   - `EventsGateway` enhanced to broadcast `threat_alert` and `detection.created` over WebSockets (`/events`).
+7. **Empirical Benchmarking (EXP-004):**
+   - 500 authentic flow samples profiled: Mean latency with SHAP is 24.865 ms (P50: 23.401 ms, P95: 31.645 ms, P99: 64.169 ms); without SHAP is 20.260 ms (P50: 19.649 ms, P95: 26.680 ms).
+   - TreeSHAP overhead measured at 6.794 ms mean latency.
+   - Throughput scaling measured up to 57.21 flows/sec single process.
+   - Verified 100% correct classification on canonical classes: BENIGN (NORMAL), DDoS (HIGH_RISK/CRITICAL), PortScan (KNOWN_ATTACK/HIGH), DoS (HIGH_RISK/HIGH), BruteForce (KNOWN_ATTACK/HIGH).
+8. **Automated Testing Suite:**
+   - 21/21 ML tests passed in Pytest (including 9 inference pipeline tests and 4 streaming pipeline tests).
+   - E2E NestJS integration and idempotency test (`test-e2e-pipeline.ts`) passed.
+9. **Documentation Suite:** Updated `ARCHITECTURE.md`, `API.md`, `DEMO.md`, `EXPERIMENTS.md`, `DECISIONS.md`, and `THREAT-MODEL.md`.
 
 ## Changed Files
-- `apps/ml/data/dataset_manifest.json`: Verified provenance metadata and file hashes.
-- `apps/ml/app/data/schema.py`: Canonical column names and excluded identifier schema.
-- `apps/ml/app/preprocessing/label_normalizer.py`: Semantic label mapping and rationale.
-- `apps/ml/app/data/ingestion.py`: Cleansing and ingestion pipeline.
-- `apps/ml/app/data/eda.py`: Statistical analysis and EDA plot generator.
-- `apps/ml/app/preprocessing/pipeline.py`: Leakage-safe stratified train/val/test split and scaler.
-- `apps/ml/app/training/supervised.py`: Supervised LightGBM trainer and evaluator.
-- `apps/ml/app/anomaly/isolation_forest.py`: Isolation Forest anomaly trainer and threshold sweep.
-- `apps/ml/app/xai/shap_explainer.py`: TreeExplainer and feature attribution generator.
-- `apps/ml/tests/`: Comprehensive test suite (8 tests).
-- `docs/DATASET.md`, `docs/ML-METHODOLOGY.md`, `docs/EXPERIMENTS.md`, `docs/DECISIONS.md`: Updated with real empirical results.
+- `apps/ml/app/inference/`: `model_loader.py`, `service.py`, `severity.py`.
+- `apps/ml/app/api/`: `inference.py`, `health.py`.
+- `apps/ml/app/streaming/`: `config.py`, `worker.py`, `replay.py`.
+- `apps/ml/tests/`: `test_inference_pipeline.py`, `test_streaming_pipeline.py`.
+- `apps/ml/scripts/`: `benchmark_phase2.py`, `verify_e2e_live.py`.
+- `apps/ml/reports/`: `phase2_benchmark.json`.
+- `apps/api/src/prisma/`: `prisma.service.ts`, `prisma.module.ts`.
+- `apps/api/src/detection/`: `detection.service.ts`, `redis-consumer.service.ts`, `detection.module.ts`.
+- `apps/api/src/events/`: `events.gateway.ts`.
+- `apps/api/src/health/`: `health.controller.ts`.
+- `apps/api/test/`: `test-e2e-pipeline.ts`.
+- `packages/shared/src/types/`: `detection.ts` (added `direction` to `ShapFeatureContribution`).
+- `docs/`: `ARCHITECTURE.md`, `API.md`, `DEMO.md`, `EXPERIMENTS.md`, `DECISIONS.md`, `THREAT-MODEL.md`.
 
 ## Remaining for Next Phase
-- Phase 2: Asynchronous Flow Ingestion, Redis Event Stream, and Real-Time ML Inference Service integration.
-
-## Known Problems
-- Infiltration class recall is 33.3% due to extreme subtlety and rare occurrences (6 test samples), accurately mirroring real-world intrusion benchmark behavior.
+- Phase 3: Frontend SOC Operations Dashboard (Erdem Design System UI, live WebSocket threat feed, incident investigation, geospatial map, and model performance visuals).
 
 ## Last Validation
-- Pytest: 8 passed in 3.53s.
-- Clean dataset: 341,713 rows, 77 features, 0 NaN, 0 Inf.
-- Supervised LightGBM: 99.85% Accuracy, 93.74% Macro F1.
-- Isolation Forest: Selected $\tau = 0.49540$, 73.35% ROC-AUC.
+- Pytest: 21 passed in 6.15s.
+- NestJS E2E Integration Test: PASSED (PostgreSQL persistence + Idempotency confirmed).
+- Live Replay E2E Verification: PASSED (5/5 canonical classes verified).
+- TypeScript Build: 0 errors across `@netsentry/shared` and `@netsentry/api`.

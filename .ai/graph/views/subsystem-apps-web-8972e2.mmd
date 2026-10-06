@@ -1,0 +1,17 @@
+%% project-intel graph view: Subsystem: apps/web
+%% mode=subsystem level=file nodes=5 edges=1
+flowchart TD
+  n4306ffba["app/globals.css"]
+  n8076096b["web/next-env.d.ts"]
+  ne0eb2c1f["health/route.ts"]
+  nf79a94b8["app/layout.tsx"]
+  n0d6d11c3["app/page.tsx"]
+  nf79a94b8 --> n4306ffba
+  classDef surface stroke-width:3px;
+  classDef entry stroke-width:3px,stroke-dasharray:6 2;
+  classDef external stroke-dasharray:4 3;
+  classDef outside stroke-dasharray:2 2;
+  classDef target fill:#fff3b0,stroke:#555555;
+  classDef note stroke-dasharray:4 3;
+  class n0d6d11c3,ne0eb2c1f,nf79a94b8 surface;
+  class n0d6d11c3,ne0eb2c1f,nf79a94b8 entry;

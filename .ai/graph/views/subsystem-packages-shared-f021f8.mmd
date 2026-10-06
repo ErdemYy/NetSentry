@@ -1,0 +1,35 @@
+%% project-intel graph view: Subsystem: packages/shared
+%% mode=subsystem level=file nodes=9 edges=14
+flowchart TD
+  subgraph sgf021f83d["packages/shared"]
+    nc4a79788["src/index.ts"]
+    n36707835["types/detection.ts"]
+    n30ddfb3b["types/flow.ts"]
+    n43e205d0["types/incident.ts"]
+    nc80fea85["types/events.ts"]
+    n9c18c09c["types/metrics.ts"]
+  end
+  nf8659a2d["detection/detection.service.ts"]
+  n0808c694["events/events.gateway.ts"]
+  n08398223["detection/redis-consumer.service.ts"]
+  nf8659a2d --> n0808c694
+  nf8659a2d --> nc4a79788
+  n08398223 --> nf8659a2d
+  n08398223 --> nc4a79788
+  n0808c694 --> nc4a79788
+  nc4a79788 ==> n36707835
+  nc4a79788 ==> nc80fea85
+  nc4a79788 ==> n30ddfb3b
+  nc4a79788 ==> n43e205d0
+  nc4a79788 ==> n9c18c09c
+  nc80fea85 --> n36707835
+  nc80fea85 --> n30ddfb3b
+  nc80fea85 --> n43e205d0
+  n43e205d0 --> n36707835
+  classDef surface stroke-width:3px;
+  classDef entry stroke-width:3px,stroke-dasharray:6 2;
+  classDef external stroke-dasharray:4 3;
+  classDef outside stroke-dasharray:2 2;
+  classDef target fill:#fff3b0,stroke:#555555;
+  classDef note stroke-dasharray:4 3;
+  class n0808c694,n08398223,nf8659a2d outside;

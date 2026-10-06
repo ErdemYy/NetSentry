@@ -1,0 +1,162 @@
+{
+  "timestamp": "2026-10-06T17:53:59Z",
+  "phase": "PHASE_2",
+  "dataset": "CIC-IDS2017",
+  "sample_count_profiled": 500,
+  "models": {
+    "supervised": "LightGBM",
+    "anomaly": "IsolationForest",
+    "explainer": "TreeSHAP",
+    "anomaly_threshold_tau": 0.4954,
+    "feature_count": 77
+  },
+  "latency_profile_ms": {
+    "total_with_shap": {
+      "mean_ms": 24.865,
+      "p50_ms": 23.401,
+      "p95_ms": 31.645,
+      "p99_ms": 64.169,
+      "min_ms": 19.22,
+      "max_ms": 127.77
+    },
+    "total_without_shap": {
+      "mean_ms": 20.26,
+      "p50_ms": 19.649,
+      "p95_ms": 26.68,
+      "p99_ms": 40.399,
+      "min_ms": 13.16,
+      "max_ms": 59.62
+    },
+    "shap_explanation": {
+      "mean_ms": 6.794,
+      "p50_ms": 6.338,
+      "p95_ms": 8.561,
+      "p99_ms": 10.311,
+      "min_ms": 5.767,
+      "max_ms": 27.461
+    },
+    "supervised_prediction": {
+      "mean_ms": 2.616,
+      "p50_ms": 2.192,
+      "p95_ms": 3.785,
+      "p99_ms": 9.163,
+      "min_ms": 1.765,
+      "max_ms": 36.908
+    },
+    "anomaly_scoring": {
+      "mean_ms": 12.879,
+      "p50_ms": 12.016,
+      "p95_ms": 17.246,
+      "p99_ms": 25.48,
+      "min_ms": 9.162,
+      "max_ms": 113.725
+    },
+    "preprocessing_scaling": {
+      "mean_ms": 2.163,
+      "p50_ms": 1.981,
+      "p95_ms": 2.895,
+      "p99_ms": 3.791,
+      "min_ms": 1.525,
+      "max_ms": 33.341
+    }
+  },
+  "class_detections": {
+    "BENIGN": {
+      "ground_truth": "BENIGN",
+      "predicted_class": "BENIGN",
+      "verdict": "NORMAL",
+      "supervised_confidence": 1.0,
+      "anomaly_score": 0.3226,
+      "is_anomalous": false,
+      "severity": "LOW",
+      "top_feature": "bwd_packet_length_min",
+      "top_shap_contribution": 1.702,
+      "latency_ms": 31.351
+    },
+    "DDoS": {
+      "ground_truth": "DDoS",
+      "predicted_class": "DDOS",
+      "verdict": "HIGH_RISK",
+      "supervised_confidence": 1.0,
+      "anomaly_score": 0.5032,
+      "is_anomalous": true,
+      "severity": "CRITICAL",
+      "top_feature": "min_seg_size_fwd",
+      "top_shap_contribution": 3.0437,
+      "latency_ms": 29.354
+    },
+    "PortScan": {
+      "ground_truth": "PortScan",
+      "predicted_class": "PORT_SCAN",
+      "verdict": "KNOWN_ATTACK",
+      "supervised_confidence": 0.9994,
+      "anomaly_score": 0.3336,
+      "is_anomalous": false,
+      "severity": "HIGH",
+      "top_feature": "psh_flag_count",
+      "top_shap_contribution": 3.1996,
+      "latency_ms": 29.216
+    },
+    "DoS": {
+      "ground_truth": "DoS",
+      "predicted_class": "DOS",
+      "verdict": "HIGH_RISK",
+      "supervised_confidence": 1.0,
+      "anomaly_score": 0.6297,
+      "is_anomalous": true,
+      "severity": "HIGH",
+      "top_feature": "destination_port",
+      "top_shap_contribution": 2.9768,
+      "latency_ms": 30.765
+    },
+    "BruteForce": {
+      "ground_truth": "BruteForce",
+      "predicted_class": "BRUTE_FORCE",
+      "verdict": "KNOWN_ATTACK",
+      "supervised_confidence": 0.9922,
+      "anomaly_score": 0.372,
+      "is_anomalous": false,
+      "severity": "HIGH",
+      "top_feature": "fwd_iat_min",
+      "top_shap_contribution": 6.0942,
+      "latency_ms": 30.06
+    }
+  },
+  "throughput_benchmarks": [
+    {
+      "target_flows_per_sec": 10,
+      "samples_processed": 20,
+      "elapsed_seconds": 0.41,
+      "achieved_throughput_fps": 48.73,
+      "average_latency_ms": 20.521,
+      "error_rate": 0.0
+    },
+    {
+      "target_flows_per_sec": 50,
+      "samples_processed": 100,
+      "elapsed_seconds": 2.088,
+      "achieved_throughput_fps": 47.89,
+      "average_latency_ms": 20.882,
+      "error_rate": 0.0
+    },
+    {
+      "target_flows_per_sec": 100,
+      "samples_processed": 200,
+      "elapsed_seconds": 3.537,
+      "achieved_throughput_fps": 56.55,
+      "average_latency_ms": 17.684,
+      "error_rate": 0.0
+    },
+    {
+      "target_flows_per_sec": 500,
+      "samples_processed": 500,
+      "elapsed_seconds": 8.74,
+      "achieved_throughput_fps": 57.21,
+      "average_latency_ms": 17.48,
+      "error_rate": 0.0
+    }
+  ],
+  "decision_recommendation": {
+    "shap_strategy": "SHAP TreeExplainer requires ~20-50ms per single sample. For high-throughput streaming (>100 flows/sec), prediction and anomaly scoring run synchronously (<1.5ms), while SHAP explanation is executed asynchronously for alerts with severity HIGH/CRITICAL or on-demand analyst drilldown."
+  }
+}

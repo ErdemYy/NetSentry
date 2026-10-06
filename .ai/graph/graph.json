@@ -23,6 +23,12 @@
     {
       "kind": "static",
       "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/detection/detection.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
       "target": "apps/api/src/events/events.module.ts",
       "type": "imports"
     },
@@ -35,7 +41,85 @@
     {
       "kind": "static",
       "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/prisma/prisma.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
       "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.module.ts",
+      "target": "apps/api/src/detection/detection.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.module.ts",
+      "target": "apps/api/src/detection/redis-consumer.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.module.ts",
+      "target": "apps/api/src/events/events.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.service.ts",
+      "target": "apps/api/src/events/events.gateway.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/detection.service.ts",
+      "target": "packages/shared/src/index.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/redis-consumer.service.ts",
+      "target": "apps/api/src/detection/detection.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/redis-consumer.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/redis-consumer.service.ts",
+      "target": "ext:ioredis",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/detection/redis-consumer.service.ts",
+      "target": "packages/shared/src/index.ts",
       "type": "imports"
     },
     {
@@ -77,7 +161,19 @@
     {
       "kind": "static",
       "source": "apps/api/src/health/health.controller.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/health/health.controller.ts",
       "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/health/health.controller.ts",
+      "target": "ext:ioredis",
       "type": "imports"
     },
     {
@@ -114,6 +210,72 @@
       "kind": "static",
       "source": "apps/api/src/main.ts",
       "target": "ext:cookie-parser",
+      "type": "imports"
+    },
+    {
+      "kind": "side-effect",
+      "source": "apps/api/src/main.ts",
+      "target": "ext:dotenv",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/prisma/prisma.module.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/prisma/prisma.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/prisma/prisma.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/prisma/prisma.service.ts",
+      "target": "ext:@prisma/client",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/test/test-e2e-pipeline.ts",
+      "target": "apps/api/src/app.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/test/test-e2e-pipeline.ts",
+      "target": "apps/api/src/detection/detection.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/test/test-e2e-pipeline.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/test/test-e2e-pipeline.ts",
+      "target": "ext:@nestjs/core",
+      "type": "imports"
+    },
+    {
+      "kind": "side-effect",
+      "source": "apps/api/test/test-e2e-pipeline.ts",
+      "target": "ext:dotenv",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/test/test-e2e-pipeline.ts",
+      "target": "packages/shared/src/index.ts",
       "type": "imports"
     },
     {
@@ -198,11 +360,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 51,
-    "hash": "e9c89788b6e1b56afa17d83da93aec4b060efe6686631bcdcb355876f63fe318",
+    "count": 67,
+    "hash": "2c9a4d3f9f2e5fbd3bd5079ee04fcb62e31f104f6b46c982a37fd48fc2df3db2",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T17:33:59.461Z",
+  "generatedAt": "2026-10-06T18:12:57.611Z",
   "nodes": [
     {
       "consumers": [],
@@ -245,24 +407,28 @@
     },
     {
       "consumers": [
-        "apps/api/src/main.ts"
+        "apps/api/src/main.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
       ],
       "exports": [
         "AppModule"
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "6b4d83497479989e9832f55b78ba1b1d48867d7587384474063ddad2f8ae02a3",
+        "hash": "d3ceda333166812a77d6be626e6ef1609247e88cba3d7dcdd19d4f7d6b0b54f1",
         "normalization": "text-lf-nobom",
-        "size": 232
+        "size": 382
       },
       "id": "apps/api/src/app.module.ts",
       "importers": [
-        "apps/api/src/main.ts"
+        "apps/api/src/main.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
       ],
       "imports": [
+        "apps/api/src/detection/detection.module.ts",
         "apps/api/src/events/events.module.ts",
         "apps/api/src/health/health.module.ts",
+        "apps/api/src/prisma/prisma.module.ts",
         "ext:@nestjs/common"
       ],
       "language": "typescript",
@@ -288,6 +454,144 @@
     },
     {
       "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "DetectionModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5b37ae92c3386db7d52c572848a971590f5c9abde9c3811c7d7b47cf2c75d2f5",
+        "normalization": "text-lf-nobom",
+        "size": 399
+      },
+      "id": "apps/api/src/detection/detection.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/detection/redis-consumer.service.ts",
+        "apps/api/src/events/events.module.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/detection/detection.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/detection/detection.module.ts",
+        "apps/api/src/detection/redis-consumer.service.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
+      ],
+      "exports": [
+        "DetectionService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "30ca2abb0d6a5d1d9eaadfb037c89672bdd654f8c749b33c6e9d59b339372d8f",
+        "normalization": "text-lf-nobom",
+        "size": 5128
+      },
+      "id": "apps/api/src/detection/detection.service.ts",
+      "importers": [
+        "apps/api/src/detection/detection.module.ts",
+        "apps/api/src/detection/redis-consumer.service.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
+      ],
+      "imports": [
+        "apps/api/src/events/events.gateway.ts",
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common",
+        "packages/shared/src/index.ts"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/detection/detection.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/detection/detection.module.ts"
+      ],
+      "exports": [
+        "RedisConsumerService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d0283eaecfe9be2827249828218e13383b5b347d047eac95ec73a6eb6ec053fe",
+        "normalization": "text-lf-nobom",
+        "size": 4911
+      },
+      "id": "apps/api/src/detection/redis-consumer.service.ts",
+      "importers": [
+        "apps/api/src/detection/detection.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/detection/detection.service.ts",
+        "ext:@nestjs/common",
+        "ext:ioredis",
+        "packages/shared/src/index.ts"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "ioredis"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/detection/redis-consumer.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/detection/detection.service.ts",
         "apps/api/src/events/events.module.ts"
       ],
       "exports": [
@@ -295,12 +599,13 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "a259a7decad1591d27ee297e2d5cd930c7ee4ff1cddfeb98599277132d7aa079",
+        "hash": "83468c0a530090321c39bbb666152490a5b3e45ccf1dfbcbb6999ff0b1c16307",
         "normalization": "text-lf-nobom",
-        "size": 1275
+        "size": 1559
       },
       "id": "apps/api/src/events/events.gateway.ts",
       "importers": [
+        "apps/api/src/detection/detection.service.ts",
         "apps/api/src/events/events.module.ts"
       ],
       "imports": [
@@ -323,7 +628,7 @@
         "parseStatus": "parsed",
         "publicSurfaceReasons": [],
         "riskBasis": [
-          "LOW: 1 dependent"
+          "LOW: 2 dependents"
         ],
         "subsystem": "apps/api"
       },
@@ -334,7 +639,8 @@
     },
     {
       "consumers": [
-        "apps/api/src/app.module.ts"
+        "apps/api/src/app.module.ts",
+        "apps/api/src/detection/detection.module.ts"
       ],
       "exports": [
         "EventsModule"
@@ -347,7 +653,8 @@
       },
       "id": "apps/api/src/events/events.module.ts",
       "importers": [
-        "apps/api/src/app.module.ts"
+        "apps/api/src/app.module.ts",
+        "apps/api/src/detection/detection.module.ts"
       ],
       "imports": [
         "apps/api/src/events/events.gateway.ts",
@@ -365,7 +672,7 @@
         "parseStatus": "parsed",
         "publicSurfaceReasons": [],
         "riskBasis": [
-          "LOW: 1 dependent"
+          "LOW: 2 dependents"
         ],
         "subsystem": "apps/api"
       },
@@ -383,16 +690,18 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "e5274266ed71ef43da6fd862085a783b8a9216d33065c10c68c85040fdb42440",
+        "hash": "b85763b0533b1ec21459125aedf5041474131ab90bc4aa44883b40769d99390c",
         "normalization": "text-lf-nobom",
-        "size": 333
+        "size": 1488
       },
       "id": "apps/api/src/health/health.controller.ts",
       "importers": [
         "apps/api/src/health/health.module.ts"
       ],
       "imports": [
-        "ext:@nestjs/common"
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common",
+        "ext:ioredis"
       ],
       "language": "typescript",
       "metadata": {
@@ -400,7 +709,8 @@
         "dependencyAnalysis": "analyzed",
         "entryPoint": false,
         "externalImports": [
-          "@nestjs/common"
+          "@nestjs/common",
+          "ioredis"
         ],
         "inCycle": false,
         "parseStatus": "parsed",
@@ -462,9 +772,9 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "9dae98a45b54d0f2a2a01cf325345e23fd13e3e619ddc686652457dc49b24502",
+        "hash": "e778ebe60171cdc731b2e35fe15731a07e72f7943f602850df63dc5a62ba67a2",
         "normalization": "text-lf-nobom",
-        "size": 599
+        "size": 623
       },
       "id": "apps/api/src/main.ts",
       "importers": [],
@@ -472,7 +782,8 @@
         "apps/api/src/app.module.ts",
         "ext:@nestjs/common",
         "ext:@nestjs/core",
-        "ext:cookie-parser"
+        "ext:cookie-parser",
+        "ext:dotenv"
       ],
       "language": "typescript",
       "metadata": {
@@ -482,7 +793,8 @@
         "externalImports": [
           "@nestjs/common",
           "@nestjs/core",
-          "cookie-parser"
+          "cookie-parser",
+          "dotenv"
         ],
         "inCycle": false,
         "parseStatus": "parsed",
@@ -493,6 +805,138 @@
         "subsystem": "apps/api"
       },
       "path": "apps/api/src/main.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "PrismaModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "9223a0889abb0669020e94a9b8c1e68274cdc05533c1f79d84fe516450e94ebd",
+        "normalization": "text-lf-nobom",
+        "size": 210
+      },
+      "id": "apps/api/src/prisma/prisma.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/prisma/prisma.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/health/health.controller.ts",
+        "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
+      ],
+      "exports": [
+        "PrismaService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "59a2f2fa2bebb31924523c440004591731ba56e5a49d2a722f3fd774c65b3925",
+        "normalization": "text-lf-nobom",
+        "size": 540
+      },
+      "id": "apps/api/src/prisma/prisma.service.ts",
+      "importers": [
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/health/health.controller.ts",
+        "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common",
+        "ext:@prisma/client"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "@prisma/client"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 3 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/prisma/prisma.service.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e7502da86c3f615885960f747db6dcfb8b0df3f1f059ef6621964505656721d6",
+        "normalization": "text-lf-nobom",
+        "size": 4980
+      },
+      "id": "apps/api/test/test-e2e-pipeline.ts",
+      "importers": [],
+      "imports": [
+        "apps/api/src/app.module.ts",
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/core",
+        "ext:dotenv",
+        "packages/shared/src/index.ts"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/core",
+          "dotenv"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/test/test-e2e-pipeline.ts",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -533,9 +977,9 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "29605dd4bb1b293e8fdfb67c9d6d247ce388a15933b52959768e19282946e96a",
+        "hash": "590eae3ae858e8de5aed255b9940f6ba01f5b35142add785e1449e97c6551ed1",
         "normalization": "text-lf-nobom",
-        "size": 592
+        "size": 1863
       },
       "id": "apps/ml/app/api/health.py",
       "importers": [],
@@ -564,9 +1008,9 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "90f2745e24ba15e8a2253630453c4243f7a6880b97fe24aef9bbc0c0319748b1",
+        "hash": "bdbc5c8f21afb31dc14d5760d79f479f6a35b1ed1d523f6c08bbd48d514d3d2d",
         "normalization": "text-lf-nobom",
-        "size": 756
+        "size": 1433
       },
       "id": "apps/ml/app/api/inference.py",
       "importers": [],
@@ -719,6 +1163,99 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
+        "hash": "a94eb216948604bcea335c8ae8d4bbdd1136f372cc2d4322fca0789ad94dd2ee",
+        "normalization": "text-lf-nobom",
+        "size": 2757
+      },
+      "id": "apps/ml/app/inference/model_loader.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/inference/model_loader.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "c609eb7720524fb65c59352b6fae332a6fac662aee7814a767f0d158d45c53ac",
+        "normalization": "text-lf-nobom",
+        "size": 7623
+      },
+      "id": "apps/ml/app/inference/service.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/inference/service.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "305ccbb35962be7ac632f738def4404cd6b509f04516da871bca9100acb43f20",
+        "normalization": "text-lf-nobom",
+        "size": 1148
+      },
+      "id": "apps/ml/app/inference/severity.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/inference/severity.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "11589dde831271231be5d0aa575dbf1ccf9b1fec535f3c5443e1238775e1997a",
         "normalization": "text-lf-nobom",
         "size": 762
@@ -812,9 +1349,9 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "2e9e50507fadc25a77b3d74b3456896dfcdbdf6de2f6710ac9fea72406be6c5d",
+        "hash": "a158d5afc740f6802b4dde66e0937d583a9d62776490236d4384e2cc0c5eadb9",
         "normalization": "text-lf-nobom",
-        "size": 2147
+        "size": 2839
       },
       "id": "apps/ml/app/schemas/flow.py",
       "importers": [],
@@ -834,6 +1371,99 @@
         "subsystem": "apps/ml"
       },
       "path": "apps/ml/app/schemas/flow.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "c215db9be15a51f2e3a1b2dcceb4adf7a01a597d1d52c5fbb917ff99c97c26bf",
+        "normalization": "text-lf-nobom",
+        "size": 775
+      },
+      "id": "apps/ml/app/streaming/config.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/streaming/config.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a3ff8d01c2ee5cd9df4cd2483653477bf6a4ba27e89af96e6ceb44c0648f0d41",
+        "normalization": "text-lf-nobom",
+        "size": 10108
+      },
+      "id": "apps/ml/app/streaming/replay.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/streaming/replay.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "bd5bdecab0765b49604a6e65dbe05857540843be6552028a0d0694a54fe43b5f",
+        "normalization": "text-lf-nobom",
+        "size": 8328
+      },
+      "id": "apps/ml/app/streaming/worker.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/app/streaming/worker.py",
       "publicSurface": false,
       "risk": null,
       "type": "file"
@@ -905,6 +1535,68 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
+        "hash": "a39b79568b4986d7342ae9121c1f6ac3ae977a0133bb9180c234840ac825c58b",
+        "normalization": "text-lf-nobom",
+        "size": 8632
+      },
+      "id": "apps/ml/scripts/benchmark_phase2.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/scripts/benchmark_phase2.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8e313689c432ad0f776e42ce0ec273a5fa4afc475d4184986e4cad0b7829cff1",
+        "normalization": "text-lf-nobom",
+        "size": 4546
+      },
+      "id": "apps/ml/scripts/verify_e2e_live.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "insufficient evidence: no dependency analysis for this file or its dependents"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/scripts/verify_e2e_live.py",
+      "publicSurface": false,
+      "risk": null,
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "ed010677717ee6c8fab893256e7f814325b5865ff3c1cd17cf6c4f03544f086a",
         "normalization": "text-lf-nobom",
         "size": 1868
@@ -927,6 +1619,37 @@
         "subsystem": "apps/ml"
       },
       "path": "apps/ml/tests/test_data_pipeline.py",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2ebbbdb925524f61522ac0433e522cf63b8f76afa1d33532dd0e3a820297d8b4",
+        "normalization": "text-lf-nobom",
+        "size": 5686
+      },
+      "id": "apps/ml/tests/test_inference_pipeline.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/tests/test_inference_pipeline.py",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -989,6 +1712,37 @@
         "subsystem": "apps/ml"
       },
       "path": "apps/ml/tests/test_models.py",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "7ce9d74a4600ed49050452739b305a6ca9952a3611000569a25fdc6464bb0d34",
+        "normalization": "text-lf-nobom",
+        "size": 3908
+      },
+      "id": "apps/ml/tests/test_streaming_pipeline.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/tests/test_streaming_pipeline.py",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -1183,7 +1937,7 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "21f13cd433fda24e0b5cf87aa1e8d7ede954252b98cbe0a9e63c7143ca1b76b2",
+        "hash": "58163580e06939a68fdbd6e2774d420b5025035f600f0a16f909650c9a73ab36",
         "normalization": "text-lf-nobom",
         "size": 2219
       },
@@ -1214,22 +1968,32 @@
     {
       "consumers": [
         "apps/api/src/app.module.ts",
+        "apps/api/src/detection/detection.module.ts",
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/detection/redis-consumer.service.ts",
         "apps/api/src/events/events.gateway.ts",
         "apps/api/src/events/events.module.ts",
         "apps/api/src/health/health.controller.ts",
         "apps/api/src/health/health.module.ts",
-        "apps/api/src/main.ts"
+        "apps/api/src/main.ts",
+        "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/src/prisma/prisma.service.ts"
       ],
       "exports": [],
       "fingerprint": null,
       "id": "ext:@nestjs/common",
       "importers": [
         "apps/api/src/app.module.ts",
+        "apps/api/src/detection/detection.module.ts",
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/detection/redis-consumer.service.ts",
         "apps/api/src/events/events.gateway.ts",
         "apps/api/src/events/events.module.ts",
         "apps/api/src/health/health.controller.ts",
         "apps/api/src/health/health.module.ts",
-        "apps/api/src/main.ts"
+        "apps/api/src/main.ts",
+        "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/src/prisma/prisma.service.ts"
       ],
       "imports": [],
       "language": null,
@@ -1243,13 +2007,15 @@
     },
     {
       "consumers": [
-        "apps/api/src/main.ts"
+        "apps/api/src/main.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
       ],
       "exports": [],
       "fingerprint": null,
       "id": "ext:@nestjs/core",
       "importers": [
-        "apps/api/src/main.ts"
+        "apps/api/src/main.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
       ],
       "imports": [],
       "language": null,
@@ -1283,6 +2049,26 @@
     },
     {
       "consumers": [
+        "apps/api/src/prisma/prisma.service.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:@prisma/client",
+      "importers": [
+        "apps/api/src/prisma/prisma.service.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "@prisma/client"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
         "apps/api/src/main.ts"
       ],
       "exports": [],
@@ -1295,6 +2081,50 @@
       "language": null,
       "metadata": {
         "package": "cookie-parser"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/main.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:dotenv",
+      "importers": [
+        "apps/api/src/main.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "dotenv"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/detection/redis-consumer.service.ts",
+        "apps/api/src/health/health.controller.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:ioredis",
+      "importers": [
+        "apps/api/src/detection/redis-consumer.service.ts",
+        "apps/api/src/health/health.controller.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "ioredis"
       },
       "path": null,
       "publicSurface": false,
@@ -1458,7 +2288,10 @@
     },
     {
       "consumers": [
-        "apps/api/src/events/events.gateway.ts"
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/detection/redis-consumer.service.ts",
+        "apps/api/src/events/events.gateway.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
       ],
       "exports": [
         "*"
@@ -1471,7 +2304,10 @@
       },
       "id": "packages/shared/src/index.ts",
       "importers": [
-        "apps/api/src/events/events.gateway.ts"
+        "apps/api/src/detection/detection.service.ts",
+        "apps/api/src/detection/redis-consumer.service.ts",
+        "apps/api/src/events/events.gateway.ts",
+        "apps/api/test/test-e2e-pipeline.ts"
       ],
       "imports": [],
       "language": "typescript",
@@ -1484,13 +2320,13 @@
         "parseStatus": "parsed",
         "publicSurfaceReasons": [],
         "riskBasis": [
-          "LOW: 1 dependent"
+          "MEDIUM: 3 dependents (at or above 3)"
         ],
         "subsystem": "packages/shared"
       },
       "path": "packages/shared/src/index.ts",
       "publicSurface": false,
-      "risk": "LOW",
+      "risk": "MEDIUM",
       "type": "file"
     },
     {
@@ -1508,9 +2344,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "f2be1ca71f801cbbe9ff09c86789adcd8b6d11b2dd1e1529730f0178ee2f0e1a",
+        "hash": "c6b21ac8c16155296bfa8e67c8042ef57097b2d3a4ea6249f99c96a19e585dcf",
         "normalization": "text-lf-nobom",
-        "size": 1013
+        "size": 1188
       },
       "id": "packages/shared/src/types/detection.ts",
       "importers": [
@@ -1703,22 +2539,22 @@
   "schemaVersion": 1,
   "stats": {
     "cycles": 0,
-    "edges": 32,
+    "edges": 59,
     "edgesByType": {
       "exports": 5,
-      "imports": 27
+      "imports": 54
     },
-    "externals": 10,
-    "files": 36,
+    "externals": 13,
+    "files": 52,
     "languagesAnalyzed": [
       "javascript",
       "typescript"
     ],
     "languagesMetadataOnly": {
       "css": 1,
-      "python": 16
+      "python": 26
     },
-    "nodes": 46,
+    "nodes": 65,
     "unresolvedImports": 2
   },
   "tool": {

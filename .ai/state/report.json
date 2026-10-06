@@ -22,7 +22,7 @@
       "severity": "warning"
     }
   ],
-  "generatedAt": "2026-10-06T17:33:59.461Z",
+  "generatedAt": "2026-10-06T18:12:57.611Z",
   "ignored": [
     {
       "path": "apps/api/dist/",
@@ -53,11 +53,19 @@
       "reason": "default"
     },
     {
+      "path": "apps/ml/app/inference/__pycache__/",
+      "reason": "default"
+    },
+    {
       "path": "apps/ml/app/preprocessing/__pycache__/",
       "reason": "default"
     },
     {
       "path": "apps/ml/app/schemas/__pycache__/",
+      "reason": "default"
+    },
+    {
+      "path": "apps/ml/app/streaming/__pycache__/",
       "reason": "default"
     },
     {
@@ -92,40 +100,40 @@
       "asset": 8,
       "config": 17,
       "documentation": 20,
-      "source": 31,
-      "test": 3,
-      "unknown": 11
+      "source": 44,
+      "test": 6,
+      "unknown": 13
     },
     "byLanguage": {
       "css": 1,
       "javascript": 2,
-      "python": 16,
-      "typescript": 17
+      "python": 26,
+      "typescript": 23
     },
-    "files": 90,
+    "files": 108,
     "graph": {
       "cycles": 0,
-      "edges": 32,
+      "edges": 59,
       "edgesByType": {
         "exports": 5,
-        "imports": 27
+        "imports": 54
       },
-      "externals": 10,
-      "files": 36,
+      "externals": 13,
+      "files": 52,
       "languagesAnalyzed": [
         "javascript",
         "typescript"
       ],
       "languagesMetadataOnly": {
         "css": 1,
-        "python": 16
+        "python": 26
       },
-      "nodes": 46,
+      "nodes": 65,
       "unresolvedImports": 2
     },
-    "ignoredDirectories": 15,
+    "ignoredDirectories": 17,
     "ignoredFiles": 18,
-    "withheld": 4
+    "withheld": 7
   },
   "tool": {
     "name": "project-intel",
@@ -133,11 +141,23 @@
   },
   "withheld": [
     {
+      "path": ".env",
+      "reason": "secret-pattern"
+    },
+    {
       "path": ".env.example",
       "reason": "secret-pattern"
     },
     {
+      "path": "apps/api/.env",
+      "reason": "secret-pattern"
+    },
+    {
       "path": "apps/api/.env.example",
+      "reason": "secret-pattern"
+    },
+    {
+      "path": "apps/ml/.env",
       "reason": "secret-pattern"
     },
     {
