@@ -56,8 +56,12 @@ class InferenceService:
         features: Dict[str, Any],
         compute_shap: bool = True,
         timestamp: str = None,
+        schema_version: str = None,
     ) -> Dict[str, Any]:
         t_start = time.perf_counter()
+
+        if schema_version:
+            self.loader.verify_schema_compatibility(schema_version)
 
         if timestamp is None:
             timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())

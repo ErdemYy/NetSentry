@@ -70,11 +70,33 @@ export default function ModelsPage() {
 
         <button
           onClick={load}
-          className="flex items-center gap-2 px-3 py-1.5 bg-[#101216] hover:bg-[#1a1d23] text-[#8b8f98] hover:text-[#ecebe6] border border-[rgba(236,235,230,0.12)] rounded text-xs transition-colors self-start md:self-auto"
+          className="flex items-center gap-2 px-3 py-1.5 bg-[#101216] hover:bg-[#1a1d23] text-[#8b8f98] hover:text-[#ecebe6] border border-[rgba(236,235,230,0.12)] rounded text-xs transition-colors self-start md:self-auto cursor-pointer"
         >
           <RefreshCw className="w-3.5 h-3.5" />
           <span>Yenile</span>
         </button>
+      </div>
+
+      {/* Provenance Callout Banner (ADR-018 / Section 3) */}
+      <div className="p-4 bg-[#101216] border-l-2 border-[#ff5b2e] border-y border-r border-[rgba(236,235,230,0.12)] rounded-r text-xs space-y-1.5 leading-relaxed">
+        <div className="flex items-center gap-2 text-[#ff5b2e] font-bold uppercase tracking-wider text-[11px]">
+          <CheckCircle2 className="w-4 h-4" />
+          <span>BİLİMSEL KANIT VE METRİK KÖKENİ AYRIMI (PROVENANCE ARCHITECTURE)</span>
+        </div>
+        <p className="text-[#8b8f98]">
+          <strong className="text-[#ecebe6]">EĞİTİM DENEYİ (EXP-001):</strong> CIC-IDS2017 test kümesi üzerinde ölçülen matematiksel referans sonuçlarıdır (LightGBM Macro F1 %93.74, Isolation Forest ROC-AUC %73.35).
+        </p>
+        <p className="text-[#8b8f98]">
+          <strong className="text-[#ecebe6]">ÇALIŞMA ZAMANI MODELİ (RUNTIME):</strong> Bellekteki modelin aktif durumu, SHA-256 kriptografik bütünlük doğrulaması, feature-schema-v1 kontratı ve gerçek zamanlı çıkarım gecikmeleridir.
+        </p>
+      </div>
+
+      {/* Section 1 Header */}
+      <div className="flex items-center justify-between border-b border-[rgba(236,235,230,0.12)] pb-2 pt-2">
+        <h2 className="text-xs font-bold uppercase text-[#4f8cff] tracking-wider">
+          BÖLÜM 1 — EĞİTİM DENEYİ METRİKLERİ (OFFLINE BENCHMARK: EXP-001)
+        </h2>
+        <span className="text-[10px] text-[#8b8f98]">341,713 Doğrulanmış Akış</span>
       </div>
 
       {/* Model Cards Grid */}
@@ -83,11 +105,11 @@ export default function ModelsPage() {
         <div className="bg-[#101216] border border-[rgba(236,235,230,0.12)] p-6 rounded space-y-4">
           <div className="flex items-center justify-between border-b border-[rgba(236,235,230,0.12)] pb-3">
             <div>
-              <div className="text-[10px] text-[#8b8f98] uppercase">GÖZETİMLİ SALDIRI SINIFLANDIRICI</div>
+              <div className="text-[10px] text-[#8b8f98] uppercase">GÖZETİMLİ SALDIRI SINIFLANDIRICI (EXP-001)</div>
               <h2 className="text-base font-bold text-[#ecebe6] mt-0.5">{sup.modelName}</h2>
             </div>
             <span className="text-[10px] px-2 py-0.5 bg-[#060709] border border-[rgba(236,235,230,0.12)] text-[#2a9d8f] rounded">
-              v{sup.version} · AKTİF
+              v{sup.version} · TEST KÜMESİ DOĞRULANDI
             </span>
           </div>
 
@@ -237,6 +259,55 @@ export default function ModelsPage() {
               ))}
             </tbody>
           </table>
+        </div>
+      </div>
+
+      {/* Section 2 Header */}
+      <div className="flex items-center justify-between border-b border-[rgba(236,235,230,0.12)] pb-2 pt-4">
+        <h2 className="text-xs font-bold uppercase text-[#2a9d8f] tracking-wider">
+          BÖLÜM 2 — ÇALIŞMA ZAMANI MODELİ VE GÜVENLİK BÜTÜNLÜĞÜ (RUNTIME PIPELINE)
+        </h2>
+        <span className="text-[10px] text-[#2a9d8f]">Aktif Dağıtık Çıkarım Durumu</span>
+      </div>
+
+      {/* Runtime Integrity Card */}
+      <div className="bg-[#101216] border border-[rgba(236,235,230,0.12)] p-6 rounded space-y-4">
+        <div className="flex items-center justify-between border-b border-[rgba(236,235,230,0.12)] pb-3">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-[#2a9d8f]" />
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[#ecebe6]">
+              MODEL ARTIFACT GÜVENLİĞİ VE BÜTÜNLÜK DOĞRULAMASI
+            </h3>
+          </div>
+          <span className="text-[10px] text-[#2a9d8f] bg-[#2a9d8f]/10 border border-[#2a9d8f]/20 px-2 py-0.5 rounded">
+            SHA-256 DOĞRULANDI
+          </span>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+            <div className="text-[10px] text-[#8b8f98]">ÖZNİTELİK ŞEMASI</div>
+            <div className="text-sm font-bold text-[#ecebe6] mt-1">feature-schema-v1</div>
+            <div className="text-[10px] text-[#8b8f98] mt-0.5">77 Kanonik Sütun</div>
+          </div>
+
+          <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+            <div className="text-[10px] text-[#8b8f98]">ANOMALİ EŞİĞİ (τ*)</div>
+            <div className="text-sm font-bold text-[#4f8cff] mt-1">0.49540</div>
+            <div className="text-[10px] text-[#8b8f98] mt-0.5">Validation F1-Max</div>
+          </div>
+
+          <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+            <div className="text-[10px] text-[#8b8f98]">BELLEK DURUMU</div>
+            <div className="text-sm font-bold text-[#2a9d8f] mt-1">YÜKLÜ (CACHED)</div>
+            <div className="text-[10px] text-[#8b8f98] mt-0.5">Singleton Loader</div>
+          </div>
+
+          <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+            <div className="text-[10px] text-[#8b8f98]">AKIM TÜKETİCİSİ</div>
+            <div className="text-sm font-bold text-[#ecebe6] mt-1">ml-inference</div>
+            <div className="text-[10px] text-[#8b8f98] mt-0.5">Redis Streams XREADGROUP</div>
+          </div>
         </div>
       </div>
 

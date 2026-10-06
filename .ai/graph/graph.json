@@ -71,7 +71,25 @@
     {
       "kind": "static",
       "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/audit/audit.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/auth/auth.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
       "target": "apps/api/src/dashboard/dashboard.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/demo/demo.module.ts",
       "type": "imports"
     },
     {
@@ -119,6 +137,12 @@
     {
       "kind": "static",
       "source": "apps/api/src/app.module.ts",
+      "target": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
       "target": "apps/api/src/threats/threats.module.ts",
       "type": "imports"
     },
@@ -126,6 +150,264 @@
       "kind": "static",
       "source": "apps/api/src/app.module.ts",
       "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "ext:@nestjs/core",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/app.module.ts",
+      "target": "ext:@nestjs/throttler",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.controller.ts",
+      "target": "apps/api/src/audit/audit.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.controller.ts",
+      "target": "apps/api/src/auth/decorators/roles.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.controller.ts",
+      "target": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.controller.ts",
+      "target": "apps/api/src/auth/guards/roles.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.module.ts",
+      "target": "apps/api/src/audit/audit.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.module.ts",
+      "target": "apps/api/src/audit/audit.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.module.ts",
+      "target": "apps/api/src/prisma/prisma.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/audit/audit.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.controller.ts",
+      "target": "apps/api/src/auth/auth.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.controller.ts",
+      "target": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.controller.ts",
+      "target": "apps/api/src/auth/decorators/public.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.controller.ts",
+      "target": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.controller.ts",
+      "target": "ext:express",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.module.ts",
+      "target": "apps/api/src/audit/audit.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.module.ts",
+      "target": "apps/api/src/auth/auth.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.module.ts",
+      "target": "apps/api/src/auth/auth.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.module.ts",
+      "target": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.module.ts",
+      "target": "apps/api/src/auth/guards/roles.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.module.ts",
+      "target": "apps/api/src/prisma/prisma.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.service.ts",
+      "target": "apps/api/src/audit/audit.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.service.ts",
+      "target": "ext:bcryptjs",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/auth.service.ts",
+      "target": "ext:jsonwebtoken",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/decorators/public.decorator.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/decorators/roles.decorator.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "target": "apps/api/src/auth/auth.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "target": "apps/api/src/auth/decorators/public.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "target": "ext:@nestjs/core",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/guards/roles.guard.ts",
+      "target": "apps/api/src/auth/decorators/roles.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/guards/roles.guard.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/auth/guards/roles.guard.ts",
+      "target": "ext:@nestjs/core",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/common/http-exception.filter.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/common/http-exception.filter.ts",
+      "target": "ext:express",
       "type": "imports"
     },
     {
@@ -167,6 +449,90 @@
     {
       "kind": "static",
       "source": "apps/api/src/dashboard/dashboard.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.controller.ts",
+      "target": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.controller.ts",
+      "target": "apps/api/src/auth/decorators/roles.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.controller.ts",
+      "target": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.controller.ts",
+      "target": "apps/api/src/auth/guards/roles.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.controller.ts",
+      "target": "apps/api/src/demo/demo.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.module.ts",
+      "target": "apps/api/src/audit/audit.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.module.ts",
+      "target": "apps/api/src/demo/demo.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.module.ts",
+      "target": "apps/api/src/demo/demo.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.module.ts",
+      "target": "apps/api/src/prisma/prisma.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.service.ts",
+      "target": "apps/api/src/audit/audit.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.service.ts",
+      "target": "apps/api/src/prisma/prisma.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/demo/demo.service.ts",
       "target": "ext:@nestjs/common",
       "type": "imports"
     },
@@ -311,6 +677,18 @@
     {
       "kind": "static",
       "source": "apps/api/src/incidents/incidents.controller.ts",
+      "target": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.controller.ts",
+      "target": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/incidents/incidents.controller.ts",
       "target": "apps/api/src/incidents/incidents.service.ts",
       "type": "imports"
     },
@@ -365,6 +743,12 @@
     {
       "kind": "static",
       "source": "apps/api/src/main.ts",
+      "target": "apps/api/src/common/http-exception.filter.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/main.ts",
       "target": "ext:@nestjs/common",
       "type": "imports"
     },
@@ -384,6 +768,12 @@
       "kind": "side-effect",
       "source": "apps/api/src/main.ts",
       "target": "ext:dotenv",
+      "type": "imports"
+    },
+    {
+      "kind": "require",
+      "source": "apps/api/src/main.ts",
+      "target": "ext:helmet",
       "type": "imports"
     },
     {
@@ -502,6 +892,108 @@
     },
     {
       "kind": "static",
+      "source": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "target": "apps/api/src/threat-intel/ssrf.validator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "target": "apps/api/src/threat-intel/threat-intel.interface.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "target": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "target": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "target": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "target": "apps/api/src/audit/audit.module.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "target": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "target": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "target": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "target": "apps/api/src/audit/audit.service.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "target": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "target": "apps/api/src/threat-intel/threat-intel.interface.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "target": "ext:@nestjs/common",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
+      "source": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "target": "ext:ioredis",
+      "type": "imports"
+    },
+    {
+      "kind": "static",
       "source": "apps/api/src/threats/threats.controller.ts",
       "target": "apps/api/src/threats/threats.service.ts",
       "type": "imports"
@@ -582,6 +1074,12 @@
       "kind": "static",
       "source": "apps/api/test/test-e2e-pipeline.ts",
       "target": "packages/shared/src/index.ts",
+      "type": "imports"
+    },
+    {
+      "kind": "require",
+      "source": "apps/api/test/test-security-suite.js",
+      "target": "ext:assert",
       "type": "imports"
     },
     {
@@ -1014,11 +1512,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 103,
-    "hash": "2bdd1e048e25186d3a6c6cb81a3c454b6b04ed88f920d096eab5abdc3b5ecfb3",
+    "count": 126,
+    "hash": "b15ef2c7b92eca516bc7869ef11acf7848ce09cd689fa682ac216a35becbc148",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T18:42:04.326Z",
+  "generatedAt": "2026-10-06T19:14:56.407Z",
   "nodes": [
     {
       "consumers": [],
@@ -1198,9 +1696,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "dbe256a9b3bc056d63897af5f39dc63d915bde4afd10a492907bc1948b605133",
+        "hash": "da82cf0b5d276d2cfd88de5f6b349ca5855c4a7d82812bb458ab97bd86b3a075",
         "normalization": "text-lf-nobom",
-        "size": 885
+        "size": 1557
       },
       "id": "apps/api/src/app.module.ts",
       "importers": [
@@ -1209,7 +1707,10 @@
       ],
       "imports": [
         "apps/api/src/analytics/analytics.module.ts",
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/auth/auth.module.ts",
         "apps/api/src/dashboard/dashboard.module.ts",
+        "apps/api/src/demo/demo.module.ts",
         "apps/api/src/detection/detection.module.ts",
         "apps/api/src/events/events.module.ts",
         "apps/api/src/health/health.module.ts",
@@ -1217,7 +1718,57 @@
         "apps/api/src/models/models.module.ts",
         "apps/api/src/network/network.module.ts",
         "apps/api/src/prisma/prisma.module.ts",
+        "apps/api/src/threat-intel/threat-intel.module.ts",
         "apps/api/src/threats/threats.module.ts",
+        "ext:@nestjs/common",
+        "ext:@nestjs/core",
+        "ext:@nestjs/throttler"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "@nestjs/core",
+          "@nestjs/throttler"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/app.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/audit/audit.module.ts"
+      ],
+      "exports": [
+        "AuditController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a681851041160b42c36caf57215f183e42fbad32ba80dc976cec73beacdc7ea2",
+        "normalization": "text-lf-nobom",
+        "size": 755
+      },
+      "id": "apps/api/src/audit/audit.controller.ts",
+      "importers": [
+        "apps/api/src/audit/audit.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/auth/decorators/roles.decorator.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
         "ext:@nestjs/common"
       ],
       "language": "typescript",
@@ -1236,7 +1787,538 @@
         ],
         "subsystem": "apps/api"
       },
-      "path": "apps/api/src/app.module.ts",
+      "path": "apps/api/src/audit/audit.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.module.ts",
+        "apps/api/src/threat-intel/threat-intel.module.ts"
+      ],
+      "exports": [
+        "AuditModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "9c525c9807825cbea55e3da8661dacf69b7828cbd7fe4f67a89f82cc2fe9a0dc",
+        "normalization": "text-lf-nobom",
+        "size": 376
+      },
+      "id": "apps/api/src/audit/audit.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.module.ts",
+        "apps/api/src/threat-intel/threat-intel.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/prisma/prisma.module.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 4 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/audit/audit.module.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/auth/auth.service.ts",
+        "apps/api/src/demo/demo.service.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
+      ],
+      "exports": [
+        "AuditService",
+        "CreateAuditLogDto"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "40f71d8c51afb28324766ebd18fba126fbccbadf2e4e9238cf103600a459e967",
+        "normalization": "text-lf-nobom",
+        "size": 1820
+      },
+      "id": "apps/api/src/audit/audit.service.ts",
+      "importers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/auth/auth.service.ts",
+        "apps/api/src/demo/demo.service.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
+      ],
+      "imports": [
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 5 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/audit/audit.service.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/auth/auth.module.ts"
+      ],
+      "exports": [
+        "AuthController",
+        "LoginDto"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a719833d0364fbba17aba2883a242af4b42d7c2c9ae3242d73790280c06ce6a2",
+        "normalization": "text-lf-nobom",
+        "size": 1775
+      },
+      "id": "apps/api/src/auth/auth.controller.ts",
+      "importers": [
+        "apps/api/src/auth/auth.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/auth/auth.service.ts",
+        "apps/api/src/auth/decorators/current-user.decorator.ts",
+        "apps/api/src/auth/decorators/public.decorator.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "ext:@nestjs/common",
+        "ext:express"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "express"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/auth.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "AuthModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "882601002218c0fb43d29e781fdf2056614d69a464fcc94e535765e811fd1b98",
+        "normalization": "text-lf-nobom",
+        "size": 593
+      },
+      "id": "apps/api/src/auth/auth.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/auth.service.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
+        "apps/api/src/prisma/prisma.module.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/auth.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts"
+      ],
+      "exports": [
+        "AuthService",
+        "UserSessionPayload"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2cd56fe35cfe5cc17eac559c6ad3ea2b31f4c2a499d4808a0322bd8a1f3e3578",
+        "normalization": "text-lf-nobom",
+        "size": 4910
+      },
+      "id": "apps/api/src/auth/auth.service.ts",
+      "importers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common",
+        "ext:bcryptjs",
+        "ext:jsonwebtoken"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "bcryptjs",
+          "jsonwebtoken"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 3 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/auth.service.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.controller.ts"
+      ],
+      "exports": [
+        "CurrentUser"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "c1aa83825bf283c0dbdd60dfff8d6c0697f4632c4407d2bd0041e5cdfa40c2f7",
+        "normalization": "text-lf-nobom",
+        "size": 255
+      },
+      "id": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "importers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.controller.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 4 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts"
+      ],
+      "exports": [
+        "IS_PUBLIC_KEY",
+        "Public"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "bb149c7568f240afbabb885243d83abe7ec86fe6a27777ba4d028b7fb3b463dc",
+        "normalization": "text-lf-nobom",
+        "size": 150
+      },
+      "id": "apps/api/src/auth/decorators/public.decorator.ts",
+      "importers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/decorators/public.decorator.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
+        "apps/api/src/demo/demo.controller.ts"
+      ],
+      "exports": [
+        "ROLES_KEY",
+        "Roles"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8080391fc73ab433dcea7bfa51c3ab08e5bb1cab10572fcbc16481ed755d9fac",
+        "normalization": "text-lf-nobom",
+        "size": 157
+      },
+      "id": "apps/api/src/auth/decorators/roles.decorator.ts",
+      "importers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
+        "apps/api/src/demo/demo.controller.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 3 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/decorators/roles.decorator.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.controller.ts"
+      ],
+      "exports": [
+        "JwtAuthGuard"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "dec83a501e22a146a4c0d28406cb189006a4d04ed97c2c60b5781a9928b61c9b",
+        "normalization": "text-lf-nobom",
+        "size": 1336
+      },
+      "id": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "importers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/incidents/incidents.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.controller.ts"
+      ],
+      "imports": [
+        "apps/api/src/auth/auth.service.ts",
+        "apps/api/src/auth/decorators/public.decorator.ts",
+        "ext:@nestjs/common",
+        "ext:@nestjs/core"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "@nestjs/core"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 6 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.controller.ts"
+      ],
+      "exports": [
+        "RolesGuard"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8670e254ec91ad12ea40244094d221be212a4bd457e3f2e29329d91e9759626e",
+        "normalization": "text-lf-nobom",
+        "size": 1051
+      },
+      "id": "apps/api/src/auth/guards/roles.guard.ts",
+      "importers": [
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.controller.ts"
+      ],
+      "imports": [
+        "apps/api/src/auth/decorators/roles.decorator.ts",
+        "ext:@nestjs/common",
+        "ext:@nestjs/core"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "@nestjs/core"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "MEDIUM: 3 dependents (at or above 3)"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/auth/guards/roles.guard.ts",
+      "publicSurface": false,
+      "risk": "MEDIUM",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/main.ts"
+      ],
+      "exports": [
+        "GlobalExceptionFilter"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "70c0ec0213640ccf81f2b40423ca271be46d635bfd3dd3c2d33ea1a7d3b27870",
+        "normalization": "text-lf-nobom",
+        "size": 1355
+      },
+      "id": "apps/api/src/common/http-exception.filter.ts",
+      "importers": [
+        "apps/api/src/main.ts"
+      ],
+      "imports": [
+        "ext:@nestjs/common",
+        "ext:express"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "express"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/common/http-exception.filter.ts",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -1366,6 +2448,142 @@
         "subsystem": "apps/api"
       },
       "path": "apps/api/src/dashboard/dashboard.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/demo/demo.module.ts"
+      ],
+      "exports": [
+        "DemoController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a9b3a0de775865737e75d891484c238a881433bec059a1f663eb2c3bc5b68e2a",
+        "normalization": "text-lf-nobom",
+        "size": 706
+      },
+      "id": "apps/api/src/demo/demo.controller.ts",
+      "importers": [
+        "apps/api/src/demo/demo.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/auth/decorators/current-user.decorator.ts",
+        "apps/api/src/auth/decorators/roles.decorator.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
+        "apps/api/src/demo/demo.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/demo/demo.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "DemoModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6fcc8ad4fb3d33331794748a254febdee95a384854cebab67f7d86281c2508e8",
+        "normalization": "text-lf-nobom",
+        "size": 416
+      },
+      "id": "apps/api/src/demo/demo.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/demo/demo.service.ts",
+        "apps/api/src/prisma/prisma.module.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/demo/demo.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/demo/demo.module.ts"
+      ],
+      "exports": [
+        "DemoService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d89d0a5faf423cb32eabafc4775641bbf566f4dad0b3370e659d52ab3b571d24",
+        "normalization": "text-lf-nobom",
+        "size": 1444
+      },
+      "id": "apps/api/src/demo/demo.service.ts",
+      "importers": [
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/demo/demo.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/prisma/prisma.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/demo/demo.service.ts",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -1694,15 +2912,17 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "9fc7403d5f4d4ba84640efd22fe7f7f866117e9e50cb2addac75244e421a156c",
+        "hash": "ba2a4f9e1d553a0d5144e94b03801717b1ad01cb06f315c04b6584103275bd54",
         "normalization": "text-lf-nobom",
-        "size": 689
+        "size": 915
       },
       "id": "apps/api/src/incidents/incidents.controller.ts",
       "importers": [
         "apps/api/src/incidents/incidents.module.ts"
       ],
       "imports": [
+        "apps/api/src/auth/decorators/current-user.decorator.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
         "apps/api/src/incidents/incidents.service.ts",
         "ext:@nestjs/common"
       ],
@@ -1781,9 +3001,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "461cca82b0b797d92ccf968192dc70a8b614e1744e61c1dab80cc6e0ed725f06",
+        "hash": "ee9f226ab31d0d6e643fe3d2223fcd1b80aee12fcd3716d5d56d82e44362d1cd",
         "normalization": "text-lf-nobom",
-        "size": 2615
+        "size": 3909
       },
       "id": "apps/api/src/incidents/incidents.service.ts",
       "importers": [
@@ -1822,18 +3042,20 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "cfa9198f39674d7709310f056eebbb3d3f3569215e5da61152ab5dae410db0bf",
+        "hash": "36e5206feae74b3e1b2eaadfdc00f4ebb1b4959a8360f98e86f3e06146bf695b",
         "normalization": "text-lf-nobom",
-        "size": 628
+        "size": 1383
       },
       "id": "apps/api/src/main.ts",
       "importers": [],
       "imports": [
         "apps/api/src/app.module.ts",
+        "apps/api/src/common/http-exception.filter.ts",
         "ext:@nestjs/common",
         "ext:@nestjs/core",
         "ext:cookie-parser",
-        "ext:dotenv"
+        "ext:dotenv",
+        "ext:helmet"
       ],
       "language": "typescript",
       "metadata": {
@@ -1844,7 +3066,8 @@
           "@nestjs/common",
           "@nestjs/core",
           "cookie-parser",
-          "dotenv"
+          "dotenv",
+          "helmet"
         ],
         "inCycle": false,
         "parseStatus": "parsed",
@@ -2122,7 +3345,10 @@
     },
     {
       "consumers": [
-        "apps/api/src/app.module.ts"
+        "apps/api/src/app.module.ts",
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.module.ts"
       ],
       "exports": [
         "PrismaModule"
@@ -2135,7 +3361,10 @@
       },
       "id": "apps/api/src/prisma/prisma.module.ts",
       "importers": [
-        "apps/api/src/app.module.ts"
+        "apps/api/src/app.module.ts",
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/demo/demo.module.ts"
       ],
       "imports": [
         "apps/api/src/prisma/prisma.service.ts",
@@ -2153,19 +3382,22 @@
         "parseStatus": "parsed",
         "publicSurfaceReasons": [],
         "riskBasis": [
-          "LOW: 1 dependent"
+          "MEDIUM: 4 dependents (at or above 3)"
         ],
         "subsystem": "apps/api"
       },
       "path": "apps/api/src/prisma/prisma.module.ts",
       "publicSurface": false,
-      "risk": "LOW",
+      "risk": "MEDIUM",
       "type": "file"
     },
     {
       "consumers": [
         "apps/api/src/analytics/analytics.service.ts",
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/auth/auth.service.ts",
         "apps/api/src/dashboard/dashboard.service.ts",
+        "apps/api/src/demo/demo.service.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/health/health.controller.ts",
         "apps/api/src/incidents/incidents.service.ts",
@@ -2186,7 +3418,10 @@
       "id": "apps/api/src/prisma/prisma.service.ts",
       "importers": [
         "apps/api/src/analytics/analytics.service.ts",
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/auth/auth.service.ts",
         "apps/api/src/dashboard/dashboard.service.ts",
+        "apps/api/src/demo/demo.service.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/health/health.controller.ts",
         "apps/api/src/incidents/incidents.service.ts",
@@ -2212,13 +3447,272 @@
         "parseStatus": "parsed",
         "publicSurfaceReasons": [],
         "riskBasis": [
-          "MEDIUM: 8 dependents (at or above 3)"
+          "HIGH: 11 dependents (at or above 10)"
         ],
         "subsystem": "apps/api"
       },
       "path": "apps/api/src/prisma/prisma.service.ts",
       "publicSurface": false,
-      "risk": "MEDIUM",
+      "risk": "HIGH",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/threat-intel/threat-intel.module.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
+      ],
+      "exports": [
+        "AbuseIpDbProvider"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e738d8b2eea1b0b0f796017fbd18a95b3a8b86fa329f3456302681d876b10b7e",
+        "normalization": "text-lf-nobom",
+        "size": 4891
+      },
+      "id": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "importers": [
+        "apps/api/src/threat-intel/threat-intel.module.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
+      ],
+      "imports": [
+        "apps/api/src/threat-intel/ssrf.validator.ts",
+        "apps/api/src/threat-intel/threat-intel.interface.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/threat-intel/abuseipdb.provider.ts"
+      ],
+      "exports": [
+        "SsrfValidator"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5c70fc5ca40f2dd3d2fa97edb3ef8671f0e769662c9269c9b44f95576523e90e",
+        "normalization": "text-lf-nobom",
+        "size": 2412
+      },
+      "id": "apps/api/src/threat-intel/ssrf.validator.ts",
+      "importers": [
+        "apps/api/src/threat-intel/abuseipdb.provider.ts"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threat-intel/ssrf.validator.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/threat-intel/threat-intel.module.ts"
+      ],
+      "exports": [
+        "ThreatIntelController"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6601e2e782be940966b297708ff15ca323c87e583607ef96b76cfde27503d858",
+        "normalization": "text-lf-nobom",
+        "size": 679
+      },
+      "id": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "importers": [
+        "apps/api/src/threat-intel/threat-intel.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/auth/decorators/current-user.decorator.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/threat-intel/abuseipdb.provider.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
+      ],
+      "exports": [
+        "IThreatIntelProvider",
+        "ThreatIntelReport"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e315ea0009af68ca1b99e6c62134a7ebe98fcc4aad5b795d8ee3611d80370837",
+        "normalization": "text-lf-nobom",
+        "size": 722
+      },
+      "id": "apps/api/src/threat-intel/threat-intel.interface.ts",
+      "importers": [
+        "apps/api/src/threat-intel/abuseipdb.provider.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
+      ],
+      "imports": [],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threat-intel/threat-intel.interface.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [
+        "ThreatIntelModule"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "3b28e142fa677d808bc01270479de99bc7c8e860242bc4db3d793af7cd898d01",
+        "normalization": "text-lf-nobom",
+        "size": 481
+      },
+      "id": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/threat-intel/abuseipdb.provider.ts",
+        "apps/api/src/threat-intel/threat-intel.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts",
+        "ext:@nestjs/common"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 1 dependent"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [
+        "apps/api/src/threat-intel/threat-intel.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.module.ts"
+      ],
+      "exports": [
+        "ThreatIntelService"
+      ],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "273ea27cdf8ab3ac4e763d39ef846f61dd9c99e6594833adcf947c74e916a321",
+        "normalization": "text-lf-nobom",
+        "size": 3011
+      },
+      "id": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "importers": [
+        "apps/api/src/threat-intel/threat-intel.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.module.ts"
+      ],
+      "imports": [
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/threat-intel/abuseipdb.provider.ts",
+        "apps/api/src/threat-intel/threat-intel.interface.ts",
+        "ext:@nestjs/common",
+        "ext:ioredis"
+      ],
+      "language": "typescript",
+      "metadata": {
+        "category": "source",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "@nestjs/common",
+          "ioredis"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: 2 dependents"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "publicSurface": false,
+      "risk": "LOW",
       "type": "file"
     },
     {
@@ -2423,6 +3917,41 @@
         "subsystem": "apps/api"
       },
       "path": "apps/api/test/test-e2e-pipeline.ts",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5cb337d715c8d6a7caa8247a3c85963b910c1cdae1a9226e1a6da80061d4535e",
+        "normalization": "text-lf-nobom",
+        "size": 5936
+      },
+      "id": "apps/api/test/test-security-suite.js",
+      "importers": [],
+      "imports": [
+        "ext:assert"
+      ],
+      "language": "javascript",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "analyzed",
+        "entryPoint": false,
+        "externalImports": [
+          "assert"
+        ],
+        "inCycle": false,
+        "parseStatus": "parsed",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/api"
+      },
+      "path": "apps/api/test/test-security-suite.js",
       "publicSurface": false,
       "risk": "LOW",
       "type": "file"
@@ -2649,9 +4178,9 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "a94eb216948604bcea335c8ae8d4bbdd1136f372cc2d4322fca0789ad94dd2ee",
+        "hash": "13b25580f9841e99449d12c54d3f5813fb1d6b1170c89b016117fd47ba59582f",
         "normalization": "text-lf-nobom",
-        "size": 2757
+        "size": 4621
       },
       "id": "apps/ml/app/inference/model_loader.py",
       "importers": [],
@@ -2680,9 +4209,9 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "c609eb7720524fb65c59352b6fae332a6fac662aee7814a767f0d158d45c53ac",
+        "hash": "fef44a10dc2e90e979db5e99d476b4345b84202ab3cce91c45ed74429ea9ae30",
         "normalization": "text-lf-nobom",
-        "size": 7623
+        "size": 7755
       },
       "id": "apps/ml/app/inference/service.py",
       "importers": [],
@@ -3176,6 +4705,37 @@
       "exports": [],
       "fingerprint": {
         "algo": "sha256",
+        "hash": "015c34c2eb5f87a3b1a1512aaac817516b076eb773b666bb07377b12b01e5e07",
+        "normalization": "text-lf-nobom",
+        "size": 1815
+      },
+      "id": "apps/ml/tests/test_model_security.py",
+      "importers": [],
+      "imports": [],
+      "language": "python",
+      "metadata": {
+        "category": "test",
+        "dependencyAnalysis": "none",
+        "entryPoint": false,
+        "externalImports": [],
+        "inCycle": false,
+        "parseStatus": "unsupported",
+        "publicSurfaceReasons": [],
+        "riskBasis": [
+          "LOW: test file"
+        ],
+        "subsystem": "apps/ml"
+      },
+      "path": "apps/ml/tests/test_model_security.py",
+      "publicSurface": false,
+      "risk": "LOW",
+      "type": "file"
+    },
+    {
+      "consumers": [],
+      "exports": [],
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "2201a899fd42789defd5abd6bb141cd655485785c8adef5498040e950aead0da",
         "normalization": "text-lf-nobom",
         "size": 1612
@@ -3520,9 +5080,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "96b4dc088bc6f2514ea3c444c483a7e3602014acca21084c3d9acd2f1f669816",
+        "hash": "d64ca63c3542ae12e9de8c073e1647303d361f438513072ca8b7aad58141a4cd",
         "normalization": "text-lf-nobom",
-        "size": 13753
+        "size": 18056
       },
       "id": "apps/web/src/app/models/page.tsx",
       "importers": [],
@@ -3654,9 +5214,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "b4ae940445a72a4c6cc6521c6e9c90b9dbe6c7f2a12ca747d42b145f6cdb75f5",
+        "hash": "de30dc7a7499ac4ca5ad06acc6882ccb79a0f594e7eb75ad9515a13cf0dc9105",
         "normalization": "text-lf-nobom",
-        "size": 7482
+        "size": 12915
       },
       "id": "apps/web/src/app/settings/page.tsx",
       "importers": [],
@@ -3695,9 +5255,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "325b25f2b4a04f0a481978aa75511dda42ea635964a934b47dbedbe5973c9715",
+        "hash": "557bc1fd38dcd6f01f85590a7ad6036de447959646fbf2829a3bf771ad30cbbf",
         "normalization": "text-lf-nobom",
-        "size": 15304
+        "size": 20394
       },
       "id": "apps/web/src/app/threats/[id]/page.tsx",
       "importers": [],
@@ -3788,9 +5348,9 @@
       ],
       "fingerprint": {
         "algo": "sha256",
-        "hash": "a5c90ba1a7b40d56892fc57e42cd61262ff15496300a732957370d0366729f68",
+        "hash": "043c745a8e7bdacd7e1776cf7037244fedc0bb0e3ea8946f10dec58cbb25384b",
         "normalization": "text-lf-nobom",
-        "size": 9395
+        "size": 15532
       },
       "id": "apps/web/src/components/layout/Shell.tsx",
       "importers": [
@@ -4218,9 +5778,24 @@
         "apps/api/src/analytics/analytics.module.ts",
         "apps/api/src/analytics/analytics.service.ts",
         "apps/api/src/app.module.ts",
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/auth/auth.service.ts",
+        "apps/api/src/auth/decorators/current-user.decorator.ts",
+        "apps/api/src/auth/decorators/public.decorator.ts",
+        "apps/api/src/auth/decorators/roles.decorator.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
+        "apps/api/src/common/http-exception.filter.ts",
         "apps/api/src/dashboard/dashboard.controller.ts",
         "apps/api/src/dashboard/dashboard.module.ts",
         "apps/api/src/dashboard/dashboard.service.ts",
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/demo/demo.module.ts",
+        "apps/api/src/demo/demo.service.ts",
         "apps/api/src/detection/detection.module.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/detection/redis-consumer.service.ts",
@@ -4240,6 +5815,10 @@
         "apps/api/src/network/network.service.ts",
         "apps/api/src/prisma/prisma.module.ts",
         "apps/api/src/prisma/prisma.service.ts",
+        "apps/api/src/threat-intel/abuseipdb.provider.ts",
+        "apps/api/src/threat-intel/threat-intel.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.module.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts",
         "apps/api/src/threats/threats.controller.ts",
         "apps/api/src/threats/threats.module.ts",
         "apps/api/src/threats/threats.service.ts"
@@ -4252,9 +5831,24 @@
         "apps/api/src/analytics/analytics.module.ts",
         "apps/api/src/analytics/analytics.service.ts",
         "apps/api/src/app.module.ts",
+        "apps/api/src/audit/audit.controller.ts",
+        "apps/api/src/audit/audit.module.ts",
+        "apps/api/src/audit/audit.service.ts",
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/auth/auth.module.ts",
+        "apps/api/src/auth/auth.service.ts",
+        "apps/api/src/auth/decorators/current-user.decorator.ts",
+        "apps/api/src/auth/decorators/public.decorator.ts",
+        "apps/api/src/auth/decorators/roles.decorator.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
+        "apps/api/src/common/http-exception.filter.ts",
         "apps/api/src/dashboard/dashboard.controller.ts",
         "apps/api/src/dashboard/dashboard.module.ts",
         "apps/api/src/dashboard/dashboard.service.ts",
+        "apps/api/src/demo/demo.controller.ts",
+        "apps/api/src/demo/demo.module.ts",
+        "apps/api/src/demo/demo.service.ts",
         "apps/api/src/detection/detection.module.ts",
         "apps/api/src/detection/detection.service.ts",
         "apps/api/src/detection/redis-consumer.service.ts",
@@ -4274,6 +5868,10 @@
         "apps/api/src/network/network.service.ts",
         "apps/api/src/prisma/prisma.module.ts",
         "apps/api/src/prisma/prisma.service.ts",
+        "apps/api/src/threat-intel/abuseipdb.provider.ts",
+        "apps/api/src/threat-intel/threat-intel.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.module.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts",
         "apps/api/src/threats/threats.controller.ts",
         "apps/api/src/threats/threats.module.ts",
         "apps/api/src/threats/threats.service.ts"
@@ -4290,6 +5888,9 @@
     },
     {
       "consumers": [
+        "apps/api/src/app.module.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
         "apps/api/src/main.ts",
         "apps/api/test/test-e2e-pipeline.ts"
       ],
@@ -4297,6 +5898,9 @@
       "fingerprint": null,
       "id": "ext:@nestjs/core",
       "importers": [
+        "apps/api/src/app.module.ts",
+        "apps/api/src/auth/guards/jwt-auth.guard.ts",
+        "apps/api/src/auth/guards/roles.guard.ts",
         "apps/api/src/main.ts",
         "apps/api/test/test-e2e-pipeline.ts"
       ],
@@ -4304,6 +5908,26 @@
       "language": null,
       "metadata": {
         "package": "@nestjs/core"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:@nestjs/throttler",
+      "importers": [
+        "apps/api/src/app.module.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "@nestjs/throttler"
       },
       "path": null,
       "publicSurface": false,
@@ -4348,6 +5972,46 @@
       "language": null,
       "metadata": {
         "package": "@prisma/client"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/test/test-security-suite.js"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:assert",
+      "importers": [
+        "apps/api/test/test-security-suite.js"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "assert"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/auth/auth.service.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:bcryptjs",
+      "importers": [
+        "apps/api/src/auth/auth.service.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "bcryptjs"
       },
       "path": null,
       "publicSurface": false,
@@ -4418,6 +6082,28 @@
     },
     {
       "consumers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/common/http-exception.filter.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:express",
+      "importers": [
+        "apps/api/src/auth/auth.controller.ts",
+        "apps/api/src/common/http-exception.filter.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "express"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
         "apps/api/src/models/models.service.ts"
       ],
       "exports": [],
@@ -4430,6 +6116,26 @@
       "language": null,
       "metadata": {
         "package": "fs"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/main.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:helmet",
+      "importers": [
+        "apps/api/src/main.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "helmet"
       },
       "path": null,
       "publicSurface": false,
@@ -4459,19 +6165,41 @@
     {
       "consumers": [
         "apps/api/src/detection/redis-consumer.service.ts",
-        "apps/api/src/health/health.controller.ts"
+        "apps/api/src/health/health.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
       ],
       "exports": [],
       "fingerprint": null,
       "id": "ext:ioredis",
       "importers": [
         "apps/api/src/detection/redis-consumer.service.ts",
-        "apps/api/src/health/health.controller.ts"
+        "apps/api/src/health/health.controller.ts",
+        "apps/api/src/threat-intel/threat-intel.service.ts"
       ],
       "imports": [],
       "language": null,
       "metadata": {
         "package": "ioredis"
+      },
+      "path": null,
+      "publicSurface": false,
+      "risk": null,
+      "type": "external"
+    },
+    {
+      "consumers": [
+        "apps/api/src/auth/auth.service.ts"
+      ],
+      "exports": [],
+      "fingerprint": null,
+      "id": "ext:jsonwebtoken",
+      "importers": [
+        "apps/api/src/auth/auth.service.ts"
+      ],
+      "imports": [],
+      "language": null,
+      "metadata": {
+        "package": "jsonwebtoken"
       },
       "path": null,
       "publicSurface": false,
@@ -5014,22 +6742,22 @@
   "schemaVersion": 1,
   "stats": {
     "cycles": 0,
-    "edges": 168,
+    "edges": 251,
     "edgesByType": {
       "exports": 5,
-      "imports": 163
+      "imports": 246
     },
-    "externals": 19,
-    "files": 88,
+    "externals": 25,
+    "files": 111,
     "languagesAnalyzed": [
       "javascript",
       "typescript"
     ],
     "languagesMetadataOnly": {
       "css": 1,
-      "python": 26
+      "python": 27
     },
-    "nodes": 107,
+    "nodes": 136,
     "unresolvedImports": 13
   },
   "tool": {

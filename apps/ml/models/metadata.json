@@ -96,9 +96,17 @@
   ],
   "anomaly_threshold": 0.4954,
   "created_at": "2026-10-06T17:30:00Z",
+  "feature_schema_version": "feature-schema-v1",
   "scaler_file": "scaler.joblib",
   "label_encoder_file": "label_encoder.joblib",
   "supervised_model_file": "supervised_lightgbm.joblib",
   "anomaly_model_file": "isolation_forest.joblib",
-  "shap_explainer_file": "shap_explainer.joblib"
+  "shap_explainer_file": "shap_explainer.joblib",
+  "artifact_hashes": {
+    "scaler_file": "5E836BFA428F211F144FCBD25841F1B7D145DB9F49F69349BDA842AD6F2D38B2",
+    "label_encoder_file": "0991D989180BD886C2BCD566BB7E9F59A4F47478EE577EB3E03D36CF5DE37D7F",
+    "supervised_model_file": "728C1E437E42D83824D94CCED166CAC0FA34E635ED4911467AC42911B991192C",
+    "anomaly_model_file": "C4245317E7ACF44E9D87C58180C6AA6513E1EEE097A5DB3DE34E962A6EC88F28",
+    "shap_explainer_file": "9611D002D2B1067E3A7BE5A1ED0EDE8FE0E85FD94EF04C4A3C7D0D1290B7B1C3"
+  }
 }

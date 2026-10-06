@@ -61,3 +61,23 @@ Evaluation Rules:
    - Baseline normal traffic (predicted_class = BENIGN, is_anomalous = False).
    - Weak attack predictions with confidence < 0.50 and normal anomaly score.
 ```
+
+---
+
+## 6. Comprehensive Security Risk Assessment & Mitigation Matrix (Phase 4)
+
+| Surface / Domain | Threat Description | Impact | Likelihood | Mitigation Strategy | Residual Risk |
+| :--- | :--- | :---: | :---: | :--- | :--- |
+| **1. Attack Surface** | Port enumeration and unauthenticated endpoint probing on ports 3000, 3001, 8000. | High | High | Minimal exposure, Docker network isolation, rate limiting on all ingress routes. | Low (Private network binding in prod). |
+| **2. Authentication** | Credential brute-forcing, credential stuffing, session hijacking. | High | Medium | Bcrypt hashing (cost 10), JWT in HTTP-only SameSite cookies, rate limiting on `/api/v1/auth/login`. | Low (Strong password policies enforced). |
+| **3. Authorization** | Privilege escalation; Analyst accessing administrative audit logs or demo reset. | High | Medium | Server-side `RolesGuard` enforcing `@Roles('ADMIN')`, returning 403 Forbidden. | Negligible (Explicit claims verification). |
+| **4. API Security** | Denial of Service via oversized JSON payloads, malformed parameter injection. | High | Medium | Payload body size capped at 1MB, Throttler rate limiting (300 req/min), structured JSON parsing. | Low (Distributed DDoS requires cloud WAF). |
+| **5. Redis Transport** | Unauthorized stream tampering, queue injection, or credential interception. | Critical | Low | Container network isolation, Redis password authentication, DLQ quarantine for malformed packets. | Negligible (Accessible only to internal services). |
+| **6. PostgreSQL** | SQL Injection, unauthorized data exfiltration or table tampering. | Critical | Low | Parameterized queries enforced via Prisma ORM, strict foreign keys, zero raw string SQL concatenation. | Negligible (No dynamic SQL construction). |
+| **7. ML Artifacts** | Model tampering, pickle deserialization exploits, backdoored weights. | Critical | Low | Cryptographic SHA-256 integrity verification upon loader startup; failure aborts startup. | Negligible (Read-only container volumes). |
+| **8. Threat Intel** | Server-Side Request Forgery (SSRF) targeting internal IPs (`127.0.0.1`, RFC 1918). | High | High | `SsrfValidator` blocks internal/private/link-local ranges before initiating any outbound HTTP call. | Negligible (Strict IP range filtering). |
+| **9. WebSocket** | Unauthorized room subscription, connection flooding, cross-site hijacking. | Medium | Medium | Origin allowlist, bounded in-memory buffer (50 alerts), scoped `/events` namespace. | Low (WSS transport in production). |
+| **10. Frontend** | Cross-Site Scripting (XSS), Clickjacking, UI tampering. | Medium | Low | React JSX contextual encoding, Helmet HTTP headers (`X-Frame-Options: DENY`, `nosniff`), no localStorage tokens. | Negligible. |
+| **11. Secrets** | Hardcoded API keys, JWT secret exposure in version control. | Critical | Low | Dotenv configuration, `.gitignore` exclusion, sanitized error messages stripping secrets. | Negligible (Audit scans verified). |
+| **12. Logging** | Log injection, sensitive data leakage (passwords, tokens) in audit files. | Medium | Low | Structured JSON logging, password fields sanitized and excluded from `AuditLog` details. | Negligible. |
+

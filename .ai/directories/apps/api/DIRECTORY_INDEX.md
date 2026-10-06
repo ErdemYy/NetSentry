@@ -1,10 +1,10 @@
 ---
-generatedAt: 2026-10-06T18:42:04.326Z
+generatedAt: 2026-10-06T19:14:56.407Z
 source: project-intel 0.1.0
 scope: directory
 path: apps/api
 schemaVersion: 1
-fingerprint: sha256:2becb94160423345baf891ed248c9ca8f173c967aedef56d92042cf39c65491b
+fingerprint: sha256:b65d82fbe4dafb343d9d476949df20c40dfbf25194e6aa18ed3289b229c7eb11
 generated: true
 ---
 
@@ -18,13 +18,21 @@ _Not determined by tooling (no README or package description found)._
 
 ## Composition
 
-29 source files (typescript 29), 2 test files.
+50 source files (typescript 50), 3 test files.
 
 ## Important files
 
 | Path | Why | Risk |
 | --- | --- | --- |
-| `apps/api/src/prisma/prisma.service.ts` | used by 8 files | MEDIUM |
+| `apps/api/src/prisma/prisma.service.ts` | used by 11 files | HIGH |
+| `apps/api/src/auth/guards/jwt-auth.guard.ts` | used by 6 files | MEDIUM |
+| `apps/api/src/audit/audit.service.ts` | used by 5 files | MEDIUM |
+| `apps/api/src/audit/audit.module.ts` | used by 4 files | MEDIUM |
+| `apps/api/src/auth/decorators/current-user.decorator.ts` | used by 4 files | MEDIUM |
+| `apps/api/src/prisma/prisma.module.ts` | used by 4 files | MEDIUM |
+| `apps/api/src/auth/auth.service.ts` | used by 3 files | MEDIUM |
+| `apps/api/src/auth/decorators/roles.decorator.ts` | used by 3 files | MEDIUM |
+| `apps/api/src/auth/guards/roles.guard.ts` | used by 3 files | MEDIUM |
 
 ## Entry points
 
@@ -41,14 +49,14 @@ _none_
 | Depends on | Edges |
 | --- | --- |
 | `packages/shared` | 4 |
-| `@nestjs/common` (package) | 29 |
+| `@nestjs/common` (package) | 48 |
+| `@nestjs/core` (package) | 5 |
 | `@prisma/client` (package) | 3 |
-| `@nestjs/core` (package) | 2 |
+| `ioredis` (package) | 3 |
 | `dotenv` (package) | 2 |
-| `ioredis` (package) | 2 |
+| `express` (package) | 2 |
+| `@nestjs/throttler` (package) | 1 |
 | `@nestjs/websockets` (package) | 1 |
-| `cookie-parser` (package) | 1 |
-| `fs` (package) | 1 |
 
 ## Consumers
 

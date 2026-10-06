@@ -2,10 +2,10 @@ digraph "project_intel" {
   graph [rankdir=LR, fontname="Helvetica", labelloc=t, label="Dependency overview (by subsystem)"];
   node [shape=box, fontname="Helvetica", fontsize=10];
   edge [fontname="Helvetica", fontsize=9];
-  // 79 files exceed maxNodes (60); showing subsystems. Use --view subsystem --target <path> for detail; graph.json has the full graph.
+  // 100 files exceed maxNodes (60); showing subsystems. Use --view subsystem --target <path> for detail; graph.json has the full graph.
   nc446879c [label="(root) (2)", shape=folder, peripheries=2];
   n304f8618 [label=".agents (1)", shape=folder];
-  n36245fac [label="apps/api (29)", shape=folder];
+  n36245fac [label="apps/api (50)", shape=folder];
   n3b7669be [label="apps/ml (21)", shape=folder];
   ne97c5dd0 [label="apps/web (20)", shape=folder, peripheries=2];
   n21f228d0 [label="packages/shared (6)", shape=folder];

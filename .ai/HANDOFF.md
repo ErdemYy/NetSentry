@@ -1,37 +1,32 @@
 # Handoff — NetSentry AI
 
-- **Objective:** Successfully complete PHASE 3 (Frontend SOC Operations Dashboard & Real-Time Security Intelligence Interface) and hand off with verified operational proof.
+- **Objective:** Successfully complete PHASE 4 (Advanced Security Hardening, Threat Intelligence Enrichment & Graduation Thesis Package) and hand off with verified operational proof.
 - **Completed:**
-  - Production-grade, dark-themed SOC Operations Dashboard (`apps/web`) adhering to the Erdem Design System (`Space Grotesk`, `JetBrains Mono`, `--color-ink`, `--color-graphite`, `--color-signal`, `--color-tech`).
-  - **Strict Zero-Mock Guarantee:** Zero occurrences of `mockData`, synthetic charts, or `Math.random()`. All metrics, flow metadata, anomaly scores, and incident records are hydrated from NestJS REST API endpoints (`/api/v1/dashboard/overview`, `/threats`, `/incidents`, `/network/stats`, `/analytics/stats`, `/models/metrics`, `/health/detailed`) and live WebSocket (`/events`).
-  - Clear cognitive separation between **Known Attack classification (LightGBM)** and **Anomaly Detection (Isolation Forest score vs $\tau^* = 0.49540$)**.
-  - **TreeSHAP Explainability UX ("WHY DID THE MODEL FLAG THIS?"):** Exact feature attributions rendered with signed numerical contribution bars and directional risk indicators (`INCREASED RISK` vs `DECREASED RISK`).
-  - Complete application routes implemented and verified with Next.js 15:
-    - `/` (Overview & real-time activity stream)
-    - `/threats` (Tabular threat feed)
-    - `/threats/[id]` (Deep telemetry & SHAP attribution)
-    - `/incidents` (Incident management triage table)
-    - `/incidents/[id]` (Incident timeline & status transition controls)
-    - `/network` (Network flow & protocol intelligence)
-    - `/analytics` (Distribution & confidence analytics)
-    - `/models` (Academic ML benchmark comparison & latency profile)
-    - `/settings` (Platform diagnostics & health probes)
-  - Real-time Socket.IO connection hook `useRealtime` listening to `threat_alert` and `detection.created` with reconnection and bounded event caching.
-  - End-to-end verified live data flow: `CIC-IDS2017 Dataset -> Redis Stream -> ML Worker -> NestJS Core API -> PostgreSQL -> WebSocket /events -> Dashboard`.
+  - **Single Source of Truth Version Consistency:** Next.js `16.3.6`, React `19.2.8`, NestJS `11.0.1`, Python `3.12.10`, Node.js `v24.19.0`, Prisma `5.22.0`, PostgreSQL `16-alpine`, Redis `7-alpine`.
+  - **Cryptographic Model Artifact Integrity:** Startup verification of all 5 ML artifacts (`lightgbm_model.joblib`, `isolation_forest.joblib`, `robust_scaler.joblib`, `label_encoder.joblib`, `shap_explainer.joblib`) via SHA-256 hashes defined in `metadata.json`. Tampered artifacts immediately halt boot with `MODEL INTEGRITY CHECK FAILED`.
+  - **Feature Schema Versioning:** `feature-schema-v1` enforced across payload contracts and model loaders.
+  - **Authentication & RBAC:** Closed Open SOC mode. Implemented `AuthModule` with JWT and secure HTTP-only cookies. Seeded `admin@netsentry.ai` (`ADMIN`) and `analyst@netsentry.ai` (`ANALYST`). Guarded all REST endpoints globally; public routes explicitly marked with `@Public()`.
+  - **API Security & Rate Limiting:** Implemented Throttler (300 req/min, 10 req/min on login), Helmet security headers, strict validation pipes, and sanitized structured exception filters preventing internal leakages.
+  - **Zero-Mock Threat Intelligence Abstraction:** Implemented `IThreatIntelProvider` with `AbuseIpDbProvider`. Enforced `SsrfValidator` blocking RFC 1918 / loopback ranges (`INVALID_TARGET`), 24h Redis caching, zero-mock reporting (`NOT_CONFIGURED` when key absent), and non-blocking degradation rule (core ML and SHAP remain 100% operational).
+  - **PostgreSQL Audit Trail & State Transitions:** Auditing all logins, logouts, incident transitions, intel queries, and demo resets to `AuditLog`. Hardened incident state transitions (`NEW -> INVESTIGATING -> CONFIRMED_THREAT/RESOLVED`).
+  - **Jury Demo Mode & Controlled Reset:** Added `POST /api/v1/demo/reset` protected by ADMIN role, reset UI button, and live audit viewer in SOC Dashboard Settings.
+  - **Frontend SOC Polish:** Retained Erdem Design System. Added session pill with role-switching modal, Threat Intelligence card in `/threats/[id]`, provenance visual separation on `/models` between offline training benchmarks (`EXP-001`) and runtime integrity state.
+  - **Graduation Thesis Package (`docs/thesis/`):** Complete 13-document suite in formal Turkish academic language covering abstract, problem, objectives, architecture, preprocessing, ML methodology, realtime streaming, threat intelligence, security architecture, experimental results, limitations, conclusions, and jury presentation script.
+  - **Experiment EXP-005 & Performance:** Documented security hardening overhead in `docs/EXPERIMENTS.md`. E2E mean latency measured at 26.36 ms (delta: +1.49 ms, zero performance regression).
 - **Validation Status:**
-  - `apps/web`: `npm test` PASSED (8/8 routes HTTP 200 + live WebSocket E2E verified).
-  - `apps/web`: `npm run build` PASSED (0 errors, 10/10 routes generated).
-  - `apps/api`: `npm run build` PASSED (0 errors).
-  - Codebase Scan: 0 mock/fake data violations.
-  - Live Replay: 5/5 canonical attack categories (BENIGN, DDoS, PortScan, DoS, BruteForce) confirmed end-to-end.
-- **Next Phase:** PHASE 4 (Advanced Security Hardening, Threat Intelligence Enrichment, and Defense Presentation Readiness).
+  - `apps/ml`: 25/25 Pytest unit and integration tests PASSED.
+  - `apps/api`: Full automated security test suite PASSED (`node test/test-security-suite.js`).
+  - `apps/web`: `npm test` PASSED (8 routes + live WebSocket E2E verified).
+  - `apps/web`: `npm run build` PASSED (Turbopack, 10/10 routes compiled cleanly).
+  - E2E Pipeline: Verified live stream ingestion through Redis Streams -> ML Worker -> NestJS Core API -> PostgreSQL -> WebSocket -> SOC Dashboard.
+- **Next Phase:** Graduation Thesis Defense / Jury Presentation.
 - **Important Documents:**
   - [docs/ARCHITECTURE.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/ARCHITECTURE.md)
-  - [docs/DECISIONS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DECISIONS.md)
-  - [docs/DEMO.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DEMO.md)
-  - [docs/API.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/API.md)
-  - [docs/EXPERIMENTS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/EXPERIMENTS.md)
   - [docs/THREAT-MODEL.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/THREAT-MODEL.md)
-- **GeneratedAt:** 2026-10-06T21:43:00+03:00
-- **From:** Senior Software Architect & Frontend Engineer
-- **To:** Academic Thesis Committee / User
+  - [docs/EXPERIMENTS.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/EXPERIMENTS.md)
+  - [docs/DEMO.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/DEMO.md)
+  - [docs/thesis/ABSTRACT.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/thesis/ABSTRACT.md)
+  - [docs/thesis/PRESENTATION_SCRIPT.md](file:///C:/Users/Okul/OneDrive/Belgeler/NetSentry/docs/thesis/PRESENTATION_SCRIPT.md)
+- **GeneratedAt:** 2026-10-06T22:15:30+03:00
+- **From:** Senior Software Architect, Security Engineer & ML Engineer
+- **To:** Academic Thesis Committee / Jury / User

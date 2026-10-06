@@ -1,10 +1,10 @@
 ---
-generatedAt: 2026-10-06T18:12:57.611Z
+generatedAt: 2026-10-06T19:14:56.407Z
 source: project-intel 0.1.0
 scope: directory
 path: apps/ml
 schemaVersion: 1
-fingerprint: sha256:e8de4fbe30748a0e7f868a148321ea85b972049470fe65914139fd06347344ee
+fingerprint: sha256:6f48758e2cf5680fd5a302f472e60c2626a49eff5695a1f83260c2e0de5e39f5
 generated: true
 ---
 
@@ -18,7 +18,7 @@ _Not determined by tooling (no README or package description found)._
 
 ## Composition
 
-21 source files (python 21), 5 test files.
+21 source files (python 21), 6 test files.
 
 ## Important files
 

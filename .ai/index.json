@@ -192,15 +192,15 @@
       "ext": ".json",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "77eaa5e4b25788590b81cb6824b4b5836b7b41658552037735957aa8af6275d0",
-        "mtime": "2026-10-06T16:58:23.701Z",
+        "hash": "1d565915df9e345250427f37fed865608e2af08f5f94fb8392a305dcb94cb05d",
+        "mtime": "2026-10-06T18:54:06.314Z",
         "normalization": "text-lf-nobom",
-        "size": 978
+        "size": 1164
       },
       "language": null,
-      "mtime": "2026-10-06T16:58:23.701Z",
+      "mtime": "2026-10-06T18:54:06.314Z",
       "path": "apps/api/package.json",
-      "size": 978
+      "size": 1164
     },
     {
       "category": "unknown",
@@ -267,15 +267,195 @@
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "dbe256a9b3bc056d63897af5f39dc63d915bde4afd10a492907bc1948b605133",
-        "mtime": "2026-10-06T18:21:27.796Z",
+        "hash": "da82cf0b5d276d2cfd88de5f6b349ca5855c4a7d82812bb458ab97bd86b3a075",
+        "mtime": "2026-10-06T19:00:50.969Z",
         "normalization": "text-lf-nobom",
-        "size": 885
+        "size": 1557
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:21:27.796Z",
+      "mtime": "2026-10-06T19:00:50.969Z",
       "path": "apps/api/src/app.module.ts",
-      "size": 885
+      "size": 1557
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a681851041160b42c36caf57215f183e42fbad32ba80dc976cec73beacdc7ea2",
+        "mtime": "2026-10-06T18:56:53.557Z",
+        "normalization": "text-lf-nobom",
+        "size": 755
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:56:53.557Z",
+      "path": "apps/api/src/audit/audit.controller.ts",
+      "size": 755
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "9c525c9807825cbea55e3da8661dacf69b7828cbd7fe4f67a89f82cc2fe9a0dc",
+        "mtime": "2026-10-06T18:56:57.257Z",
+        "normalization": "text-lf-nobom",
+        "size": 376
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:56:57.257Z",
+      "path": "apps/api/src/audit/audit.module.ts",
+      "size": 376
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "40f71d8c51afb28324766ebd18fba126fbccbadf2e4e9238cf103600a459e967",
+        "mtime": "2026-10-06T18:56:48.871Z",
+        "normalization": "text-lf-nobom",
+        "size": 1820
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:56:48.871Z",
+      "path": "apps/api/src/audit/audit.service.ts",
+      "size": 1820
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a719833d0364fbba17aba2883a242af4b42d7c2c9ae3242d73790280c06ce6a2",
+        "mtime": "2026-10-06T18:57:54.424Z",
+        "normalization": "text-lf-nobom",
+        "size": 1775
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:57:54.424Z",
+      "path": "apps/api/src/auth/auth.controller.ts",
+      "size": 1775
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "882601002218c0fb43d29e781fdf2056614d69a464fcc94e535765e811fd1b98",
+        "mtime": "2026-10-06T18:58:08.460Z",
+        "normalization": "text-lf-nobom",
+        "size": 593
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:58:08.460Z",
+      "path": "apps/api/src/auth/auth.module.ts",
+      "size": 593
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2cd56fe35cfe5cc17eac559c6ad3ea2b31f4c2a499d4808a0322bd8a1f3e3578",
+        "mtime": "2026-10-06T18:57:28.696Z",
+        "normalization": "text-lf-nobom",
+        "size": 4910
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:57:28.696Z",
+      "path": "apps/api/src/auth/auth.service.ts",
+      "size": 4910
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "c1aa83825bf283c0dbdd60dfff8d6c0697f4632c4407d2bd0041e5cdfa40c2f7",
+        "mtime": "2026-10-06T18:57:14.454Z",
+        "normalization": "text-lf-nobom",
+        "size": 255
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:57:14.454Z",
+      "path": "apps/api/src/auth/decorators/current-user.decorator.ts",
+      "size": 255
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "bb149c7568f240afbabb885243d83abe7ec86fe6a27777ba4d028b7fb3b463dc",
+        "mtime": "2026-10-06T18:57:01.888Z",
+        "normalization": "text-lf-nobom",
+        "size": 150
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:57:01.888Z",
+      "path": "apps/api/src/auth/decorators/public.decorator.ts",
+      "size": 150
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8080391fc73ab433dcea7bfa51c3ab08e5bb1cab10572fcbc16481ed755d9fac",
+        "mtime": "2026-10-06T18:57:06.443Z",
+        "normalization": "text-lf-nobom",
+        "size": 157
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:57:06.443Z",
+      "path": "apps/api/src/auth/decorators/roles.decorator.ts",
+      "size": 157
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "dec83a501e22a146a4c0d28406cb189006a4d04ed97c2c60b5781a9928b61c9b",
+        "mtime": "2026-10-06T18:57:36.331Z",
+        "normalization": "text-lf-nobom",
+        "size": 1336
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:57:36.331Z",
+      "path": "apps/api/src/auth/guards/jwt-auth.guard.ts",
+      "size": 1336
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8670e254ec91ad12ea40244094d221be212a4bd457e3f2e29329d91e9759626e",
+        "mtime": "2026-10-06T18:57:44.179Z",
+        "normalization": "text-lf-nobom",
+        "size": 1051
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:57:44.179Z",
+      "path": "apps/api/src/auth/guards/roles.guard.ts",
+      "size": 1051
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "70c0ec0213640ccf81f2b40423ca271be46d635bfd3dd3c2d33ea1a7d3b27870",
+        "mtime": "2026-10-06T19:00:31.071Z",
+        "normalization": "text-lf-nobom",
+        "size": 1355
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T19:00:31.071Z",
+      "path": "apps/api/src/common/http-exception.filter.ts",
+      "size": 1355
     },
     {
       "category": "source",
@@ -321,6 +501,51 @@
       "mtime": "2026-10-06T18:18:44.045Z",
       "path": "apps/api/src/dashboard/dashboard.service.ts",
       "size": 1373
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "a9b3a0de775865737e75d891484c238a881433bec059a1f663eb2c3bc5b68e2a",
+        "mtime": "2026-10-06T19:00:16.090Z",
+        "normalization": "text-lf-nobom",
+        "size": 706
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T19:00:16.090Z",
+      "path": "apps/api/src/demo/demo.controller.ts",
+      "size": 706
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6fcc8ad4fb3d33331794748a254febdee95a384854cebab67f7d86281c2508e8",
+        "mtime": "2026-10-06T19:00:20.119Z",
+        "normalization": "text-lf-nobom",
+        "size": 416
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T19:00:20.119Z",
+      "path": "apps/api/src/demo/demo.module.ts",
+      "size": 416
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "d89d0a5faf423cb32eabafc4775641bbf566f4dad0b3370e659d52ab3b571d24",
+        "mtime": "2026-10-06T19:00:04.362Z",
+        "normalization": "text-lf-nobom",
+        "size": 1444
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T19:00:04.362Z",
+      "path": "apps/api/src/demo/demo.service.ts",
+      "size": 1444
     },
     {
       "category": "source",
@@ -432,15 +657,15 @@
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "9fc7403d5f4d4ba84640efd22fe7f7f866117e9e50cb2addac75244e421a156c",
-        "mtime": "2026-10-06T18:19:27.158Z",
+        "hash": "ba2a4f9e1d553a0d5144e94b03801717b1ad01cb06f315c04b6584103275bd54",
+        "mtime": "2026-10-06T18:59:57.132Z",
         "normalization": "text-lf-nobom",
-        "size": 689
+        "size": 915
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:19:27.158Z",
+      "mtime": "2026-10-06T18:59:57.132Z",
       "path": "apps/api/src/incidents/incidents.controller.ts",
-      "size": 689
+      "size": 915
     },
     {
       "category": "source",
@@ -462,30 +687,30 @@
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "461cca82b0b797d92ccf968192dc70a8b614e1744e61c1dab80cc6e0ed725f06",
-        "mtime": "2026-10-06T18:19:22.440Z",
+        "hash": "ee9f226ab31d0d6e643fe3d2223fcd1b80aee12fcd3716d5d56d82e44362d1cd",
+        "mtime": "2026-10-06T18:59:43.212Z",
         "normalization": "text-lf-nobom",
-        "size": 2615
+        "size": 3909
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:19:22.440Z",
+      "mtime": "2026-10-06T18:59:43.212Z",
       "path": "apps/api/src/incidents/incidents.service.ts",
-      "size": 2615
+      "size": 3909
     },
     {
       "category": "source",
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "cfa9198f39674d7709310f056eebbb3d3f3569215e5da61152ab5dae410db0bf",
-        "mtime": "2026-10-06T18:29:55.135Z",
+        "hash": "36e5206feae74b3e1b2eaadfdc00f4ebb1b4959a8360f98e86f3e06146bf695b",
+        "mtime": "2026-10-06T19:00:56.893Z",
         "normalization": "text-lf-nobom",
-        "size": 628
+        "size": 1383
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:29:55.135Z",
+      "mtime": "2026-10-06T19:00:56.893Z",
       "path": "apps/api/src/main.ts",
-      "size": 628
+      "size": 1383
     },
     {
       "category": "source",
@@ -612,6 +837,96 @@
       "ext": ".ts",
       "fingerprint": {
         "algo": "sha256",
+        "hash": "e738d8b2eea1b0b0f796017fbd18a95b3a8b86fa329f3456302681d876b10b7e",
+        "mtime": "2026-10-06T18:59:03.405Z",
+        "normalization": "text-lf-nobom",
+        "size": 4891
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:59:03.405Z",
+      "path": "apps/api/src/threat-intel/abuseipdb.provider.ts",
+      "size": 4891
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5c70fc5ca40f2dd3d2fa97edb3ef8671f0e769662c9269c9b44f95576523e90e",
+        "mtime": "2026-10-06T18:58:46.971Z",
+        "normalization": "text-lf-nobom",
+        "size": 2412
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:58:46.971Z",
+      "path": "apps/api/src/threat-intel/ssrf.validator.ts",
+      "size": 2412
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "6601e2e782be940966b297708ff15ca323c87e583607ef96b76cfde27503d858",
+        "mtime": "2026-10-06T18:59:18.200Z",
+        "normalization": "text-lf-nobom",
+        "size": 679
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:59:18.200Z",
+      "path": "apps/api/src/threat-intel/threat-intel.controller.ts",
+      "size": 679
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e315ea0009af68ca1b99e6c62134a7ebe98fcc4aad5b795d8ee3611d80370837",
+        "mtime": "2026-10-06T18:58:22.952Z",
+        "normalization": "text-lf-nobom",
+        "size": 722
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:58:22.952Z",
+      "path": "apps/api/src/threat-intel/threat-intel.interface.ts",
+      "size": 722
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "3b28e142fa677d808bc01270479de99bc7c8e860242bc4db3d793af7cd898d01",
+        "mtime": "2026-10-06T18:59:29.674Z",
+        "normalization": "text-lf-nobom",
+        "size": 481
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:59:29.674Z",
+      "path": "apps/api/src/threat-intel/threat-intel.module.ts",
+      "size": 481
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "273ea27cdf8ab3ac4e763d39ef846f61dd9c99e6594833adcf947c74e916a321",
+        "mtime": "2026-10-06T18:59:13.278Z",
+        "normalization": "text-lf-nobom",
+        "size": 3011
+      },
+      "language": "typescript",
+      "mtime": "2026-10-06T18:59:13.278Z",
+      "path": "apps/api/src/threat-intel/threat-intel.service.ts",
+      "size": 3011
+    },
+    {
+      "category": "source",
+      "ext": ".ts",
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "ef41e8479c3e9dd34fd40ab06e6a9e276680d8bd76517955fae3504c3787b13f",
         "mtime": "2026-10-06T18:19:09.175Z",
         "normalization": "text-lf-nobom",
@@ -681,6 +996,21 @@
       "mtime": "2026-10-06T17:54:43.863Z",
       "path": "apps/api/test/test-e2e-pipeline.ts",
       "size": 4980
+    },
+    {
+      "category": "test",
+      "ext": ".js",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5cb337d715c8d6a7caa8247a3c85963b910c1cdae1a9226e1a6da80061d4535e",
+        "mtime": "2026-10-06T19:01:40.435Z",
+        "normalization": "text-lf-nobom",
+        "size": 5936
+      },
+      "language": "javascript",
+      "mtime": "2026-10-06T19:01:40.435Z",
+      "path": "apps/api/test/test-security-suite.js",
+      "size": 5936
     },
     {
       "category": "config",
@@ -882,30 +1212,30 @@
       "ext": ".py",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "a94eb216948604bcea335c8ae8d4bbdd1136f372cc2d4322fca0789ad94dd2ee",
-        "mtime": "2026-10-06T17:43:40.541Z",
+        "hash": "13b25580f9841e99449d12c54d3f5813fb1d6b1170c89b016117fd47ba59582f",
+        "mtime": "2026-10-06T18:55:37.985Z",
         "normalization": "text-lf-nobom",
-        "size": 2757
+        "size": 4621
       },
       "language": "python",
-      "mtime": "2026-10-06T17:43:40.541Z",
+      "mtime": "2026-10-06T18:55:37.985Z",
       "path": "apps/ml/app/inference/model_loader.py",
-      "size": 2757
+      "size": 4621
     },
     {
       "category": "source",
       "ext": ".py",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "c609eb7720524fb65c59352b6fae332a6fac662aee7814a767f0d158d45c53ac",
-        "mtime": "2026-10-06T17:45:01.496Z",
+        "hash": "fef44a10dc2e90e979db5e99d476b4345b84202ab3cce91c45ed74429ea9ae30",
+        "mtime": "2026-10-06T18:55:52.330Z",
         "normalization": "text-lf-nobom",
-        "size": 7623
+        "size": 7755
       },
       "language": "python",
-      "mtime": "2026-10-06T17:45:01.496Z",
+      "mtime": "2026-10-06T18:55:52.330Z",
       "path": "apps/ml/app/inference/service.py",
-      "size": 7623
+      "size": 7755
     },
     {
       "category": "source",
@@ -1152,15 +1482,15 @@
       "ext": ".json",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "e0a0b33805f69ded4d183df9677471c58c02f19fab324f0e75d66dd897d1e603",
-        "mtime": "2026-10-06T17:42:33.772Z",
+        "hash": "56c2a664a56c53f9e9d73b36123866c8c98fad2f4cc8eee56107dfa85cb79e87",
+        "mtime": "2026-10-06T18:55:18.719Z",
         "normalization": "text-lf-nobom",
-        "size": 2580
+        "size": 3131
       },
       "language": null,
-      "mtime": "2026-10-06T17:42:33.772Z",
+      "mtime": "2026-10-06T18:55:18.719Z",
       "path": "apps/ml/models/metadata.json",
-      "size": 2580
+      "size": 3131
     },
     {
       "category": "config",
@@ -1467,6 +1797,21 @@
       "ext": ".py",
       "fingerprint": {
         "algo": "sha256",
+        "hash": "015c34c2eb5f87a3b1a1512aaac817516b076eb773b666bb07377b12b01e5e07",
+        "mtime": "2026-10-06T18:56:17.834Z",
+        "normalization": "text-lf-nobom",
+        "size": 1815
+      },
+      "language": "python",
+      "mtime": "2026-10-06T18:56:17.834Z",
+      "path": "apps/ml/tests/test_model_security.py",
+      "size": 1815
+    },
+    {
+      "category": "test",
+      "ext": ".py",
+      "fingerprint": {
+        "algo": "sha256",
         "hash": "2201a899fd42789defd5abd6bb141cd655485785c8adef5498040e950aead0da",
         "mtime": "2026-10-06T17:31:41.728Z",
         "normalization": "text-lf-nobom",
@@ -1662,15 +2007,15 @@
       "ext": ".tsx",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "96b4dc088bc6f2514ea3c444c483a7e3602014acca21084c3d9acd2f1f669816",
-        "mtime": "2026-10-06T18:27:27.811Z",
+        "hash": "d64ca63c3542ae12e9de8c073e1647303d361f438513072ca8b7aad58141a4cd",
+        "mtime": "2026-10-06T19:04:45.084Z",
         "normalization": "text-lf-nobom",
-        "size": 13753
+        "size": 18056
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:27:27.811Z",
+      "mtime": "2026-10-06T19:04:45.084Z",
       "path": "apps/web/src/app/models/page.tsx",
-      "size": 13753
+      "size": 18056
     },
     {
       "category": "source",
@@ -1707,30 +2052,30 @@
       "ext": ".tsx",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "b4ae940445a72a4c6cc6521c6e9c90b9dbe6c7f2a12ca747d42b145f6cdb75f5",
-        "mtime": "2026-10-06T18:28:05.000Z",
+        "hash": "de30dc7a7499ac4ca5ad06acc6882ccb79a0f594e7eb75ad9515a13cf0dc9105",
+        "mtime": "2026-10-06T19:05:30.416Z",
         "normalization": "text-lf-nobom",
-        "size": 7482
+        "size": 12915
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:28:05.000Z",
+      "mtime": "2026-10-06T19:05:30.416Z",
       "path": "apps/web/src/app/settings/page.tsx",
-      "size": 7482
+      "size": 12915
     },
     {
       "category": "source",
       "ext": ".tsx",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "325b25f2b4a04f0a481978aa75511dda42ea635964a934b47dbedbe5973c9715",
-        "mtime": "2026-10-06T18:25:20.702Z",
+        "hash": "557bc1fd38dcd6f01f85590a7ad6036de447959646fbf2829a3bf771ad30cbbf",
+        "mtime": "2026-10-06T19:04:00.016Z",
         "normalization": "text-lf-nobom",
-        "size": 15304
+        "size": 20394
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:25:20.702Z",
+      "mtime": "2026-10-06T19:04:00.016Z",
       "path": "apps/web/src/app/threats/[id]/page.tsx",
-      "size": 15304
+      "size": 20394
     },
     {
       "category": "source",
@@ -1752,15 +2097,15 @@
       "ext": ".tsx",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "a5c90ba1a7b40d56892fc57e42cd61262ff15496300a732957370d0366729f68",
-        "mtime": "2026-10-06T18:23:28.041Z",
+        "hash": "043c745a8e7bdacd7e1776cf7037244fedc0bb0e3ea8946f10dec58cbb25384b",
+        "mtime": "2026-10-06T19:06:00.765Z",
         "normalization": "text-lf-nobom",
-        "size": 9395
+        "size": 15532
       },
       "language": "typescript",
-      "mtime": "2026-10-06T18:23:28.041Z",
+      "mtime": "2026-10-06T19:06:00.765Z",
       "path": "apps/web/src/components/layout/Shell.tsx",
-      "size": 9395
+      "size": 15532
     },
     {
       "category": "source",
@@ -1992,15 +2337,15 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "b6a8bba4bd4304c2af76bc5570ad6eb6f18f27062f0eecd34e8e17a5952850ef",
-        "mtime": "2026-10-06T18:11:14.615Z",
+        "hash": "79262841c7d5c48f91dee48eeccba971820cd8e2dba80925a0c3e9a1dd36c107",
+        "mtime": "2026-10-06T19:14:19.977Z",
         "normalization": "text-lf-nobom",
-        "size": 7305
+        "size": 10851
       },
       "language": null,
-      "mtime": "2026-10-06T18:11:14.615Z",
+      "mtime": "2026-10-06T19:14:19.977Z",
       "path": "docs/EXPERIMENTS.md",
-      "size": 7305
+      "size": 10851
     },
     {
       "category": "documentation",
@@ -2022,15 +2367,210 @@
       "ext": ".md",
       "fingerprint": {
         "algo": "sha256",
-        "hash": "bf6d0f8e0039b85ac45c128788ae51687bc68affefee9e73ddfe9fcba5ff7897",
-        "mtime": "2026-10-06T18:11:50.521Z",
+        "hash": "486d5298a68fc39e9e3fababad93efd9f78b637321f79402e7ccfedd226ce6ce",
+        "mtime": "2026-10-06T19:11:47.638Z",
         "normalization": "text-lf-nobom",
-        "size": 3727
+        "size": 6927
       },
       "language": null,
-      "mtime": "2026-10-06T18:11:50.521Z",
+      "mtime": "2026-10-06T19:11:47.638Z",
       "path": "docs/THREAT-MODEL.md",
-      "size": 3727
+      "size": 6927
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "139212d82bd6fe5410c2f2c4cb7a6fcb9989e9c2c36e910f0d0f83162ee0cdc0",
+        "mtime": "2026-10-06T19:07:40.332Z",
+        "normalization": "text-lf-nobom",
+        "size": 4148
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:07:40.332Z",
+      "path": "docs/thesis/ABSTRACT.md",
+      "size": 4148
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "e7fbdc0207c33ee6d03b9e104e62d6340b0cb0d760c523a49b9f599b46368ed7",
+        "mtime": "2026-10-06T19:10:43.208Z",
+        "normalization": "text-lf-nobom",
+        "size": 2489
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:10:43.208Z",
+      "path": "docs/thesis/CONCLUSION.md",
+      "size": 2489
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "105ce64fb7bd84fbf6271275fb7b39a6452842ba593e9786888d71422743fd86",
+        "mtime": "2026-10-06T19:08:59.734Z",
+        "normalization": "text-lf-nobom",
+        "size": 4265
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:08:59.734Z",
+      "path": "docs/thesis/DATASET_AND_PREPROCESSING.md",
+      "size": 4265
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5fda65a305de839d0630f9eca3689a43f3f7f73da63535659e2810e1562483ec",
+        "mtime": "2026-10-06T19:10:17.188Z",
+        "normalization": "text-lf-nobom",
+        "size": 4463
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:10:17.188Z",
+      "path": "docs/thesis/EXPERIMENTAL_RESULTS.md",
+      "size": 4463
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "35f4eb4696c2faa6a9ba3705a197d8d9dfa5dd03dae87c8a754289c6a16b85fb",
+        "mtime": "2026-10-06T19:10:31.165Z",
+        "normalization": "text-lf-nobom",
+        "size": 3464
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:10:31.165Z",
+      "path": "docs/thesis/LIMITATIONS.md",
+      "size": 3464
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "abbcf8de5e6bff03039bd2047480ce21e1a31f2ba2ac02bda099804b61da44bc",
+        "mtime": "2026-10-06T19:09:17.006Z",
+        "normalization": "text-lf-nobom",
+        "size": 4238
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:09:17.006Z",
+      "path": "docs/thesis/MACHINE_LEARNING_METHODOLOGY.md",
+      "size": 4238
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "5a2012a3789852cfc12319c75c84eb1fb16a93495ad48aca5a76a0dd3544e61c",
+        "mtime": "2026-10-06T19:08:11.928Z",
+        "normalization": "text-lf-nobom",
+        "size": 3478
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:08:11.928Z",
+      "path": "docs/thesis/OBJECTIVES.md",
+      "size": 3478
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "b24ee3aa9b48dd4844b25015f4e15af1c18eafa308f324533790aec69fb956eb",
+        "mtime": "2026-10-06T19:11:04.281Z",
+        "normalization": "text-lf-nobom",
+        "size": 6981
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:11:04.281Z",
+      "path": "docs/thesis/PRESENTATION_SCRIPT.md",
+      "size": 6981
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2a7ed079f7cf28635621cc30d65e0d29e0c4e80ac74e4714f3ce36a16128dd40",
+        "mtime": "2026-10-06T19:07:54.419Z",
+        "normalization": "text-lf-nobom",
+        "size": 3874
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:07:54.419Z",
+      "path": "docs/thesis/PROBLEM.md",
+      "size": 3874
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "973e662f3699668e8a3c84924f36e31c302083c7c054d8628910052386a73104",
+        "mtime": "2026-10-06T19:09:29.845Z",
+        "normalization": "text-lf-nobom",
+        "size": 3126
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:09:29.845Z",
+      "path": "docs/thesis/REALTIME_ARCHITECTURE.md",
+      "size": 3126
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "2ab2b945489fd53bb9fd57d3d302b5b236dde67f69d10622a3895d1fbbadb000",
+        "mtime": "2026-10-06T19:09:57.576Z",
+        "normalization": "text-lf-nobom",
+        "size": 3900
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:09:57.576Z",
+      "path": "docs/thesis/SECURITY_ARCHITECTURE.md",
+      "size": 3900
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "220cc5fb700214e7c5db5a29540ede039cfbda4c32059f289ac1dae70b9a14b9",
+        "mtime": "2026-10-06T19:08:44.217Z",
+        "normalization": "text-lf-nobom",
+        "size": 7168
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:08:44.217Z",
+      "path": "docs/thesis/SYSTEM_ARCHITECTURE.md",
+      "size": 7168
+    },
+    {
+      "category": "documentation",
+      "ext": ".md",
+      "fingerprint": {
+        "algo": "sha256",
+        "hash": "8588c268badfb1754f14cfd151f66cd5b7adcc2c03fa000008004901f0fd1bf0",
+        "mtime": "2026-10-06T19:09:43.118Z",
+        "normalization": "text-lf-nobom",
+        "size": 3158
+      },
+      "language": null,
+      "mtime": "2026-10-06T19:09:43.118Z",
+      "path": "docs/thesis/THREAT_INTELLIGENCE.md",
+      "size": 3158
     },
     {
       "category": "config",
@@ -2170,11 +2710,11 @@
   ],
   "fingerprint": {
     "algo": "sha256",
-    "count": 144,
-    "hash": "b1e52c9004bbd7d365479264a9153edaaa6acef8fdeb551f13c27050dc9f4408",
+    "count": 180,
+    "hash": "7af4569d59be3f33f19e85303a97005744df3b7695bac45e63eb1d7fdafa8af6",
     "normalization": "set-path-hash-v1"
   },
-  "generatedAt": "2026-10-06T18:42:04.326Z",
+  "generatedAt": "2026-10-06T19:14:56.407Z",
   "hashAlgo": "sha256",
   "profile": "standard",
   "project": {
@@ -2186,26 +2726,26 @@
     "byCategory": {
       "asset": 8,
       "config": 17,
-      "documentation": 20,
-      "source": 77,
-      "test": 9,
+      "documentation": 33,
+      "source": 98,
+      "test": 11,
       "unknown": 13
     },
     "byLanguage": {
       "css": 1,
-      "javascript": 5,
-      "python": 26,
-      "typescript": 56
+      "javascript": 6,
+      "python": 27,
+      "typescript": 77
     },
-    "files": 144,
+    "files": 180,
     "ignoredDirectories": 18,
     "ignoredFiles": 18,
     "withheld": 7
   },
   "structureFingerprint": {
     "algo": "sha256",
-    "count": 103,
-    "hash": "2bdd1e048e25186d3a6c6cb81a3c454b6b04ed88f920d096eab5abdc3b5ecfb3",
+    "count": 126,
+    "hash": "b15ef2c7b92eca516bc7869ef11acf7848ce09cd689fa682ac216a35becbc148",
     "normalization": "set-path-hash-v1"
   },
   "tool": {

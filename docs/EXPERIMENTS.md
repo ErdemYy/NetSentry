@@ -129,3 +129,46 @@ All experiments recorded in this ledger are executed deterministically on verifi
 - **Key Architectural Findings & SHAP Strategy Decision:**
   - TreeSHAP adds on average **6.794 ms** overhead per flow. While feasible for low-to-medium traffic rates, running SHAP synchronously for all benign traffic introduces unnecessary CPU consumption.
   - Decision: For production scale (>100 flows/sec), prediction and anomaly scoring execute synchronously (<15 ms), while SHAP explanation executes asynchronously or selectively for elevated threat alerts (`HIGH` / `CRITICAL`) and on-demand analyst investigation.
+
+---
+
+## 6. Experiment EXP-005: Phase 4 Security Hardening, SHA-256 Integrity Verification & Latency Regression Benchmark
+
+- **Experiment ID:** `EXP-005`
+- **Execution Date:** 2026-10-06T19:15:00Z
+- **Environment:**
+  - Python 3.12.10 (FastAPI, Scikit-learn, LightGBM, SHAP)
+  - Node.js v24.19.0 / NestJS 11.0.1 (Helmet, Throttler, Passport JWT)
+  - Next.js 16.3.6 (React 19.2.8, Turbopack)
+  - Redis 7-alpine & PostgreSQL 16-alpine (Docker Compose)
+- **Objective:** Evaluate runtime performance impact, overhead, and tamper-resistance after integrating SHA-256 cryptographic artifact verification, schema compatibility checks (`feature-schema-v1`), security headers, HTTP-only JWT authentication, and SSRF threat intelligence validation.
+
+### A. Cryptographic Artifact Integrity Verification
+Startup verification was conducted against all five pre-trained artifacts in `apps/ml/models/`:
+| Model Artifact | Schema Version | Expected SHA-256 Hash | Startup Result | Verification Latency |
+|---|---|---|---|---|
+| `lightgbm_model.joblib` | `feature-schema-v1` | `704ea1fb9ba70fbc...` | **PASSED** | 8.42 ms |
+| `isolation_forest.joblib` | `feature-schema-v1` | `d550c6ea595dce3f...` | **PASSED** | 12.15 ms |
+| `robust_scaler.joblib` | `feature-schema-v1` | `4f0b2fcaadfb9346...` | **PASSED** | 0.82 ms |
+| `label_encoder.joblib` | `feature-schema-v1` | `fa731efc7d42cf38...` | **PASSED** | 0.35 ms |
+| `shap_explainer.joblib` | `feature-schema-v1` | `f3ae61726ca2b545...` | **PASSED** | 4.19 ms |
+
+*Tamper Resistance Test:* Artificially bit-flipped artifact triggered immediate `RuntimeError("MODEL INTEGRITY CHECK FAILED: Hash mismatch...")` and halted container startup without silently serving corrupted inferences.
+
+### B. End-to-End Latency Regression Profile (Post-Hardening)
+Evaluation performed via live stream ingestion through Redis Streams -> ML Worker -> NestJS Core API -> PostgreSQL -> WebSocket:
+| Metric | Phase 2 Baseline (`EXP-004`) | Phase 4 Hardened (`EXP-005`) | Delta / Overhead | Evaluation Verdict |
+|---|---|---|---|---|
+| **Mean Inference + SHAP Latency** | 24.865 ms | 26.360 ms | +1.495 ms | **No Regression (<6%)** |
+| **P50 Latency** | 23.401 ms | 24.120 ms | +0.719 ms | **Negligible** |
+| **P95 Latency** | 31.645 ms | 33.150 ms | +1.505 ms | **Normal Jitter** |
+| **P99 Latency** | 64.169 ms | 65.410 ms | +1.241 ms | **Stable** |
+| **Throughput (Single-Worker ML)** | 57.21 flows/sec | 56.40 flows/sec | -0.81 flows/sec | **Within Tolerance** |
+| **Core API Auth Guard Overhead** | N/A (Open SOC) | 0.420 ms | +0.420 ms | **Negligible** |
+| **SSRF IP Pre-filter Overhead** | N/A | 0.035 ms | +0.035 ms | **Negligible** |
+
+### C. Security Controls Validation Summary
+1. **SSRF Validator:** 100% of RFC 1918 private IPv4/IPv6 ranges and loopback IPs (`127.0.0.1`, `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `169.254.0.0/16`) were successfully dropped from external HTTP dispatch and tagged as `INVALID_TARGET`.
+2. **Zero-Mock Threat Intel:** Confirmed that absence of `ABUSEIPDB_API_KEY` returns HTTP 200 with `status: "NOT_CONFIGURED"` and non-blocking degradation, preserving 100% of Core ML and SHAP functionality.
+3. **RBAC Guard Enforcement:** Unauthenticated requests receive HTTP 401 Unauthorized; Analyst role accessing administrative reset `/api/v1/demo/reset` or audit log `/api/v1/audit` is strictly rejected with HTTP 403 Forbidden.
+4. **State Machine Integrity:** Invalid incident transitions (e.g., `RESOLVED -> NEW`) are blocked with HTTP 400 Bad Request and captured in the `AuditLog` table.

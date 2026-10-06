@@ -80,7 +80,7 @@ export class IncidentsService {
     return incident;
   }
 
-  async updateStatus(id: string, status: string) {
+  async updateStatus(id: string, status: string, actorId?: string) {
     const validStatuses = ['NEW', 'INVESTIGATING', 'CONFIRMED_THREAT', 'FALSE_POSITIVE', 'RESOLVED'];
     const upperStatus = status.toUpperCase();
     if (!validStatuses.includes(upperStatus)) {
@@ -92,12 +92,50 @@ export class IncidentsService {
       throw new NotFoundException(`Incident with ID '${id}' not found`);
     }
 
-    return this.prisma.incident.update({
+    // State Machine Validation (ADR-013 / Section 21)
+    const allowedTransitions: Record<string, string[]> = {
+      NEW: ['INVESTIGATING', 'FALSE_POSITIVE', 'CONFIRMED_THREAT'],
+      INVESTIGATING: ['CONFIRMED_THREAT', 'RESOLVED', 'FALSE_POSITIVE'],
+      CONFIRMED_THREAT: ['RESOLVED', 'INVESTIGATING'],
+      FALSE_POSITIVE: ['RESOLVED', 'INVESTIGATING'],
+      RESOLVED: ['INVESTIGATING'], // Reopen
+    };
+
+    const currentStatus = incident.status;
+    if (currentStatus !== upperStatus) {
+      const allowed = allowedTransitions[currentStatus] || [];
+      if (!allowed.includes(upperStatus)) {
+        throw new BadRequestException(
+          `Invalid status transition: Cannot transition incident from '${currentStatus}' to '${upperStatus}'. Allowed: ${allowed.join(', ')}`,
+        );
+      }
+    }
+
+    const updated = await this.prisma.incident.update({
       where: { id },
       data: {
         status: upperStatus as IncidentStatus,
         updatedAt: new Date(),
       },
     });
+
+    // Record Audit Log
+    if (this.prisma) {
+      await this.prisma.auditLog.create({
+        data: {
+          userId: actorId || null,
+          action: 'INCIDENT_STATUS_CHANGE',
+          targetResource: 'Incident',
+          targetId: id,
+          details: {
+            fromStatus: currentStatus,
+            toStatus: upperStatus,
+            incidentTitle: incident.title,
+          },
+        },
+      });
+    }
+
+    return updated;
   }
 }

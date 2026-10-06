@@ -1,62 +1,67 @@
 # Task State — NetSentry AI
 
-- **Goal:** Execute PHASE 3 — Frontend SOC Operations Dashboard & Real-Time Security Intelligence Interface: Erdem Design System, strict Zero-Mock policy, live NestJS REST & WebSocket `/events` telemetry, TreeSHAP explanation UI ("WHY DID THE MODEL FLAG THIS?"), dual-model verdict separation (LightGBM vs Isolation Forest), Incident triage, Network intelligence, Analytics, and scientific Models benchmark review.
+- **Goal:** Execute PHASE 4 — Advanced Security Hardening, Threat Intelligence Enrichment & Graduation Thesis Package: Authentication (JWT & HTTP-only cookies), RBAC (ANALYST vs ADMIN), Strict DTO Validation, Helmet & Throttler rate limiting, SHA-256 model artifact integrity verification, `feature-schema-v1` validation, Zero-Mock Threat Intelligence abstraction (AbuseIPDB, SSRF protection against RFC 1918 / loopback ranges, 24h Redis caching, non-blocking augmentation), PostgreSQL Audit Logging, Incident state machine validation, Jury Demo Mode & State Reset, 13-document Turkish academic thesis documentation package (`docs/thesis/`), and zero performance regression validation (`EXP-005`).
 - **Status:** done
-- **Class and Risk:** ARCHITECTURAL / MEDIUM
-- **Owner:** Senior Software Architect & Frontend Engineer
-- **UpdatedAt:** 2026-10-06T21:42:00+03:00
+- **Class and Risk:** ARCHITECTURAL / HIGH
+- **Owner:** Senior Software Architect, Security Engineer & ML Engineer
+- **UpdatedAt:** 2026-10-06T22:15:00+03:00
 
 ## Completed
-1. **Strict Zero-Mock Architecture:**
-   - Zero occurrences of `mockData`, `fakeThreat`, `demoThreat`, `Math.random()`, or synthetic timers in `apps/web/src`.
-   - All data dynamically hydrated from NestJS Core API (`/api/v1/dashboard/overview`, `/threats`, `/threats/:id`, `/incidents`, `/incidents/:id`, `/network/stats`, `/analytics/stats`, `/models/metrics`, `/health/detailed`) and Socket.IO `/events`.
-   - Authentic `NO DATA` and `WAITING FOR EVENTS` empty states implemented when telemetry is sparse.
-2. **Erdem Design System Integration:**
-   - Dark, restrained, information-dense theme tokens (`--color-ink: #060709`, `--color-graphite: #101216`, `--color-signal: #ff5b2e`, `--color-tech: #4f8cff`).
-   - Typography: `Space Grotesk` for editorial headers and navigation; `JetBrains Mono` for all technical data (IPs, ports, protocols, timestamps, event IDs, scores, latencies).
-   - Semantic accessible severity badges (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`, `INFO`).
-   - Motion restraint: localized row fades (`translateY(4px -> 0)`), no full-screen flashing or glow pulses; `prefers-reduced-motion` enabled.
-3. **Core API Aggregation Modules (`apps/api`):**
-   - Implemented `DashboardModule` (`GET /api/v1/dashboard/overview`).
-   - Implemented `ThreatsModule` (`GET /api/v1/threats`, `GET /api/v1/threats/:id`).
-   - Implemented `IncidentsModule` (`GET /api/v1/incidents`, `GET /api/v1/incidents/:id`, `PATCH /api/v1/incidents/:id/status`).
-   - Implemented `NetworkModule` (`GET /api/v1/network/stats`).
-   - Implemented `AnalyticsModule` (`GET /api/v1/analytics/stats`).
-   - Implemented `ModelsModule` (`GET /api/v1/models/metrics`).
-4. **Next.js 15 Application Routes (`apps/web`):**
-   - `/`: Overview dashboard with top bar live health indicators, KPI strip, real-time activity stream, and hybrid architecture summary card.
-   - `/threats`: Editorial tabular feed with IP routes, attack categories, severities, and triage filters.
-   - `/threats/[id]`: Deep telemetry inspection with dual-engine verdicts, complete flow telemetry, and prominent **"WHY DID THE MODEL FLAG THIS?"** TreeSHAP attribution visualizer.
-   - `/incidents`: Triage board of escalated threats with status transitions.
-   - `/incidents/[id]`: Incident detail with attack timeline and status actions (`INVESTIGATE`, `RESOLVE`).
-   - `/network`: Network flow volume, transport protocols, destination port distributions, and utilization metrics.
-   - `/analytics`: Aggregated attack taxonomy distributions, severity breakdowns, and confidence buckets.
-   - `/models`: Academic evaluation interface comparing LightGBM (99.85% Acc, 93.74% Macro F1) and Isolation Forest (73.35% ROC-AUC, 52.36% F1), plus latency benchmark profiles.
-   - `/settings`: Platform configuration and live health diagnostic probes.
-5. **Real-Time WebSocket Integration (`useRealtime`):**
-   - Socket.IO connection to NestJS `/events` with reconnection and exponential backoff.
-   - Listens to `threat_alert` and `detection.created`, feeding a deduplicated FIFO stream buffer.
-6. **Live End-to-End Replay Verification:**
-   - Streamed authentic CIC-IDS2017 flows (BENIGN, DDoS, PortScan, DoS, BruteForce) through `netsentry:flows`.
-   - Verified consumption by ML Worker -> detection publication -> NestJS ingestion -> PostgreSQL storage -> WebSocket broadcast -> client listener in real-time (`verify-realtime-e2e.js`).
-7. **Automated Verification:**
-   - 8/8 Next.js routes verified with HTTP 200 OK.
-   - Zero-mock policy verified with code scans.
-   - Production Next.js build (`next build`) and NestJS build (`tsc`) succeed with 0 errors.
+1. **Version Consistency Single Source of Truth:**
+   - Established strict consistency across environment, manifests, and documentation: Next.js `16.3.6`, React `19.2.8`, NestJS `11.0.1`, Python `3.12.10`, Node.js `v24.19.0`, Prisma `5.22.0`, PostgreSQL `16-alpine`, Redis `7-alpine`.
+2. **Model Security & Integrity (`apps/ml`):**
+   - Added SHA-256 cryptographic verification of all 5 artifacts (`lightgbm_model.joblib`, `isolation_forest.joblib`, `robust_scaler.joblib`, `label_encoder.joblib`, `shap_explainer.joblib`) during startup.
+   - Enforced schema version checking (`feature-schema-v1`).
+   - Implemented unit tests (`test_model_security.py`). 25/25 Python tests passing.
+3. **Authentication & RBAC (`apps/api`):**
+   - Implemented `AuthModule` with JWT and secure HTTP-only cookies.
+   - Seeded default accounts: `admin@netsentry.ai` and `analyst@netsentry.ai`.
+   - Implemented global `JwtAuthGuard` (with `@Public()` opt-out) and `RolesGuard` (`@Roles('ADMIN')`).
+   - Protected API routes and automated verification (401 on missing auth, 403 on Analyst attempting Admin-only actions).
+4. **API Protection & Error Sanitization (`apps/api`):**
+   - Added `@nestjs/throttler` (300 requests/minute default, 10 requests/minute on `/auth/login`).
+   - Configured `helmet` security headers.
+   - Implemented `HttpExceptionFilter` preventing internal stack trace, SQL, or filesystem disclosure.
+5. **Threat Intelligence Abstraction & Zero-Mock Enrichment (`apps/api`):**
+   - Implemented `IThreatIntelProvider` interface and `AbuseIpDbProvider`.
+   - Implemented `SsrfValidator` strictly blocking RFC 1918 private IPv4/IPv6 addresses, loopbacks, and link-local ranges before network dispatch (`INVALID_TARGET`).
+   - Implemented 24-hour Redis caching (`threat-intel:{ip}`) with status metadata.
+   - Enforced Zero-Mock policy: returns `NOT_CONFIGURED`, `RATE_LIMITED`, or `INVALID_TARGET` honestly without fabricating reputation scores.
+   - Enforced non-blocking augmentation: core ML detection and SHAP explanations remain 100% operational regardless of provider availability.
+6. **Audit Trail & Incident State Machine (`apps/api`):**
+   - Implemented `AuditModule` logging authentication events, incident transitions, intel queries, and demo resets to PostgreSQL `AuditLog`.
+   - Hardened incident status transition rules (`NEW -> INVESTIGATING -> CONFIRMED_THREAT/RESOLVED`).
+7. **Jury Demo Mode & Reset (`apps/api` & `apps/web`):**
+   - Created `DemoModule` with `POST /api/v1/demo/reset` protected by ADMIN role.
+   - Integrated Admin reset action and live audit log viewer in the SOC Dashboard Settings page.
+8. **Frontend SOC Polish (`apps/web`):**
+   - Added Session status pill with interactive login/role switch modal in `Shell.tsx`.
+   - Added `THREAT INTELLIGENCE (EXTERNAL ENRICHMENT)` card in `/threats/[id]` below the TreeSHAP card.
+   - Updated `/models` with clear visual provenance separation between offline training benchmarks (`EXP-001`) and live runtime model integrity/hashes.
+   - Turbopack production build succeeded; 8/8 routes + live WebSocket tests passing.
+9. **Academic Thesis Documentation Package (`docs/thesis/`):**
+   - Produced 13 formal Turkish academic documents:
+     - `ABSTRACT.md`, `PROBLEM.md`, `OBJECTIVES.md`, `SYSTEM_ARCHITECTURE.md`, `DATASET_AND_PREPROCESSING.md`, `MACHINE_LEARNING_METHODOLOGY.md`, `REALTIME_ARCHITECTURE.md`, `THREAT_INTELLIGENCE.md`, `SECURITY_ARCHITECTURE.md`, `EXPERIMENTAL_RESULTS.md`, `LIMITATIONS.md`, `CONCLUSION.md`, `PRESENTATION_SCRIPT.md`.
+   - Expanded `docs/THREAT-MODEL.md` with complete 12-domain Security Risk Assessment Matrix.
+10. **Experiment EXP-005 & Latency Benchmark:**
+    - Profiled full pipeline latency with SHA-256 checks and security middleware active. Mean latency: 26.36 ms (delta: +1.49 ms, zero regression).
 
 ## Changed Files
-- `apps/api/src/`: `app.module.ts`, `main.ts`, `dashboard/*`, `threats/*`, `incidents/*`, `network/*`, `analytics/*`, `models/*`.
-- `apps/web/src/`:
-  - `app/`: `layout.tsx`, `page.tsx`, `globals.css`, `threats/*`, `incidents/*`, `network/*`, `analytics/*`, `models/*`, `settings/*`.
-  - `components/`: `layout/Shell.tsx`, `ui/KpiCard.tsx`, `ui/SeverityBadge.tsx`, `ui/StatusIndicator.tsx`, `ui/ShapAttributionBar.tsx`, `ui/EmptyState.tsx`.
-  - `hooks/`: `useRealtime.ts`.
-  - `lib/`: `api.ts`.
-- `apps/web/test/`: `verify-routes.js`, `verify-realtime-e2e.js`.
-- `apps/web/package.json`: added `"test"` script.
-- `docs/`: `ARCHITECTURE.md`, `DECISIONS.md`, `DEMO.md`.
+- `apps/ml/`: `models/metadata.json`, `app/inference/model_loader.py`, `app/inference/service.py`, `tests/test_model_security.py`.
+- `apps/api/`:
+  - `prisma/schema.prisma` (added `User`, `Role`, `AuditLog`, `ThreatIntelCache` models, and migration).
+  - `src/audit/*`, `src/auth/*`, `src/threat-intel/*`, `src/demo/*`, `src/common/*`.
+  - `src/incidents/*`, `src/app.module.ts`, `src/main.ts`.
+  - `test/test-security-suite.js`.
+- `apps/web/`:
+  - `src/lib/api.ts`, `src/components/layout/Shell.tsx`.
+  - `src/app/threats/[id]/page.tsx`, `src/app/models/page.tsx`, `src/app/settings/page.tsx`.
+- `docs/`:
+  - `thesis/*` (13 documents), `THREAT-MODEL.md`, `EXPERIMENTS.md`.
 
 ## Last Validation
-- `apps/web`: `npm test` PASSED (8 routes HTTP 200 OK + Real-time WebSocket E2E verified).
-- `apps/web`: `npm run build` PASSED (all static and dynamic routes built cleanly).
-- Zero-mock grep scan: 0 occurrences of forbidden patterns.
-- End-to-end live flow replay: 5/5 canonical classes verified through entire stack.
+- `apps/ml`: 25/25 Pytest unit and integration tests PASSED.
+- `apps/api`: Full automated security test suite PASSED (`node test/test-security-suite.js`).
+- `apps/web`: `npm test` PASSED (8 routes + live WebSocket E2E verified).
+- `apps/web`: `npm run build` PASSED (Turbopack, 10/10 routes compiled cleanly).
+- Live latency regression: 26.36 ms (EXP-005, zero performance regression).

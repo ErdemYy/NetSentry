@@ -138,7 +138,22 @@
           },
           {
             "kind": "static",
+            "specifier": "./audit/audit.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./auth/auth.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
             "specifier": "./dashboard/dashboard.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./demo/demo.module",
             "typeOnly": false
           },
           {
@@ -178,7 +193,64 @@
           },
           {
             "kind": "static",
+            "specifier": "./threat-intel/threat-intel.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
             "specifier": "./threats/threats.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/core",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/throttler",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "da82cf0b5d276d2cfd88de5f6b349ca5855c4a7d82812bb458ab97bd86b3a075"
+    },
+    "apps/api/src/audit/audit.controller.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AuditController"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../auth/decorators/roles.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../auth/guards/jwt-auth.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../auth/guards/roles.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./audit.service",
             "typeOnly": false
           },
           {
@@ -192,7 +264,379 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "dbe256a9b3bc056d63897af5f39dc63d915bde4afd10a492907bc1948b605133"
+      "hash": "a681851041160b42c36caf57215f183e42fbad32ba80dc976cec73beacdc7ea2"
+    },
+    "apps/api/src/audit/audit.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AuditModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../prisma/prisma.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./audit.controller",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./audit.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "9c525c9807825cbea55e3da8661dacf69b7828cbd7fe4f67a89f82cc2fe9a0dc"
+    },
+    "apps/api/src/audit/audit.service.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AuditService",
+          "CreateAuditLogDto"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../prisma/prisma.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "40f71d8c51afb28324766ebd18fba126fbccbadf2e4e9238cf103600a459e967"
+    },
+    "apps/api/src/auth/auth.controller.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AuthController",
+          "LoginDto"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./auth.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./decorators/current-user.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./decorators/public.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./guards/jwt-auth.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "express",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "a719833d0364fbba17aba2883a242af4b42d7c2c9ae3242d73790280c06ce6a2"
+    },
+    "apps/api/src/auth/auth.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AuthModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../audit/audit.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../prisma/prisma.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./auth.controller",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./auth.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./guards/jwt-auth.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./guards/roles.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "882601002218c0fb43d29e781fdf2056614d69a464fcc94e535765e811fd1b98"
+    },
+    "apps/api/src/auth/auth.service.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AuthService",
+          "UserSessionPayload"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../audit/audit.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../prisma/prisma.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "bcryptjs",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "jsonwebtoken",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "2cd56fe35cfe5cc17eac559c6ad3ea2b31f4c2a499d4808a0322bd8a1f3e3578"
+    },
+    "apps/api/src/auth/decorators/current-user.decorator.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "CurrentUser"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "c1aa83825bf283c0dbdd60dfff8d6c0697f4632c4407d2bd0041e5cdfa40c2f7"
+    },
+    "apps/api/src/auth/decorators/public.decorator.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "IS_PUBLIC_KEY",
+          "Public"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "bb149c7568f240afbabb885243d83abe7ec86fe6a27777ba4d028b7fb3b463dc"
+    },
+    "apps/api/src/auth/decorators/roles.decorator.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "ROLES_KEY",
+          "Roles"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "8080391fc73ab433dcea7bfa51c3ab08e5bb1cab10572fcbc16481ed755d9fac"
+    },
+    "apps/api/src/auth/guards/jwt-auth.guard.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "JwtAuthGuard"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../auth.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../decorators/public.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/core",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "dec83a501e22a146a4c0d28406cb189006a4d04ed97c2c60b5781a9928b61c9b"
+    },
+    "apps/api/src/auth/guards/roles.guard.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "RolesGuard"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../decorators/roles.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/core",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "8670e254ec91ad12ea40244094d221be212a4bd457e3f2e29329d91e9759626e"
+    },
+    "apps/api/src/common/http-exception.filter.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "GlobalExceptionFilter"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "express",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "70c0ec0213640ccf81f2b40423ca271be46d635bfd3dd3c2d33ea1a7d3b27870"
     },
     "apps/api/src/dashboard/dashboard.controller.ts": {
       "adapter": "javascript",
@@ -279,6 +723,127 @@
         "supported": true
       },
       "hash": "91ad12ef5881a6fc708cad9b1b03b38840bc57bd67a52216488518543edd7245"
+    },
+    "apps/api/src/demo/demo.controller.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "DemoController"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../auth/decorators/current-user.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../auth/decorators/roles.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../auth/guards/jwt-auth.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../auth/guards/roles.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./demo.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "a9b3a0de775865737e75d891484c238a881433bec059a1f663eb2c3bc5b68e2a"
+    },
+    "apps/api/src/demo/demo.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "DemoModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../audit/audit.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../prisma/prisma.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./demo.controller",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./demo.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "6fcc8ad4fb3d33331794748a254febdee95a384854cebab67f7d86281c2508e8"
+    },
+    "apps/api/src/demo/demo.service.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "DemoService"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../audit/audit.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../prisma/prisma.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "d89d0a5faf423cb32eabafc4775641bbf566f4dad0b3370e659d52ab3b571d24"
     },
     "apps/api/src/detection/detection.module.ts": {
       "adapter": "javascript",
@@ -525,6 +1090,16 @@
         "imports": [
           {
             "kind": "static",
+            "specifier": "../auth/decorators/current-user.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../auth/guards/jwt-auth.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
             "specifier": "./incidents.service",
             "typeOnly": false
           },
@@ -539,7 +1114,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "9fc7403d5f4d4ba84640efd22fe7f7f866117e9e50cb2addac75244e421a156c"
+      "hash": "ba2a4f9e1d553a0d5144e94b03801717b1ad01cb06f315c04b6584103275bd54"
     },
     "apps/api/src/incidents/incidents.module.ts": {
       "adapter": "javascript",
@@ -604,7 +1179,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "461cca82b0b797d92ccf968192dc70a8b614e1744e61c1dab80cc6e0ed725f06"
+      "hash": "ee9f226ab31d0d6e643fe3d2223fcd1b80aee12fcd3716d5d56d82e44362d1cd"
     },
     "apps/api/src/main.ts": {
       "adapter": "javascript",
@@ -616,6 +1191,11 @@
           {
             "kind": "static",
             "specifier": "./app.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./common/http-exception.filter",
             "typeOnly": false
           },
           {
@@ -637,6 +1217,11 @@
             "kind": "side-effect",
             "specifier": "dotenv/config",
             "typeOnly": false
+          },
+          {
+            "kind": "require",
+            "specifier": "helmet",
+            "typeOnly": false
           }
         ],
         "purposeHint": null,
@@ -644,7 +1229,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "cfa9198f39674d7709310f056eebbb3d3f3569215e5da61152ab5dae410db0bf"
+      "hash": "36e5206feae74b3e1b2eaadfdc00f4ebb1b4959a8360f98e86f3e06146bf695b"
     },
     "apps/api/src/models/models.controller.ts": {
       "adapter": "javascript",
@@ -877,6 +1462,192 @@
       },
       "hash": "59a2f2fa2bebb31924523c440004591731ba56e5a49d2a722f3fd774c65b3925"
     },
+    "apps/api/src/threat-intel/abuseipdb.provider.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "AbuseIpDbProvider"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "./ssrf.validator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./threat-intel.interface",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "e738d8b2eea1b0b0f796017fbd18a95b3a8b86fa329f3456302681d876b10b7e"
+    },
+    "apps/api/src/threat-intel/ssrf.validator.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "SsrfValidator"
+        ],
+        "imports": [],
+        "purposeHint": "Validates whether an IP address or host is private, loopback, or link-local to prevent Server-Side Request Forgery (SSRF) vulnerabilities.",
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "5c70fc5ca40f2dd3d2fa97edb3ef8671f0e769662c9269c9b44f95576523e90e"
+    },
+    "apps/api/src/threat-intel/threat-intel.controller.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "ThreatIntelController"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../auth/decorators/current-user.decorator",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "../auth/guards/jwt-auth.guard",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./threat-intel.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "6601e2e782be940966b297708ff15ca323c87e583607ef96b76cfde27503d858"
+    },
+    "apps/api/src/threat-intel/threat-intel.interface.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "IThreatIntelProvider",
+          "ThreatIntelReport"
+        ],
+        "imports": [],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "e315ea0009af68ca1b99e6c62134a7ebe98fcc4aad5b795d8ee3611d80370837"
+    },
+    "apps/api/src/threat-intel/threat-intel.module.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "ThreatIntelModule"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../audit/audit.module",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./abuseipdb.provider",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./threat-intel.controller",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./threat-intel.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "3b28e142fa677d808bc01270479de99bc7c8e860242bc4db3d793af7cd898d01"
+    },
+    "apps/api/src/threat-intel/threat-intel.service.ts": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [
+          "ThreatIntelService"
+        ],
+        "imports": [
+          {
+            "kind": "static",
+            "specifier": "../audit/audit.service",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./abuseipdb.provider",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "./threat-intel.interface",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "@nestjs/common",
+            "typeOnly": false
+          },
+          {
+            "kind": "static",
+            "specifier": "ioredis",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "273ea27cdf8ab3ac4e763d39ef846f61dd9c99e6594833adcf947c74e916a321"
+    },
     "apps/api/src/threats/threats.controller.ts": {
       "adapter": "javascript",
       "adapterVersion": "1",
@@ -1028,6 +1799,26 @@
         "supported": true
       },
       "hash": "e7502da86c3f615885960f747db6dcfb8b0df3f1f059ef6621964505656721d6"
+    },
+    "apps/api/test/test-security-suite.js": {
+      "adapter": "javascript",
+      "adapterVersion": "1",
+      "facts": {
+        "diagnostics": [],
+        "exports": [],
+        "imports": [
+          {
+            "kind": "require",
+            "specifier": "assert",
+            "typeOnly": false
+          }
+        ],
+        "purposeHint": null,
+        "reexports": [],
+        "status": "parsed",
+        "supported": true
+      },
+      "hash": "5cb337d715c8d6a7caa8247a3c85963b910c1cdae1a9226e1a6da80061d4535e"
     },
     "apps/web/next-env.d.ts": {
       "adapter": "javascript",
@@ -1285,7 +2076,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "96b4dc088bc6f2514ea3c444c483a7e3602014acca21084c3d9acd2f1f669816"
+      "hash": "d64ca63c3542ae12e9de8c073e1647303d361f438513072ca8b7aad58141a4cd"
     },
     "apps/web/src/app/network/page.tsx": {
       "adapter": "javascript",
@@ -1421,7 +2212,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "b4ae940445a72a4c6cc6521c6e9c90b9dbe6c7f2a12ca747d42b145f6cdb75f5"
+      "hash": "de30dc7a7499ac4ca5ad06acc6882ccb79a0f594e7eb75ad9515a13cf0dc9105"
     },
     "apps/web/src/app/threats/[id]/page.tsx": {
       "adapter": "javascript",
@@ -1478,7 +2269,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "325b25f2b4a04f0a481978aa75511dda42ea635964a934b47dbedbe5973c9715"
+      "hash": "557bc1fd38dcd6f01f85590a7ad6036de447959646fbf2829a3bf771ad30cbbf"
     },
     "apps/web/src/app/threats/page.tsx": {
       "adapter": "javascript",
@@ -1572,7 +2363,7 @@
         "status": "parsed",
         "supported": true
       },
-      "hash": "a5c90ba1a7b40d56892fc57e42cd61262ff15496300a732957370d0366729f68"
+      "hash": "043c745a8e7bdacd7e1776cf7037244fedc0bb0e3ea8946f10dec58cbb25384b"
     },
     "apps/web/src/components/ui/EmptyState.tsx": {
       "adapter": "javascript",
@@ -1947,7 +2738,7 @@
       "hash": "6e43b45276729449068c4d759100a7288bbede0f26844323964e2c893a29f4ad"
     }
   },
-  "generatedAt": "2026-10-06T18:42:04.326Z",
+  "generatedAt": "2026-10-06T19:14:56.407Z",
   "schema": "erdem.parse-cache",
   "schemaVersion": 1,
   "tool": {

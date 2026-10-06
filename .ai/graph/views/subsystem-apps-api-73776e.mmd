@@ -1,22 +1,41 @@
 %% project-intel graph view: Subsystem: apps/api
-%% mode=subsystem level=file nodes=30 edges=47
+%% mode=subsystem level=file nodes=51 edges=100
 flowchart TD
   subgraph sg73776ec8["apps/api"]
     nbc402317["prisma/prisma.service.ts"]
+    n8b379050["guards/jwt-auth.guard.ts"]
+    n5bab0237["audit/audit.service.ts"]
+    n54d88857["audit/audit.module.ts"]
+    n579389a6["decorators/current-user.decorator.ts"]
+    n114ee72c["prisma/prisma.module.ts"]
+    n2cd82bb0["auth/auth.service.ts"]
+    n687abe97["decorators/roles.decorator.ts"]
+    n10dcf1c3["guards/roles.guard.ts"]
     nf8659a2d["detection/detection.service.ts"]
     nc1f9e778["analytics/analytics.service.ts"]
     nec28db8b["src/app.module.ts"]
+    n231a92c8["decorators/public.decorator.ts"]
     nbefaacfa["dashboard/dashboard.service.ts"]
+    n9cd1861c["demo/demo.service.ts"]
     n0808c694["events/events.gateway.ts"]
     n854d837f["events/events.module.ts"]
     n9f58736f["incidents/incidents.service.ts"]
     na7a21d03["models/models.service.ts"]
     n78a15e2a["network/network.service.ts"]
+    n31181e3d["threat-intel/abuseipdb.provider.ts"]
+    n5a693d0b["threat-intel/threat-intel.interface.ts"]
+    nf3756aef["threat-intel/threat-intel.service.ts"]
     naaa520a3["threats/threats.service.ts"]
     n08739fc6["analytics/analytics.controller.ts"]
     n80d293cc["analytics/analytics.module.ts"]
+    na2202f27["audit/audit.controller.ts"]
+    na8d494a4["auth/auth.controller.ts"]
+    na6578adb["auth/auth.module.ts"]
+    ne0c72489["common/http-exception.filter.ts"]
     nf8c41d8c["dashboard/dashboard.controller.ts"]
     n8d58721a["dashboard/dashboard.module.ts"]
+    n7fef9149["demo/demo.controller.ts"]
+    n08fe0a4d["demo/demo.module.ts"]
     n2b19c9c0["detection/detection.module.ts"]
     n08398223["detection/redis-consumer.service.ts"]
     nd046f3c6["health/health.controller.ts"]
@@ -27,7 +46,9 @@ flowchart TD
     na99d6583["models/models.module.ts"]
     n6a55f24c["network/network.controller.ts"]
     n1b5fe3e4["network/network.module.ts"]
-    n114ee72c["prisma/prisma.module.ts"]
+    n2fb193eb["threat-intel/ssrf.validator.ts"]
+    n3a28e24d["threat-intel/threat-intel.controller.ts"]
+    n61c1b9e2["threat-intel/threat-intel.module.ts"]
     n6c737ab1["threats/threats.controller.ts"]
     n9de70d53["threats/threats.module.ts"]
     n338ea8c7["src/main.ts"]
@@ -38,7 +59,10 @@ flowchart TD
   n80d293cc --> nc1f9e778
   nc1f9e778 --> nbc402317
   nec28db8b --> n80d293cc
+  nec28db8b --> n54d88857
+  nec28db8b --> na6578adb
   nec28db8b --> n8d58721a
+  nec28db8b --> n08fe0a4d
   nec28db8b --> n2b19c9c0
   nec28db8b --> n854d837f
   nec28db8b --> naba0fc26
@@ -46,11 +70,46 @@ flowchart TD
   nec28db8b --> na99d6583
   nec28db8b --> n1b5fe3e4
   nec28db8b --> n114ee72c
+  nec28db8b --> n61c1b9e2
   nec28db8b --> n9de70d53
+  na2202f27 --> n5bab0237
+  na2202f27 --> n687abe97
+  na2202f27 --> n8b379050
+  na2202f27 --> n10dcf1c3
+  n54d88857 --> na2202f27
+  n54d88857 --> n5bab0237
+  n54d88857 --> n114ee72c
+  n5bab0237 --> nbc402317
+  na8d494a4 --> n2cd82bb0
+  na8d494a4 --> n579389a6
+  na8d494a4 --> n231a92c8
+  na8d494a4 --> n8b379050
+  na6578adb --> n54d88857
+  na6578adb --> na8d494a4
+  na6578adb --> n2cd82bb0
+  na6578adb --> n8b379050
+  na6578adb --> n10dcf1c3
+  na6578adb --> n114ee72c
+  n2cd82bb0 --> n5bab0237
+  n2cd82bb0 --> nbc402317
+  n8b379050 --> n2cd82bb0
+  n8b379050 --> n231a92c8
+  n10dcf1c3 --> n687abe97
   nf8c41d8c --> nbefaacfa
   n8d58721a --> nf8c41d8c
   n8d58721a --> nbefaacfa
   nbefaacfa --> nbc402317
+  n7fef9149 --> n579389a6
+  n7fef9149 --> n687abe97
+  n7fef9149 --> n8b379050
+  n7fef9149 --> n10dcf1c3
+  n7fef9149 --> n9cd1861c
+  n08fe0a4d --> n54d88857
+  n08fe0a4d --> n7fef9149
+  n08fe0a4d --> n9cd1861c
+  n08fe0a4d --> n114ee72c
+  n9cd1861c --> n5bab0237
+  n9cd1861c --> nbc402317
   n2b19c9c0 --> nf8659a2d
   n2b19c9c0 --> n08398223
   n2b19c9c0 --> n854d837f
@@ -63,11 +122,14 @@ flowchart TD
   n854d837f --> n0808c694
   nd046f3c6 --> nbc402317
   naba0fc26 --> nd046f3c6
+  n2cdd41a0 --> n579389a6
+  n2cdd41a0 --> n8b379050
   n2cdd41a0 --> n9f58736f
   n31423134 --> n2cdd41a0
   n31423134 --> n9f58736f
   n9f58736f --> nbc402317
   n338ea8c7 --> nec28db8b
+  n338ea8c7 --> ne0c72489
   nb8d636f0 --> na7a21d03
   na99d6583 --> nb8d636f0
   na99d6583 --> na7a21d03
@@ -76,6 +138,18 @@ flowchart TD
   n1b5fe3e4 --> n78a15e2a
   n78a15e2a --> nbc402317
   n114ee72c --> nbc402317
+  n31181e3d --> n2fb193eb
+  n31181e3d --> n5a693d0b
+  n3a28e24d --> n579389a6
+  n3a28e24d --> n8b379050
+  n3a28e24d --> nf3756aef
+  n61c1b9e2 --> n54d88857
+  n61c1b9e2 --> n31181e3d
+  n61c1b9e2 --> n3a28e24d
+  n61c1b9e2 --> nf3756aef
+  nf3756aef --> n5bab0237
+  nf3756aef --> n31181e3d
+  nf3756aef --> n5a693d0b
   n6c737ab1 --> naaa520a3
   n9de70d53 --> n6c737ab1
   n9de70d53 --> naaa520a3

@@ -16,7 +16,7 @@ import {
   Radio,
   Server,
 } from 'lucide-react';
-import { getSystemHealth, SystemHealthStatus } from '../../lib/api';
+import { getSystemHealth, SystemHealthStatus, getCurrentUser, login, logout } from '../../lib/api';
 import { useRealtime } from '../../hooks/useRealtime';
 
 interface ShellProps {
@@ -34,6 +34,13 @@ export function Shell({ children }: ShellProps) {
     uptimeSeconds: 0,
   });
 
+  const [user, setUser] = useState<any>(null);
+  const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
+  const [loginEmail, setLoginEmail] = useState<string>('admin@netsentry.ai');
+  const [loginPassword, setLoginPassword] = useState<string>('AdminPassword123!');
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
+
   const { status: wsStatus, lastEventAt } = useRealtime();
 
   useEffect(() => {
@@ -46,13 +53,46 @@ export function Shell({ children }: ShellProps) {
         // preserve previous state on transient failure
       }
     }
+    async function fetchUser() {
+      try {
+        const res = await getCurrentUser();
+        if (isMounted && res?.user) setUser(res.user);
+      } catch {
+        // not logged in
+      }
+    }
     check();
+    fetchUser();
     const interval = setInterval(check, 10000);
     return () => {
       isMounted = false;
       clearInterval(interval);
     };
   }, []);
+
+  const handleLogin = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    setIsLoggingIn(true);
+    setLoginError(null);
+    try {
+      const res = await login(loginEmail, loginPassword);
+      setUser(res.user);
+      setShowLoginModal(false);
+    } catch (err: any) {
+      setLoginError(err.message || 'Geçersiz kimlik bilgileri');
+    } finally {
+      setIsLoggingIn(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setUser(null);
+    } catch (err: any) {
+      console.error('Logout error:', err);
+    }
+  };
 
   const navItems = [
     { href: '/', label: 'GENEL BAKIŞ', icon: Activity },
@@ -231,8 +271,111 @@ export function Shell({ children }: ShellProps) {
                 </span>
               )}
             </div>
+
+            {/* Auth Session Pill */}
+            {user ? (
+              <div className="flex items-center gap-2 pl-2 border-l border-[rgba(236,235,230,0.12)]">
+                <span className="px-1.5 py-0.5 bg-[#4f8cff]/10 text-[#4f8cff] border border-[#4f8cff]/20 rounded text-[9px] font-bold">
+                  {user.role}
+                </span>
+                <span className="hidden xl:inline text-[#8b8f98] text-[10px] truncate max-w-[120px]">
+                  {user.email}
+                </span>
+                <button
+                  onClick={handleLogout}
+                  className="text-[10px] text-[#8b8f98] hover:text-[#e63946] transition-colors underline cursor-pointer ml-1"
+                >
+                  Çıkış
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => setShowLoginModal(true)}
+                className="px-2.5 py-1 bg-[#ff5b2e] text-[#060709] font-bold rounded text-[10px] hover:bg-[#ff7247] transition-colors cursor-pointer"
+              >
+                GİRİŞ YAP
+              </button>
+            )}
           </div>
         </header>
+
+        {/* Login Modal */}
+        {showLoginModal && (
+          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-4">
+            <div className="bg-[#101216] border border-[rgba(236,235,230,0.2)] rounded-lg max-w-sm w-full p-6 space-y-4">
+              <div className="flex items-center justify-between border-b border-[rgba(236,235,230,0.12)] pb-3">
+                <div className="font-mono text-sm font-bold text-[#ecebe6]">SOC GİRİŞİ</div>
+                <button
+                  onClick={() => setShowLoginModal(false)}
+                  className="text-[#8b8f98] hover:text-[#ecebe6]"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {loginError && (
+                <div className="p-2.5 bg-[#e63946]/10 border border-[#e63946]/30 text-[#e63946] rounded text-xs font-mono">
+                  {loginError}
+                </div>
+              )}
+
+              <form onSubmit={handleLogin} className="space-y-3 font-mono text-xs">
+                <div>
+                  <label className="block text-[#8b8f98] mb-1">E-Posta</label>
+                  <input
+                    type="email"
+                    value={loginEmail}
+                    onChange={(e) => setLoginEmail(e.target.value)}
+                    className="w-full bg-[#060709] border border-[rgba(236,235,230,0.2)] rounded px-3 py-2 text-[#ecebe6] focus:outline-none focus:border-[#ff5b2e]"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-[#8b8f98] mb-1">Şifre</label>
+                  <input
+                    type="password"
+                    value={loginPassword}
+                    onChange={(e) => setLoginPassword(e.target.value)}
+                    className="w-full bg-[#060709] border border-[rgba(236,235,230,0.2)] rounded px-3 py-2 text-[#ecebe6] focus:outline-none focus:border-[#ff5b2e]"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={isLoggingIn}
+                  className="w-full py-2 bg-[#ff5b2e] text-[#060709] font-bold rounded hover:bg-[#ff7247] transition-colors cursor-pointer"
+                >
+                  {isLoggingIn ? 'Giriş Yapılıyor...' : 'GİRİŞ YAP'}
+                </button>
+              </form>
+
+              {/* Quick Demo Credentials */}
+              <div className="pt-3 border-t border-[rgba(236,235,230,0.08)] space-y-2">
+                <div className="text-[10px] text-[#8b8f98] font-mono">Jüri Demosu Hızlı Rol Seçimi:</div>
+                <div className="grid grid-cols-2 gap-2 font-mono text-[10px]">
+                  <button
+                    onClick={() => {
+                      setLoginEmail('admin@netsentry.ai');
+                      setLoginPassword('AdminPassword123!');
+                    }}
+                    className="p-1.5 bg-[#1a1d23] hover:bg-[#22262e] border border-[rgba(236,235,230,0.12)] rounded text-[#4f8cff] text-left cursor-pointer"
+                  >
+                    Admin Seç
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLoginEmail('analyst@netsentry.ai');
+                      setLoginPassword('AnalystPassword123!');
+                    }}
+                    className="p-1.5 bg-[#1a1d23] hover:bg-[#22262e] border border-[rgba(236,235,230,0.12)] rounded text-[#2a9d8f] text-left cursor-pointer"
+                  >
+                    Analist Seç
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Content Body */}
         <main className="flex-1 p-4 md:p-8 max-w-[1600px] w-full mx-auto">

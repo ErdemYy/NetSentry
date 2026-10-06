@@ -13,8 +13,9 @@ import {
   Radio,
   Server,
   AlertTriangle,
+  Globe,
 } from 'lucide-react';
-import { getThreatById } from '../../../lib/api';
+import { getThreatById, getThreatIntel, ThreatIntelData } from '../../../lib/api';
 import { SeverityBadge } from '../../../components/ui/SeverityBadge';
 import { ShapAttributionBar } from '../../../components/ui/ShapAttributionBar';
 import { ErrorState, LoadingSkeleton } from '../../../components/ui/EmptyState';
@@ -24,6 +25,8 @@ export default function ThreatDetailPage() {
   const id = params?.id as string;
 
   const [threat, setThreat] = useState<any | null>(null);
+  const [intel, setIntel] = useState<ThreatIntelData | null>(null);
+  const [loadingIntel, setLoadingIntel] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,6 +38,15 @@ export default function ThreatDetailPage() {
         setError(null);
         const data = await getThreatById(id);
         setThreat(data);
+
+        // Fetch threat intelligence if source IP is present
+        if (data?.flow?.sourceIp) {
+          setLoadingIntel(true);
+          getThreatIntel(data.flow.sourceIp)
+            .then(setIntel)
+            .catch(() => {})
+            .finally(() => setLoadingIntel(false));
+        }
       } catch (err: any) {
         setError(err?.message || 'Tehdit detayları alınamadı');
       } finally {
@@ -254,6 +266,97 @@ export default function ThreatDetailPage() {
         <div className="text-[10px] font-mono text-[#8b8f98] pt-2 border-t border-[rgba(236,235,230,0.08)] leading-relaxed">
           * Pozitif SHAP katkısı (+), ilgili ağ akış özniteliğinin modeli &apos;{threat.attackCategory}&apos; sınıflandırmasına yönlendirdiğini doğrular. Negatif katkı ise akışın normal davranışa yakınsadığı bileşenleri temsil eder.
         </div>
+      </div>
+
+      {/* THREAT INTELLIGENCE (EXTERNAL ENRICHMENT) */}
+      <div className="bg-[#101216] border border-[rgba(236,235,230,0.12)] p-6 rounded space-y-4">
+        <div className="flex items-center justify-between border-b border-[rgba(236,235,230,0.12)] pb-3">
+          <div className="flex items-center gap-2">
+            <Globe className="w-4 h-4 text-[#4f8cff]" />
+            <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#ecebe6]">
+              HARİCİ TEHDİT İSTİHBARATI (THREAT INTELLIGENCE ENRICHMENT)
+            </h2>
+          </div>
+          <span className="text-[10px] font-mono text-[#8b8f98]">AbuseIPDB Provider API v2</span>
+        </div>
+
+        {loadingIntel ? (
+          <div className="py-4 text-xs font-mono text-[#8b8f98] animate-pulse">
+            İstihbarat verisi sorgulanıyor...
+          </div>
+        ) : intel ? (
+          <div className="space-y-3 font-mono text-xs">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+                <div className="text-[10px] text-[#8b8f98]">İSTİHBARAT SAĞLAYICI</div>
+                <div className="text-sm font-bold text-[#ecebe6] mt-1">{intel.provider}</div>
+              </div>
+              <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+                <div className="text-[10px] text-[#8b8f98]">DURUM (STATUS)</div>
+                <div
+                  className={`text-sm font-bold mt-1 ${
+                    intel.status === 'AVAILABLE'
+                      ? 'text-[#2a9d8f]'
+                      : intel.status === 'INVALID_TARGET'
+                      ? 'text-[#4f8cff]'
+                      : 'text-[#f77f00]'
+                  }`}
+                >
+                  {intel.status}
+                </div>
+              </div>
+              <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+                <div className="text-[10px] text-[#8b8f98]">İTİBAR / KÖTÜYE KULLANIM</div>
+                <div
+                  className={`text-sm font-bold mt-1 ${
+                    intel.reputationScore && intel.reputationScore > 20
+                      ? 'text-[#ff5b2e]'
+                      : 'text-[#ecebe6]'
+                  }`}
+                >
+                  {intel.reputationScore !== undefined ? `${intel.reputationScore}% Güven` : '—'}
+                </div>
+              </div>
+              <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)]">
+                <div className="text-[10px] text-[#8b8f98]">ÖNBELLEK (CACHE)</div>
+                <div className="text-sm font-bold text-[#ecebe6] mt-1">
+                  {intel.cached ? 'REDIS HIT' : 'LIVE QUERY'}
+                </div>
+              </div>
+            </div>
+
+            {intel.status === 'INVALID_TARGET' && (
+              <div className="p-3 bg-[#4f8cff]/10 border border-[#4f8cff]/20 text-[#4f8cff] rounded text-xs leading-relaxed">
+                {intel.message}
+              </div>
+            )}
+
+            {intel.status === 'NOT_CONFIGURED' && (
+              <div className="p-3 bg-[#1a1d23] border border-[rgba(236,235,230,0.12)] text-[#8b8f98] rounded text-xs leading-relaxed">
+                Harici Threat Intel sağlayıcısı henüz yapılandırılmadı (ABUSEIPDB_API_KEY anahtarı eklenerek canlı IP itibar zenginleştirmesi aktifleştirilebilir). Modelimizin yerel tespit ve TreeSHAP açıklama yeteneği %100 çalışmaktadır.
+              </div>
+            )}
+
+            {intel.status === 'AVAILABLE' && (
+              <div className="p-3 bg-[#060709] rounded border border-[rgba(236,235,230,0.06)] grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px]">
+                <div>
+                  <span className="text-[#8b8f98]">Ülke:</span>{' '}
+                  <span className="text-[#ecebe6] font-bold">{intel.countryCode}</span>
+                </div>
+                <div>
+                  <span className="text-[#8b8f98]">İSS (ISP):</span>{' '}
+                  <span className="text-[#ecebe6] truncate">{intel.isp}</span>
+                </div>
+                <div>
+                  <span className="text-[#8b8f98]">Toplam Şikayet:</span>{' '}
+                  <span className="text-[#ecebe6] font-bold">{intel.totalReports}</span>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="text-xs font-mono text-[#8b8f98]">İstihbarat verisi bulunamadı.</div>
+        )}
       </div>
 
       {/* Network Flow Inspection */}
