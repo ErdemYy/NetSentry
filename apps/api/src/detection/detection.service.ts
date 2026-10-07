@@ -70,6 +70,7 @@ export class DetectionService {
         rstFlagCount: flowData?.rstFlagCount ?? 0,
         pshFlagCount: flowData?.pshFlagCount ?? 0,
         ackFlagCount: flowData?.ackFlagCount ?? 0,
+        source: flowData?.source || (detectionData as any)?.source || 'replay',
       },
       update: {},
     });
@@ -95,6 +96,7 @@ export class DetectionService {
         explanation: detectionData.explanation,
         modelVersionSupervised: detectionData.modelVersionSupervised,
         modelVersionUnsupervised: detectionData.modelVersionUnsupervised,
+        source: (detectionData as any)?.source || flowData?.source || 'replay',
       },
     });
 

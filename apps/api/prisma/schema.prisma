@@ -121,6 +121,7 @@ model Flow {
   rstFlagCount        Int            @default(0)
   pshFlagCount        Int            @default(0)
   ackFlagCount        Int            @default(0)
+  source              String         @default("replay")
   detections          Detection[]
   networkEvents       NetworkEvent[]
   createdAt           DateTime       @default(now())
@@ -145,6 +146,7 @@ model Detection {
   explanation              String
   modelVersionSupervised   String
   modelVersionUnsupervised String
+  source                   String         @default("replay")
   incident                 Incident?
   createdAt                DateTime       @default(now())
 

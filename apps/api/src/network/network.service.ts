@@ -61,8 +61,20 @@ export class NetworkService {
       },
     });
 
+    // Data source breakdown (Phase 6: Replay vs Live)
+    const sourcesRaw = await this.prisma.flow.groupBy({
+      by: ['source'],
+      _count: { id: true },
+    });
+    const sourceBreakdown = sourcesRaw.map((s) => ({
+      source: s.source,
+      count: s._count.id,
+      percentage: totalFlows > 0 ? Number(((s._count.id / totalFlows) * 100).toFixed(1)) : 0,
+    }));
+
     return {
       totalFlows,
+      sourceBreakdown,
       protocolDistribution,
       portDistribution,
       averages: {

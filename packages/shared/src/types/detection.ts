@@ -28,6 +28,8 @@ export interface ShapFeatureContribution {
 }
 
 
+import type { FlowSource } from './flow.js';
+
 export interface DetectionResult {
   id: string;
   flowId: string;
@@ -45,4 +47,5 @@ export interface DetectionResult {
   modelVersionUnsupervised: string;
   inferenceLatencyMs?: number;
   classProbabilities?: Record<string, number>;
+  source?: FlowSource;
 }

@@ -107,15 +107,34 @@ Open Google Chrome / Edge to: `http://localhost:3000`
    - Emphasize to the committee why Accuracy (99.85%) is NOT the sole benchmark, and draw attention to **Macro Recall (92.45%)** and **Macro F1 (93.74%)** across all 9 classes.
    - Review the 6-stage end-to-end latency benchmarks (total mean: 27.04 ms, fast-path: 20.26 ms).
 
-### Phase 6: Automated Verification Suite
+### Phase 6: Live Network Sensor & Bidirectional Flow Demonstration (Phase 6)
+Demonstrate the newly integrated Live Sensor capability to the jury:
+1. **Sensor Status & Interface Discovery:**
+   - Navigate to `/network` in the browser.
+   - Show the jury the **CANLI AĞ SENSÖRÜ (PHASE 6 — LIVE SENSOR)** panel.
+   - Point out the active network interface, driver status (`Npcap: MEVCUT` or `EKSİK`), and observed packets.
+   - Point out the **Dual Data Source Overview** separating `VERİ KAYNAĞI: BENCHMARK / REPLAY` from `VERİ KAYNAĞI: CANLI SENSÖR (LIVE)`.
+2. **Offline PCAP / Golden Stream Ingestion:**
+   ```bash
+   cd apps/ml
+   .venv/Scripts/python scripts/benchmark_sensor.py
+   ```
+   - Show the jury how 100 bidirectional conversations (700 packets) are ingested through `PacketParser` $\to$ `FlowManager` $\to$ canonical 77-feature extraction at **17,207.9 pkts/sec** with an extraction latency of **0.1593 ms**.
+   - Show how completed flows are pushed to `netsentry:flows` with `source: "live"`, evaluated by LightGBM and Isolation Forest, and displayed on the SOC dashboard with the emerald `LIVE` badge.
+
+### Phase 7: Automated Verification Suite
 Run the automated end-to-end verification and test suite:
 ```bash
-# Verify ML pipeline and real traffic replay
+# Run complete ML & Live Sensor test suite (33 unit/parity tests)
 cd apps/ml
+.venv/Scripts/pytest -v
+
+# Verify ML pipeline and real traffic replay
 .venv/Scripts/python scripts/verify_e2e_live.py
 
-# Verify Frontend routes and live WebSocket integration
+# Verify Frontend build
 cd apps/web
-npm test
+npm.cmd run build
 ```
+
 

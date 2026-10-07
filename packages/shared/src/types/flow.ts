@@ -1,4 +1,5 @@
 export type NetworkProtocol = 'TCP' | 'UDP' | 'ICMP' | 'OTHER';
+export type FlowSource = 'replay' | 'live';
 
 export interface NetworkFlow {
   id: string;
@@ -22,4 +23,5 @@ export interface NetworkFlow {
   rstFlagCount: number;
   pshFlagCount: number;
   ackFlagCount: number;
+  source?: FlowSource;
 }

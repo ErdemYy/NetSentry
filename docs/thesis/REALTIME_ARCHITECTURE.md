@@ -40,3 +40,52 @@ Her tespit bir olay değildir. Analistlerin alarm yorgunluğu (alert fatigue) ya
   - `threat_alert`: `threat_feed` odasına abone olan tüm analist ekranlarına anlık bildirim fırlatır.
   - `detection.created`: Genel akış akışına (activity stream) her yeni tespit olayını ulaştırır.
 - **Yeniden Bağlanma Dayanıklılığı:** İstemci tarafındaki `useRealtime` kancası, üstel geri çekilme (exponential backoff: 1s-5s) ile bağlantı kesintilerinde otomatik olarak yeniden bağlanır (`RECONNECTING` $\rightarrow$ `LIVE`).
+
+---
+
+## 5. Çift Veri Kaynağı Mimarisi: Replay vs Canlı Sensör (Phase 6)
+
+NetSentry AI, gerçek zamanlı tespit hattında iki bağımsız veri kaynağını destekleyecek biçimde tasarlanmıştır:
+
+```text
+┌────────────────────────────────┐       ┌────────────────────────────────┐
+│   CIC-IDS2017 Veri Kümesi      │       │     Gerçek Ağ Arayüzü / PCAP   │
+│   (Benchmark / Replay Motoru)  │       │     (Live Network Sensor)      │
+└───────────────┬────────────────┘       └───────────────┬────────────────┘
+                │                                        │
+                │ FlowFeatureVector                      │ FlowFeatureVector
+                │ source: "replay"                       │ source: "live"
+                │                                        │
+                └───────────────► ┌────────────────────┐ ◄┘
+                                  │  netsentry:flows   │
+                                  └─────────┬──────────┘
+                                            │
+                                            ▼
+                                  ┌────────────────────┐
+                                  │     ML Worker      │
+                                  │ (LightGBM+IF+SHAP) │
+                                  └─────────┬──────────┘
+                                            │
+                                            ▼
+                                  ┌────────────────────┐
+                                  │  NestJS Core API   │
+                                  └─────────┬──────────┘
+                                            │
+                                  ┌─────────┴──────────┐
+                                  ▼                    ▼
+                           ┌──────────────┐     ┌──────────────┐
+                           │  PostgreSQL  │     │  WebSocket   │
+                           │ (Kalıcılık)  │     │  (SOC UI)    │
+                           └──────────────┘     └──────────────┘
+```
+
+1. **Benchmark / Replay Modu (`source: "replay"`):**
+   - Kaynak: Doğrulanmış CIC-IDS2017 zemin gerçekliği etiketlerine sahip kayıtlar.
+   - Rol: Bilimsel doğruluk (Macro F1: %93.74, ROC-AUC: %73.35) ve benchmark karşılaştırmaları.
+
+2. **Canlı Ağ Sensörü Modu (`source: "live"`):**
+   - Kaynak: Windows Npcap / Scapy paket yakalama motoru ve iki yönlü akış birleştirici.
+   - Rol: Gerçek ağda operasyonel anomali ve saldırı tespiti.
+   - Başarım: 17,207.9 paket/sn işleme verimi, 0.1593 ms öznitelik çıkarım gecikmesi, 39.64 ms uçtan uca ML gecikmesi.
+   - Güvence: Ground-truth etiketi bulunmayan canlı trafikte yapay doğruluk metriği uydurulmaz; operasyonel akış hacmi, sınıf dağılımı ve gecikme telemetrisi raporlanır.
+

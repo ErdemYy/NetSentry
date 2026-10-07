@@ -67,6 +67,7 @@ class MLStreamWorker:
             )
 
             # Parse or synthesize flow network metadata for downstream Core API persistence
+            source_type = fields.get("source", "replay" if "ground_truth_label" in fields else "live")
             raw_flow = fields.get("flow")
             if raw_flow:
                 flow_data = json.loads(raw_flow) if isinstance(raw_flow, str) else raw_flow
@@ -94,6 +95,9 @@ class MLStreamWorker:
                     "pshFlagCount": int(features.get("psh_flag_count", 0)),
                     "ackFlagCount": int(features.get("ack_flag_count", 0)),
                 }
+
+            flow_data["source"] = source_type
+            detection_result["source"] = source_type
 
             event_payload = {
                 "eventId": f"evt-{detection_result['id'][4:]}",

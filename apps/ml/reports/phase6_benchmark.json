@@ -1,0 +1,18 @@
+{
+  "benchmark": "Phase 6 Live Sensor & Feature Extractor",
+  "timestamp": "2026-10-07T15:22:25Z",
+  "packet_throughput_pkts_sec": 17207.9,
+  "flow_throughput_flows_sec": 2458.3,
+  "feature_extraction": {
+    "mean_ms": 0.1593,
+    "p50_ms": 0.1437,
+    "p95_ms": 0.248,
+    "p99_ms": 0.3582
+  },
+  "end_to_end_streaming": {
+    "mean_ms": 39.64,
+    "p50_ms": 36.09,
+    "p95_ms": 43.46,
+    "p99_ms": 104.15
+  }
+}

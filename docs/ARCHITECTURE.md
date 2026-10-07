@@ -5,40 +5,56 @@ NetSentry AI is a next-generation distributed Network Intrusion Detection System
 
 ## 2. Distributed Component Pipeline & Security Architecture
 ```text
-Dataset / Flow Replay Source (clean_flows.parquet)
-                     │
-                     ▼
-       Redis Stream: netsentry:flows
-                     │
-       (Consumer Group: ml-inference)
-                     ▼
-                 ML Worker
-   ┌─────────────────┼──────────────────┐
-   ↓                 ↓                  ↓
-LightGBM       Isolation Forest      TreeSHAP
-(Supervised)    (τ* = 0.49540)     (Attributions)
-   └─────────────────┬──────────────────┘
-                     │ DetectionResult
-                     ▼
-       Redis Stream: netsentry:detections
-                     │
-       (Consumer Group: netsentry-api-group)
-                     ▼
-            NestJS Core API Orchestrator  ◄─── [Enrichment Layer: Threat Intel (AbuseIPDB)]
-   ┌─────────────────┼──────────────────┐        (SSRF Protected, 24h Redis Cache, Non-blocking)
-   ↓                 ↓                  ↓
-PostgreSQL        AuditLog        Incident State Machine
-(Persistence)   (Security Trail)  (Triage Validation)
-   └─────────────────┬──────────────────┘
-                     │ WSS (/events namespace, JWT Auth Guard)
-                     ▼
-         SOC Operations Dashboard (Next.js 16)
-                     │
-                     ▼
-        SOC Analyst / Security Lead
+┌───────────────────────────────┐       ┌───────────────────────────────┐
+│  CIC-IDS2017 Dataset Replay   │       │      Live Network Sensor      │
+│  (clean_flows.parquet)        │       │      (Npcap / Scapy / NIC)    │
+│  source: "replay"             │       │      source: "live"           │
+└───────────────┬───────────────┘       └───────────────┬───────────────┘
+                │                                       │
+                │ 77 Canonical Features                 │ 77 Canonical Features
+                │                                       │
+                └──────────────────► ┌──────────────────▼◄──────────────┘
+                                     │   Redis Stream: netsentry:flows  │
+                                     └──────────────────┬───────────────┘
+                                                        │
+                                          (Consumer Group: ml-inference)
+                                                        ▼
+                                                    ML Worker
+                                      ┌─────────────────┼──────────────────┐
+                                      ↓                 ↓                  ↓
+                                   LightGBM       Isolation Forest      TreeSHAP
+                                   (Supervised)    (τ* = 0.49540)     (Attributions)
+                                      └─────────────────┬──────────────────┘
+                                                        │ DetectionResult
+                                                        ▼
+                                          Redis Stream: netsentry:detections
+                                                        │
+                                          (Consumer Group: netsentry-api-group)
+                                                        ▼
+                                               NestJS Core API Orchestrator  ◄─── [Enrichment Layer: Threat Intel (AbuseIPDB)]
+                                      ┌─────────────────┼──────────────────┐        (SSRF Protected, 24h Redis Cache, Non-blocking)
+                                      ↓                 ↓                  ↓
+                                  PostgreSQL        AuditLog        Incident State Machine
+                                  (Persistence)   (Security Trail)  (Triage Validation)
+                                      └─────────────────┬──────────────────┘
+                                                        │ WSS (/events namespace, JWT Auth Guard)
+                                                        ▼
+                                            SOC Operations Dashboard (Next.js 16)
+                                                        │
+                                                        ▼
+                                           SOC Analyst / Security Lead
 ```
 
 ## 3. Subsystem Breakdown
+
+### 3.0 Live Network Sensor Subsystem (`apps/ml/app/sensor/` — Phase 6)
+- **Paket Yakalama (Packet Capture):** Windows ortamında Npcap çekirdek sürücüsü ve Scapy ile promiscuous mode dinleme. Sürücü eksikliğinde `SENSOR_UNAVAILABLE` durumuna geçerek çökmeyi önler.
+- **İki Yönlü Konuşma Anahtarı (Bidirectional FlowKey):** $A \to B$ ve $B \to A$ paketlerini tekil bir kanonik 5'li demet `((min_endpoint, max_endpoint), protocol)` altında eşleştirir. İlk paket yönü `FORWARD`, karşı yönden gelenler `BACKWARD` kabul edilir.
+- **Akış Yaşam Döngüsü (Flow Lifecycle):**
+  - TCP bağlantıları çift taraflı `FIN` el sıkışması (`fin_count >= 2`) veya ani `RST` bayrağı ile anında sonlandırılır.
+  - UDP ve sonlandırılmamış TCP akışları arka plan süpürücüsü ile `NETSENTRY_FLOW_TIMEOUT_MS` (30s) etkinsizlik süresi dolduğunda kapatılır.
+- **Kanonik 77-Öznitelik Çıkarımı:** Her tamamlanan akıştan `feature-schema-v1` ile birebir uyumlu 77 öznitelik çıkarılır (Ortalama gecikme: 0.1593 ms). Sıfır süreli akışlarda ve tek paketli akışlarda sıfıra bölme ve NaN/Inf koruması garantilidir.
+- **Gizlilik Güvencesi (Privacy-by-Design):** Ham paket yükü (payload) asla saklanmaz veya veritabanına iletilmez.
 
 ### 3.1 Data Ingestion & Stream Layer
 - **Canonical Transport:** Redis Streams (`XREADGROUP`, `XACK`, `XADD`) provide durable, at-least-once message processing.

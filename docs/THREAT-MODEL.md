@@ -81,3 +81,16 @@ Evaluation Rules:
 | **11. Secrets** | Hardcoded API keys, JWT secret exposure in version control. | Critical | Low | Dotenv configuration, `.gitignore` exclusion, sanitized error messages stripping secrets. | Negligible (Audit scans verified). |
 | **12. Logging** | Log injection, sensitive data leakage (passwords, tokens) in audit files. | Medium | Low | Structured JSON logging, password fields sanitized and excluded from `AuditLog` details. | Negligible. |
 
+---
+
+## 7. Packet Capture & Live Network Sensor Attack Surface (Phase 6)
+
+| Risk Factor | Threat Scenario | Mitigation Mechanism | Residual Risk |
+|---|---|---|---|
+| **Raw Payload Privacy Leak** | Capturing unencrypted credentials, PII, session cookies, or HTTP bodies from live network traffic. | **Privacy-by-Design:** `PacketParser` never extracts or stores raw payload bytes. Only protocol metadata (L3/L4 headers, wire length, TCP flags, window size) is retained. No payload field exists in `ParsedPacket` or `Flow`. | Negligible (Zero payload retention policy). |
+| **Sniffer Memory Exhaustion (State DoS)** | Attacker floods network with randomized spoofed IPs/ports to explode the active flow table memory. | **Bounded Capacity & Inactivity Eviction:** Flow table is strictly capped at `NETSENTRY_MAX_ACTIVE_FLOWS` (default 10,000). Excess flows trigger immediate inactivity sweep and controlled LRU capacity eviction (`CAPACITY_EVICTION`). | Low (Memory bounded below 150MB). |
+| **Malformed Packet & Parser Exploit** | Crafting fragmented, truncated, or invalid IP/TCP headers to crash Scapy or the Python runtime. | **Parser Isolation:** All packet unpacking is wrapped in defensive try-except blocks. Malformed packets increment `parse_errors_count` and are safely dropped without crashing the capture engine. | Negligible. |
+| **Unauthorized Capture Control** | Unprivileged users starting/stopping packet sniffing or probing internal network interfaces. | **Admin-Enforced RBAC:** `POST /api/v1/sensor/start` and `stop` require `ADMIN` JWT role enforced by NestJS `RolesGuard`. Every operation is recorded in the immutable `AuditLog` table. | Negligible. |
+| **Local Host Safety & Passive Sniffing** | Rogue packet transmission, port scanning, or automated attack generation from sensor host. | **Passive-Only Architecture:** The sensor process contains strictly zero packet injection, raw socket transmit, or packet crafting routines. It functions exclusively as a passive traffic observer. | Zero (No transmit capability implemented). |
+
+

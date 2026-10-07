@@ -41,15 +41,23 @@ def health_check():
     except Exception:
         redis_connected = False
 
+    # 3. Check Live Sensor Subsystem
+    try:
+        from app.sensor.capture import LiveSensorEngine
+        sensor_status = LiveSensorEngine.get_instance().get_status()
+    except Exception as e:
+        sensor_status = {"error": str(e), "sensor_enabled": False, "capture_state": "ERROR"}
+
     return {
         "status": "ok" if (all_models_ready and redis_connected) else "degraded",
         "service": "NetSentry ML Inference Engine",
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "python_version": sys.version.split(" ")[0],
         "platform": platform.platform(),
-        "phase": "PHASE_2_REALTIME_INFERENCE",
+        "phase": "PHASE_6_LIVE_SENSOR",
         "models_ready": all_models_ready,
         "models_loaded": models_loaded,
         "redis_connected": redis_connected,
         "redis_host": f"{redis_host}:{redis_port}",
+        "sensor": sensor_status,
     }

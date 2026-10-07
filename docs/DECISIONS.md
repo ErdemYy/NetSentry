@@ -169,3 +169,28 @@
   3. Micro-animations are strictly restrained to newly inserted rows (`fade-in`, `translateY(4px -> 0)`), with zero whole-screen flashing, zero glow pulses, and full `prefers-reduced-motion` compliance.
 - **Consequences:** Silky smooth 60fps rendering under active packet streams, zero layout shifts, and full WCAG accessibility.
 
+---
+
+## ADR-020: Bidirectional Flow Reconstruction & Initiator-Relative Direction Semantics (Phase 6)
+- **Status:** Accepted
+- **Context:** Raw network interfaces deliver individual unidirectional packets. Supervised models trained on CIC-IDS2017 expect bidirectional flow vectors featuring forward and backward statistics (e.g. `total_fwd_packets`, `total_bwd_packets`, `fwd_packet_length_mean`, `bwd_packet_length_mean`).
+- **Decision:**
+  1. Implement a canonical hashable conversation key `((min_endpoint, max_endpoint), protocol)` ensuring packets from $A \to B$ and $B \to A$ resolve to the exact same in-memory flow accumulator (`BidirectionalFlow`).
+  2. The first observed packet in the conversation deterministically defines the conversation **Initiator (FORWARD direction)**. Subsequent packets originating from the reciprocal endpoint are classified as **Responder (BACKWARD direction)**.
+  3. Connection teardown uses full TCP state tracking: connections terminate immediately upon reciprocal FIN exchange (`fin_count >= 2`) or unilateral RST (`rst_count >= 1`). Inactive UDP/TCP conversations expire via a configurable inactivity sweep (`FLOW_TIMEOUT_MS = 30000`).
+  4. Partial, unterminated flows are never sent to the ML inference pipeline.
+- **Consequences:** Preserves 100% mathematical and semantic consistency with CICFlowMeter and the frozen Phase 1 `feature-schema-v1` contract without retraining existing models.
+
+---
+
+## ADR-021: Windows Npcap Driver Abstraction and Dual Ingestion Pipelines (Phase 6)
+- **Status:** Accepted
+- **Context:** Capturing live promiscuous Ethernet/IP traffic on Windows requires the Npcap kernel driver. In development or restricted lab environments where Npcap or Administrator privileges are unavailable, the system must not crash or fail silently.
+- **Decision:**
+  1. Detect Npcap presence at runtime via `scapy.conf.use_pcap`.
+  2. If missing, transition sensor operational state cleanly to `SENSOR_UNAVAILABLE` with informative operator remediation instructions rather than raising unhandled exceptions.
+  3. Provide offline PCAP ingestion (`process_pcap_file`) using standard `scapy.PcapReader`, enabling full 77-feature extraction and streaming without kernel drivers or root privileges.
+  4. Establish a dual-mode ingestion architecture: Benchmark/Replay Mode (`source: "replay"`) for academic evaluation against ground truth, and Live Sensor Mode (`source: "live"`) for operational traffic monitoring. Ground-truth metrics (Accuracy, F1) are never fabricated for live traffic.
+- **Consequences:** Safe, resilient deployment on Windows workstations with verifiable parity against historical model contracts.
+
+

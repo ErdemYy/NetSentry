@@ -15,6 +15,7 @@ import { AuditModule } from './audit/audit.module';
 import { AuthModule } from './auth/auth.module';
 import { ThreatIntelModule } from './threat-intel/threat-intel.module';
 import { DemoModule } from './demo/demo.module';
+import { SensorModule } from './sensor/sensor.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { DemoModule } from './demo/demo.module';
     NetworkModule,
     AnalyticsModule,
     ModelsModule,
+    SensorModule,
   ],
   providers: [
     {
