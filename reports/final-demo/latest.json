@@ -2,7 +2,7 @@
     "demo_reset":  "PASS",
     "websocket_event":  "PASS",
     "ground_truth_isolation":  "PASS",
-    "timestamp":  "2026-10-08T14:42:26Z",
+    "timestamp":  "2026-10-08T16:21:38Z",
     "services":  {
                      "api":  "PASS",
                      "web":  "PASS",
@@ -18,7 +18,7 @@
                         "docker":  "Docker version 29.6.2, build dfc4efb",
                         "python":  "3.12.10"
                     },
-    "git_commit":  "0dfac97a3963e7c6769d04f199bc6651a1cf3097",
+    "git_commit":  "767479c0cfd0ff42451fa5491bb2fc9e155e30ff",
     "frontend":  "PASS",
     "overall":  "PASS",
     "mode":  "Replay",

@@ -294,30 +294,56 @@ Empirical latency and throughput measurements under a controlled workstation tes
 - [Docker Desktop](https://www.docker.com/) (PostgreSQL 16 & Redis 7)
 - [Node.js](https://nodejs.org/) v20+ & npm
 - [Python](https://www.python.org/) 3.12+
+- *(Optional for Live Physical NIC Sniffing)*: [Npcap](https://npcap.com/) on Windows (install with *"WinPcap API-compatible mode"* enabled). Offline replay and PCAP analysis work driverless out-of-the-box.
 
-### 1. Clone & Infrastructure Setup
+---
+
+### Default Credentials (RBAC)
+
+The system is pre-configured with two distinct security roles implementing strict Role-Based Access Control:
+
+| Role | Username / Email | Password | Scope & Permissions |
+| :--- | :--- | :--- | :--- |
+| **Yönetici (ADMIN)** | `admin@netsentry.ai` | `AdminPassword123!` | **Full Operational Access:** Sensor Start/Stop (`/api/v1/sensor`), Immutable Audit Logs (`/audit`), Demo Reset, Incident Escalation. |
+| **Analist (ANALYST)** | `analyst@netsentry.ai` | `AnalystPassword123!` | **Analysis & Triage:** Threat Investigation (`/threats`), TreeSHAP Explanations, Incident Notes & Status Update, Sensor Monitoring. *(Sensor control & audit logs restricted with 403 Forbidden).* |
+
+---
+
+### One-Command Acceptance & Demo Harness
+
+For jury presentation or automated evaluation, NetSentry AI includes a deterministic 8-stage verification harness:
+
+```cmd
+# 1. Replay Mode (Recommended for Jury Presentation):
+# Validates health, resets demo state, replays 5 authentic attack classes,
+# computes TreeSHAP explanations, verifies database persistence, and opens SOC Dashboard.
+.\demo.cmd -Mode Replay -OpenBrowser
+
+# 2. Live Sensor Mode (Physical Network Card Monitoring):
+# Probes host NIC adapters via Npcap, executes live packet capture on active Wi-Fi/Ethernet,
+# reconstructs bidirectional flows in real-time, and verifies pipeline telemetry.
+.\demo.cmd -Mode LiveSensor -OpenBrowser
+```
+
+*(PowerShell alternative: `powershell -ExecutionPolicy Bypass -File .\tools\final-demo.ps1 -Mode Replay -OpenBrowser`)*
+
+Automated verification generates both machine-readable and executive acceptance reports:
+- **Executive Acceptance Summary:** [`reports/final-demo/latest.md`](reports/final-demo/latest.md)
+- **Machine Verification Matrix:** [`reports/final-demo/latest.json`](reports/final-demo/latest.json)
+
+---
+
+### Manual Service Startup
+
+If you prefer starting each service independently in separate terminals:
 
 ```bash
+# 1. Clone & Infrastructure Setup
 git clone https://github.com/ErdemYy/NetSentry.git
 cd NetSentry
-
-# Start PostgreSQL (port 5433) and Redis (port 6380)
 docker compose up -d postgres redis
-```
-
-### 2. Environment Configuration
-
-```bash
 cp .env.example .env
-```
 
-Ensure configuration matches your local ports and credentials.
-
-### 3. Start Application Services
-
-Open three separate terminals:
-
-```bash
 # Terminal 1: NestJS Core API (Port 3001)
 cd apps/api
 npm install
@@ -327,10 +353,7 @@ npm run start
 # Terminal 2: Python ML Engine & Stream Worker (Port 8000)
 cd apps/ml
 python -m venv .venv
-# On Windows:
-.venv\Scripts\activate
-# On Linux/macOS:
-source .venv/bin/activate
+.venv\Scripts\activate   # Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
 python -m app.streaming.worker
 
@@ -345,29 +368,19 @@ Navigate to **`http://localhost:3000`** in your browser.
 
 ---
 
-## Demo
+## Presentation & Jury Flow
 
-Follow this step-by-step workflow to evaluate NetSentry AI:
+Follow this structured 5–10 minute workflow during defense:
 
-1. **Access the SOC Dashboard:** Open `http://localhost:3000` and sign in with analyst credentials.
-2. **Replay Authentic Traffic:** From `apps/ml`, trigger multi-vector test traffic:
-   ```bash
-   # Replay 10 DDoS attack flows
-   python -m app.streaming.replay --mode ATTACK --attack DDoS --rate 5 --max 10
+1. **Executive Overview (`/`):** Review real-time KPI strip, dual-engine status (LightGBM + Isolation Forest), and live threat feed.
+2. **Threat Investigation (`/threats`):** Examine ingested attack flows (DDoS, DoS, PortScan, BruteForce, Benign) classified with supervised confidence and unsupervised anomaly score.
+3. **Explainable AI Attribution (`/threats/[id]`):** Open the **"WHY DID THE MODEL FLAG THIS?"** TreeSHAP panel to inspect exact micro-contributions per flow feature.
+4. **Incident Escalation (`/incidents`):** Triage auto-escalated critical threats, update investigation state (`INVESTIGATING` $\to$ `RESOLVED`), and attach analyst notes.
+5. **Live Network Sensor (`/network`):** Inspect discovered host adapters, Npcap driver availability, packet arrival counters, and active conversation reconstruction.
+6. **Model Integrity (`/models`):** Verify runtime SHA-256 cryptographic hashes against training experiment baselines (`EXP-001`).
+7. **Audit & Access Control (`/settings`):** Review immutable PostgreSQL audit trail and demonstrate role restrictions between `ADMIN` and `ANALYST`.
 
-   # Replay 10 PortScan reconnaissance flows
-   python -m app.streaming.replay --mode ATTACK --attack PortScan --rate 5 --max 10
-
-   # Replay 20 Benign enterprise flows
-   python -m app.streaming.replay --mode NORMAL --rate 10 --max 20
-   ```
-3. **Observe Real-Time Stream:** Inspect alerts appearing instantly on the threat feed via WebSocket.
-4. **Inspect TreeSHAP Attribution:** Click a detection card to review the **"WHY DID THE MODEL FLAG THIS?"** explanation.
-5. **Triage Incidents:** Open the `/incidents` page to review escalated security events and update investigation status.
-6. **Inspect Live Network Sensor:** Navigate to `/network` to inspect real-time adapter discovery, packet counters, and conversation reconstruction.
-7. **Review Model State:** Open `/models` to verify offline benchmark metrics, runtime status, and SHA-256 hash validity.
-
-For a full presentation walkthrough, see the [Full Jury Demo Script](docs/thesis/PRESENTATION_SCRIPT.md).
+For the complete academic defense script, see the [Jury Presentation Script](docs/thesis/PRESENTATION_SCRIPT.md) and [Jury Technical Q&A Defense Guide](docs/thesis/JURY_QA.md).
 
 ---
 

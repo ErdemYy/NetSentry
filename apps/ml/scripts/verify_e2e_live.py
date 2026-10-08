@@ -33,6 +33,16 @@ def verify_live_pipeline():
     worker = MLStreamWorker(worker_id="live-e2e-worker")
     worker.setup_stream_group()
 
+    # Fast-forward consumer group cursor to end of stream so this verification immediately inspects newly injected flows
+    try:
+        worker.redis_client.xgroup_setid(
+            STREAMING_CONFIG.stream_flows,
+            STREAMING_CONFIG.consumer_group,
+            "$"
+        )
+    except Exception as e:
+        logger.debug(f"Consumer group cursor adjustment: {e}")
+
     test_classes = ["BENIGN", "DDoS", "PortScan", "DoS", "BruteForce"]
     injected_flow_ids = []
 

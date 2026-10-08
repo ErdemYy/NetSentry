@@ -94,6 +94,9 @@ export class RedisConsumerService implements OnModuleInit, OnModuleDestroy {
       } catch (err: any) {
         if (!this.isRunning) break;
         this.logger.error(`Error in consumer loop: ${err.message}`);
+        if (err.message && err.message.includes('NOGROUP')) {
+          await this.setupConsumerGroup();
+        }
         await new Promise((res) => setTimeout(res, 1000));
       }
     }
