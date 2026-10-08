@@ -45,16 +45,16 @@ Aşağıdaki metrikler; `docs/EXPERIMENTS.md`, `docs/thesis/EXPERIMENTAL_RESULTS
 - **Makro Kesinlik (Macro Precision):** %98.78
 - **Makro F1 (Macro F1):** %93.74
 
-### Sınıf Bazlı Detaylar
-- **BENIGN:** Precision %99.98, Recall %99.99, F1 %99.99 (Destek: 34,171)
-- **DDoS:** Precision %100.00, Recall %99.95, F1 %99.98 (Destek: 19,204)
-- **PortScan:** Precision %98.81, Recall %99.68, F1 %99.24 (Destek: 23,839)
-- **DoS:** Precision %99.90, Recall %99.91, F1 %99.91 (Destek: 37,994)
-- **BruteForce:** Precision %98.70, Recall %96.39, F1 %97.53 (Destek: 2,075)
-- **Botnet:** Precision %93.68, Recall %96.38, F1 %95.01 (Destek: 293)
-- **WebAttack:** Precision %98.05, Recall %98.68, F1 %98.37 (Destek: 329)
-- **Heartbleed:** Precision %100.00, Recall %100.00, F1 %100.00 (Destek: 2)
-- **Infiltration:** Precision %100.00, Recall %33.33, F1 %50.00 (Destek: 3 - Nadir sınıf kısıtı)
+### Sınıf Bazlı Detaylar (Test Kümesi: 51,257 Akış)
+- **BENIGN:** Precision %99.98, Recall %99.83, F1 %99.90 (Destek: 35,764)
+- **DDoS:** Precision %99.93, Recall %100.00, F1 %99.97 (Destek: 4,500)
+- **PortScan:** Precision %99.58, Recall %99.91, F1 %99.75 (Destek: 4,500)
+- **DoS:** Precision %99.76, Recall %99.96, F1 %99.86 (Destek: 4,500)
+- **BruteForce:** Precision %100.00, Recall %100.00, F1 %100.00 (Destek: 1,373)
+- **WebAttack:** Precision %100.00, Recall %99.38, F1 %99.69 (Destek: 321)
+- **Botnet:** Precision %89.82, Recall %99.66, F1 %94.48 (Destek: 292)
+- **Infiltration:** Precision %100.00, Recall %33.33, F1 %50.00 (Destek: 6 - Nadir sınıf kısıtı)
+- **Heartbleed:** Precision %100.00, Recall %100.00, F1 %100.00 (Destek: 1)
 
 ### Gözetimsiz Model (Isolation Forest - EXP-002)
 - **ROC-AUC:** %73.35

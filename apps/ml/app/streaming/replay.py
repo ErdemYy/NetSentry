@@ -56,6 +56,7 @@ class FlowReplayEngine:
         self.df: Optional[pd.DataFrame] = None
         self.benign_df: Optional[pd.DataFrame] = None
         self.attack_df: Optional[pd.DataFrame] = None
+        self.evaluation_map: Dict[str, str] = {}
 
     def load_dataset(self):
         if not self.dataset_path.exists():
@@ -176,6 +177,8 @@ class FlowReplayEngine:
 
             # 77 feature dictionary strictly devoid of ground-truth label
             features_dict = {col: float(row[col]) for col in feature_cols}
+            # Evaluation correlation strictly stored in local map, never published to model input stream
+            self.evaluation_map[flow_id] = str(row["label"])
             flow_meta = self._synthesize_network_flow(row, flow_id, timestamp_str)
 
             message_payload = {
@@ -184,8 +187,7 @@ class FlowReplayEngine:
                 "features": json.dumps(features_dict),
                 "flow": json.dumps(flow_meta),
                 "compute_shap": "true" if compute_shap else "false",
-                # Ground truth strictly isolated to replay evaluation metadata
-                "ground_truth_label": str(row["label"]),
+                "source": "replay",
             }
             batch_items.append(message_payload)
 

@@ -40,3 +40,16 @@ def test_tampered_hash_fails_integrity():
     with pytest.raises(RuntimeError, match="MODEL INTEGRITY CHECK FAILED"):
         if actual_hash != expected_hash:
             raise RuntimeError(f"MODEL INTEGRITY CHECK FAILED: Hash mismatch for '{meta['scaler_file']}'")
+
+def test_experiment_and_document_metrics_consistency():
+    # Import and run the canonical consistency validator
+    sys_path_root = Path(__file__).resolve().parent.parent.parent.parent
+    validator_path = sys_path_root / "scripts" / "validate_experiment_consistency.py"
+    assert validator_path.exists(), "Consistency validator script missing"
+
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("validator", validator_path)
+    val_mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(val_mod)
+    assert val_mod.validate() is True
+

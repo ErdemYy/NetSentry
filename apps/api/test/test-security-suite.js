@@ -109,6 +109,42 @@ async function testSecuritySuite() {
     }
   }
 
+  // 9. Test RBAC: Analyst attempting to start sensor
+  console.log('9. Testing RBAC: Analyst attempting to POST /api/v1/sensor/start...');
+  const resAnalystSensorStart = await fetch(`${BASE_URL}/sensor/start`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${analystToken}`,
+    },
+    body: JSON.stringify({ filter: 'ip' }),
+  });
+  assert.strictEqual(resAnalystSensorStart.status, 403, 'Expected 403 Forbidden for Analyst starting sensor');
+  console.log('   ✓ PASS: Denied ANALYST access to start sensor with HTTP 403 Forbidden.\n');
+
+  // 10. Test RBAC: Analyst attempting to stop sensor
+  console.log('10. Testing RBAC: Analyst attempting to POST /api/v1/sensor/stop...');
+  const resAnalystSensorStop = await fetch(`${BASE_URL}/sensor/stop`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${analystToken}`,
+    },
+  });
+  assert.strictEqual(resAnalystSensorStop.status, 403, 'Expected 403 Forbidden for Analyst stopping sensor');
+  console.log('   ✓ PASS: Denied ANALYST access to stop sensor with HTTP 403 Forbidden.\n');
+
+  // 11. Test RBAC: Admin accessing sensor status
+  console.log('11. Testing RBAC: Admin accessing GET /api/v1/sensor/status...');
+  const resAdminSensorStatus = await fetch(`${BASE_URL}/sensor/status`, {
+    headers: {
+      Authorization: `Bearer ${adminToken}`,
+    },
+  });
+  assert.strictEqual(resAdminSensorStatus.status, 200, 'Expected 200 OK for Admin viewing sensor status');
+  const sensorStatus = await resAdminSensorStatus.json();
+  assert(sensorStatus.capture_state !== undefined, 'Expected capture_state in sensor status');
+  console.log(`   ✓ PASS: Admin granted access to sensor status (State: ${sensorStatus.capture_state}).\n`);
+
   console.log('=== ALL SECURITY & AUTHENTICATION TESTS PASSED 100%! ===');
 }
 

@@ -7,21 +7,37 @@ export interface StartSensorDto {
 }
 
 export interface ProcessPcapDto {
-  filepath: string;
+  filename?: string;
+  filepath?: string;
 }
 
 @Injectable()
 export class SensorService {
   private readonly logger = new Logger(SensorService.name);
   private readonly mlServiceUrl = process.env.ML_SERVICE_URL || 'http://localhost:8000';
+  private readonly internalServiceToken = process.env.INTERNAL_SERVICE_TOKEN || '';
 
   constructor(private readonly auditService: AuditService) {}
+
+  private getAuthHeaders(contentTypeJson = false): Record<string, string> {
+    const headers: Record<string, string> = {
+      'Accept': 'application/json',
+    };
+    if (contentTypeJson) {
+      headers['Content-Type'] = 'application/json';
+    }
+    if (this.internalServiceToken) {
+      headers['Authorization'] = `Bearer ${this.internalServiceToken}`;
+      headers['X-Internal-Service-Token'] = this.internalServiceToken;
+    }
+    return headers;
+  }
 
   async getStatus(): Promise<any> {
     try {
       const response = await fetch(`${this.mlServiceUrl}/api/v1/sensor/status`, {
         method: 'GET',
-        headers: { 'Accept': 'application/json' },
+        headers: this.getAuthHeaders(),
       });
       if (!response.ok) {
         throw new HttpException(`Sensor status error: ${response.statusText}`, response.status);
@@ -52,7 +68,7 @@ export class SensorService {
     try {
       const response = await fetch(`${this.mlServiceUrl}/api/v1/sensor/interfaces`, {
         method: 'GET',
-        headers: { 'Accept': 'application/json' },
+        headers: this.getAuthHeaders(),
       });
       if (!response.ok) {
         throw new HttpException(`Sensor interfaces error: ${response.statusText}`, response.status);
@@ -75,7 +91,7 @@ export class SensorService {
     try {
       const response = await fetch(`${this.mlServiceUrl}/api/v1/sensor/start`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: this.getAuthHeaders(true),
         body: JSON.stringify({
           interface: dto?.interface || null,
           filter: dto?.filter || 'ip and (tcp or udp)',
@@ -111,7 +127,7 @@ export class SensorService {
     try {
       const response = await fetch(`${this.mlServiceUrl}/api/v1/sensor/stop`, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
+        headers: this.getAuthHeaders(),
       });
       result = await response.json();
     } catch (err: any) {
@@ -133,16 +149,20 @@ export class SensorService {
   }
 
   async processPcap(dto: ProcessPcapDto, userId?: string): Promise<any> {
-    if (!dto?.filepath) {
-      throw new HttpException('Missing filepath parameter', HttpStatus.BAD_REQUEST);
+    const targetFile = dto?.filename || dto?.filepath;
+    if (!targetFile) {
+      throw new HttpException('Missing filename or filepath parameter', HttpStatus.BAD_REQUEST);
     }
 
     let result: any;
     try {
       const response = await fetch(`${this.mlServiceUrl}/api/v1/sensor/process-pcap`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ filepath: dto.filepath }),
+        headers: this.getAuthHeaders(true),
+        body: JSON.stringify({
+          filename: dto?.filename || targetFile,
+          filepath: dto?.filepath || targetFile,
+        }),
       });
       if (!response.ok) {
         const errorText = await response.text();
@@ -154,15 +174,17 @@ export class SensorService {
       throw new HttpException(`Failed to communicate with sensor engine: ${err.message}`, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    // Record audit event
+    // Record audit event with sanitized filename (never full filesystem path)
+    const sanitizedFilename = result.filename || targetFile.replace(/^.*[\\/]/, '');
     await this.auditService.createLog({
       userId,
       action: 'SENSOR_PCAP_PROCESSED',
       targetResource: 'LiveSensor',
       details: {
-        filepath: dto.filepath,
+        filename: sanitizedFilename,
         packets_processed: result.packets_processed,
         flows_extracted: result.flows_extracted,
+        elapsed_seconds: result.elapsed_seconds,
       },
     });
 

@@ -57,7 +57,7 @@ def verify_live_pipeline():
             "features": json.dumps(features_dict),
             "flow": json.dumps(flow_meta),
             "compute_shap": "true",
-            "ground_truth_label": cls_name,
+            "source": "replay",
         }
         replay.redis_client.xadd(STREAMING_CONFIG.stream_flows, message_payload)
 

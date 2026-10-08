@@ -208,7 +208,7 @@ Existing ML Pipeline
 ### Operational Characteristics
 
 - **Stateful 5-Tuple Tracking:** Direction is established by the conversation initiator (`IP_src`, `IP_dst`, `Port_src`, `Port_dst`, `Protocol`). Reverse packets are correctly accounted as `Bwd` statistics.
-- **Teardown & Eviction:** TCP connections terminate on FIN/RST flags; UDP/ICMP flows terminate via configurable inactivity sweeps (default 15s) or lifetime limits (120s).
+- **Teardown & Eviction:** TCP connections terminate on FIN/RST flags; UDP flows terminate via configurable inactivity sweeps (default 30s via `NETSENTRY_FLOW_TIMEOUT_MS`) or lifetime limits (120s).
 - **Driver Resiliency:** Gracefully detects Npcap on Windows; transitions to `SENSOR_UNAVAILABLE` with guidance if uninstalled, while offline PCAP stream ingestion operates driverless.
 - **Privacy-by-Design:** **Zero raw payload retention**. Only L3/L4 header lengths, wire sizes, and protocol flags are analyzed.
 
@@ -235,9 +235,12 @@ NetSentry AI implements defense-in-depth security hardening across API, worker, 
 - **Authentication & RBAC:** Secure JWT tokens stored in HTTP-only, SameSite cookies. Server-side `RolesGuard` restricts sensor start/stop and administrative resets to `ADMIN` accounts.
 - **Cryptographic Model Verification:** All model artifacts (`LightGBM`, `Isolation Forest`, `TreeSHAP`, `RobustScaler`, `LabelEncoder`) undergo SHA-256 integrity validation upon service startup to prevent model tampering or deserialization exploits.
 - **Schema Validation:** Strict `feature-schema-v1` checks ensure incoming flows have exactly 77 finite numerical values before reaching inference.
-- **Rate Limiting & Headers:** Helmet HTTP security headers, Throttler rate limiting (300 req/min), body size caps, and bounded flow table memory limits (10,000 max flows with LRU eviction).
+- **Service-to-Service Authentication:** Direct access to FastAPI sensor control endpoints (`/start`, `/stop`, `/process-pcap`) is blocked from public ingress and requires internal service token verification (`INTERNAL_SERVICE_TOKEN`).
+- **Filesystem Sandboxing:** PCAP ingestion endpoints enforce canonical path boundaries within `NETSENTRY_PCAP_ROOT`, rejecting path traversals (`..`), symlink escapes, and arbitrary system file access.
+- **Crash Recovery & DLQ:** Stream consumers leverage `XAUTOCLAIM` to automatically recover unacknowledged messages orphaned by crashed workers, with durable Redis-backed retry counters and dead-letter queue routing (`netsentry:flows:dlq`).
+- **Ground-Truth Stream Isolation:** Ingestion pipelines guarantee that model input streams are strictly devoid of training labels, maintaining scientific isolation.
 - **Privacy Protection:** No raw packet payload is captured, logged, or persisted to disk.
-- **Audit Logging:** Administrative operations (`SENSOR_STARTED`, `SENSOR_STOPPED`, incident status changes, user logins) are written to an immutable PostgreSQL `AuditLog`.
+- **Audit Logging:** Administrative operations (`SENSOR_STARTED`, `SENSOR_STOPPED`, `SENSOR_PCAP_PROCESSED`, incident status changes, user logins) are written to an immutable PostgreSQL `AuditLog`.
 
 ---
 

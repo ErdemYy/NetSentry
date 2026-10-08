@@ -20,6 +20,7 @@ class StreamingConfig(BaseModel):
     batch_size: int = 20
     block_timeout_ms: int = 1000
     max_retries: int = 3
+    claim_idle_ms: int = int(os.getenv("CLAIM_IDLE_MS", "30000"))
 
 
 STREAMING_CONFIG = StreamingConfig()

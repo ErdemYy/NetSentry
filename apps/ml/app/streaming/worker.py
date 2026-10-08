@@ -29,7 +29,7 @@ class MLStreamWorker:
         self.is_running = False
         self.processed_count = 0
         self.error_count = 0
-        self.retry_counts = {}
+        self._last_autoclaim_id = "0-0"
 
     def setup_stream_group(self):
         try:
@@ -45,6 +45,43 @@ class MLStreamWorker:
                 logger.info(f"Consumer group '{self.config.consumer_group}' already exists.")
             else:
                 raise e
+
+    def _get_retry_key(self, message_id: str) -> str:
+        """Durable Redis key tracking failure attempt count across worker crashes/restarts."""
+        return f"netsentry:retry:{self.config.stream_flows}:{message_id}"
+
+    def _get_retry_count(self, message_id: str) -> int:
+        val = self.redis_client.get(self._get_retry_key(message_id))
+        return int(val) if val else 0
+
+    def _incr_retry_count(self, message_id: str) -> int:
+        key = self._get_retry_key(message_id)
+        count = self.redis_client.incr(key)
+        self.redis_client.expire(key, 86400)  # 24-hour TTL for durable failure state
+        return count
+
+    def _clear_retry_count(self, message_id: str):
+        self.redis_client.delete(self._get_retry_key(message_id))
+
+    @property
+    def retry_counts(self):
+        worker_self = self
+
+        class _DurableRetryDict(dict):
+            def get(self, key, default=None):
+                cnt = worker_self._get_retry_count(key)
+                return cnt if cnt > 0 else default
+
+            def __contains__(self, key):
+                return worker_self._get_retry_count(key) > 0
+
+            def __getitem__(self, key):
+                cnt = worker_self._get_retry_count(key)
+                if cnt == 0:
+                    raise KeyError(key)
+                return cnt
+
+        return _DurableRetryDict()
 
     def process_message(self, message_id: str, fields: dict) -> bool:
         try:
@@ -66,8 +103,8 @@ class MLStreamWorker:
                 compute_shap=compute_shap,
             )
 
-            # Parse or synthesize flow network metadata for downstream Core API persistence
-            source_type = fields.get("source", "replay" if "ground_truth_label" in fields else "live")
+            # Strict ground-truth isolation: never derive source or verdict from training labels
+            source_type = fields.get("source", "replay")
             raw_flow = fields.get("flow")
             if raw_flow:
                 flow_data = json.loads(raw_flow) if isinstance(raw_flow, str) else raw_flow
@@ -127,18 +164,14 @@ class MLStreamWorker:
 
             # Acknowledge successfully processed flow
             self.redis_client.xack(self.config.stream_flows, self.config.consumer_group, message_id)
+            self._clear_retry_count(message_id)
             self.processed_count += 1
-
-            if message_id in self.retry_counts:
-                del self.retry_counts[message_id]
-
             return True
 
         except Exception as e:
             self.error_count += 1
-            retries = self.retry_counts.get(message_id, 0) + 1
-            self.retry_counts[message_id] = retries
-            logger.error(f"Error processing message {message_id} (Attempt {retries}): {e}")
+            retries = self._incr_retry_count(message_id)
+            logger.error(f"Error processing message {message_id} (Attempt {retries}/{self.config.max_retries}): {e}")
 
             if retries >= self.config.max_retries:
                 logger.warning(f"Message {message_id} exceeded max retries ({self.config.max_retries}). Forwarding to DLQ.")
@@ -146,17 +179,57 @@ class MLStreamWorker:
                     self.config.stream_dlq,
                     {
                         "original_id": message_id,
-                        "fields": json.dumps(fields),
+                        "fields": json.dumps(fields) if isinstance(fields, dict) else str(fields),
                         "error": str(e),
+                        "attempt_count": retries,
                         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                     },
                 )
                 self.redis_client.xack(self.config.stream_flows, self.config.consumer_group, message_id)
-                del self.retry_counts[message_id]
+                self._clear_retry_count(message_id)
 
             return False
 
+    def claim_orphaned_messages(self, count: int = 10) -> int:
+        """
+        Recovers and processes pending messages orphaned by crashed or abruptly terminated workers.
+        Uses XAUTOCLAIM based on the configured claim_idle_ms.
+        """
+        try:
+            res = self.redis_client.xautoclaim(
+                name=self.config.stream_flows,
+                groupname=self.config.consumer_group,
+                consumername=self.worker_id,
+                min_idle_time=self.config.claim_idle_ms,
+                start_id=self._last_autoclaim_id,
+                count=count,
+            )
+            if not res or len(res) < 2:
+                return 0
+
+            next_id = res[0]
+            messages = res[1]
+            self._last_autoclaim_id = next_id if next_id and next_id != "0-0" else "0-0"
+
+            recovered = 0
+            for msg in messages:
+                if not msg or not isinstance(msg, (list, tuple)) or len(msg) < 2:
+                    continue
+                message_id, fields = msg[0], msg[1]
+                logger.info(f"Worker '{self.worker_id}' recovered orphaned pending message {message_id} via XAUTOCLAIM")
+                if self.process_message(message_id, fields):
+                    recovered += 1
+
+            return recovered
+        except Exception as e:
+            logger.debug(f"XAUTOCLAIM idle inspection: {e}")
+            return 0
+
     def process_batch(self, count: int = 10, block_ms: int = 1000) -> int:
+        # 1. First recover any orphaned messages abandoned by crashed workers
+        recovered_count = self.claim_orphaned_messages(count=count)
+
+        # 2. Ingest new stream messages
         response = self.redis_client.xreadgroup(
             groupname=self.config.consumer_group,
             consumername=self.worker_id,
@@ -166,15 +239,15 @@ class MLStreamWorker:
         )
 
         if not response:
-            return 0
+            return recovered_count
 
-        total_processed = 0
+        new_processed = 0
         for stream_name, messages in response:
             for message_id, fields in messages:
                 if self.process_message(message_id, fields):
-                    total_processed += 1
+                    new_processed += 1
 
-        return total_processed
+        return recovered_count + new_processed
 
     def run(self, max_messages: Optional[int] = None):
         self.setup_stream_group()

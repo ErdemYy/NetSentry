@@ -12,8 +12,8 @@ Bir mühendislik bitirme çalışmasının akademik değeri, yalnızca başarıl
 - Sistem bu kısıt nedeniyle gerçek dünya trafiğinde yeniden eğitime (retraining) ihtiyaç duyabilir.
 
 ### 2.2 Uç Azınlık Sınıflarının Temsil Güçlüğü
-- Ham veri setinde **Infiltration** sınıfı yalnızca 36 örneğe, **Heartbleed** ise 11 örneğe sahiptir. Test kümesinde sırasıyla 5 ve 2 örnek yer almaktadır.
-- Tabakalı örnekleme ile bu akışların tamamı korunmuş olsa dahi, 5 örnekli bir sınıfta tek bir yanlış tahmin duyarlılığı (Recall) doğrudan %20'ye düşürmektedir. Infiltration gibi hedefli sızma saldırılarının ağ akış seviyesinde tespiti için ek ana bilgisayar (host-based) telemetrisine ihtiyaç vardır.
+- Ham veri setinde **Infiltration** sınıfı yalnızca 36 örneğe, **Heartbleed** ise 11 örneğe sahiptir. %15'lik tabakalı test kümesinde sırasıyla 6 ve 1 örnek yer almaktadır.
+- Tabakalı örnekleme ile bu akışların tamamı korunmuş olsa dahi, 6 örnekli bir sınıfta kaçırılan her örnek duyarlılığı (Recall) %16.67 düşürmekte olup testte yakalanan 2 örnek neticesinde recall %33.33 olarak gerçekleşmiştir. Infiltration gibi hedefli sızma saldırılarının ağ akış seviyesinde tespiti için ek ana bilgisayar (host-based) telemetrisine ihtiyaç vardır.
 
 ### 2.3 Gözetimsiz Modelin Performans Tavanı
 - Isolation Forest'ın elde ettiği F1 skoru (%52.36) ve ROC-AUC (%73.35), gözetimli modelin (%93.74) gerisindedir. Gözetimsiz modellerin genel doğası gereği, karmaşık meşru trafik desenlerini %100 doğrulukla izole etmek mümkün değildir. Bu nedenle model tek başına değil, hibrit sentezin bir bileşeni olarak konumlandırılmıştır.

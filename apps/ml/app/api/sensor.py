@@ -1,11 +1,17 @@
 from typing import Optional
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, Field
 
+from app.api.internal_auth import verify_internal_service_token
 from app.sensor.capture import LiveSensorEngine
 from app.sensor.interfaces import InterfaceManager
+from app.sensor.sandbox import resolve_and_validate_pcap_path
 
-router = APIRouter(prefix="/api/v1/sensor", tags=["Live Sensor"])
+router = APIRouter(
+    prefix="/api/v1/sensor",
+    tags=["Live Sensor"],
+    dependencies=[Depends(verify_internal_service_token)],
+)
 
 
 class StartCaptureRequest(BaseModel):
@@ -14,13 +20,15 @@ class StartCaptureRequest(BaseModel):
 
 
 class ProcessPcapRequest(BaseModel):
-    filepath: str = Field(..., description="Absolute or relative path to PCAP/PCAPNG file")
+    filename: Optional[str] = Field(None, description="Filename within the sandboxed PCAP directory (e.g., sample.pcap)")
+    filepath: Optional[str] = Field(None, description="Alias for filename (strictly sandboxed)")
 
 
 @router.get("/status")
 def get_sensor_status():
     """
     Returns real-time operational status, metrics, and state of the Live Sensor subsystem.
+    Protected by internal service authentication.
     """
     engine = LiveSensorEngine.get_instance()
     return engine.get_status()
@@ -31,6 +39,7 @@ def get_sensor_interfaces():
     """
     Lists discovered physical/virtual network adapters on the host machine.
     Includes Npcap driver availability status.
+    Protected by internal service authentication.
     """
     interfaces = InterfaceManager.list_interfaces()
     npcap_installed = InterfaceManager.is_npcap_installed()
@@ -49,6 +58,7 @@ def start_capture(req: Optional[StartCaptureRequest] = None):
     """
     Starts live network packet capture on designated interface.
     Gracefully returns SENSOR_UNAVAILABLE if Npcap is missing or CAPTURE_PERMISSION_DENIED.
+    Protected by internal service authentication.
     """
     engine = LiveSensorEngine.get_instance()
     iface = req.interface if req else None
@@ -56,7 +66,6 @@ def start_capture(req: Optional[StartCaptureRequest] = None):
 
     result = engine.start_capture(interface_name=iface, bpf_filter=bpf)
     if not result.get("success", False):
-        # Do not throw 500 error; return structured operational failure code
         return {
             "success": False,
             "status": result.get("status"),
@@ -71,6 +80,7 @@ def start_capture(req: Optional[StartCaptureRequest] = None):
 def stop_capture():
     """
     Stops live network packet capture and flushes pending flows to Redis.
+    Protected by internal service authentication.
     """
     engine = LiveSensorEngine.get_instance()
     result = engine.stop_capture()
@@ -82,13 +92,39 @@ def process_pcap(req: ProcessPcapRequest):
     """
     Processes an offline PCAP/PCAPNG file through the bidirectional flow reconstruction
     and canonical 77-feature extraction engine, publishing completed flows to Redis.
-    Works without Npcap or elevated privileges.
+    Strictly restricted to sandboxed PCAP files (NETSENTRY_PCAP_ROOT).
+    Protected by internal service authentication.
     """
+    target = req.filename or req.filepath
+    if not target:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Either 'filename' or 'filepath' must be provided.",
+        )
+
+    try:
+        safe_path = resolve_and_validate_pcap_path(target)
+    except ValueError as ve:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Security violation / Invalid PCAP parameter: {str(ve)}",
+        )
+    except FileNotFoundError as fnf:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(fnf),
+        )
+
     engine = LiveSensorEngine.get_instance()
     try:
-        result = engine.process_pcap_file(req.filepath)
+        result = engine.process_pcap_file(str(safe_path))
+        # Mask absolute server filesystem path from response
+        result["filename"] = safe_path.name
+        if "pcap_file" in result:
+            result["pcap_file"] = safe_path.name
         return result
-    except FileNotFoundError as e:
-        raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"PCAP processing engine error: {str(e)}",
+        )

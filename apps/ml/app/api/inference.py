@@ -1,10 +1,15 @@
 from typing import Dict, Any, Optional
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, Field
 
+from app.api.internal_auth import verify_internal_service_token
 from app.inference.service import InferenceService
 
-router = APIRouter(prefix="/api/v1", tags=["Inference"])
+router = APIRouter(
+    prefix="/api/v1",
+    tags=["Inference"],
+    dependencies=[Depends(verify_internal_service_token)],
+)
 inference_service = InferenceService()
 
 

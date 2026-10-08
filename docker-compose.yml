@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-netsentry}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-netsentry_secret}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be provided in environment}
       POSTGRES_DB: ${POSTGRES_DB:-netsentry_db}
     ports:
       - "${POSTGRES_PORT:-5433}:5432"
@@ -40,11 +40,12 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3001
-      DATABASE_URL: postgresql://${POSTGRES_USER:-netsentry}:${POSTGRES_PASSWORD:-netsentry_secret}@postgres:5432/${POSTGRES_DB:-netsentry_db}?schema=public
+      DATABASE_URL: postgresql://${POSTGRES_USER:-netsentry}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be provided in environment}@postgres:5432/${POSTGRES_DB:-netsentry_db}?schema=public
       REDIS_HOST: redis
       REDIS_PORT: 6379
-      ML_SERVICE_URL: http://ml:8000
-      JWT_SECRET: ${JWT_SECRET:-netsentry_jwt_dev_secret}
+      ML_SERVICE_URL: http://ml-api:8000
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be provided in environment}
+      INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN:?INTERNAL_SERVICE_TOKEN must be provided in environment}
     ports:
       - "3001:3001"
     depends_on:
@@ -52,19 +53,44 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+      ml-api:
+        condition: service_healthy
 
-  ml:
+  ml-api:
     build:
       context: apps/ml
       dockerfile: Dockerfile
-    container_name: netsentry-ml
+    container_name: netsentry-ml-api
     restart: unless-stopped
     environment:
       PORT: 8000
       REDIS_HOST: redis
       REDIS_PORT: 6379
-    ports:
-      - "8000:8000"
+      INTERNAL_SERVICE_TOKEN: ${INTERNAL_SERVICE_TOKEN:?INTERNAL_SERVICE_TOKEN must be provided in environment}
+      ML_INTERNAL_AUTH_ENABLED: ${ML_INTERNAL_AUTH_ENABLED:-true}
+      NETSENTRY_PCAP_ROOT: /app/data/pcap
+    expose:
+      - "8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "python -c 'import urllib.request; urllib.request.urlopen(\"http://localhost:8000/health\")'"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ml-worker:
+    build:
+      context: apps/ml
+      dockerfile: Dockerfile
+    container_name: netsentry-ml-worker
+    restart: unless-stopped
+    command: ["python", "-m", "app.streaming.worker"]
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CLAIM_IDLE_MS: ${CLAIM_IDLE_MS:-30000}
     depends_on:
       redis:
         condition: service_healthy

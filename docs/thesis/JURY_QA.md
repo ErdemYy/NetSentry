@@ -63,7 +63,7 @@ Eşik değeri keyfi olarak (örneğin varsayılan 0.50) seçilmemiştir. Model e
 
 ### 9. Infiltration Saldırısında Recall Neden %33.3 Seviyesindedir?
 **Cevap:**  
-Bu durum bir model hatası değil, veri setinin fiziksel gerçekliğidir. 2.8 milyonluk CIC-IDS2017 ana veri setinde Infiltration sınıfına ait yalnızca 36 adet akış bulunmaktadır. Tabakalı test kümemize sadece 3 ila 4 örnek düşmektedir. Bir örneğin kaçırılması dahi recall oranını %33'e düşürmektedir. Akademik dürüstlük gereği bu sınıfı SMOTE gibi sentetik yöntemlerle yapay olarak şişirmedik ve istatistiksel belirsizliğiyle birlikte tez kısıtları bölümünde açıkça paylaştık.
+Bu durum bir model hatası değil, veri setinin fiziksel gerçekliğidir. 2.8 milyonluk CIC-IDS2017 ana veri setinde Infiltration sınıfına ait yalnızca 36 adet akış bulunmaktadır. Tabakalı test kümemize (%15) sadece 6 örnek düşmektedir. Kaçırılan 4 örnek recall oranını %33.33 seviyesine çekmektedir. Akademik dürüstlük gereği bu sınıfı SMOTE gibi sentetik yöntemlerle yapay olarak şişirmedik ve istatistiksel belirsizliğiyle birlikte tez kısıtları bölümünde açıkça paylaştık.
 
 ---
 
