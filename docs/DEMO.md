@@ -9,7 +9,17 @@ Ground-truth labels are strictly stripped before inference to ensure that the ML
 
 ## 2. Service Startup Procedure
 
-### Step 1: Start Infrastructure (PostgreSQL & Redis)
+### Recommended: Automated Final Demo Harness (Single Entrypoint)
+For academic demonstrations and jury evaluation, execute the unified Windows harness:
+```powershell
+.\tools\final-demo.ps1 -Mode Replay -OpenBrowser
+```
+This single command validates the environment, verifies Docker containers, probes subsystem health (`/api/v1/health/detailed`), authenticates as ADMIN, purges previous demo telemetry via `POST /api/v1/demo/reset`, streams authentic CIC-IDS2017 flow vectors with zero ground-truth leakage, verifies real-time WebSocket ingestion, and generates acceptance reports.
+
+### Alternative: Modular Service Startup
+If individual process inspection or manual step-by-step debugging is desired:
+
+#### Step 1: Start Infrastructure (PostgreSQL & Redis)
 Ensure Docker Desktop is running, then execute:
 ```bash
 docker compose up -d postgres redis
@@ -18,21 +28,29 @@ Verify connectivity:
 - PostgreSQL: Port 5433 (Database: `netsentry_db`)
 - Redis: Port 6380 (Stream transport)
 
-### Step 2: Start NestJS Core API
+#### Step 2: Start NestJS Core API
 In a terminal window:
 ```bash
 cd apps/api
 npm run start
 ```
-*Health Check:* `curl http://localhost:3001/health`
+*Health Check:* `curl http://localhost:3001/api/v1/health/detailed`
 
-### Step 3: Start ML Streaming Worker
+#### Step 3: Start ML Streaming Worker & API
 In a second terminal window:
 ```bash
 cd apps/ml
 .venv/Scripts/python -m app.streaming.worker
 ```
 The worker initializes all 5 artifacts (LightGBM, Isolation Forest, TreeSHAP, RobustScaler, LabelEncoder) and begins listening to `netsentry:flows` via consumer group `ml-inference`.
+
+#### Step 4: Start SOC Operations Dashboard
+In a third terminal window:
+```bash
+cd apps/web
+npm run start
+```
+Accessible at `http://localhost:3000`.
 
 ---
 

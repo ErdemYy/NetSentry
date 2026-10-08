@@ -1,0 +1,28 @@
+﻿{
+    "demo_reset":  "PASS",
+    "websocket_event":  "PASS",
+    "ground_truth_isolation":  "PASS",
+    "timestamp":  "2026-10-08T14:42:26Z",
+    "services":  {
+                     "api":  "PASS",
+                     "web":  "PASS",
+                     "ml_worker":  "PASS",
+                     "postgres":  "PASS",
+                     "ml_api":  "PASS",
+                     "redis":  "PASS"
+                 },
+    "authentication":  "PASS",
+    "database_persistence":  "PASS",
+    "environment":  {
+                        "node":  "v24.19.0",
+                        "docker":  "Docker version 29.6.2, build dfc4efb",
+                        "python":  "3.12.10"
+                    },
+    "git_commit":  "0dfac97a3963e7c6769d04f199bc6651a1cf3097",
+    "frontend":  "PASS",
+    "overall":  "PASS",
+    "mode":  "Replay",
+    "live_sensor":  "NOT_APPLICABLE",
+    "ml_inference":  "PASS",
+    "replay":  "PASS"
+}

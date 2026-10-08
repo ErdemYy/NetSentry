@@ -63,35 +63,34 @@ def verify_live_pipeline():
 
     logger.info(f"Published {len(injected_flow_ids)} flows to stream '{STREAMING_CONFIG.stream_flows}'.")
 
-    # 2. Consume and infer via MLStreamWorker
-    processed_count = 0
+    # 2. Consume and infer via MLStreamWorker until all injected flows are detected
     start_wait = time.time()
-    while processed_count < len(injected_flow_ids) and (time.time() - start_wait) < 15:
-        n = worker.process_batch(count=10, block_ms=1000)
-        processed_count += n
-        logger.info(f"Batch processed: {n} (Total: {processed_count})")
-
-    logger.info(f"ML Worker processed {processed_count} flows.")
-
-    # 3. Verify in output stream netsentry:detections
-    detections = worker.redis_client.xrevrange(STREAMING_CONFIG.stream_detections, count=20)
     verified = {}
+    target_ids = {inj_id: expected_cls for inj_id, expected_cls in injected_flow_ids}
 
-    for det_id, fields in detections:
-        flow_id = fields.get("flow_id")
-        for inj_id, expected_cls in injected_flow_ids:
-            if flow_id == inj_id and inj_id not in verified:
+    while len(verified) < len(injected_flow_ids) and (time.time() - start_wait) < 25:
+        worker.process_batch(count=10, block_ms=500)
+
+        # Check output stream netsentry:detections
+        detections = worker.redis_client.xrevrange(STREAMING_CONFIG.stream_detections, count=50)
+        for det_id, fields in detections:
+            flow_id = fields.get("flow_id")
+            if flow_id in target_ids and flow_id not in verified:
                 payload = json.loads(fields["payload"])
-                verified[inj_id] = {
-                    "expected_class": expected_cls,
-                    "predicted_category": payload["attackCategory"],
-                    "verdict": payload["verdict"],
-                    "confidence": payload["supervisedConfidence"],
-                    "anomaly_score": payload["unsupervisedAnomalyScore"],
-                    "severity": payload["severity"],
-                    "top_shap_feature": payload["topFeatures"][0]["feature"] if payload["topFeatures"] else None,
-                    "latency_ms": payload["inferenceLatencyMs"],
+                verified[flow_id] = {
+                    "expected_class": target_ids[flow_id],
+                    "predicted_category": payload.get("attackCategory"),
+                    "verdict": payload.get("verdict"),
+                    "confidence": payload.get("supervisedConfidence"),
+                    "anomaly_score": payload.get("unsupervisedAnomalyScore"),
+                    "severity": payload.get("severity"),
+                    "top_shap_feature": payload["topFeatures"][0]["feature"] if payload.get("topFeatures") else None,
+                    "latency_ms": payload.get("inferenceLatencyMs"),
                 }
+        if len(verified) < len(injected_flow_ids):
+            time.sleep(0.5)
+
+    logger.info(f"Verified {len(verified)} of {len(injected_flow_ids)} injected flows in {time.time() - start_wait:.2f}s.")
 
     logger.info("=== LIVE VERIFICATION RESULTS ===")
     for inj_id, res in verified.items():

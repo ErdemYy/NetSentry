@@ -15,35 +15,20 @@ Bu kontrol listesi, NetSentry AI bitirme projesi jüri sunumu ve canlı savunmas
 
 ## 2. Servislerin Başlatılması ve Doğrulanması (T-15 Dakika)
 
-### Adım 1: Veri Tabanı ve Akış Kuyruğu (Docker)
-```bash
-docker compose up -d postgres redis
+### Birincil Seçenek: Otomatikleştirilmiş Jüri Harness'ı (Tek Komut)
+Tüm ortamı doğrulamak, servisleri ayağa kaldırmak ve sıfır sızıntılı test akışını çalıştırmak için:
+```powershell
+.\tools\final-demo.ps1 -Mode Replay -OpenBrowser
 ```
-- [ ] `netsentry-postgres` (Port 5433) çalışıyor (`docker ps` ile teyit edildi).
-- [ ] `netsentry-redis` (Port 6380) çalışıyor (`docker ps` ile teyit edildi).
+- [ ] 8 aşamanın tamamı yeşil (`PASS`) sonuçlandı.
+- [ ] `reports/final-demo/latest.json` ve `latest.md` oluşturuldu.
 
-### Adım 2: ML Çıkarım Servisi & Akış Tüketicisi
-```bash
-cd apps/ml
-.venv/Scripts/python -m app.streaming.worker
-```
-- [ ] Model bütünlüğü SHA-256 kontrolleri geçti (`5/5 joblib artifact PASSED`).
-- [ ] Redis consumer group `ml-inference` akışları dinlemeye başladı.
-
-### Adım 3: NestJS Core API
-```bash
-cd apps/api
-npm run start
-```
-- [ ] Core API port 3001 üzerinde ayakta (`http://localhost:3001/health` -> HTTP 200).
-- [ ] Güvenlik filtreleri (Helmet, Throttler, JWT Guard) devrede.
-
-### Adım 4: Next.js SOC Dashboard
-```bash
-cd apps/web
-npm run start
-```
-- [ ] Web arayüzü port 3000 üzerinde ayakta (`http://localhost:3000` açıldı).
+### İkincil / Modüler Başlatma Yöntemi:
+Servisleri ayrı terminallerde incelemek için:
+- **Veri Tabanı & Redis:** `docker compose up -d postgres redis`
+- **Core API:** `npm run start --prefix apps/api` (`http://localhost:3001/api/v1/health/detailed` -> 200)
+- **ML Servisi:** `cd apps/ml; .venv/Scripts/python -m app.streaming.worker`
+- **SOC Web:** `npm run start --prefix apps/web` (`http://localhost:3000`)
 - [ ] Üst çubukta `API ●`, `ML ENGINE ●`, `REDIS ●`, `DATABASE ●` ve `LIVE ●` yeşil.
 
 ---

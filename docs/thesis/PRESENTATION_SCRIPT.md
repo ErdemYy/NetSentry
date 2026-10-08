@@ -38,8 +38,7 @@
 > *"Üst çubuktaki göstergelerimiz doğrudan `/api/v1/health/detailed` endpoint'i üzerinden Core API, ML Engine, Redis ve PostgreSQL bileşenlerimizin anlık çalışma durumunu ve Socket.IO `/events` canlı WebSocket bağlantısını doğrulamaktadır."*
 
 ### Adım 4: Kontrollü Veri Akışı Başlatma (Controlled Replay)
-> *"Akademik güvenlik ilkeleri gereği sistemimiz harici ağlara gerçek saldırı paketleri atmaz. Bunun yerine CIC-IDS2017 veri setinden doğrulanmış `clean_flows.parquet` dosyasını kullanan kontrollü bir yeniden oynatma motorumuz vardır.*
-> *Şimdi terminalden 5 kanonik akışı sisteme aktarıyorum:*
+> *"Akademik güvenlik ilkeleri gereği sistemimiz harici ağlara gerçek saldırı paketleri atmaz. Bunun yerine CIC-IDS2017 veri setinden doğrulanmış `clean_flows.parquet` dosyasını kullanan kontrollü bir yeniden oynatma motorumuz vardır. Bu işlem tek komutluk `.\tools\final-demo.ps1 -Mode Replay` harness'ımız ile veya doğrudan replay modülümüz ile tetiklenebilir:*
 > `python -m app.streaming.replay --mode MIXED --rate 5 --max 5`"
 
 ### Adım 5: Meşru Trafik Tespiti (BENIGN Flow)
